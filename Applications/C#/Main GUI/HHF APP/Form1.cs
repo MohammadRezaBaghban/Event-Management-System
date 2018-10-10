@@ -19,6 +19,7 @@ namespace HHF_APP
             InitializeComponent();
             sidepanelforBTNs.Height = AdminBtn.Height;
             sidepanelforBTNs.Top = AdminBtn.Top;
+            viewAdminDashboard1.BringToFront();
             //SoundPlayer my_sound = new SoundPlayer("F:/xxxxxx.wave"); //put your own .wave file path
             //my_sound.Play();
             //my_sound.Stop();
@@ -45,16 +46,23 @@ namespace HHF_APP
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            sidepanelforBTNs.Height = storeBtn.Height;
+            sidepanelforBTNs.Top = storeBtn.Top;
+            viewStore1.BringToFront();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-
+            sidepanelforBTNs.Height = campBtn.Height;
+            sidepanelforBTNs.Top = campBtn.Top;
+            viewCamping1.BringToFront();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
+            sidepanelforBTNs.Height = lendBtn.Height;
+            sidepanelforBTNs.Top = lendBtn.Top;
+            viewLending1.BringToFront();
 
         }
 
@@ -62,6 +70,8 @@ namespace HHF_APP
         {
             sidepanelforBTNs.Height = AdminBtn.Height;
             sidepanelforBTNs.Top = AdminBtn.Top;
+            viewAdminDashboard1.BringToFront();
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -87,6 +97,11 @@ namespace HHF_APP
         }
 
         private void viewCheckInOut1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void viewTickets1_Load(object sender, EventArgs e)
         {
 
         }

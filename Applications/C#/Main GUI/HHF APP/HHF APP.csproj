@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,6 +54,30 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="viewAdminDashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="viewAdminDashboard.Designer.cs">
+      <DependentUpon>viewAdminDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewCamping.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="viewCamping.Designer.cs">
+      <DependentUpon>viewCamping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewLending.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="viewLending.Designer.cs">
+      <DependentUpon>viewLending.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewStore.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="viewStore.Designer.cs">
+      <DependentUpon>viewStore.cs</DependentUpon>
+    </Compile>
     <Compile Include="viewTickets.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -76,7 +101,20 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="viewAdminDashboard.resx">
+      <DependentUpon>viewAdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewCamping.resx">
+      <DependentUpon>viewCamping.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewLending.resx">
+      <DependentUpon>viewLending.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewStore.resx">
+      <DependentUpon>viewStore.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="viewTickets.resx">
       <DependentUpon>viewTickets.cs</DependentUpon>
     </EmbeddedResource>
@@ -95,6 +133,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo halloween 24 opacity.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
