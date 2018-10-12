@@ -1,6 +1,6 @@
 ﻿namespace HHF_APP
 {
-    partial class viewTickets
+    partial class viewLending
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,19 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(viewTickets));
             this.SuspendLayout();
             // 
-            // viewTickets
+            // viewLending
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::HHF_APP.Properties.Resources.logo_halloween_24_opacity;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.DoubleBuffered = true;
-            this.Name = "viewTickets";
-            this.Padding = new System.Windows.Forms.Padding(5);
+            this.Name = "viewLending";
             this.Size = new System.Drawing.Size(968, 753);
             this.ResumeLayout(false);
 

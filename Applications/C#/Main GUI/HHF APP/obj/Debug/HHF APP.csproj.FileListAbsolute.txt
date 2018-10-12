@@ -9,3 +9,7 @@ H:\FONTYs\ProP&POPD\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF AP
 H:\FONTYs\ProP&POPD\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF APP.pdb
 H:\FONTYs\ProP&POPD\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF_APP.viewCheckInOut.resources
 H:\FONTYs\ProP&POPD\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF_APP.viewTickets.resources
+H:\FONTYs\ProP&POPD\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF_APP.viewAdminDashboard.resources
+H:\FONTYs\ProP&POPD\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF_APP.viewCamping.resources
+H:\FONTYs\ProP&POPD\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF_APP.viewStore.resources
+H:\FONTYs\ProP&POPD\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF_APP.viewLending.resources

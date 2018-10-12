@@ -1,6 +1,6 @@
 ﻿namespace HHF_APP
 {
-    partial class viewTickets
+    partial class viewStore
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(viewTickets));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(viewStore));
             this.SuspendLayout();
             // 
-            // viewTickets
+            // viewStore
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -39,9 +39,9 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.DoubleBuffered = true;
-            this.Name = "viewTickets";
-            this.Padding = new System.Windows.Forms.Padding(5);
+            this.Name = "viewStore";
             this.Size = new System.Drawing.Size(968, 753);
+            this.Load += new System.EventHandler(this.viewStore_Load);
             this.ResumeLayout(false);
 
         }
