@@ -53,5 +53,10 @@ namespace HHF_APP
         {
 
         }
+
+        private void panel16_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

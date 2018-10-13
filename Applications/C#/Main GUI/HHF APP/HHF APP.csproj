@@ -137,5 +137,8 @@
   <ItemGroup>
     <None Include="Resources\logo halloween 24 opacity.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\money-refund.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
