@@ -28,7 +28,7 @@
             <div class="container">
                 <div class="col-sm-2 col-xs-12 navigation-header">
                     <a href="#" class="logo">
-                        <img src="assets/img/logo-.png" alt="HHF" width="110" height="90" class="retina-show"
+                        <img src="assets/img/logo-.png" href="/" width="110" height="90" class="retina-show"
                            style="margin-top: -30px;">
                     </a>
                     <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation" aria-expanded="false" aria-controls="navigation">
@@ -46,7 +46,8 @@
                             <li class="navigation-item"><a href="#activities" class="navigation-link">Activities</a></li>
                             <li class="navigation-item"><a href="#tickets" class="navigation-link">Tickets</a></li>
                             <li class="navigation-item"><a href="/schedule" class="navigation-link">Schedule</a></li>
-                            <li class="navigation-item"><a href="#contacts" class="navigation-link">Contact Us</a></li>
+                            <li class="navigation-item"><a href="#" class="navigation-link" data-toggle="modal" data-target="#email-ticket"
+                                >Contact Us</a></li>
                             <li class="navigation-item"><a href="/login" class="navigation-link">Login</a></li>
                         </ul>
                     </div>
@@ -297,53 +298,6 @@
         </div>
     </section>
 
-    <section class="section align-center" id="contacts">
-        <h3>Contact Us</h3>
-        <div class="container contacts-wrapper">
-            <div class="align-left contacts col-sm-6">
-                <h5 class="highlight">Location</h5>
-
-                <ul class="list">
-                    <li><i class="fa fa-map-marker"></i>Rachelsmolen 1</li>
-                    <li><i class="fa fa-envelope"></i>info@hhf.com</li>
-                    <li><i class="fa fa-phone"></i>(+31) 060-000 000</li>
-                    <li><i class="fa fa-clock-o"></i>9:00a.m - 8:00p.m</li>
-                </ul>
-            </div>
-
-            <div class="align-left col-sm-6">
-                <form action="" class="form form-mail-us" novalidate="novalidate">
-                    <div class="col-sm-12">
-                        <h5 class="highlight">Mail Us</h5>
-                        <br>
-                    </div>
-
-                    <div class="col-sm-6 col-md-5">
-                        <fieldset>
-                            <label for="name">Name</label>
-                            <input id="name" name="name" type="text">
-                        </fieldset>
-                        <fieldset>
-                            <label for="email">Email</label>
-                            <input id="email" name="email" type="email" class="valid">
-                        </fieldset>
-                    </div>
-
-                    <div class="col-sm-6 col-md-5">
-                        <fieldset>
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message"></textarea>
-                        </fieldset>
-                    </div>
-
-                    <fieldset class="col-sm-12">
-                        <input type="submit" class="btn btn-solid" value="Submit">
-                    </fieldset>
-                </form>
-            </div>
-        </div>
-    </section>
-
     <section class="footer">
         <div class="footer-base">
             <div class="container">
@@ -373,6 +327,41 @@
         </div>
         
     </section>
+
+
+
+    <div id="email-ticket" class="modal-window" data-modal="email-ticket" style="background-color:transparent;margin-top: 50px;">
+        <div class="modal-box small animated" data-animation="zoomIn" data-duration="700">
+            <span class="close-btn icon icon-office-52"></span>
+            <h5 class="align-center"><span class="highlight">Contact Us</span></h5>
+            <form class="form registration-form align-center">
+
+                    <div class="col-sm-12 ">
+                        <fieldset>
+                            <label for="name">Name</label>
+                            <input id="name" name="name" type="text">
+                        </fieldset>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <fieldset>
+                            <label for="email">Email</label>
+                            <input id="email" name="email" type="email" class="valid">
+                        </fieldset>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <fieldset>
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message"></textarea>
+                        </fieldset>
+                    </div>
+                <input type="submit" value="submit" class="btn">
+            </form>
+
+        </div>
+    </div>
+
 @include('layouts.welcome-page-footer')
 </body>
 </html>
