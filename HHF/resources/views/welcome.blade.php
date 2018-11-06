@@ -84,7 +84,7 @@
 
 
 
-    <section id="activities" class="section align-center" style="background-color: #1f2125">
+    <section id="activities" class="section align-center" style="background-color: #1f2125;">
         <div class="container">
             <span class="icon section-icon icon-badges-votes-01"></span>
             <h3 style="color: white">Activities</h3>
