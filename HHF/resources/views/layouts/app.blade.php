@@ -1,3 +1,4 @@
+@include('layouts.welcome-page-header')
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -7,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>HighLands Halloween Festival</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -21,33 +22,43 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
-
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            <li class="nav-item">
-                                @if (Route::has('register'))
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                @endif
-                            </li>
+                            <header class="header header-black fixed" style="min-height: 100px;">
+                                <div class="header-wrapper fixed">
+                                    <div class="container">
+                                        <div class="col-sm-2 col-xs-12 navigation-header">
+                                            <a href="#" class="logo">
+                                                <img src="assets/img/logo-.png" href="/" width="110" height="90" class="retina-show"
+                                                   style="margin-top: -30px;">
+                                            </a>
+                                            <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation" aria-expanded="false" aria-controls="navigation">
+                                                <span class="icon-bar"></span>
+                                                <span class="icon-bar"></span>
+                                                <span class="icon-bar"></span>
+                                            </button>
+                                        </div>
+
+                                        <div class="col-sm-10 col-xs-12 navigation-container">
+                                            <div id="navigation" class="navbar-collapse collapse">
+                                                <ul class="navigation-list pull-left light-text">
+                                                    <li class="navigation-item"><a href="/" class="navigation-link">Home</a></li>
+                                                    <li class="navigation-item"><a href="/#about" class="navigation-link">About Us</a></li>
+                                                    <li class="navigation-item"><a href="/#activities" class="navigation-link">Activities</a></li>
+                                                    <li class="navigation-item"><a href="/#tickets" class="navigation-link">Tickets</a></li>
+                                                    <li class="navigation-item"><a href="/schedule" class="navigation-link">Schedule</a></li>
+                                                    <li class="navigation-item"><a href="#" class="navigation-link" data-toggle="modal" data-target="#email-ticket"
+                                                        >Contact Us</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </header>
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -70,11 +81,43 @@
                     </ul>
                 </div>
             </div>
-        </nav>
-
         <main class="py-4">
             @yield('content')
         </main>
     </div>
+
+
+    <div id="email-ticket" class="modal-window" data-modal="email-ticket" style="background-color:transparent;margin-top: 50px;">
+        <div class="modal-box small animated" data-animation="zoomIn" data-duration="700">
+            <span class="close-btn icon icon-office-52"></span>
+            <h5 class="align-center"><span class="highlight">Contact Us</span></h5>
+            <form class="form registration-form align-center">
+
+                    <div class="col-sm-12 ">
+                        <fieldset>
+                            <label for="name">Name</label>
+                            <input id="name" name="name" type="text">
+                        </fieldset>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <fieldset>
+                            <label for="email">Email</label>
+                            <input id="email" name="email" type="email" class="valid">
+                        </fieldset>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <fieldset>
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message"></textarea>
+                        </fieldset>
+                    </div>
+                <input type="submit" value="submit" class="btn">
+            </form>
+
+        </div>
+    </div>
+    @include('layouts.welcome-page-footer')
 </body>
 </html>

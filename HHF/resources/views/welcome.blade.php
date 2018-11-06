@@ -5,9 +5,6 @@
         <ul class="socials-nav">
             <li class="socials-nav-item"><a href="#"><span class="fa fa-twitter"></span></a></li>
             <li class="socials-nav-item"><a href="#"><span class="fa fa-facebook"></span></a></li>
-            <li class="socials-nav-item"><a href="#"><span class="fa fa-github"></span></a></li>
-            <li class="socials-nav-item"><a href="#"><span class="fa fa-vimeo-square"></span></a></li>
-            <li class="socials-nav-item"><a href="#"><span class="fa fa-google-plus"></span></a></li>
             <li class="socials-nav-item"><a href="#"><span class="fa fa-instagram"></span></a></li>
         </ul>
         <div class="heading-block centered-block align-center">
@@ -96,103 +93,27 @@
 
             <div class="gallery masonry">
                 <span class="masonry-item">
-                    <a href="#" class="gallery-thumb-link" data-modal-link="gallery-1">
-                        <img src="assets/img/gallery/gallery1-thumb.jpg" alt="">
-                    </a>
-
-                    <div class="modal-window" data-modal="gallery-1">
-                        <div class="modal-box medium animated" data-animation="zoomIn" data-duration="700">
-                            <span class="close-btn icon icon-office-52"></span>
-
-                            <h5 class="heading-alt">Gallery image 1</h5>
-                            <br/>
-
-                            <img src="assets/img/gallery/gallery1.jpg" class="full-width-img" alt="gallery1">
-                        </div>
-                    </div>
+                    <img src="assets/img/activities_gallery/gallery1-thumb.png" alt="">
                 </span>
 
                 <span class="masonry-item">
-                    <a href="#" class="gallery-thumb-link" data-modal-link="gallery-2">
-                        <img src="assets/img/gallery/gallery2-thumb.jpg" alt="">
-                    </a>
-
-                    <div class="modal-window" data-modal="gallery-2">
-                        <div class="modal-box medium animated" data-animation="zoomIn" data-duration="700">
-                            <span class="close-btn icon icon-office-52"></span>
-
-                            <h5 class="heading-alt">Gallery image 2</h5>
-                            <br/>
-
-                            <img src="assets/img/gallery/gallery2.jpg" class="full-width-img" alt="gallery1">
-                        </div>
-                    </div>
-                </span>
-                <span class="masonry-item">
-                    <a href="#" class="gallery-thumb-link" data-modal-link="gallery-3">
-                        <img src="assets/img/gallery/gallery3-thumb.jpg" alt="">
-                    </a>
-
-                    <div class="modal-window" data-modal="gallery-3">
-                        <div class="modal-box medium animated" data-animation="zoomIn" data-duration="700">
-                            <span class="close-btn icon icon-office-52"></span>
-
-                            <h5 class="heading-alt">Gallery image 3</h5>
-                            <br/>
-
-                            <img src="assets/img/gallery/gallery3.jpg" class="full-width-img" alt="gallery1">
-                        </div>
-                    </div>
+                    <img src="assets/img/activities_gallery/gallery1-thumb.png" alt="">
                 </span>
 
                 <span class="masonry-item">
-                    <a href="#" class="gallery-thumb-link" data-modal-link="gallery-4">
-                        <img src="assets/img/gallery/gallery4-thumb.jpg" alt="">
-                    </a>
-
-                    <div class="modal-window" data-modal="gallery-4">
-                        <div class="modal-box medium animated" data-animation="zoomIn" data-duration="700">
-                            <span class="close-btn icon icon-office-52"></span>
-
-                            <h5 class="heading-alt">Gallery image 4</h5>
-                            <br/>
-
-                            <img src="assets/img/gallery/gallery4.jpg" class="full-width-img" alt="gallery1">
-                        </div>
-                    </div>
-                </span>
-                <span class="masonry-item">
-                    <a href="#" class="gallery-thumb-link" data-modal-link="gallery-5">
-                        <img src="assets/img/gallery/gallery5-thumb.jpg" alt="">
-                    </a>
-
-                    <div class="modal-window" data-modal="gallery-5">
-                        <div class="modal-box medium animated" data-animation="zoomIn" data-duration="700">
-                            <span class="close-btn icon icon-office-52"></span>
-
-                            <h5 class="heading-alt">Gallery image 5</h5>
-                            <br/>
-
-                            <img src="assets/img/gallery/gallery5.jpg" class="full-width-img" alt="gallery1">
-                        </div>
-                    </div>
+                    <img src="assets/img/activities_gallery/gallery1-thumb.png" alt="">
                 </span>
 
                 <span class="masonry-item">
-                    <a href="#" class="gallery-thumb-link" data-modal-link="gallery-6">
-                        <img src="assets/img/gallery/gallery6-thumb.jpg" alt="">
-                    </a>
+                    <img src="assets/img/activities_gallery/gallery1-thumb.png" alt="">
+                </span>
 
-                    <div class="modal-window" data-modal="gallery-6">
-                        <div class="modal-box medium animated" data-animation="zoomIn" data-duration="700">
-                            <span class="close-btn icon icon-office-52"></span>
+                <span class="masonry-item">
+                    <img src="assets/img/activities_gallery/gallery1-thumb.png" alt="">
+                </span>
 
-                            <h5 class="heading-alt">Gallery image 6</h5>
-                            <br/>
-
-                            <img src="assets/img/gallery/gallery6.jpg" class="full-width-img" alt="gallery1">
-                        </div>
-                    </div>
+                <span class="masonry-item">
+                    <img src="assets/img/activities_gallery/gallery1-thumb.png" alt="">
                 </span>
             </div>
 
@@ -210,9 +131,9 @@
             <div class="row">
                 <div class="col-sm-4">
                     <div class="package-column">
-                        <h6 class="package-title">Early Bird</h6>
+                        <h6 class="package-title">Individual</h6>
                         <div class="package-price">
-                            <span class="currency">$</span>33
+                            <span class="currency">€</span>55
                         </div>
                         <div class="package-detail">
                             <ul>
@@ -228,9 +149,9 @@
                 <div class="col-sm-4">
                     <div class="package-column special-column">
                         <span class="sale-label uppercase">Hot!</span>
-                        <h6 class="package-title">Silver Pass</h6>
+                        <h6 class="package-title">VIP</h6>
                         <div class="package-price">
-                            <span class="currency">$</span>99
+                            <span class="currency">€</span>55
                         </div>
                         <div class="package-detail">
                             <ul>
@@ -245,9 +166,9 @@
 
                 <div class="col-sm-4">
                     <div class="package-column">
-                        <h6 class="package-title">Gold Pass</h6>
+                        <h6 class="package-title">Group(s)</h6>
                         <div class="package-price">
-                            <span class="currency">$</span>150
+                            <span class="currency">€</span>55
                         </div>
                         <div class="package-detail">
                             <ul>
@@ -304,7 +225,7 @@
 
                 <div class="col-md-6">
                     <ul class="footer-nav">
-                        <li class="footer-nav-item"><a href="#">Contact</a></li>
+                        <li class="footer-nav-item"><a href="" class="navigation-link" data-toggle="modal" data-target="#email-ticket">Contact</a></li>
                         <li class="footer-nav-item"><a href="#">Privacy policy</a></li>
                         <li class="footer-nav-item"><a href="#">Press</a></li>
                     </ul>
@@ -314,9 +235,6 @@
                     <ul class="socials-nav align-right">
                         <li class="socials-nav-item"><a href="#"><span class="fa fa-twitter"></span></a></li>
                         <li class="socials-nav-item"><a href="#"><span class="fa fa-facebook"></span></a></li>
-                        <li class="socials-nav-item"><a href="#"><span class="fa fa-github"></span></a></li>
-                        <li class="socials-nav-item"><a href="#"><span class="fa fa-vimeo-square"></span></a></li>
-                        <li class="socials-nav-item"><a href="#"><span class="fa fa-google-plus"></span></a></li>
                         <li class="socials-nav-item"><a href="#"><span class="fa fa-instagram"></span></a></li>
                     </ul>
 
