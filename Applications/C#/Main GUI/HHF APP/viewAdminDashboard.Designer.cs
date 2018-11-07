@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(viewAdminDashboard));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -47,8 +44,6 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
@@ -57,6 +52,7 @@
             this.panel14 = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel17 = new System.Windows.Forms.Panel();
@@ -64,23 +60,27 @@
             this.panel19 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.panel20 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel9.SuspendLayout();
-            this.panel10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.panel11.SuspendLayout();
             this.panel13.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel16.SuspendLayout();
             this.panel17.SuspendLayout();
             this.panel19.SuspendLayout();
+            this.panel10.SuspendLayout();
+            this.panel20.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -88,7 +88,7 @@
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(68, 39);
+            this.panel1.Location = new System.Drawing.Point(3, 4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(283, 140);
             this.panel1.TabIndex = 1;
@@ -142,7 +142,7 @@
             this.panel4.BackColor = System.Drawing.Color.Transparent;
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.panel6);
-            this.panel4.Location = new System.Drawing.Point(357, 39);
+            this.panel4.Location = new System.Drawing.Point(289, 0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(283, 140);
             this.panel4.TabIndex = 2;
@@ -195,7 +195,7 @@
             this.panel7.BackColor = System.Drawing.Color.Transparent;
             this.panel7.Controls.Add(this.panel8);
             this.panel7.Controls.Add(this.panel9);
-            this.panel7.Location = new System.Drawing.Point(646, 39);
+            this.panel7.Location = new System.Drawing.Point(576, 2);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(283, 140);
             this.panel7.TabIndex = 2;
@@ -244,38 +244,12 @@
             this.label4.Text = "Total Spent";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel10.Controls.Add(this.chart1);
-            this.panel10.Location = new System.Drawing.Point(103, 212);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(468, 413);
-            this.panel10.TabIndex = 3;
-            // 
-            // chart1
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(0, 0);
-            this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(468, 413);
-            this.chart1.TabIndex = 0;
-            this.chart1.Text = "Revenue in details";
-            this.chart1.Click += new System.EventHandler(this.chart1_Click);
-            // 
             // panel11
             // 
             this.panel11.BackColor = System.Drawing.Color.Transparent;
             this.panel11.Controls.Add(this.panel12);
             this.panel11.Controls.Add(this.panel13);
-            this.panel11.Location = new System.Drawing.Point(646, 335);
+            this.panel11.Location = new System.Drawing.Point(287, 162);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(283, 140);
             this.panel11.TabIndex = 3;
@@ -329,7 +303,7 @@
             this.panel14.BackColor = System.Drawing.Color.Transparent;
             this.panel14.Controls.Add(this.panel15);
             this.panel14.Controls.Add(this.panel16);
-            this.panel14.Location = new System.Drawing.Point(646, 483);
+            this.panel14.Location = new System.Drawing.Point(576, 164);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(283, 140);
             this.panel14.TabIndex = 3;
@@ -358,6 +332,16 @@
             this.panel16.TabIndex = 0;
             this.panel16.Paint += new System.Windows.Forms.PaintEventHandler(this.panel16_Paint);
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(173, 48);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(55, 24);
+            this.label11.TabIndex = 2;
+            this.label11.Text = "000";
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -385,7 +369,7 @@
             this.panel17.BackColor = System.Drawing.Color.Transparent;
             this.panel17.Controls.Add(this.panel18);
             this.panel17.Controls.Add(this.panel19);
-            this.panel17.Location = new System.Drawing.Point(646, 187);
+            this.panel17.Location = new System.Drawing.Point(5, 164);
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(283, 140);
             this.panel17.TabIndex = 3;
@@ -434,60 +418,97 @@
             this.label10.Text = "Total Balance";
             this.label10.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.BlanchedAlmond;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(125, 631);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(418, 43);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Refresh Chart";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Bisque;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Segoe Script", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(670, 660);
+            this.button2.Location = new System.Drawing.Point(843, 27);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(226, 63);
+            this.button2.Size = new System.Drawing.Size(110, 285);
             this.button2.TabIndex = 5;
             this.button2.Text = "Refresh";
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // label11
+            // panel10
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(173, 48);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(55, 24);
-            this.label11.TabIndex = 2;
-            this.label11.Text = "000";
+            this.panel10.BackColor = System.Drawing.Color.Chocolate;
+            this.panel10.Controls.Add(this.textBox1);
+            this.panel10.Controls.Add(this.button3);
+            this.panel10.Controls.Add(this.button1);
+            this.panel10.Controls.Add(this.listBox1);
+            this.panel10.Location = new System.Drawing.Point(8, 341);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(948, 238);
+            this.panel10.TabIndex = 6;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(835, 4);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(108, 24);
+            this.textBox1.TabIndex = 3;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Tomato;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.button3.Location = new System.Drawing.Point(835, 33);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(108, 32);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "Search";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Tomato;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.button1.Location = new System.Drawing.Point(835, 179);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(108, 52);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Change Password";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(3, 3);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(828, 228);
+            this.listBox1.TabIndex = 0;
+            // 
+            // panel20
+            // 
+            this.panel20.BackColor = System.Drawing.Color.Orchid;
+            this.panel20.Controls.Add(this.panel17);
+            this.panel20.Controls.Add(this.panel4);
+            this.panel20.Controls.Add(this.panel1);
+            this.panel20.Controls.Add(this.panel14);
+            this.panel20.Controls.Add(this.panel7);
+            this.panel20.Controls.Add(this.panel11);
+            this.panel20.Location = new System.Drawing.Point(4, 8);
+            this.panel20.Name = "panel20";
+            this.panel20.Size = new System.Drawing.Size(952, 316);
+            this.panel20.TabIndex = 2;
             // 
             // viewAdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.panel17);
-            this.Controls.Add(this.panel14);
-            this.Controls.Add(this.panel11);
             this.Controls.Add(this.panel10);
-            this.Controls.Add(this.panel7);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.panel20);
             this.DoubleBuffered = true;
             this.Name = "viewAdminDashboard";
             this.Padding = new System.Windows.Forms.Padding(5);
-            this.Size = new System.Drawing.Size(968, 753);
+            this.Size = new System.Drawing.Size(964, 702);
             this.Load += new System.EventHandler(this.viewAdminDashboard_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -501,8 +522,6 @@
             this.panel7.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
-            this.panel10.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
             this.panel13.ResumeLayout(false);
@@ -515,6 +534,9 @@
             this.panel17.PerformLayout();
             this.panel19.ResumeLayout(false);
             this.panel19.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
+            this.panel20.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -537,8 +559,6 @@
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Panel panel13;
@@ -554,8 +574,13 @@
         private System.Windows.Forms.Panel panel19;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Panel panel20;
     }
 }

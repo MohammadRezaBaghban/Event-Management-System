@@ -2393,7 +2393,7 @@ input.header.header-color .navigation-header .buy-btn,
 div.bg-low-poly,
 footer.bg-low-poly,
 section.bg-low-poly {
-  background-image: url("http://vivaco.com/demo/ventcamp/assets/img/background/controls_bg.jpg");
+  background-image: url("http://vivaco.com/demo/ventcamp/assets/img/background/controls_bg.jpgf");
   background-repeat: no-repeat;
   background-position: center top;
 }
@@ -6978,6 +6978,10 @@ button[type="submit"] .loading {
 .bg5 {
   background-image: url("../img/backgrounds/bg5.jpg");
 }
+
+ .bg6 {
+   background-image: url("../img/backgrounds/bg6.jpg");
+ }
 .bg1.overlay:before {
   opacity: 0.9;
 }

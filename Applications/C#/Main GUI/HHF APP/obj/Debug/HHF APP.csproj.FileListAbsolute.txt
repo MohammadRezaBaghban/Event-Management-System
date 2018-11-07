@@ -13,3 +13,17 @@ H:\FONTYs\ProP&POPD\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF_AP
 H:\FONTYs\ProP&POPD\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF_APP.viewCamping.resources
 H:\FONTYs\ProP&POPD\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF_APP.viewStore.resources
 H:\FONTYs\ProP&POPD\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF_APP.viewLending.resources
+H:\FONTYs\prop\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF_APP.Form1.resources
+H:\FONTYs\prop\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF_APP.Properties.Resources.resources
+H:\FONTYs\prop\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF_APP.viewAdminDashboard.resources
+H:\FONTYs\prop\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF_APP.viewCamping.resources
+H:\FONTYs\prop\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF_APP.viewLending.resources
+H:\FONTYs\prop\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF_APP.viewStore.resources
+H:\FONTYs\prop\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF_APP.viewTickets.resources
+H:\FONTYs\prop\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF_APP.viewCheckInOut.resources
+H:\FONTYs\prop\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF APP.csproj.GenerateResource.Cache
+H:\FONTYs\prop\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF APP.exe
+H:\FONTYs\prop\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF APP.pdb
+H:\FONTYs\prop\ProP_Sems2\Applications\C#\Main GUI\HHF APP\bin\Debug\HHF APP.exe.config
+H:\FONTYs\prop\ProP_Sems2\Applications\C#\Main GUI\HHF APP\bin\Debug\HHF APP.exe
+H:\FONTYs\prop\ProP_Sems2\Applications\C#\Main GUI\HHF APP\bin\Debug\HHF APP.pdb

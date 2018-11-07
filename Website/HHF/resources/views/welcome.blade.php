@@ -1,7 +1,7 @@
 @include('layouts.welcome-page-header')
 <body>
 
-    <section id="hero" class="hero-section bg3 bg-cover overlay gradient-overlay window-height align-center light-text">
+    <section id="hero" class="hero-section bg6 bg-cover overlay gradient-overlay window-height align-center light-text">
         <ul class="socials-nav">
             <li class="socials-nav-item"><a href="#"><span class="fa fa-twitter"></span></a></li>
             <li class="socials-nav-item"><a href="#"><span class="fa fa-facebook"></span></a></li>

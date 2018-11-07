@@ -19,7 +19,7 @@ namespace HHF_APP
             InitializeComponent();
             sidepanelforBTNs.Height = AdminBtn.Height;
             sidepanelforBTNs.Top = AdminBtn.Top;
-            viewAdminDashboard1.BringToFront();
+           // viewAdminDashboard1.BringToFront();
             //SoundPlayer my_sound = new SoundPlayer("F:/xxxxxx.wave"); //put your own .wave file path
             //my_sound.Play();
             //my_sound.Stop();
@@ -32,7 +32,7 @@ namespace HHF_APP
         {
             sidepanelforBTNs.Height = ticketsBtn.Height;
             sidepanelforBTNs.Top = ticketsBtn.Top;
-            viewTickets1.BringToFront();
+            //viewTickets1.BringToFront();
             
         }
 
@@ -40,7 +40,7 @@ namespace HHF_APP
         {
             sidepanelforBTNs.Height = checkinBTn.Height;
             sidepanelforBTNs.Top = checkinBTn.Top;
-            viewCheckInOut1.BringToFront();
+           // viewCheckInOut1.BringToFront();
 
         }
 
@@ -48,21 +48,21 @@ namespace HHF_APP
         {
             sidepanelforBTNs.Height = storeBtn.Height;
             sidepanelforBTNs.Top = storeBtn.Top;
-            viewStore1.BringToFront();
+          //  viewStore1.BringToFront();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             sidepanelforBTNs.Height = campBtn.Height;
             sidepanelforBTNs.Top = campBtn.Top;
-            viewCamping1.BringToFront();
+          //  viewCamping1.BringToFront();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             sidepanelforBTNs.Height = lendBtn.Height;
             sidepanelforBTNs.Top = lendBtn.Top;
-            viewLending1.BringToFront();
+          //  viewLending1.BringToFront();
 
         }
 
@@ -70,7 +70,7 @@ namespace HHF_APP
         {
             sidepanelforBTNs.Height = AdminBtn.Height;
             sidepanelforBTNs.Top = AdminBtn.Top;
-            viewAdminDashboard1.BringToFront();
+          //  viewAdminDashboard1.BringToFront();
 
         }
 
