@@ -2232,9 +2232,7 @@ body > .container {
 img {
   max-width: 100%;
 }
-.retina-show {
-  display: none;
-}
+.retina-show {display: initial;}
 .base-clr-bd,
 .preloader-mask .preloader,
 .preloader-mask .preloader:before,

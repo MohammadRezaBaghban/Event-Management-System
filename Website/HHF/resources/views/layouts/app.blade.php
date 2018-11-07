@@ -85,6 +85,9 @@
             @yield('content')
         </main>
     </div>
+
+
+    
     @include('layouts.welcome-page-footer')
 </body>
 </html>

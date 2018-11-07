@@ -24,10 +24,8 @@
         <div class="header-wrapper fixed">
             <div class="container">
                 <div class="col-sm-2 col-xs-12 navigation-header">
-                    <a href="#" class="logo">
-                        <img src="assets/img/logo-.png" href="/" width="110" height="90" class="retina-show"
+                        <img src="./assets/img/logo-.png" width="110" height="90" class="retina-show"
                            style="margin-top: -30px;">
-                    </a>
                     <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation" aria-expanded="false" aria-controls="navigation">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
