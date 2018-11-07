@@ -19,6 +19,11 @@ Route::get('/schedule', function () {
     return view('schedule');
 });
 
+Route::get('/info', function () {
+    return view('phpinfo');
+});
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
