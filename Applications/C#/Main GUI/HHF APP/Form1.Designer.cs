@@ -30,8 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.LogoutBtn = new System.Windows.Forms.Button();
             this.sidepanelforBTNs = new System.Windows.Forms.Panel();
@@ -45,24 +47,22 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.tbBarcode = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.viewAdminDashboard1 = new HHF_APP.viewAdminDashboard();
             this.panel1.SuspendLayout();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -78,15 +78,25 @@
             this.panel1.Size = new System.Drawing.Size(314, 787);
             this.panel1.TabIndex = 0;
             // 
-            // label1
+            // panel6
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.label1.Location = new System.Drawing.Point(139, 56);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(146, 30);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "USER NAME";
+            this.panel6.BackColor = System.Drawing.Color.Black;
+            this.panel6.Controls.Add(this.pictureBox1);
+            this.panel6.Location = new System.Drawing.Point(19, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(86, 110);
+            this.panel6.TabIndex = 3;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(4, 8);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(78, 102);
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
@@ -100,6 +110,16 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.label1.Location = new System.Drawing.Point(139, 56);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(146, 30);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "USER NAME";
             // 
             // panel2
             // 
@@ -308,6 +328,28 @@
             this.panel3.Size = new System.Drawing.Size(968, 49);
             this.panel3.TabIndex = 0;
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Myriad Hebrew", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(283, 13);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(71, 24);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Search";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Sitka Small", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(6, 9);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(95, 28);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "User ID:";
+            // 
             // tbBarcode
             // 
             this.tbBarcode.Location = new System.Drawing.Point(107, 13);
@@ -340,60 +382,18 @@
             this.button1.BackColor = System.Drawing.SystemColors.InfoText;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(791, 2);
+            this.button1.Location = new System.Drawing.Point(791, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(174, 45);
+            this.button1.Size = new System.Drawing.Size(174, 43);
             this.button1.TabIndex = 0;
             this.button1.Text = "Scan Barcode";
             this.button1.UseVisualStyleBackColor = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Sitka Small", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(6, 9);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(95, 28);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "User ID:";
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Myriad Hebrew", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(283, 13);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(71, 24);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Search";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(4, 8);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(78, 102);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.Black;
-            this.panel6.Controls.Add(this.pictureBox1);
-            this.panel6.Location = new System.Drawing.Point(19, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(86, 110);
-            this.panel6.TabIndex = 3;
             // 
             // viewAdminDashboard1
             // 
             this.viewAdminDashboard1.BackColor = System.Drawing.Color.Linen;
             this.viewAdminDashboard1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.viewAdminDashboard1.Location = new System.Drawing.Point(4, 51);
+            this.viewAdminDashboard1.Location = new System.Drawing.Point(0, 51);
             this.viewAdminDashboard1.Name = "viewAdminDashboard1";
             this.viewAdminDashboard1.Padding = new System.Windows.Forms.Padding(5);
             this.viewAdminDashboard1.Size = new System.Drawing.Size(964, 702);
@@ -414,6 +414,8 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
@@ -421,8 +423,6 @@
             this.panel5.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
