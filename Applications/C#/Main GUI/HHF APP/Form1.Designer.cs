@@ -53,7 +53,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.viewTickets1 = new HHF_APP.viewTickets();
             this.viewAdminDashboard1 = new HHF_APP.viewAdminDashboard();
+            this.viewCheckInOut1 = new HHF_APP.viewCheckInOut();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -305,7 +307,9 @@
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(241)))), ((int)(((byte)(246)))));
+            this.panel5.BackColor = System.Drawing.Color.Transparent;
+            this.panel5.Controls.Add(this.viewCheckInOut1);
+            this.panel5.Controls.Add(this.viewTickets1);
             this.panel5.Controls.Add(this.viewAdminDashboard1);
             this.panel5.Controls.Add(this.panel3);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -327,13 +331,14 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(968, 49);
             this.panel3.TabIndex = 0;
+            this.panel3.Visible = false;
             // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Myriad Hebrew", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(283, 13);
+            this.button2.Location = new System.Drawing.Point(292, 13);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(71, 24);
             this.button2.TabIndex = 5;
@@ -344,15 +349,15 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Sitka Small", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(6, 9);
+            this.label4.Location = new System.Drawing.Point(5, 9);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(95, 28);
+            this.label4.Size = new System.Drawing.Size(111, 28);
             this.label4.TabIndex = 4;
-            this.label4.Text = "User ID:";
+            this.label4.Text = "Ticket ID:";
             // 
             // tbBarcode
             // 
-            this.tbBarcode.Location = new System.Drawing.Point(107, 13);
+            this.tbBarcode.Location = new System.Drawing.Point(117, 13);
             this.tbBarcode.Name = "tbBarcode";
             this.tbBarcode.Size = new System.Drawing.Size(170, 24);
             this.tbBarcode.TabIndex = 3;
@@ -389,15 +394,35 @@
             this.button1.Text = "Scan Barcode";
             this.button1.UseVisualStyleBackColor = false;
             // 
+            // viewTickets1
+            // 
+            this.viewTickets1.BackColor = System.Drawing.Color.Linen;
+            this.viewTickets1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.viewTickets1.Location = new System.Drawing.Point(0, 52);
+            this.viewTickets1.Name = "viewTickets1";
+            this.viewTickets1.Padding = new System.Windows.Forms.Padding(5);
+            this.viewTickets1.Size = new System.Drawing.Size(968, 702);
+            this.viewTickets1.TabIndex = 2;
+            // 
             // viewAdminDashboard1
             // 
             this.viewAdminDashboard1.BackColor = System.Drawing.Color.Linen;
             this.viewAdminDashboard1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.viewAdminDashboard1.Location = new System.Drawing.Point(0, 51);
+            this.viewAdminDashboard1.Location = new System.Drawing.Point(2, 52);
             this.viewAdminDashboard1.Name = "viewAdminDashboard1";
             this.viewAdminDashboard1.Padding = new System.Windows.Forms.Padding(5);
             this.viewAdminDashboard1.Size = new System.Drawing.Size(964, 702);
             this.viewAdminDashboard1.TabIndex = 1;
+            // 
+            // viewCheckInOut1
+            // 
+            this.viewCheckInOut1.BackColor = System.Drawing.Color.Linen;
+            this.viewCheckInOut1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.viewCheckInOut1.Location = new System.Drawing.Point(0, 52);
+            this.viewCheckInOut1.Name = "viewCheckInOut1";
+            this.viewCheckInOut1.Padding = new System.Windows.Forms.Padding(5);
+            this.viewCheckInOut1.Size = new System.Drawing.Size(968, 702);
+            this.viewCheckInOut1.TabIndex = 3;
             // 
             // Form1
             // 
@@ -453,7 +478,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private viewTickets viewTickets1;
         private viewAdminDashboard viewAdminDashboard1;
+        private viewCheckInOut viewCheckInOut1;
     }
 }
 

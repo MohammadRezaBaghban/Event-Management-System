@@ -35,11 +35,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
-            this.BackgroundImage = global::HHF_APP.Properties.Resources.logo_halloween_24_opacity;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.DoubleBuffered = true;
             this.Name = "viewCamping";
-            this.Size = new System.Drawing.Size(968, 753);
+            this.Size = new System.Drawing.Size(973, 702);
             this.ResumeLayout(false);
 
         }

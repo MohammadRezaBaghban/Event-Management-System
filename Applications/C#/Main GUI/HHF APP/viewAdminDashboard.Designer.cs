@@ -68,12 +68,12 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.panel20 = new System.Windows.Forms.Panel();
             this.panel21 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.listBox2 = new System.Windows.Forms.ListBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -431,7 +431,7 @@
             this.button2.BackColor = System.Drawing.Color.Orange;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(841, 27);
+            this.button2.Location = new System.Drawing.Point(845, 29);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(110, 285);
             this.button2.TabIndex = 5;
@@ -445,7 +445,7 @@
             this.panel10.Controls.Add(this.button3);
             this.panel10.Controls.Add(this.button1);
             this.panel10.Controls.Add(this.listBox1);
-            this.panel10.Location = new System.Drawing.Point(5, 340);
+            this.panel10.Location = new System.Drawing.Point(9, 342);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(948, 238);
             this.panel10.TabIndex = 6;
@@ -499,7 +499,7 @@
             this.panel20.Controls.Add(this.panel14);
             this.panel20.Controls.Add(this.panel7);
             this.panel20.Controls.Add(this.panel11);
-            this.panel20.Location = new System.Drawing.Point(4, 8);
+            this.panel20.Location = new System.Drawing.Point(8, 10);
             this.panel20.Name = "panel20";
             this.panel20.Size = new System.Drawing.Size(952, 316);
             this.panel20.TabIndex = 2;
@@ -513,39 +513,29 @@
             this.panel21.Controls.Add(this.button4);
             this.panel21.Controls.Add(this.label12);
             this.panel21.Controls.Add(this.textBox2);
-            this.panel21.Location = new System.Drawing.Point(7, 585);
+            this.panel21.Location = new System.Drawing.Point(11, 587);
             this.panel21.Name = "panel21";
             this.panel21.Size = new System.Drawing.Size(946, 100);
             this.panel21.TabIndex = 7;
             // 
-            // textBox2
+            // label13
             // 
-            this.textBox2.Location = new System.Drawing.Point(24, 29);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(486, 24);
-            this.textBox2.TabIndex = 0;
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(708, 3);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(42, 23);
+            this.label13.TabIndex = 5;
+            this.label13.Text = "Log:";
             // 
-            // label12
+            // listBox2
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(266, 3);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(48, 23);
-            this.label12.TabIndex = 1;
-            this.label12.Text = "Path:";
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.Orange;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(24, 59);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(240, 37);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Select Log File";
-            this.button4.UseVisualStyleBackColor = false;
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.ItemHeight = 16;
+            this.listBox2.Location = new System.Drawing.Point(525, 29);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(416, 68);
+            this.listBox2.TabIndex = 4;
             // 
             // button5
             // 
@@ -559,24 +549,34 @@
             this.button5.Text = "Select Log File";
             this.button5.UseVisualStyleBackColor = false;
             // 
-            // listBox2
+            // button4
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 16;
-            this.listBox2.Location = new System.Drawing.Point(525, 29);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(416, 68);
-            this.listBox2.TabIndex = 4;
+            this.button4.BackColor = System.Drawing.Color.Orange;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(24, 59);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(240, 37);
+            this.button4.TabIndex = 2;
+            this.button4.Text = "Select Log File";
+            this.button4.UseVisualStyleBackColor = false;
             // 
-            // label13
+            // label12
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(708, 3);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(42, 23);
-            this.label13.TabIndex = 5;
-            this.label13.Text = "Log:";
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(266, 3);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(48, 23);
+            this.label12.TabIndex = 1;
+            this.label12.Text = "Path:";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(24, 29);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(486, 24);
+            this.textBox2.TabIndex = 0;
             // 
             // viewAdminDashboard
             // 
@@ -591,7 +591,7 @@
             this.DoubleBuffered = true;
             this.Name = "viewAdminDashboard";
             this.Padding = new System.Windows.Forms.Padding(5);
-            this.Size = new System.Drawing.Size(964, 702);
+            this.Size = new System.Drawing.Size(973, 702);
             this.Load += new System.EventHandler(this.viewAdminDashboard_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
