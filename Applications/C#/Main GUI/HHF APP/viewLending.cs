@@ -16,5 +16,10 @@ namespace HHF_APP
         {
             InitializeComponent();
         }
+
+        private void viewLending_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
