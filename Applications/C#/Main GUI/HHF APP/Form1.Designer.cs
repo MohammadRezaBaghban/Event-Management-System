@@ -56,6 +56,7 @@
             this.viewTickets1 = new HHF_APP.viewTickets();
             this.viewAdminDashboard1 = new HHF_APP.viewAdminDashboard();
             this.viewCheckInOut1 = new HHF_APP.viewCheckInOut();
+            this.viewStore1 = new HHF_APP.viewStore();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -308,6 +309,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Transparent;
+            this.panel5.Controls.Add(this.viewStore1);
             this.panel5.Controls.Add(this.viewCheckInOut1);
             this.panel5.Controls.Add(this.viewTickets1);
             this.panel5.Controls.Add(this.viewAdminDashboard1);
@@ -424,6 +426,15 @@
             this.viewCheckInOut1.Size = new System.Drawing.Size(968, 702);
             this.viewCheckInOut1.TabIndex = 3;
             // 
+            // viewStore1
+            // 
+            this.viewStore1.BackColor = System.Drawing.Color.Linen;
+            this.viewStore1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.viewStore1.Location = new System.Drawing.Point(0, 52);
+            this.viewStore1.Name = "viewStore1";
+            this.viewStore1.Size = new System.Drawing.Size(965, 702);
+            this.viewStore1.TabIndex = 4;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -481,6 +492,7 @@
         private viewTickets viewTickets1;
         private viewAdminDashboard viewAdminDashboard1;
         private viewCheckInOut viewCheckInOut1;
+        private viewStore viewStore1;
     }
 }
 

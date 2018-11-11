@@ -51,7 +51,7 @@ namespace HHF_APP
             sidepanelforBTNs.Height = storeBtn.Height;
             sidepanelforBTNs.Top = storeBtn.Top;
             panel3.Visible = true;
-            //  viewStore1.BringToFront();
+             viewStore1.BringToFront();
         }
 
         private void button6_Click(object sender, EventArgs e)
