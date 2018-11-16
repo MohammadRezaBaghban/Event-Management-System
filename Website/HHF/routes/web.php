@@ -19,6 +19,10 @@ Route::get('/schedule', function () {
     return view('schedule');
 });
 
+Route::get('/booking', function () {
+    return view('booking');
+});
+
 Route::get('/info', function () {
     return view('phpinfo');
 });
