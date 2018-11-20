@@ -1,4 +1,5 @@
-﻿namespace HHF_APP
+﻿#pragma warning disable CS0436
+namespace HHF_APP
 {
     partial class viewCheckInOut
     {
@@ -762,3 +763,4 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
+#pragma warning restore CS0436

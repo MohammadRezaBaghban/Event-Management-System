@@ -1,4 +1,5 @@
-﻿namespace HHF_APP
+﻿
+namespace HHF_APP
 {
     partial class viewCamping
     {

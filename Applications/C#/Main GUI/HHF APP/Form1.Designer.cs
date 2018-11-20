@@ -1,4 +1,5 @@
-﻿namespace HHF_APP
+﻿
+namespace HHF_APP
 {
     partial class Form1
     {
@@ -20,10 +21,8 @@
         private System.Windows.Forms.Button checkinBTn;
         private System.Windows.Forms.Button storeBtn;
         private System.Windows.Forms.Button ticketsBtn;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Panel panel5;
-        private viewLending viewLending1;
+        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label4;
@@ -31,11 +30,17 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
-        private viewTickets viewTickets1;
         private viewAdminDashboard viewAdminDashboard1;
-        private viewCheckInOut viewCheckInOut1;
-        private viewStore viewStore1;
         private viewCamping viewCamping1;
+        private viewCheckInOut viewCheckInOut1;
+        private viewLending viewLending1;
+        private viewStore viewStore1;
+        private viewTickets viewTickets1;
+        // private viewAdminDashboard viewAdminDashboard1;
+        //       private viewAdminDashboard viewAdminDashboard1;
+        //// Type conflicts with imported type
+        //       private viewCamping viewCamping1;
+        //// Type conflicts with imported type
     }
 }
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+#pragma warning disable CS0436
 namespace HHF_APP
 {
     static class Program
@@ -20,3 +20,4 @@ namespace HHF_APP
         }
     }
 }
+#pragma warning restore CS0436
