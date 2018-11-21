@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Media;
 
 
+
 namespace HHF_APP
 {
     public partial class Form1 : Form
@@ -23,27 +24,7 @@ namespace HHF_APP
             //SoundPlayer my_sound = new SoundPlayer("F:/xxxxxx.wave"); //put your own .4wave file path
             //my_sound.Play();
             //my_sound.Stop();
-            Spire.Barcode.BarcodeSettings barsetting = new Spire.Barcode.BarcodeSettings();
-
-            //set the x dimension
-            barsetting.X = 0.8f;
-            barsetting.Unit = GraphicsUnit.Millimeter;
-
-            barsetting.HasBorder = true;
-            barsetting.BorderWidth = 0.5F;
-
-            //set the data
-            barsetting.Data = "58465157484";
-            barsetting.Data2D = "58465157484";
-
-            //generate UPCA barcode
-            barsetting.Type = Spire.Barcode.BarCodeType.UPCA;
-
-            Spire.Barcode.BarCodeGenerator bargenerator = new Spire.Barcode.BarCodeGenerator(barsetting);
-            Image barcodeimage = bargenerator.GenerateImage();
-            barcodeimage.Save("barcode.png");
-
-            System.Diagnostics.Process.Start("barcode.png");
+           
 
         }
 
@@ -165,7 +146,6 @@ namespace HHF_APP
             this.viewLending1 = new HHF_APP.viewLending();
             this.viewStore1 = new HHF_APP.viewStore();
             this.viewTickets1 = new HHF_APP.viewTickets();
-            this.barCodeControl1 = new Spire.Barcode.Forms.BarCodeControl();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -235,7 +215,6 @@ namespace HHF_APP
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(104)))), ((int)(((byte)(28)))));
-            this.panel2.Controls.Add(this.barCodeControl1);
             this.panel2.Controls.Add(this.LogoutBtn);
             this.panel2.Controls.Add(this.sidepanelforBTNs);
             this.panel2.Controls.Add(this.AdminBtn);
@@ -489,6 +468,7 @@ namespace HHF_APP
             this.button1.TabIndex = 0;
             this.button1.Text = "Scan Barcode";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // viewAdminDashboard1
             // 
@@ -547,37 +527,6 @@ namespace HHF_APP
             this.viewTickets1.Size = new System.Drawing.Size(964, 727);
             this.viewTickets1.TabIndex = 8;
             // 
-            // barCodeControl1
-            // 
-            this.barCodeControl1.BarHeight = 20F;
-            this.barCodeControl1.BorderDashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            this.barCodeControl1.BorderWidth = 0.9F;
-            this.barCodeControl1.Data = "005";
-            this.barCodeControl1.Data2D = "005";
-            this.barCodeControl1.DpiX = 96F;
-            this.barCodeControl1.DpiY = 96F;
-            this.barCodeControl1.Font = new System.Drawing.Font("Verdana", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.barCodeControl1.ImageHeight = 30F;
-            this.barCodeControl1.ImageWidth = 120F;
-            this.barCodeControl1.LeftMargin = 10F;
-            this.barCodeControl1.Location = new System.Drawing.Point(20, 84);
-            this.barCodeControl1.Name = "barCodeControl1";
-            this.barCodeControl1.RightMargin = 20F;
-            this.barCodeControl1.Rotate = 0F;
-            this.barCodeControl1.ShowTextOnBottom = true;
-            this.barCodeControl1.ShowTopText = true;
-            this.barCodeControl1.Size = new System.Drawing.Size(271, 125);
-            this.barCodeControl1.SupSpace = 4F;
-            this.barCodeControl1.TabIndex = 9;
-            this.barCodeControl1.TextFont = new System.Drawing.Font("Arial", 8F);
-            this.barCodeControl1.TopText = "Spire.BarCode Evaluation Version";
-            this.barCodeControl1.TopTextFont = new System.Drawing.Font("Times New Roman", 9F);
-            this.barCodeControl1.Type = ((Spire.Barcode.BarCodeType)((Spire.Barcode.BarCodeType.Interleaved25 | Spire.Barcode.BarCodeType.Code93Extended)));
-            this.barCodeControl1.UseChecksum = Spire.Barcode.CheckSumMode.Auto;
-            this.barCodeControl1.WideNarrowRatio = 3F;
-            this.barCodeControl1.XYRatio = 0F;
-            this.barCodeControl1.Y = 2F;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -615,6 +564,11 @@ namespace HHF_APP
         private void panel5_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

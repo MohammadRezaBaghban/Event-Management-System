@@ -39,6 +39,8 @@ namespace HHF_APP
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel9.SuspendLayout();
             this.panel15.SuspendLayout();
             this.SuspendLayout();
@@ -50,7 +52,7 @@ namespace HHF_APP
             this.panel9.Controls.Add(this.label18);
             this.panel9.Controls.Add(this.panel15);
             this.panel9.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel9.Location = new System.Drawing.Point(362, 222);
+            this.panel9.Location = new System.Drawing.Point(365, 373);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(187, 81);
             this.panel9.TabIndex = 15;
@@ -116,7 +118,7 @@ namespace HHF_APP
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.DarkGreen;
-            this.button3.Location = new System.Drawing.Point(307, 337);
+            this.button3.Location = new System.Drawing.Point(301, 271);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(171, 96);
             this.button3.TabIndex = 11;
@@ -129,7 +131,7 @@ namespace HHF_APP
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.Red;
-            this.button4.Location = new System.Drawing.Point(489, 337);
+            this.button4.Location = new System.Drawing.Point(478, 271);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(171, 96);
             this.button4.TabIndex = 17;
@@ -142,12 +144,29 @@ namespace HHF_APP
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.DarkGreen;
-            this.button1.Location = new System.Drawing.Point(552, 234);
+            this.button1.Location = new System.Drawing.Point(558, 380);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(54, 69);
             this.button1.TabIndex = 18;
             this.button1.Text = "Pay";
             this.button1.UseVisualStyleBackColor = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(350, 241);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(274, 24);
+            this.textBox1.TabIndex = 19;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(227, 233);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(115, 32);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Barcode:";
             // 
             // viewCamping
             // 
@@ -155,6 +174,8 @@ namespace HHF_APP
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -167,6 +188,7 @@ namespace HHF_APP
             this.panel15.ResumeLayout(false);
             this.panel15.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -181,5 +203,7 @@ namespace HHF_APP
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
     }
 }
