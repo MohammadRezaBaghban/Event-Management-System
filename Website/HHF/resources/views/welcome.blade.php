@@ -86,7 +86,7 @@
                 </span>
 
             <span class="masonry-item">
-                    <img src="assets/img/activities_gallery/gallery1-thumb.png" alt="">
+                    <img src="assets/img/activities_gallery/6.jpeg" alt="">
                 </span>
         </div>
 
@@ -110,9 +110,9 @@
                     </div>
                     <div class="package-detail">
                         <ul>
-                            <li><span class="fa fa-check check-icon"></span>Regular Seating</li>
-                            <li><span class="fa fa-check check-icon"></span>Free Snacks</li>
-                            <li><span class="fa fa-check check-icon"></span>Custom Badge</li>
+                            <li><span class="fa fa-info check-icon"></span>€10 Registration Fee</li>
+                            <li><span class="fa fa-ban check-icon"></span>Camping <span class="bold">NOT</span> Available</li>
+                            <li><span class="fa fa-info check-icon"></span>€10 Registration Fee</li>
                         </ul>
                     </div>
                     <a href="#" class="btn btn-lg btn-outline-clr">Buy now</a>
@@ -124,13 +124,16 @@
                     <span class="sale-label uppercase">Hot!</span>
                     <h6 class="package-title">VIP</h6>
                     <div class="package-price">
-                        <span class="currency">€</span>55
+                        <span class="currency">€</span>150
                     </div>
                     <div class="package-detail">
                         <ul>
-                            <li><span class="fa fa-check check-icon"></span>Regular Seating</li>
+                            <li><span class="fa fa-minus check-icon"></span>Camping Fee: €130</li>
+                            <li><span class="fa fa-info check-icon"></span>Furnished Tents</li>
+                            <li><span class="fa fa-check check-icon"></span>Faster Check In</li>
                             <li><span class="fa fa-check check-icon"></span>Free Snacks</li>
-                            <li><span class="fa fa-check check-icon"></span>Custom Badge</li>
+                            <li><span class="fa fa-check check-icon"></span>Free Parking</li>
+
                         </ul>
                     </div>
                     <a href="#" class="btn btn-lg">Buy now</a>
@@ -145,9 +148,11 @@
                     </div>
                     <div class="package-detail">
                         <ul>
-                            <li><span class="fa fa-check check-icon"></span>Regular Seating</li>
-                            <li><span class="fa fa-check check-icon"></span>Free Snacks</li>
-                            <li><span class="fa fa-check check-icon"></span>Custom Badge</li>
+                            <li><span class="fa fa-info check-icon"></span>Price is Per Person</li>
+                            <li><span class="fa fa-check check-icon"></span>Up to 6 People</li>
+                            <li><span class="fa fa-check check-icon"></span>Camping Available for </li>
+                            <li><span class="fa fa-info check-icon"></span>€20/Person</li>
+                            <li><span class="fa fa-info check-icon"></span>€10 Registration Fee</li>
                         </ul>
                     </div>
                     <a href="#" class="btn btn-lg btn-outline-clr">Buy now</a>
@@ -162,12 +167,26 @@
 
         <div class="col-md-6">
             <div class="widget about-widget">
-                <h6 class="widget-head">Thoughts on <span class="highlight">HHF</span></h6>
-                <p class="text-alt">
-                    <small>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                        been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                        galley of type and scrambled it to make a type.
+                <h6 class="widget-head">Quotes That We Believe In As <span class="highlight">HHF</span> Community </h6>
+                <p class="text-alt" style="color: white;">
+                    <small>
+                        Productivity is never an accident. It is always
+                        the result of a commitment to excellence,
+                        intelligent planning, and focused effort.
                     </small>
+                    <small>
+                        Success depends upon previous preparation,
+                        and without such preparation there is sure to be failure.
+                    </small>
+                    <small>
+                        Alone we can do so little; together we can do so much.
+                    </small>
+                <small>
+                    Without leaps of imagination, or dreaming,
+                    we lose the excitement of possibilities. Dreaming, after all,
+                    is a form of planning
+                </small>
+
                 </p>
             </div>
         </div>
