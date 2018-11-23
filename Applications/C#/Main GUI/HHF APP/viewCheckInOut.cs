@@ -55,9 +55,10 @@ namespace HHF_APP
 
                 BarCodeGenerator bargenerator = new BarCodeGenerator(barsetting);
                 Image barcodeimage = bargenerator.GenerateImage();
-                barcodeimage.Save(tbUserId.Text+".png");
-
-                System.Diagnostics.Process.Start(tbUserId.Text + ".png");
+                
+                barcodeimage.Save("../../../"+tbUserId.Text+".png");
+                
+                System.Diagnostics.Process.Start("../../../" + tbUserId.Text + ".png");
             }
             catch(Exception ex)
             {
