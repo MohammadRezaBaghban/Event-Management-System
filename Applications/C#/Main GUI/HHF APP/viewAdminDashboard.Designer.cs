@@ -30,623 +30,654 @@ namespace HHF_APP
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(viewAdminDashboard));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.visitcountnr = new System.Windows.Forms.Label();
-            this.VisitCount = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.panel16 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.panel17 = new System.Windows.Forms.Panel();
-            this.panel18 = new System.Windows.Forms.Panel();
-            this.panel19 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.pnl1 = new System.Windows.Forms.Panel();
+            this.pnlPresentVisitors = new System.Windows.Forms.Panel();
+            this.pnlAdmin1 = new System.Windows.Forms.Panel();
+            this.lblVisitorCount = new System.Windows.Forms.Label();
+            this.lblPresentVisitors = new System.Windows.Forms.Label();
+            this.pnl2 = new System.Windows.Forms.Panel();
+            this.pnlTicketsSold = new System.Windows.Forms.Panel();
+            this.pnlAdmin2 = new System.Windows.Forms.Panel();
+            this.lblTicketsSold = new System.Windows.Forms.Label();
+            this.lblTicketsSoldHeader = new System.Windows.Forms.Label();
+            this.pnl3 = new System.Windows.Forms.Panel();
+            this.pnlTotalSpent = new System.Windows.Forms.Panel();
+            this.pnlAdmin3 = new System.Windows.Forms.Panel();
+            this.lblTotalSpent = new System.Windows.Forms.Label();
+            this.lblTotalSpentHeader = new System.Windows.Forms.Label();
+            this.pnl5 = new System.Windows.Forms.Panel();
+            this.pnlTotalVisitors = new System.Windows.Forms.Panel();
+            this.pnlAdmin5 = new System.Windows.Forms.Panel();
+            this.lblTotalVisitorHeader = new System.Windows.Forms.Label();
+            this.lblTotalVisitors = new System.Windows.Forms.Label();
+            this.pnl6 = new System.Windows.Forms.Panel();
+            this.panelBookedSpots = new System.Windows.Forms.Panel();
+            this.pnlAdmin6 = new System.Windows.Forms.Panel();
+            this.lblFreeSpots = new System.Windows.Forms.Label();
+            this.lblBookedSpots = new System.Windows.Forms.Label();
+            this.lblBookedAndFree = new System.Windows.Forms.Label();
+            this.pnl4 = new System.Windows.Forms.Panel();
+            this.pnlTotalBalance = new System.Windows.Forms.Panel();
+            this.pnlAdmin4 = new System.Windows.Forms.Panel();
+            this.lblTotalBalance = new System.Windows.Forms.Label();
+            this.lblTotalBalanceHeader = new System.Windows.Forms.Label();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.btnRemoveStaff = new System.Windows.Forms.Button();
+            this.btnAddStaff = new System.Windows.Forms.Button();
+            this.tbSearchStaff = new System.Windows.Forms.TextBox();
+            this.btnSearchStaff = new System.Windows.Forms.Button();
+            this.btnChangePswStaff = new System.Windows.Forms.Button();
+            this.lbStaffList = new System.Windows.Forms.ListBox();
             this.panel20 = new System.Windows.Forms.Panel();
             this.panel21 = new System.Windows.Forms.Panel();
-            this.label13 = new System.Windows.Forms.Label();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel9.SuspendLayout();
-            this.panel11.SuspendLayout();
-            this.panel13.SuspendLayout();
-            this.panel14.SuspendLayout();
-            this.panel16.SuspendLayout();
-            this.panel17.SuspendLayout();
-            this.panel19.SuspendLayout();
+            this.lblLog = new System.Windows.Forms.Label();
+            this.lbLogFIle = new System.Windows.Forms.ListBox();
+            this.btnReadLogFile = new System.Windows.Forms.Button();
+            this.btnSelectLogFile = new System.Windows.Forms.Button();
+            this.lblAtmLogPath = new System.Windows.Forms.Label();
+            this.tbLogDirectory = new System.Windows.Forms.TextBox();
+            this.pnl1.SuspendLayout();
+            this.pnlAdmin1.SuspendLayout();
+            this.pnl2.SuspendLayout();
+            this.pnlAdmin2.SuspendLayout();
+            this.pnl3.SuspendLayout();
+            this.pnlAdmin3.SuspendLayout();
+            this.pnl5.SuspendLayout();
+            this.pnlAdmin5.SuspendLayout();
+            this.pnl6.SuspendLayout();
+            this.pnlAdmin6.SuspendLayout();
+            this.pnl4.SuspendLayout();
+            this.pnlAdmin4.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel20.SuspendLayout();
             this.panel21.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // pnl1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(5, -2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(283, 140);
-            this.panel1.TabIndex = 1;
+            this.pnl1.BackColor = System.Drawing.Color.Transparent;
+            this.pnl1.Controls.Add(this.pnlPresentVisitors);
+            this.pnl1.Controls.Add(this.pnlAdmin1);
+            this.pnl1.Location = new System.Drawing.Point(4, -2);
+            this.pnl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnl1.Name = "pnl1";
+            this.pnl1.Size = new System.Drawing.Size(243, 114);
+            this.pnl1.TabIndex = 1;
             // 
-            // panel3
+            // pnlPresentVisitors
             // 
-            this.panel3.AutoSize = true;
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Location = new System.Drawing.Point(19, 11);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(65, 65);
-            this.panel3.TabIndex = 1;
+            this.pnlPresentVisitors.AutoSize = true;
+            this.pnlPresentVisitors.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.pnlPresentVisitors.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlPresentVisitors.BackgroundImage")));
+            this.pnlPresentVisitors.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pnlPresentVisitors.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlPresentVisitors.Location = new System.Drawing.Point(16, 9);
+            this.pnlPresentVisitors.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlPresentVisitors.Name = "pnlPresentVisitors";
+            this.pnlPresentVisitors.Size = new System.Drawing.Size(56, 53);
+            this.pnlPresentVisitors.TabIndex = 1;
             // 
-            // panel2
+            // pnlAdmin1
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.visitcountnr);
-            this.panel2.Controls.Add(this.VisitCount);
-            this.panel2.Location = new System.Drawing.Point(4, 44);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(254, 92);
-            this.panel2.TabIndex = 0;
+            this.pnlAdmin1.BackColor = System.Drawing.Color.White;
+            this.pnlAdmin1.Controls.Add(this.lblVisitorCount);
+            this.pnlAdmin1.Controls.Add(this.lblPresentVisitors);
+            this.pnlAdmin1.Location = new System.Drawing.Point(3, 36);
+            this.pnlAdmin1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlAdmin1.Name = "pnlAdmin1";
+            this.pnlAdmin1.Size = new System.Drawing.Size(218, 75);
+            this.pnlAdmin1.TabIndex = 0;
             // 
-            // visitcountnr
+            // lblVisitorCount
             // 
-            this.visitcountnr.AutoSize = true;
-            this.visitcountnr.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.visitcountnr.Location = new System.Drawing.Point(129, 38);
-            this.visitcountnr.Name = "visitcountnr";
-            this.visitcountnr.Size = new System.Drawing.Size(55, 23);
-            this.visitcountnr.TabIndex = 1;
-            this.visitcountnr.Text = "00000";
+            this.lblVisitorCount.AutoSize = true;
+            this.lblVisitorCount.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVisitorCount.Location = new System.Drawing.Point(111, 31);
+            this.lblVisitorCount.Name = "lblVisitorCount";
+            this.lblVisitorCount.Size = new System.Drawing.Size(49, 19);
+            this.lblVisitorCount.TabIndex = 1;
+            this.lblVisitorCount.Text = "00000";
             // 
-            // VisitCount
+            // lblPresentVisitors
             // 
-            this.VisitCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.VisitCount.AutoSize = true;
-            this.VisitCount.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VisitCount.Location = new System.Drawing.Point(103, 2);
-            this.VisitCount.Name = "VisitCount";
-            this.VisitCount.Size = new System.Drawing.Size(127, 23);
-            this.VisitCount.TabIndex = 0;
-            this.VisitCount.Text = "Present Visitors";
-            this.VisitCount.Click += new System.EventHandler(this.VisitCount_Click);
+            this.lblPresentVisitors.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblPresentVisitors.AutoSize = true;
+            this.lblPresentVisitors.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPresentVisitors.Location = new System.Drawing.Point(88, 2);
+            this.lblPresentVisitors.Name = "lblPresentVisitors";
+            this.lblPresentVisitors.Size = new System.Drawing.Size(106, 19);
+            this.lblPresentVisitors.TabIndex = 0;
+            this.lblPresentVisitors.Text = "Present Visitors";
+            this.lblPresentVisitors.Click += new System.EventHandler(this.VisitCount_Click);
             // 
-            // panel4
+            // pnl2
             // 
-            this.panel4.BackColor = System.Drawing.Color.Transparent;
-            this.panel4.Controls.Add(this.panel5);
-            this.panel4.Controls.Add(this.panel6);
-            this.panel4.Location = new System.Drawing.Point(291, -2);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(283, 140);
-            this.panel4.TabIndex = 2;
+            this.pnl2.BackColor = System.Drawing.Color.Transparent;
+            this.pnl2.Controls.Add(this.pnlTicketsSold);
+            this.pnl2.Controls.Add(this.pnlAdmin2);
+            this.pnl2.Location = new System.Drawing.Point(249, -2);
+            this.pnl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnl2.Name = "pnl2";
+            this.pnl2.Size = new System.Drawing.Size(243, 114);
+            this.pnl2.TabIndex = 2;
             // 
-            // panel5
+            // pnlTicketsSold
             // 
-            this.panel5.AutoSize = true;
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
-            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Location = new System.Drawing.Point(21, 11);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(65, 65);
-            this.panel5.TabIndex = 1;
+            this.pnlTicketsSold.AutoSize = true;
+            this.pnlTicketsSold.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.pnlTicketsSold.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlTicketsSold.BackgroundImage")));
+            this.pnlTicketsSold.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pnlTicketsSold.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlTicketsSold.Location = new System.Drawing.Point(18, 9);
+            this.pnlTicketsSold.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlTicketsSold.Name = "pnlTicketsSold";
+            this.pnlTicketsSold.Size = new System.Drawing.Size(56, 53);
+            this.pnlTicketsSold.TabIndex = 1;
             // 
-            // panel6
+            // pnlAdmin2
             // 
-            this.panel6.BackColor = System.Drawing.Color.White;
-            this.panel6.Controls.Add(this.label1);
-            this.panel6.Controls.Add(this.label2);
-            this.panel6.Location = new System.Drawing.Point(4, 44);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(254, 92);
-            this.panel6.TabIndex = 0;
+            this.pnlAdmin2.BackColor = System.Drawing.Color.White;
+            this.pnlAdmin2.Controls.Add(this.lblTicketsSold);
+            this.pnlAdmin2.Controls.Add(this.lblTicketsSoldHeader);
+            this.pnlAdmin2.Location = new System.Drawing.Point(3, 36);
+            this.pnlAdmin2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlAdmin2.Name = "pnlAdmin2";
+            this.pnlAdmin2.Size = new System.Drawing.Size(218, 75);
+            this.pnlAdmin2.TabIndex = 0;
             // 
-            // label1
+            // lblTicketsSold
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(129, 38);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 23);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "00000";
+            this.lblTicketsSold.AutoSize = true;
+            this.lblTicketsSold.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTicketsSold.Location = new System.Drawing.Point(111, 31);
+            this.lblTicketsSold.Name = "lblTicketsSold";
+            this.lblTicketsSold.Size = new System.Drawing.Size(49, 19);
+            this.lblTicketsSold.TabIndex = 1;
+            this.lblTicketsSold.Text = "00000";
             // 
-            // label2
+            // lblTicketsSoldHeader
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(104, 2);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 23);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Tickets Sold";
+            this.lblTicketsSoldHeader.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTicketsSoldHeader.AutoSize = true;
+            this.lblTicketsSoldHeader.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTicketsSoldHeader.Location = new System.Drawing.Point(89, 2);
+            this.lblTicketsSoldHeader.Name = "lblTicketsSoldHeader";
+            this.lblTicketsSoldHeader.Size = new System.Drawing.Size(85, 19);
+            this.lblTicketsSoldHeader.TabIndex = 0;
+            this.lblTicketsSoldHeader.Text = "Tickets Sold";
             // 
-            // panel7
+            // pnl3
             // 
-            this.panel7.BackColor = System.Drawing.Color.Transparent;
-            this.panel7.Controls.Add(this.panel8);
-            this.panel7.Controls.Add(this.panel9);
-            this.panel7.Location = new System.Drawing.Point(577, -2);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(283, 140);
-            this.panel7.TabIndex = 2;
+            this.pnl3.BackColor = System.Drawing.Color.Transparent;
+            this.pnl3.Controls.Add(this.pnlTotalSpent);
+            this.pnl3.Controls.Add(this.pnlAdmin3);
+            this.pnl3.Location = new System.Drawing.Point(495, -2);
+            this.pnl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnl3.Name = "pnl3";
+            this.pnl3.Size = new System.Drawing.Size(243, 114);
+            this.pnl3.TabIndex = 2;
             // 
-            // panel8
+            // pnlTotalSpent
             // 
-            this.panel8.AutoSize = true;
-            this.panel8.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.panel8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel8.BackgroundImage")));
-            this.panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel8.Location = new System.Drawing.Point(18, 11);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(65, 65);
-            this.panel8.TabIndex = 1;
+            this.pnlTotalSpent.AutoSize = true;
+            this.pnlTotalSpent.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.pnlTotalSpent.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlTotalSpent.BackgroundImage")));
+            this.pnlTotalSpent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pnlTotalSpent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlTotalSpent.Location = new System.Drawing.Point(15, 9);
+            this.pnlTotalSpent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlTotalSpent.Name = "pnlTotalSpent";
+            this.pnlTotalSpent.Size = new System.Drawing.Size(56, 53);
+            this.pnlTotalSpent.TabIndex = 1;
             // 
-            // panel9
+            // pnlAdmin3
             // 
-            this.panel9.BackColor = System.Drawing.Color.White;
-            this.panel9.Controls.Add(this.label3);
-            this.panel9.Controls.Add(this.label4);
-            this.panel9.Location = new System.Drawing.Point(4, 44);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(254, 92);
-            this.panel9.TabIndex = 0;
+            this.pnlAdmin3.BackColor = System.Drawing.Color.White;
+            this.pnlAdmin3.Controls.Add(this.lblTotalSpent);
+            this.pnlAdmin3.Controls.Add(this.lblTotalSpentHeader);
+            this.pnlAdmin3.Location = new System.Drawing.Point(3, 36);
+            this.pnlAdmin3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlAdmin3.Name = "pnlAdmin3";
+            this.pnlAdmin3.Size = new System.Drawing.Size(218, 75);
+            this.pnlAdmin3.TabIndex = 0;
             // 
-            // label3
+            // lblTotalSpent
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(129, 38);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 23);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "00000";
+            this.lblTotalSpent.AutoSize = true;
+            this.lblTotalSpent.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalSpent.Location = new System.Drawing.Point(111, 31);
+            this.lblTotalSpent.Name = "lblTotalSpent";
+            this.lblTotalSpent.Size = new System.Drawing.Size(49, 19);
+            this.lblTotalSpent.TabIndex = 1;
+            this.lblTotalSpent.Text = "00000";
             // 
-            // label4
+            // lblTotalSpentHeader
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(129, 2);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(95, 23);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Total Spent";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblTotalSpentHeader.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTotalSpentHeader.AutoSize = true;
+            this.lblTotalSpentHeader.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalSpentHeader.Location = new System.Drawing.Point(111, 2);
+            this.lblTotalSpentHeader.Name = "lblTotalSpentHeader";
+            this.lblTotalSpentHeader.Size = new System.Drawing.Size(80, 19);
+            this.lblTotalSpentHeader.TabIndex = 0;
+            this.lblTotalSpentHeader.Text = "Total Spent";
+            this.lblTotalSpentHeader.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // panel11
+            // pnl5
             // 
-            this.panel11.BackColor = System.Drawing.Color.Transparent;
-            this.panel11.Controls.Add(this.panel12);
-            this.panel11.Controls.Add(this.panel13);
-            this.panel11.Location = new System.Drawing.Point(289, 158);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(283, 140);
-            this.panel11.TabIndex = 3;
+            this.pnl5.BackColor = System.Drawing.Color.Transparent;
+            this.pnl5.Controls.Add(this.pnlTotalVisitors);
+            this.pnl5.Controls.Add(this.pnlAdmin5);
+            this.pnl5.Location = new System.Drawing.Point(248, 128);
+            this.pnl5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnl5.Name = "pnl5";
+            this.pnl5.Size = new System.Drawing.Size(243, 114);
+            this.pnl5.TabIndex = 3;
             // 
-            // panel12
+            // pnlTotalVisitors
             // 
-            this.panel12.AutoSize = true;
-            this.panel12.BackColor = System.Drawing.Color.MediumSpringGreen;
-            this.panel12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel12.BackgroundImage")));
-            this.panel12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel12.Location = new System.Drawing.Point(18, 11);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(65, 65);
-            this.panel12.TabIndex = 1;
+            this.pnlTotalVisitors.AutoSize = true;
+            this.pnlTotalVisitors.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.pnlTotalVisitors.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlTotalVisitors.BackgroundImage")));
+            this.pnlTotalVisitors.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pnlTotalVisitors.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlTotalVisitors.Location = new System.Drawing.Point(15, 9);
+            this.pnlTotalVisitors.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlTotalVisitors.Name = "pnlTotalVisitors";
+            this.pnlTotalVisitors.Size = new System.Drawing.Size(56, 53);
+            this.pnlTotalVisitors.TabIndex = 1;
             // 
-            // panel13
+            // pnlAdmin5
             // 
-            this.panel13.BackColor = System.Drawing.Color.White;
-            this.panel13.Controls.Add(this.label6);
-            this.panel13.Controls.Add(this.label5);
-            this.panel13.Location = new System.Drawing.Point(4, 44);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(254, 92);
-            this.panel13.TabIndex = 0;
+            this.pnlAdmin5.BackColor = System.Drawing.Color.White;
+            this.pnlAdmin5.Controls.Add(this.lblTotalVisitorHeader);
+            this.pnlAdmin5.Controls.Add(this.lblTotalVisitors);
+            this.pnlAdmin5.Location = new System.Drawing.Point(3, 36);
+            this.pnlAdmin5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlAdmin5.Name = "pnlAdmin5";
+            this.pnlAdmin5.Size = new System.Drawing.Size(218, 75);
+            this.pnlAdmin5.TabIndex = 0;
             // 
-            // label6
+            // lblTotalVisitorHeader
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(125, 2);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(110, 23);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Total Visitiors";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblTotalVisitorHeader.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTotalVisitorHeader.AutoSize = true;
+            this.lblTotalVisitorHeader.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalVisitorHeader.Location = new System.Drawing.Point(107, 2);
+            this.lblTotalVisitorHeader.Name = "lblTotalVisitorHeader";
+            this.lblTotalVisitorHeader.Size = new System.Drawing.Size(95, 19);
+            this.lblTotalVisitorHeader.TabIndex = 2;
+            this.lblTotalVisitorHeader.Text = "Total Visitiors";
+            this.lblTotalVisitorHeader.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // label5
+            // lblTotalVisitors
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(129, 38);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 23);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "00000";
+            this.lblTotalVisitors.AutoSize = true;
+            this.lblTotalVisitors.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalVisitors.Location = new System.Drawing.Point(111, 31);
+            this.lblTotalVisitors.Name = "lblTotalVisitors";
+            this.lblTotalVisitors.Size = new System.Drawing.Size(49, 19);
+            this.lblTotalVisitors.TabIndex = 1;
+            this.lblTotalVisitors.Text = "00000";
             // 
-            // panel14
+            // pnl6
             // 
-            this.panel14.BackColor = System.Drawing.Color.Transparent;
-            this.panel14.Controls.Add(this.panel15);
-            this.panel14.Controls.Add(this.panel16);
-            this.panel14.Location = new System.Drawing.Point(577, 158);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(283, 140);
-            this.panel14.TabIndex = 3;
+            this.pnl6.BackColor = System.Drawing.Color.Transparent;
+            this.pnl6.Controls.Add(this.panelBookedSpots);
+            this.pnl6.Controls.Add(this.pnlAdmin6);
+            this.pnl6.Location = new System.Drawing.Point(495, 128);
+            this.pnl6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnl6.Name = "pnl6";
+            this.pnl6.Size = new System.Drawing.Size(243, 114);
+            this.pnl6.TabIndex = 3;
             // 
-            // panel15
+            // panelBookedSpots
             // 
-            this.panel15.AutoSize = true;
-            this.panel15.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.panel15.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel15.BackgroundImage")));
-            this.panel15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel15.Location = new System.Drawing.Point(18, 11);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(65, 65);
-            this.panel15.TabIndex = 1;
+            this.panelBookedSpots.AutoSize = true;
+            this.panelBookedSpots.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.panelBookedSpots.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelBookedSpots.BackgroundImage")));
+            this.panelBookedSpots.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panelBookedSpots.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelBookedSpots.Location = new System.Drawing.Point(15, 9);
+            this.panelBookedSpots.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelBookedSpots.Name = "panelBookedSpots";
+            this.panelBookedSpots.Size = new System.Drawing.Size(56, 53);
+            this.panelBookedSpots.TabIndex = 1;
             // 
-            // panel16
+            // pnlAdmin6
             // 
-            this.panel16.BackColor = System.Drawing.Color.White;
-            this.panel16.Controls.Add(this.label11);
-            this.panel16.Controls.Add(this.label7);
-            this.panel16.Controls.Add(this.label8);
-            this.panel16.Location = new System.Drawing.Point(4, 44);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(254, 92);
-            this.panel16.TabIndex = 0;
-            this.panel16.Paint += new System.Windows.Forms.PaintEventHandler(this.panel16_Paint);
+            this.pnlAdmin6.BackColor = System.Drawing.Color.White;
+            this.pnlAdmin6.Controls.Add(this.lblFreeSpots);
+            this.pnlAdmin6.Controls.Add(this.lblBookedSpots);
+            this.pnlAdmin6.Controls.Add(this.lblBookedAndFree);
+            this.pnlAdmin6.Location = new System.Drawing.Point(3, 36);
+            this.pnlAdmin6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlAdmin6.Name = "pnlAdmin6";
+            this.pnlAdmin6.Size = new System.Drawing.Size(218, 75);
+            this.pnlAdmin6.TabIndex = 0;
+            this.pnlAdmin6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel16_Paint);
             // 
-            // label11
+            // lblFreeSpots
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(175, 42);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(37, 23);
-            this.label11.TabIndex = 2;
-            this.label11.Text = "000";
+            this.lblFreeSpots.AutoSize = true;
+            this.lblFreeSpots.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFreeSpots.Location = new System.Drawing.Point(150, 34);
+            this.lblFreeSpots.Name = "lblFreeSpots";
+            this.lblFreeSpots.Size = new System.Drawing.Size(33, 19);
+            this.lblFreeSpots.TabIndex = 2;
+            this.lblFreeSpots.Text = "000";
             // 
-            // label7
+            // lblBookedSpots
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(88, 42);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(37, 23);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "000";
+            this.lblBookedSpots.AutoSize = true;
+            this.lblBookedSpots.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBookedSpots.Location = new System.Drawing.Point(75, 34);
+            this.lblBookedSpots.Name = "lblBookedSpots";
+            this.lblBookedSpots.Size = new System.Drawing.Size(33, 19);
+            this.lblBookedSpots.TabIndex = 1;
+            this.lblBookedSpots.Text = "000";
             // 
-            // label8
+            // lblBookedAndFree
             // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(79, 2);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(170, 23);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Booked && Free Spots";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblBookedAndFree.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblBookedAndFree.AutoSize = true;
+            this.lblBookedAndFree.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBookedAndFree.Location = new System.Drawing.Point(68, 2);
+            this.lblBookedAndFree.Name = "lblBookedAndFree";
+            this.lblBookedAndFree.Size = new System.Drawing.Size(138, 19);
+            this.lblBookedAndFree.TabIndex = 0;
+            this.lblBookedAndFree.Text = "Booked && Free Spots";
+            this.lblBookedAndFree.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // panel17
+            // pnl4
             // 
-            this.panel17.BackColor = System.Drawing.Color.Transparent;
-            this.panel17.Controls.Add(this.panel18);
-            this.panel17.Controls.Add(this.panel19);
-            this.panel17.Location = new System.Drawing.Point(7, 158);
-            this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(283, 140);
-            this.panel17.TabIndex = 3;
+            this.pnl4.BackColor = System.Drawing.Color.Transparent;
+            this.pnl4.Controls.Add(this.pnlTotalBalance);
+            this.pnl4.Controls.Add(this.pnlAdmin4);
+            this.pnl4.Location = new System.Drawing.Point(6, 128);
+            this.pnl4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnl4.Name = "pnl4";
+            this.pnl4.Size = new System.Drawing.Size(243, 114);
+            this.pnl4.TabIndex = 3;
             // 
-            // panel18
+            // pnlTotalBalance
             // 
-            this.panel18.AutoSize = true;
-            this.panel18.BackColor = System.Drawing.Color.Aqua;
-            this.panel18.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel18.BackgroundImage")));
-            this.panel18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel18.Location = new System.Drawing.Point(18, 11);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(65, 65);
-            this.panel18.TabIndex = 1;
+            this.pnlTotalBalance.AutoSize = true;
+            this.pnlTotalBalance.BackColor = System.Drawing.Color.Aqua;
+            this.pnlTotalBalance.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlTotalBalance.BackgroundImage")));
+            this.pnlTotalBalance.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pnlTotalBalance.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlTotalBalance.Location = new System.Drawing.Point(15, 9);
+            this.pnlTotalBalance.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlTotalBalance.Name = "pnlTotalBalance";
+            this.pnlTotalBalance.Size = new System.Drawing.Size(56, 53);
+            this.pnlTotalBalance.TabIndex = 1;
             // 
-            // panel19
+            // pnlAdmin4
             // 
-            this.panel19.BackColor = System.Drawing.Color.White;
-            this.panel19.Controls.Add(this.label9);
-            this.panel19.Controls.Add(this.label10);
-            this.panel19.Location = new System.Drawing.Point(4, 44);
-            this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(254, 92);
-            this.panel19.TabIndex = 0;
+            this.pnlAdmin4.BackColor = System.Drawing.Color.White;
+            this.pnlAdmin4.Controls.Add(this.lblTotalBalance);
+            this.pnlAdmin4.Controls.Add(this.lblTotalBalanceHeader);
+            this.pnlAdmin4.Location = new System.Drawing.Point(3, 36);
+            this.pnlAdmin4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlAdmin4.Name = "pnlAdmin4";
+            this.pnlAdmin4.Size = new System.Drawing.Size(218, 75);
+            this.pnlAdmin4.TabIndex = 0;
             // 
-            // label9
+            // lblTotalBalance
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(129, 38);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(55, 23);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "00000";
+            this.lblTotalBalance.AutoSize = true;
+            this.lblTotalBalance.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalBalance.Location = new System.Drawing.Point(111, 31);
+            this.lblTotalBalance.Name = "lblTotalBalance";
+            this.lblTotalBalance.Size = new System.Drawing.Size(49, 19);
+            this.lblTotalBalance.TabIndex = 1;
+            this.lblTotalBalance.Text = "00000";
             // 
-            // label10
+            // lblTotalBalanceHeader
             // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(125, 2);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(110, 23);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Total Balance";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblTotalBalanceHeader.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTotalBalanceHeader.AutoSize = true;
+            this.lblTotalBalanceHeader.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalBalanceHeader.Location = new System.Drawing.Point(107, 2);
+            this.lblTotalBalanceHeader.Name = "lblTotalBalanceHeader";
+            this.lblTotalBalanceHeader.Size = new System.Drawing.Size(92, 19);
+            this.lblTotalBalanceHeader.TabIndex = 0;
+            this.lblTotalBalanceHeader.Text = "Total Balance";
+            this.lblTotalBalanceHeader.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // button2
+            // btnRefresh
             // 
-            this.button2.BackColor = System.Drawing.Color.Orange;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(839, 21);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(110, 285);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Refresh";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnRefresh.BackColor = System.Drawing.Color.Orange;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.Location = new System.Drawing.Point(719, 17);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(94, 232);
+            this.btnRefresh.TabIndex = 5;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.button2_Click);
             // 
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.BurlyWood;
-            this.panel10.Controls.Add(this.button7);
-            this.panel10.Controls.Add(this.button6);
-            this.panel10.Controls.Add(this.textBox1);
-            this.panel10.Controls.Add(this.button3);
-            this.panel10.Controls.Add(this.button1);
-            this.panel10.Controls.Add(this.listBox1);
-            this.panel10.Location = new System.Drawing.Point(3, 334);
+            this.panel10.Controls.Add(this.btnRemoveStaff);
+            this.panel10.Controls.Add(this.btnAddStaff);
+            this.panel10.Controls.Add(this.tbSearchStaff);
+            this.panel10.Controls.Add(this.btnSearchStaff);
+            this.panel10.Controls.Add(this.btnChangePswStaff);
+            this.panel10.Controls.Add(this.lbStaffList);
+            this.panel10.Location = new System.Drawing.Point(3, 271);
+            this.panel10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(948, 238);
+            this.panel10.Size = new System.Drawing.Size(813, 193);
             this.panel10.TabIndex = 6;
             // 
-            // textBox1
+            // btnRemoveStaff
             // 
-            this.textBox1.Location = new System.Drawing.Point(810, 13);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(134, 24);
-            this.textBox1.TabIndex = 3;
+            this.btnRemoveStaff.BackColor = System.Drawing.Color.Orange;
+            this.btnRemoveStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemoveStaff.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveStaff.Location = new System.Drawing.Point(694, 95);
+            this.btnRemoveStaff.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRemoveStaff.Name = "btnRemoveStaff";
+            this.btnRemoveStaff.Size = new System.Drawing.Size(115, 27);
+            this.btnRemoveStaff.TabIndex = 5;
+            this.btnRemoveStaff.Text = "Remove";
+            this.btnRemoveStaff.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnAddStaff
             // 
-            this.button3.BackColor = System.Drawing.Color.Orange;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(810, 39);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(134, 33);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Search";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnAddStaff.BackColor = System.Drawing.Color.Orange;
+            this.btnAddStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddStaff.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddStaff.Location = new System.Drawing.Point(694, 63);
+            this.btnAddStaff.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAddStaff.Name = "btnAddStaff";
+            this.btnAddStaff.Size = new System.Drawing.Size(115, 27);
+            this.btnAddStaff.TabIndex = 4;
+            this.btnAddStaff.Text = "Add";
+            this.btnAddStaff.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // tbSearchStaff
             // 
-            this.button1.BackColor = System.Drawing.Color.Orange;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(822, 156);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(113, 69);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Change Password";
-            this.button1.UseVisualStyleBackColor = false;
+            this.tbSearchStaff.Location = new System.Drawing.Point(694, 11);
+            this.tbSearchStaff.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbSearchStaff.Name = "tbSearchStaff";
+            this.tbSearchStaff.Size = new System.Drawing.Size(115, 20);
+            this.tbSearchStaff.TabIndex = 3;
             // 
-            // listBox1
+            // btnSearchStaff
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(5, 13);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(799, 212);
-            this.listBox1.TabIndex = 0;
+            this.btnSearchStaff.BackColor = System.Drawing.Color.Orange;
+            this.btnSearchStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchStaff.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchStaff.Location = new System.Drawing.Point(694, 32);
+            this.btnSearchStaff.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSearchStaff.Name = "btnSearchStaff";
+            this.btnSearchStaff.Size = new System.Drawing.Size(115, 27);
+            this.btnSearchStaff.TabIndex = 2;
+            this.btnSearchStaff.Text = "Search";
+            this.btnSearchStaff.UseVisualStyleBackColor = false;
+            // 
+            // btnChangePswStaff
+            // 
+            this.btnChangePswStaff.BackColor = System.Drawing.Color.Orange;
+            this.btnChangePswStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangePswStaff.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangePswStaff.Location = new System.Drawing.Point(705, 127);
+            this.btnChangePswStaff.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnChangePswStaff.Name = "btnChangePswStaff";
+            this.btnChangePswStaff.Size = new System.Drawing.Size(97, 56);
+            this.btnChangePswStaff.TabIndex = 1;
+            this.btnChangePswStaff.Text = "Change Password";
+            this.btnChangePswStaff.UseVisualStyleBackColor = false;
+            // 
+            // lbStaffList
+            // 
+            this.lbStaffList.FormattingEnabled = true;
+            this.lbStaffList.Location = new System.Drawing.Point(4, 11);
+            this.lbStaffList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lbStaffList.Name = "lbStaffList";
+            this.lbStaffList.Size = new System.Drawing.Size(685, 173);
+            this.lbStaffList.TabIndex = 0;
             // 
             // panel20
             // 
             this.panel20.BackColor = System.Drawing.Color.BurlyWood;
-            this.panel20.Controls.Add(this.panel17);
-            this.panel20.Controls.Add(this.panel4);
-            this.panel20.Controls.Add(this.panel1);
-            this.panel20.Controls.Add(this.panel14);
-            this.panel20.Controls.Add(this.panel7);
-            this.panel20.Controls.Add(this.panel11);
+            this.panel20.Controls.Add(this.pnl4);
+            this.panel20.Controls.Add(this.pnl2);
+            this.panel20.Controls.Add(this.pnl1);
+            this.panel20.Controls.Add(this.pnl6);
+            this.panel20.Controls.Add(this.pnl3);
+            this.panel20.Controls.Add(this.pnl5);
             this.panel20.Location = new System.Drawing.Point(2, 2);
+            this.panel20.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(952, 316);
+            this.panel20.Size = new System.Drawing.Size(816, 257);
             this.panel20.TabIndex = 2;
             // 
             // panel21
             // 
             this.panel21.BackColor = System.Drawing.Color.BurlyWood;
-            this.panel21.Controls.Add(this.label13);
-            this.panel21.Controls.Add(this.listBox2);
-            this.panel21.Controls.Add(this.button5);
-            this.panel21.Controls.Add(this.button4);
-            this.panel21.Controls.Add(this.label12);
-            this.panel21.Controls.Add(this.textBox2);
-            this.panel21.Location = new System.Drawing.Point(5, 579);
+            this.panel21.Controls.Add(this.lblLog);
+            this.panel21.Controls.Add(this.lbLogFIle);
+            this.panel21.Controls.Add(this.btnReadLogFile);
+            this.panel21.Controls.Add(this.btnSelectLogFile);
+            this.panel21.Controls.Add(this.lblAtmLogPath);
+            this.panel21.Controls.Add(this.tbLogDirectory);
+            this.panel21.Location = new System.Drawing.Point(4, 470);
+            this.panel21.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(946, 100);
+            this.panel21.Size = new System.Drawing.Size(811, 81);
             this.panel21.TabIndex = 7;
             // 
-            // label13
+            // lblLog
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(710, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(42, 23);
-            this.label13.TabIndex = 5;
-            this.label13.Text = "Log:";
+            this.lblLog.AutoSize = true;
+            this.lblLog.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLog.Location = new System.Drawing.Point(609, 0);
+            this.lblLog.Name = "lblLog";
+            this.lblLog.Size = new System.Drawing.Size(35, 19);
+            this.lblLog.TabIndex = 5;
+            this.lblLog.Text = "Log:";
             // 
-            // listBox2
+            // lbLogFIle
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 16;
-            this.listBox2.Location = new System.Drawing.Point(527, 23);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(416, 68);
-            this.listBox2.TabIndex = 4;
+            this.lbLogFIle.FormattingEnabled = true;
+            this.lbLogFIle.Location = new System.Drawing.Point(452, 19);
+            this.lbLogFIle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lbLogFIle.Name = "lbLogFIle";
+            this.lbLogFIle.Size = new System.Drawing.Size(357, 56);
+            this.lbLogFIle.TabIndex = 4;
             // 
-            // button5
+            // btnReadLogFile
             // 
-            this.button5.BackColor = System.Drawing.Color.Orange;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(272, 53);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(240, 37);
-            this.button5.TabIndex = 3;
-            this.button5.Text = "Read ATM Log";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnReadLogFile.BackColor = System.Drawing.Color.Orange;
+            this.btnReadLogFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReadLogFile.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReadLogFile.Location = new System.Drawing.Point(233, 43);
+            this.btnReadLogFile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnReadLogFile.Name = "btnReadLogFile";
+            this.btnReadLogFile.Size = new System.Drawing.Size(206, 30);
+            this.btnReadLogFile.TabIndex = 3;
+            this.btnReadLogFile.Text = "Read ATM Log";
+            this.btnReadLogFile.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // btnSelectLogFile
             // 
-            this.button4.BackColor = System.Drawing.Color.Orange;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(26, 53);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(240, 37);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Select Log File";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnSelectLogFile.BackColor = System.Drawing.Color.Orange;
+            this.btnSelectLogFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSelectLogFile.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelectLogFile.Location = new System.Drawing.Point(22, 43);
+            this.btnSelectLogFile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSelectLogFile.Name = "btnSelectLogFile";
+            this.btnSelectLogFile.Size = new System.Drawing.Size(206, 30);
+            this.btnSelectLogFile.TabIndex = 2;
+            this.btnSelectLogFile.Text = "Select Log File";
+            this.btnSelectLogFile.UseVisualStyleBackColor = false;
             // 
-            // label12
+            // lblAtmLogPath
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(218, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(124, 23);
-            this.label12.TabIndex = 1;
-            this.label12.Text = "ATM LOG Path:";
+            this.lblAtmLogPath.AutoSize = true;
+            this.lblAtmLogPath.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAtmLogPath.Location = new System.Drawing.Point(187, 0);
+            this.lblAtmLogPath.Name = "lblAtmLogPath";
+            this.lblAtmLogPath.Size = new System.Drawing.Size(104, 19);
+            this.lblAtmLogPath.TabIndex = 1;
+            this.lblAtmLogPath.Text = "ATM LOG Path:";
             // 
-            // textBox2
+            // tbLogDirectory
             // 
-            this.textBox2.Location = new System.Drawing.Point(26, 23);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(486, 24);
-            this.textBox2.TabIndex = 0;
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.Orange;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(810, 78);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(134, 33);
-            this.button6.TabIndex = 4;
-            this.button6.Text = "Add";
-            this.button6.UseVisualStyleBackColor = false;
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.Orange;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(810, 117);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(134, 33);
-            this.button7.TabIndex = 5;
-            this.button7.Text = "Remove";
-            this.button7.UseVisualStyleBackColor = false;
+            this.tbLogDirectory.Location = new System.Drawing.Point(22, 21);
+            this.tbLogDirectory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbLogDirectory.Name = "tbLogDirectory";
+            this.tbLogDirectory.Size = new System.Drawing.Size(417, 20);
+            this.tbLogDirectory.TabIndex = 0;
             // 
             // viewAdminDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Controls.Add(this.panel21);
             this.Controls.Add(this.panel10);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.panel20);
             this.DoubleBuffered = true;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "viewAdminDashboard";
-            this.Padding = new System.Windows.Forms.Padding(5);
-            this.Size = new System.Drawing.Size(973, 702);
+            this.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Size = new System.Drawing.Size(834, 570);
             this.Load += new System.EventHandler(this.viewAdminDashboard_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
-            this.panel13.ResumeLayout(false);
-            this.panel13.PerformLayout();
-            this.panel14.ResumeLayout(false);
-            this.panel14.PerformLayout();
-            this.panel16.ResumeLayout(false);
-            this.panel16.PerformLayout();
-            this.panel17.ResumeLayout(false);
-            this.panel17.PerformLayout();
-            this.panel19.ResumeLayout(false);
-            this.panel19.PerformLayout();
+            this.pnl1.ResumeLayout(false);
+            this.pnl1.PerformLayout();
+            this.pnlAdmin1.ResumeLayout(false);
+            this.pnlAdmin1.PerformLayout();
+            this.pnl2.ResumeLayout(false);
+            this.pnl2.PerformLayout();
+            this.pnlAdmin2.ResumeLayout(false);
+            this.pnlAdmin2.PerformLayout();
+            this.pnl3.ResumeLayout(false);
+            this.pnl3.PerformLayout();
+            this.pnlAdmin3.ResumeLayout(false);
+            this.pnlAdmin3.PerformLayout();
+            this.pnl5.ResumeLayout(false);
+            this.pnl5.PerformLayout();
+            this.pnlAdmin5.ResumeLayout(false);
+            this.pnlAdmin5.PerformLayout();
+            this.pnl6.ResumeLayout(false);
+            this.pnl6.PerformLayout();
+            this.pnlAdmin6.ResumeLayout(false);
+            this.pnlAdmin6.PerformLayout();
+            this.pnl4.ResumeLayout(false);
+            this.pnl4.PerformLayout();
+            this.pnlAdmin4.ResumeLayout(false);
+            this.pnlAdmin4.PerformLayout();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
             this.panel20.ResumeLayout(false);
@@ -659,52 +690,52 @@ namespace HHF_APP
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label visitcountnr;
-        private System.Windows.Forms.Label VisitCount;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel panel14;
-        private System.Windows.Forms.Panel panel15;
-        private System.Windows.Forms.Panel panel16;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Panel panel17;
-        private System.Windows.Forms.Panel panel18;
-        private System.Windows.Forms.Panel panel19;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Panel pnl1;
+        private System.Windows.Forms.Panel pnlPresentVisitors;
+        private System.Windows.Forms.Panel pnlAdmin1;
+        private System.Windows.Forms.Label lblVisitorCount;
+        private System.Windows.Forms.Label lblPresentVisitors;
+        private System.Windows.Forms.Panel pnl2;
+        private System.Windows.Forms.Panel pnlTicketsSold;
+        private System.Windows.Forms.Panel pnlAdmin2;
+        private System.Windows.Forms.Label lblTicketsSold;
+        private System.Windows.Forms.Label lblTicketsSoldHeader;
+        private System.Windows.Forms.Panel pnl3;
+        private System.Windows.Forms.Panel pnlTotalSpent;
+        private System.Windows.Forms.Panel pnlAdmin3;
+        private System.Windows.Forms.Label lblTotalSpent;
+        private System.Windows.Forms.Label lblTotalSpentHeader;
+        private System.Windows.Forms.Panel pnl5;
+        private System.Windows.Forms.Panel pnlTotalVisitors;
+        private System.Windows.Forms.Panel pnlAdmin5;
+        private System.Windows.Forms.Label lblTotalVisitorHeader;
+        private System.Windows.Forms.Label lblTotalVisitors;
+        private System.Windows.Forms.Panel pnl6;
+        private System.Windows.Forms.Panel panelBookedSpots;
+        private System.Windows.Forms.Panel pnlAdmin6;
+        private System.Windows.Forms.Label lblBookedSpots;
+        private System.Windows.Forms.Label lblBookedAndFree;
+        private System.Windows.Forms.Panel pnl4;
+        private System.Windows.Forms.Panel pnlTotalBalance;
+        private System.Windows.Forms.Panel pnlAdmin4;
+        private System.Windows.Forms.Label lblTotalBalance;
+        private System.Windows.Forms.Label lblTotalBalanceHeader;
+        private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Label lblFreeSpots;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.TextBox tbSearchStaff;
+        private System.Windows.Forms.Button btnSearchStaff;
+        private System.Windows.Forms.Button btnChangePswStaff;
+        private System.Windows.Forms.ListBox lbStaffList;
         private System.Windows.Forms.Panel panel20;
         private System.Windows.Forms.Panel panel21;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnSelectLogFile;
+        private System.Windows.Forms.Label lblAtmLogPath;
+        private System.Windows.Forms.TextBox tbLogDirectory;
+        private System.Windows.Forms.Label lblLog;
+        private System.Windows.Forms.ListBox lbLogFIle;
+        private System.Windows.Forms.Button btnReadLogFile;
+        private System.Windows.Forms.Button btnRemoveStaff;
+        private System.Windows.Forms.Button btnAddStaff;
     }
 }
