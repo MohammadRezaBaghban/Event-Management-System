@@ -26,7 +26,8 @@ Route::get('/booking', function () {
 Route::get('/info', function () {
     return view('phpinfo');
 });
-
+Route::get('twitterUserTimeLine', 'TwitterController@twitterUserTimeLine');
+Route::post('tweet', ['as'=>'post.tweet','uses'=>'TwitterController@tweet']);
 
 Auth::routes();
 
