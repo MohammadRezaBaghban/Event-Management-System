@@ -2,7 +2,33 @@
 
 <body>
 @include('layouts.navigation')
+<script  src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function() {
+        var addDiv = $('#addinput');
+        var i = $('#addinput p').size() + 1;
 
+        $('#addNew').live('click', function() {
+           if(i<5){ $('<div id="person"><p ><strong>----------------------------------------------</strong> <div class="form-group" > <label for="fname" class="col-sm-2 control-label">First Name</label> <div class="col-sm-10"> <input type="text" class="form-control" id="fname"placeholder="Enter your first name here"> </div> </div><div class="form-group"> <label for="lname" class="col-sm-2 control-label">Last Name</label> <div class="col-sm-10"> <input type="text" class="form-control" id="lname"placeholder="Enter your first name here"> </div> </div> <div class="form-group"> <label for="phonenr" class="col-sm-2 control-label">Phone Number</label> <div class="col-sm-10"> <div class="input-group input-group-sm"> <span class="input-group-addon">+</span> <input type="number" class="form-control" placeholder=""> </div> </div> </div><a href="#" id="remNew">Remove</a> </p></div>').appendTo(addDiv);
+            i++;
+
+            return false;}
+            else {$('<div id="person"><p ><strong>----------------------------------------------</strong> <div class="form-group" > <label for="fname" class="col-sm-2 control-label">First Name</label> <div class="col-sm-10"> <input type="text" class="form-control" id="fname"placeholder="Enter your first name here"> </div> </div><div class="form-group"> <label for="lname" class="col-sm-2 control-label">Last Name</label> <div class="col-sm-10"> <input type="text" class="form-control" id="lname"placeholder="Enter your first name here"> </div> </div> <div class="form-group"> <label for="phonenr" class="col-sm-2 control-label">Phone Number</label> <div class="col-sm-10"> <div class="input-group input-group-sm"> <span class="input-group-addon">+</span> <input type="number" class="form-control" placeholder=""> </div> </div> </div><a href="#" id="remNew">Remove</a> </p></div>').appendTo(addDiv);
+               $('#addNew').toggle();
+               return false;
+           }
+        });
+
+        $('#remNew').live('click', function() {
+
+            $('#person').remove();
+                i--;
+
+                return false;
+        });
+    });
+
+</script>
 <div class="container">
     <div class="row">
         <div class="col-sm-7">
@@ -88,7 +114,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="phonenr" class="col-sm-2 control-label">IBAN</label>
+                            <label for="iban" class="col-sm-2 control-label">IBAN</label>
                             <div class="col-sm-10">
                                 <div class="input-group input-group-sm">
                                     <span class="input-group-addon">€</span>
@@ -182,40 +208,58 @@
                 </div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form">
+                        <p>----------------------------------------------</p>
                         <div class="form-group">
                             <label for="fname" class="col-sm-2 control-label">First Name</label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" id="fname"
                                        placeholder="Enter your first name here">
                             </div>
+                        </div><div class="form-group">
+                            <label for="lname" class="col-sm-2 control-label">Last Name</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="lname"
+                                       placeholder="Enter your first name here">
+                            </div>
                         </div>
-
                         <div class="form-group">
-                            <label class="col-sm-2 control-label">VIP</label>
-                            <div class="col-sm-10 align-left">
-                                <div class="radio-inline">
-                                    <label>
-                                        <input id="withvip" name="withvip" value="" type="radio">
-                                        Of Course Yes!</label>
+                            <label for="phonenr" class="col-sm-2 control-label">Phone Number</label>
+                            <div class="col-sm-10">
+                                <div class="input-group input-group-sm">
+                                    <span class="input-group-addon">+</span>
+                                    <input type="number" class="form-control" placeholder="">
                                 </div>
-                                <div class="radio-inline">
-                                    <label>
-                                        <input id="novip" name="novip" value="" type="radio">
-                                        No, Thanks!</label>
+                            </div>
+                        </div>
+                        <p>----------------------------------------------</p>
+                        <div class="form-group">
+                            <label for="fname" class="col-sm-2 control-label">First Name</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="fname"
+                                       placeholder="Enter your first name here">
+                            </div>
+                        </div><div class="form-group">
+                            <label for="lname" class="col-sm-2 control-label">Last Name</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="lname"
+                                       placeholder="Enter your first name here">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="phonenr" class="col-sm-2 control-label">Phone Number</label>
+                            <div class="col-sm-10">
+                                <div class="input-group input-group-sm">
+                                    <span class="input-group-addon">+</span>
+                                    <input type="number" class="form-control" placeholder="">
                                 </div>
                             </div>
                         </div>
 
 
-
-                        <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10 align-left">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox">I accept terms and conditions of registration and refund policy
-                                    </label>
-                                </div>
-                            </div>
+                        <div id="addinput">
+                            <p>
+                            <a href="#" id="addNew">Add</a>
+                            </p>
                         </div>
                     </form>
                 </div>

@@ -3,62 +3,89 @@
 @include('layouts.navigation')
   
   <ul class="timeline">
-    <li><div class="tldate">Apr 2014</div></li>
+    <li><div class="tldate">31 OCT 2019</div></li>
     
     <li>
       <div class="tl-circ"></div>
       <div class="timeline-panel">
         <div class="tl-heading">
-          <h4>Lorem Ipsum</h4>
-          <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 3 hours ago</small></p>
+          <h4>A Fright at the Museum</h4>
+          <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 1</small></p>
         </div>
         <div class="tl-body">
-          <p>Lorem Ipsum and such.</p>
+          <p>"Do you dare to enter the world of Fright at the Museum?
+              Fly your broomstick over to this Halloween Party by
+              Expat Events! There will be lots of creepy surprises,
+              spooky music and scary people!"</p>
         </div>
       </div>
     </li>
-    
+
     <li class="timeline-inverted">
       <div class="tl-circ"></div>
       <div class="timeline-panel">
         <div class="tl-heading">
-          <h4>Lorem Ipsum</h4>
-          <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 4/07/2014</small></p>
+          <h4>Haunted houses</h4>
+          <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 2</small></p>
         </div>
         <div class="tl-body">
-          <p>Lorem Ipsum</p>
+          <p>Haunted houses</p>
             
           <p>Lorem Ipsum nonirnw inouwed.  inwendiuqnwenfr iuwrdf</p>
         </div>
       </div>
     </li>
+      <li>
+          <div class="tl-circ"></div>
+          <div class="timeline-panel">
+              <div class="tl-heading">
+                  <h4>costume contest</h4>
+                  <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>3</small></p>
+              </div>
+              <div class="tl-body">
+                  <p>"Do you dare to enter the world of Fright at the Museum?
+                      Fly your broomstick over to this Halloween Party by
+                      Expat Events! There will be lots of creepy surprises,
+                      spooky music and scary people!"</p>
+              </div>
+          </div>
+      </li>
+    <li><div class="tldate">01 NOV 2019</div></li>
     
-    <li><div class="tldate">Mar 2014</div></li>
-    
-    <li>
-      <div class="tl-circ"></div>
-      <div class="timeline-panel">
-        <div class="tl-heading">
-          <h4>Lorem Ipsum</h4>
-          <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 3/22/2014</small></p>
-        </div>
-        <div class="tl-body">
-          <p>Lorem Ipsum.</p>
-        </div>
-      </div>
-    </li>
+
     <li class="timeline-inverted">
       <div class="timeline-panel">
         <div class="tl-heading">
-          <h4>Lorem Ipsum</h4>
-          <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 3/16/2014</small></p>
+          <h4>Magic Potions</h4>
+          <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 4</small></p>
         </div>
         <div class="tl-body">
-          <p>iqbenr clakjnsr cqbeorcpaisb`dnfpq iurc2bvepjsda picwu prqfvFQWQERFQRFQWRFQWRFWQFWQRF<</p>
+          <p>In this activity you vote for people or people will vote for you if you have the best costume, a prize will
+              be given to the winner
+
+
+              </p>
         
         </div>
       </div>
     </li>
+      <li>
+          <div class="tl-circ"></div>
+          <div class="timeline-panel">
+              <div class="tl-heading">
+                  <h4>Murder Mystery</h4>
+                  <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 5</small></p>
+              </div>
+              <div class="tl-body">
+                  <p> Each
+                      guest will be sent a character profile and will be asked to come
+                      prepared to act out that character at the party.
+                      When they arrive, a murder scene will be set, and have
+                      the guests question each other to find out who the
+                      “murderer” is.</p>
+              </div>
+          </div>
+      </li>
   </ul>
 
 

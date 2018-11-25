@@ -115,7 +115,7 @@
                             <li><span class="fa fa-info check-icon"></span>€10 Registration Fee</li>
                         </ul>
                     </div>
-                    <a href="#" class="btn btn-lg btn-outline-clr">Buy now</a>
+                    <a href="/booking" class="btn btn-lg btn-outline-clr">Buy now</a>
                 </div>
             </div>
 
@@ -136,7 +136,7 @@
 
                         </ul>
                     </div>
-                    <a href="#" class="btn btn-lg">Buy now</a>
+                    <a href="/booking" class="btn btn-lg">Buy now</a>
                 </div>
             </div>
 
@@ -155,7 +155,7 @@
                             <li><span class="fa fa-info check-icon"></span>€10 Registration Fee</li>
                         </ul>
                     </div>
-                    <a href="#" class="btn btn-lg btn-outline-clr">Buy now</a>
+                    <a href="/booking" class="btn btn-lg btn-outline-clr">Buy now</a>
                 </div>
             </div>
         </div>
@@ -194,27 +194,12 @@
         <div class="col-md-6 col-lg-3 col-lg-offset-1">
             <div class="widget twitter-widget">
                 <h6 class="widget-head"><span class="fa fa-twitter"></span> Twitter Feed</h6>
+<iframe src="http://twubs.com/embed/HHF_NL/?messagesPerPage=10&headerBgColor=%231c6485&headerTextColor=%23ffffff"
+ width="500" height="450" frameborder="0">#HHF_NL</iframe>
+ 
+ 
 
-                <ul class="tweets-list">
-                    <li class="tweet">
-                        <p class="text-alt tweet-text">Grabehan <a href="#">#NowPlaying</a> Future People by Alabama
-                            Shakes <a href="http://spoti.fi/1CTPWcW">http://spoti.fi/1CTPWcW</a></p>
-                        <small class="tweet-date">7 sep 2015</small>
-                    </li>
-
-                    <li class="tweet">
-                        <p class="text-alt tweet-text">Loving <a href="#">@TryGhost</a> so far. Ghost theming here I
-                            come!</p>
-                        <small class="tweet-date">8 sep 2015</small>
-                    </li>
-
-                    <li class="tweet">
-                        <p class="text-alt tweet-text">We didn't set out to be superheroes. But sometimes, life doesn't
-                            go the way you planned. <a href="#">#TI5</a> <a href="#">#BleedBlue</a></p>
-                        <small class="tweet-date">9 sep 2015</small>
-                    </li>
-                </ul>
-            </div>
+ </div>
         </div>
     </div>
 </section>
