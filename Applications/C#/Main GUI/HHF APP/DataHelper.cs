@@ -14,7 +14,7 @@
 //        public MySqlConnection connection;
 //        public DataHelper()
 //        {
-//            String connectionInfo = "Server = studmysql01.fhict.local; " + "user id = dbi400320; " + "database = dbi400320; " + "password = 12345678;" + "sslmode = none";
+//            String connectionInfo = "Server = studmysql01.fhict.local; " + "user id = dbi378474; " + "database = dbi378474; " + "password = 123456789;" + "sslmode = none";
 
 
 //            connection = new MySqlConnection(connectionInfo);
