@@ -30,125 +30,134 @@
         {
             this.lbArticle = new System.Windows.Forms.ListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.Loaned_Items = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnChangeLoanStatus = new System.Windows.Forms.Button();
+            this.btnReturnItem = new System.Windows.Forms.Button();
+            this.lbLoandedItems = new System.Windows.Forms.ListBox();
+            this.btnLendItem = new System.Windows.Forms.Button();
+            this.btnAddArticle = new System.Windows.Forms.Button();
+            this.btnRemoveArticle = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbArticle
             // 
             this.lbArticle.FormattingEnabled = true;
-            this.lbArticle.ItemHeight = 16;
-            this.lbArticle.Location = new System.Drawing.Point(33, 33);
+            this.lbArticle.Location = new System.Drawing.Point(28, 27);
+            this.lbArticle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lbArticle.Name = "lbArticle";
-            this.lbArticle.Size = new System.Drawing.Size(400, 644);
+            this.lbArticle.Size = new System.Drawing.Size(343, 524);
             this.lbArticle.TabIndex = 0;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.button6);
-            this.groupBox2.Controls.Add(this.Loaned_Items);
-            this.groupBox2.Location = new System.Drawing.Point(452, 33);
+            this.groupBox2.Controls.Add(this.btnChangeLoanStatus);
+            this.groupBox2.Controls.Add(this.btnReturnItem);
+            this.groupBox2.Controls.Add(this.lbLoandedItems);
+            this.groupBox2.Location = new System.Drawing.Point(387, 27);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(494, 198);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Size = new System.Drawing.Size(423, 161);
             this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Loaned Items";
             // 
-            // button6
+            // btnChangeLoanStatus
             // 
-            this.button6.BackColor = System.Drawing.Color.Red;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.BlanchedAlmond;
-            this.button6.Location = new System.Drawing.Point(369, 109);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(119, 83);
-            this.button6.TabIndex = 13;
-            this.button6.Text = "Return";
-            this.button6.UseVisualStyleBackColor = false;
+            this.btnChangeLoanStatus.BackColor = System.Drawing.Color.Gold;
+            this.btnChangeLoanStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangeLoanStatus.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangeLoanStatus.ForeColor = System.Drawing.Color.White;
+            this.btnChangeLoanStatus.Location = new System.Drawing.Point(316, 20);
+            this.btnChangeLoanStatus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnChangeLoanStatus.Name = "btnChangeLoanStatus";
+            this.btnChangeLoanStatus.Size = new System.Drawing.Size(102, 67);
+            this.btnChangeLoanStatus.TabIndex = 18;
+            this.btnChangeLoanStatus.Text = "Change Status";
+            this.btnChangeLoanStatus.UseVisualStyleBackColor = false;
             // 
-            // Loaned_Items
+            // btnReturnItem
             // 
-            this.Loaned_Items.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Loaned_Items.FormattingEnabled = true;
-            this.Loaned_Items.ItemHeight = 23;
-            this.Loaned_Items.Location = new System.Drawing.Point(8, 25);
-            this.Loaned_Items.Name = "Loaned_Items";
-            this.Loaned_Items.Size = new System.Drawing.Size(355, 165);
-            this.Loaned_Items.TabIndex = 15;
+            this.btnReturnItem.BackColor = System.Drawing.Color.Red;
+            this.btnReturnItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReturnItem.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReturnItem.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.btnReturnItem.Location = new System.Drawing.Point(316, 89);
+            this.btnReturnItem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnReturnItem.Name = "btnReturnItem";
+            this.btnReturnItem.Size = new System.Drawing.Size(102, 67);
+            this.btnReturnItem.TabIndex = 13;
+            this.btnReturnItem.Text = "Return";
+            this.btnReturnItem.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // lbLoandedItems
             // 
-            this.button1.BackColor = System.Drawing.Color.ForestGreen;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(452, 254);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(494, 113);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "Lend";
-            this.button1.UseVisualStyleBackColor = false;
+            this.lbLoandedItems.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLoandedItems.FormattingEnabled = true;
+            this.lbLoandedItems.ItemHeight = 19;
+            this.lbLoandedItems.Location = new System.Drawing.Point(7, 20);
+            this.lbLoandedItems.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lbLoandedItems.Name = "lbLoandedItems";
+            this.lbLoandedItems.Size = new System.Drawing.Size(305, 118);
+            this.lbLoandedItems.TabIndex = 15;
             // 
-            // button2
+            // btnLendItem
             // 
-            this.button2.BackColor = System.Drawing.Color.Gold;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(369, 25);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(119, 83);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "Change Status";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnLendItem.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnLendItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLendItem.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLendItem.ForeColor = System.Drawing.Color.White;
+            this.btnLendItem.Location = new System.Drawing.Point(387, 206);
+            this.btnLendItem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLendItem.Name = "btnLendItem";
+            this.btnLendItem.Size = new System.Drawing.Size(423, 92);
+            this.btnLendItem.TabIndex = 17;
+            this.btnLendItem.Text = "Lend";
+            this.btnLendItem.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnAddArticle
             // 
-            this.button3.BackColor = System.Drawing.Color.OliveDrab;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(821, 495);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(119, 83);
-            this.button3.TabIndex = 19;
-            this.button3.Text = "Add Article";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnAddArticle.BackColor = System.Drawing.Color.OliveDrab;
+            this.btnAddArticle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddArticle.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddArticle.ForeColor = System.Drawing.Color.White;
+            this.btnAddArticle.Location = new System.Drawing.Point(704, 402);
+            this.btnAddArticle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAddArticle.Name = "btnAddArticle";
+            this.btnAddArticle.Size = new System.Drawing.Size(102, 67);
+            this.btnAddArticle.TabIndex = 19;
+            this.btnAddArticle.Text = "Add Article";
+            this.btnAddArticle.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // btnRemoveArticle
             // 
-            this.button4.BackColor = System.Drawing.Color.LimeGreen;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(821, 594);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(119, 83);
-            this.button4.TabIndex = 20;
-            this.button4.Text = "Remove Article";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnRemoveArticle.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnRemoveArticle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemoveArticle.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveArticle.ForeColor = System.Drawing.Color.White;
+            this.btnRemoveArticle.Location = new System.Drawing.Point(704, 483);
+            this.btnRemoveArticle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRemoveArticle.Name = "btnRemoveArticle";
+            this.btnRemoveArticle.Size = new System.Drawing.Size(102, 67);
+            this.btnRemoveArticle.TabIndex = 20;
+            this.btnRemoveArticle.Text = "Remove Article";
+            this.btnRemoveArticle.UseVisualStyleBackColor = false;
             // 
             // viewLending
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnRemoveArticle);
+            this.Controls.Add(this.btnAddArticle);
+            this.Controls.Add(this.btnLendItem);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.lbArticle);
             this.DoubleBuffered = true;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "viewLending";
-            this.Size = new System.Drawing.Size(965, 701);
+            this.Size = new System.Drawing.Size(827, 570);
             this.Load += new System.EventHandler(this.viewLending_Load);
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -159,11 +168,11 @@
 
         private System.Windows.Forms.ListBox lbArticle;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.ListBox Loaned_Items;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnChangeLoanStatus;
+        private System.Windows.Forms.Button btnReturnItem;
+        private System.Windows.Forms.ListBox lbLoandedItems;
+        private System.Windows.Forms.Button btnLendItem;
+        private System.Windows.Forms.Button btnAddArticle;
+        private System.Windows.Forms.Button btnRemoveArticle;
     }
 }
