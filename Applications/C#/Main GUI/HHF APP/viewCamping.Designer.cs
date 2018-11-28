@@ -31,170 +31,162 @@ namespace HHF_APP
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(viewCamping));
             this.panel9 = new System.Windows.Forms.Panel();
-            this.pnlCampingStatus = new System.Windows.Forms.Panel();
-            this.lblPaymentStatus = new System.Windows.Forms.Label();
-            this.pnlStatus = new System.Windows.Forms.Panel();
-            this.lblCampingStatus = new System.Windows.Forms.Label();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.label18 = new System.Windows.Forms.Label();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.btnCampingCheckIn = new System.Windows.Forms.Button();
-            this.btnCampingCheckOut = new System.Windows.Forms.Button();
-            this.btnCampingPay = new System.Windows.Forms.Button();
-            this.tbCampingBarcode = new System.Windows.Forms.TextBox();
-            this.lblBarcodeHeader = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel9.SuspendLayout();
-            this.pnlStatus.SuspendLayout();
+            this.panel15.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.Transparent;
-            this.panel9.Controls.Add(this.pnlCampingStatus);
-            this.panel9.Controls.Add(this.lblPaymentStatus);
-            this.panel9.Controls.Add(this.pnlStatus);
+            this.panel9.Controls.Add(this.panel14);
+            this.panel9.Controls.Add(this.label18);
+            this.panel9.Controls.Add(this.panel15);
             this.panel9.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel9.Location = new System.Drawing.Point(313, 303);
-            this.panel9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel9.Location = new System.Drawing.Point(365, 373);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(160, 66);
+            this.panel9.Size = new System.Drawing.Size(187, 81);
             this.panel9.TabIndex = 15;
             // 
-            // pnlCampingStatus
+            // panel14
             // 
-            this.pnlCampingStatus.AutoSize = true;
-            this.pnlCampingStatus.BackColor = System.Drawing.Color.LimeGreen;
-            this.pnlCampingStatus.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlCampingStatus.BackgroundImage")));
-            this.pnlCampingStatus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pnlCampingStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlCampingStatus.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlCampingStatus.Location = new System.Drawing.Point(3, 10);
-            this.pnlCampingStatus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnlCampingStatus.Name = "pnlCampingStatus";
-            this.pnlCampingStatus.Size = new System.Drawing.Size(40, 37);
-            this.pnlCampingStatus.TabIndex = 1;
+            this.panel14.AutoSize = true;
+            this.panel14.BackColor = System.Drawing.Color.LimeGreen;
+            this.panel14.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel14.BackgroundImage")));
+            this.panel14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel14.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel14.Location = new System.Drawing.Point(3, 12);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(46, 45);
+            this.panel14.TabIndex = 1;
             // 
-            // lblPaymentStatus
+            // label18
             // 
-            this.lblPaymentStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblPaymentStatus.AutoSize = true;
-            this.lblPaymentStatus.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPaymentStatus.Location = new System.Drawing.Point(49, 7);
-            this.lblPaymentStatus.Name = "lblPaymentStatus";
-            this.lblPaymentStatus.Size = new System.Drawing.Size(105, 19);
-            this.lblPaymentStatus.TabIndex = 0;
-            this.lblPaymentStatus.Text = "Payment Status";
+            this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(57, 9);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(127, 23);
+            this.label18.TabIndex = 0;
+            this.label18.Text = "Payment Status";
             // 
-            // pnlStatus
+            // panel15
             // 
-            this.pnlStatus.BackColor = System.Drawing.Color.White;
-            this.pnlStatus.Controls.Add(this.lblCampingStatus);
-            this.pnlStatus.Controls.Add(this.label20);
-            this.pnlStatus.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlStatus.Location = new System.Drawing.Point(3, 28);
-            this.pnlStatus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnlStatus.Name = "pnlStatus";
-            this.pnlStatus.Size = new System.Drawing.Size(155, 33);
-            this.pnlStatus.TabIndex = 0;
+            this.panel15.BackColor = System.Drawing.Color.White;
+            this.panel15.Controls.Add(this.label19);
+            this.panel15.Controls.Add(this.label20);
+            this.panel15.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel15.Location = new System.Drawing.Point(3, 35);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(181, 41);
+            this.panel15.TabIndex = 0;
             // 
-            // lblCampingStatus
+            // label19
             // 
-            this.lblCampingStatus.AutoSize = true;
-            this.lblCampingStatus.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCampingStatus.Location = new System.Drawing.Point(87, 7);
-            this.lblCampingStatus.Name = "lblCampingStatus";
-            this.lblCampingStatus.Size = new System.Drawing.Size(39, 19);
-            this.lblCampingStatus.TabIndex = 2;
-            this.lblCampingStatus.Text = "-----";
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(101, 9);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(45, 23);
+            this.label19.TabIndex = 2;
+            this.label19.Text = "-----";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(132, 44);
+            this.label20.Location = new System.Drawing.Point(154, 54);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(39, 19);
+            this.label20.Size = new System.Drawing.Size(50, 23);
             this.label20.TabIndex = 1;
             this.label20.Text = "xxxxx";
             // 
-            // btnCampingCheckIn
+            // button3
             // 
-            this.btnCampingCheckIn.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnCampingCheckIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCampingCheckIn.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCampingCheckIn.ForeColor = System.Drawing.Color.DarkGreen;
-            this.btnCampingCheckIn.Location = new System.Drawing.Point(258, 220);
-            this.btnCampingCheckIn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnCampingCheckIn.Name = "btnCampingCheckIn";
-            this.btnCampingCheckIn.Size = new System.Drawing.Size(147, 78);
-            this.btnCampingCheckIn.TabIndex = 11;
-            this.btnCampingCheckIn.Text = "Check In";
-            this.btnCampingCheckIn.UseVisualStyleBackColor = false;
+            this.button3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.DarkGreen;
+            this.button3.Location = new System.Drawing.Point(301, 271);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(171, 96);
+            this.button3.TabIndex = 11;
+            this.button3.Text = "Check In";
+            this.button3.UseVisualStyleBackColor = false;
             // 
-            // btnCampingCheckOut
+            // button4
             // 
-            this.btnCampingCheckOut.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnCampingCheckOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCampingCheckOut.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCampingCheckOut.ForeColor = System.Drawing.Color.Red;
-            this.btnCampingCheckOut.Location = new System.Drawing.Point(410, 220);
-            this.btnCampingCheckOut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnCampingCheckOut.Name = "btnCampingCheckOut";
-            this.btnCampingCheckOut.Size = new System.Drawing.Size(147, 78);
-            this.btnCampingCheckOut.TabIndex = 17;
-            this.btnCampingCheckOut.Text = "Check Out";
-            this.btnCampingCheckOut.UseVisualStyleBackColor = false;
+            this.button4.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.Red;
+            this.button4.Location = new System.Drawing.Point(478, 271);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(171, 96);
+            this.button4.TabIndex = 17;
+            this.button4.Text = "Check Out";
+            this.button4.UseVisualStyleBackColor = false;
             // 
-            // btnCampingPay
+            // button1
             // 
-            this.btnCampingPay.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnCampingPay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCampingPay.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCampingPay.ForeColor = System.Drawing.Color.DarkGreen;
-            this.btnCampingPay.Location = new System.Drawing.Point(478, 309);
-            this.btnCampingPay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnCampingPay.Name = "btnCampingPay";
-            this.btnCampingPay.Size = new System.Drawing.Size(46, 56);
-            this.btnCampingPay.TabIndex = 18;
-            this.btnCampingPay.Text = "Pay";
-            this.btnCampingPay.UseVisualStyleBackColor = false;
+            this.button1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.DarkGreen;
+            this.button1.Location = new System.Drawing.Point(558, 380);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(54, 69);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "Pay";
+            this.button1.UseVisualStyleBackColor = false;
             // 
-            // tbCampingBarcode
+            // textBox1
             // 
-            this.tbCampingBarcode.Location = new System.Drawing.Point(300, 196);
-            this.tbCampingBarcode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbCampingBarcode.Name = "tbCampingBarcode";
-            this.tbCampingBarcode.Size = new System.Drawing.Size(235, 20);
-            this.tbCampingBarcode.TabIndex = 19;
+            this.textBox1.Location = new System.Drawing.Point(350, 241);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(274, 24);
+            this.textBox1.TabIndex = 19;
             // 
-            // lblBarcodeHeader
+            // label1
             // 
-            this.lblBarcodeHeader.AutoSize = true;
-            this.lblBarcodeHeader.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBarcodeHeader.Location = new System.Drawing.Point(195, 189);
-            this.lblBarcodeHeader.Name = "lblBarcodeHeader";
-            this.lblBarcodeHeader.Size = new System.Drawing.Size(90, 25);
-            this.lblBarcodeHeader.TabIndex = 20;
-            this.lblBarcodeHeader.Text = "Barcode:";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(227, 233);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(115, 32);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Barcode:";
             // 
             // viewCamping
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Controls.Add(this.lblBarcodeHeader);
-            this.Controls.Add(this.tbCampingBarcode);
-            this.Controls.Add(this.btnCampingPay);
-            this.Controls.Add(this.btnCampingCheckOut);
-            this.Controls.Add(this.btnCampingCheckIn);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.panel9);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "viewCamping";
-            this.Size = new System.Drawing.Size(834, 570);
+            this.Size = new System.Drawing.Size(973, 702);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
-            this.pnlStatus.ResumeLayout(false);
-            this.pnlStatus.PerformLayout();
+            this.panel15.ResumeLayout(false);
+            this.panel15.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -203,15 +195,15 @@ namespace HHF_APP
         #endregion
 
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Panel pnlCampingStatus;
-        private System.Windows.Forms.Label lblPaymentStatus;
-        private System.Windows.Forms.Panel pnlStatus;
-        private System.Windows.Forms.Label lblCampingStatus;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Button btnCampingCheckIn;
-        private System.Windows.Forms.Button btnCampingCheckOut;
-        private System.Windows.Forms.Button btnCampingPay;
-        private System.Windows.Forms.TextBox tbCampingBarcode;
-        private System.Windows.Forms.Label lblBarcodeHeader;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
     }
 }

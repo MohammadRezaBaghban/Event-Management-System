@@ -21,5 +21,15 @@ namespace HHF_APP
         {
 
         }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine();
+        }
     }
 }
