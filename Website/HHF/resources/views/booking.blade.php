@@ -6,14 +6,14 @@
 <script type="text/javascript">
     $(function() {
         var addDiv = $('#addinput');
-        var i = $('#addinput p').size() + 1;
+        var i = $('#addinput p').size() + 2;
 
         $('#addNew').live('click', function() {
-           if(i<5){ $('<div id="person"><p ><strong>----------------------------------------------</strong> <div class="form-group" > <label for="fname" class="col-sm-2 control-label">First Name</label> <div class="col-sm-10"> <input type="text" class="form-control" id="fname"placeholder="Enter your first name here"> </div> </div><div class="form-group"> <label for="lname" class="col-sm-2 control-label">Last Name</label> <div class="col-sm-10"> <input type="text" class="form-control" id="lname"placeholder="Enter your first name here"> </div> </div> <div class="form-group"> <label for="phonenr" class="col-sm-2 control-label">Phone Number</label> <div class="col-sm-10"> <div class="input-group input-group-sm"> <span class="input-group-addon">+</span> <input type="number" class="form-control" placeholder=""> </div> </div> </div><a href="#" id="remNew">Remove</a> </p></div>').appendTo(addDiv);
+           if(i<6){ $('<div id="person">' + '<p><strong>----------------------------------------------</strong> <div class="form-group" > <label for="fname" class="col-sm-2 control-label" >First Name</label> <div class="col-sm-10"> <input type="text" class="form-control" id="fname"placeholder="Enter your first name here"  name="fname'+ i +'"> </div> </div><div class="form-group"> <label for="lname" class="col-sm-2 control-label" >Last Name</label> <div class="col-sm-10"> <input type="text" class="form-control" id="lname"placeholder="Enter your first name here" name="lname'+ i +'"> </div> </div> <div class="form-group"> <label for="phonenr" class="col-sm-2 control-label">Phone Number</label> <div class="col-sm-10"> <div class="input-group input-group-sm"> <span class="input-group-addon">+</span> <input type="number" class="form-control" placeholder="" name="phone'+ i +'"> </div> </div> </div><a href="#" id="remNew">Remove</a> </p></div>').appendTo(addDiv);
             i++;
 
             return false;}
-            else {$('<div id="person"><p ><strong>----------------------------------------------</strong> <div class="form-group" > <label for="fname" class="col-sm-2 control-label">First Name</label> <div class="col-sm-10"> <input type="text" class="form-control" id="fname"placeholder="Enter your first name here"> </div> </div><div class="form-group"> <label for="lname" class="col-sm-2 control-label">Last Name</label> <div class="col-sm-10"> <input type="text" class="form-control" id="lname"placeholder="Enter your first name here"> </div> </div> <div class="form-group"> <label for="phonenr" class="col-sm-2 control-label">Phone Number</label> <div class="col-sm-10"> <div class="input-group input-group-sm"> <span class="input-group-addon">+</span> <input type="number" class="form-control" placeholder=""> </div> </div> </div><a href="#" id="remNew">Remove</a> </p></div>').appendTo(addDiv);
+            else {$('<div id="person"><p ><strong>----------------------------------------------</strong> <div class="form-group" > <label for="fname" class="col-sm-2 control-label" >First Name</label> <div class="col-sm-10"> <input type="text" class="form-control" id="fname"placeholder="Enter your first name here"  name="fname'+ i +'"> </div> </div><div class="form-group"> <label for="lname" class="col-sm-2 control-label" >Last Name</label> <div class="col-sm-10"> <input type="text" class="form-control" id="lname"placeholder="Enter your first name here" name="lname'+ i +'"> </div> </div> <div class="form-group"> <label for="phonenr" class="col-sm-2 control-label">Phone Number</label> <div class="col-sm-10"> <div class="input-group input-group-sm"> <span class="input-group-addon">+</span> <input type="number" class="form-control" placeholder="" name="phone'+ i +'"> </div> </div> </div><a href="#" id="remNew">Remove</a> </p></div>').appendTo(addDiv);
                $('#addNew').toggle();
                return false;
            }
@@ -41,23 +41,23 @@
                         <div class="form-group">
                             <label for="fname" class="col-sm-2 control-label">First Name</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="fname"
-                                       placeholder="Enter your first name here">
+                                <input type="text" class="form-control" name="fname"
+                                       placeholder="Enter your first name here" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="lname" class="col-sm-2 control-label">Last Name</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="lname"
-                                       placeholder="Enter your last name here">
+                                <input type="text" class="form-control" name="lname"
+                                       placeholder="Enter your last name here" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="mail" class="col-sm-2 control-label">mail</label>
+                            <label for="mail" class="col-sm-2 control-label">Email</label>
                             <div class="col-sm-10">
                                 <div class="input-group input-group-sm">
                                     <span class="input-group-addon">@</span>
-                                    <input type="text" class="form-control" placeholder="">
+                                    <input type="text" class="form-control" placeholder="" name="email" required>
                                 </div>
                             </div>
                         </div>
@@ -66,21 +66,21 @@
                             <div class="col-sm-10">
                                 <div class="input-group input-group-sm">
                                     <span class="input-group-addon">@</span>
-                                    <input type="text" class="form-control" placeholder="">
+                                    <input type="text" class="form-control" placeholder="" name="email2" required>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="password" class="col-sm-2 control-label">Password</label>
                             <div class="col-sm-10">
-                                <input type="password" class="form-control" id="pass">
+                                <input type="password" class="form-control" name="passwd" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="password" class="col-sm-2 control-label">Confirm your password
                             </label>
                             <div class="col-sm-10">
-                                <input type="password" class="form-control" id="confirmpass">
+                                <input type="password" class="form-control" name="passwd2" required>
                             </div>
                         </div>
                         <div class="form-group">
@@ -88,37 +88,32 @@
                             <div class="col-sm-10 align-left">
                                 <div class="radio-inline">
                                     <label>
-                                        <input id="withvip" name="withvip" value="" type="radio">
+                                        <input id="withvip" name="withvip" value="vip" type="radio" >
                                         Of Course Yes!</label>
                                 </div>
                                 <div class="radio-inline">
                                     <label>
-                                        <input id="novip" name="novip" value="" type="radio">
+                                        <input id="name" name="novip" value="novip" type="radio" >
                                         No, Thanks!</label>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="phonenr" class="col-sm-2 control-label">Phone Number</label>
+                            <label for="phonenr" class="col-sm-2 control-label" >Phone Number</label>
                             <div class="col-sm-10">
                                 <div class="input-group input-group-sm">
                                     <span class="input-group-addon">+</span>
-                                    <input type="number" class="form-control" placeholder="">
+                                    <input type="number" class="form-control" name="phonenr" placeholder="" required>
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="Address" class="col-sm-2 control-label">Address</label>
-                            <div class="col-sm-10">
-                                <textarea name="address" cols="" rows="" class="form-control"></textarea>
-                            </div>
-                        </div>
+
                         <div class="form-group">
                             <label for="iban" class="col-sm-2 control-label">IBAN</label>
                             <div class="col-sm-10">
                                 <div class="input-group input-group-sm">
                                     <span class="input-group-addon">€</span>
-                                    <input type="text" class="form-control" placeholder="">
+                                    <input type="text" class="form-control" name="iban" placeholder="" required>
                                 </div>
                             </div>
                         </div>

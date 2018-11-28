@@ -1,6 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
+use Auth;
+use App\Account;
+use App\User;
+use App\Ticket;
+use App\Transaction;
+use App\CampReservation;
+use App\BankInfo;
+use App\CampSpot;
+use Illuminate\Support\Facades\Input;
 
 use Illuminate\Http\Request;
 
@@ -34,7 +43,9 @@ class AccountController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            ''
+        ]);
     }
 
     /**
