@@ -194,12 +194,9 @@
         <div class="col-md-6 col-lg-3 col-lg-offset-1">
             <div class="widget twitter-widget">
                 <h6 class="widget-head"><span class="fa fa-twitter"></span> Twitter Feed</h6>
-<iframe src="http://twubs.com/embed/HHF_NL/?messagesPerPage=10&headerBgColor=%231c6485&headerTextColor=%23ffffff"
- width="500" height="450" frameborder="0">#HHF_NL</iframe>
- 
- 
-
- </div>
+                <iframe src="http://twubs.com/embed/HHF_NL/?messagesPerPage=10&headerBgColor=%231c6485&headerTextColor=%23ffffff"
+                 width="500" height="450" frameborder="0">#HHF_NL</iframe>
+            </div>
         </div>
     </div>
 </section>
