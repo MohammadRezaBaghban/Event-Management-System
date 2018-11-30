@@ -17,15 +17,12 @@ class CreateAccountsTable extends Migration
             $table->increments('account_id');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('bank_act_nr');
+            $table->integer('bank_act_nr')->unsigned();
             $table->foreign('bank_act_nr')->references('bank_act_nr')->on('bank_infos')->onDelete('cascade');
             $table->decimal('initial_balance');
             $table->enum('is_valid',['yes','no']);
-            $table->rememberToken();
             $table->timestamps();
         });
-
-
     }
 
     /**

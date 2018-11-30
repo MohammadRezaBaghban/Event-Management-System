@@ -33,9 +33,10 @@
 
 </script>
 <div class="container">
-    <form class="form-horizontal" role="form" action="/save" method="post" enctype="multipart/form-data">
-        {{ csrf_field() }}
-        <div class="row">
+    <div class="row">
+
+        <form class="form-horizontal" role="form" action="/save" method="post" enctype="multipart/form-data">
+            {{ csrf_field() }}
             <div class="col-sm-7">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -89,6 +90,28 @@
                                 <input type="password" class="form-control" name="passwd2" required>
                             </div>
                         </div>
+
+                        <div class="form-group">
+                            <label for="iban" class="col-sm-2 control-label">IBAN</label>
+                            <div class="col-sm-10">
+                                <div class="input-group input-group-sm">
+                                    <span class="input-group-addon">€</span>
+                                    <input type="text" class="form-control" name="iban" placeholder="" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="initialbal" class="col-sm-2 control-label">Top Up</label>
+                            <div class="col-sm-10">
+                                <div class="input-group input-group-sm">
+                                    <span class="input-group-addon">€</span>
+                                    <input type="number" class="form-control" name="initialbal" placeholder="" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        
                         <div class="form-group">
                             <label class="col-sm-2 control-label">VIP</label>
                             <div class="col-sm-10 align-left">
@@ -115,26 +138,6 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="iban" class="col-sm-2 control-label">IBAN</label>
-                            <div class="col-sm-10">
-                                <div class="input-group input-group-sm">
-                                    <span class="input-group-addon">€</span>
-                                    <input type="text" class="form-control" name="iban" placeholder="" required>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="initialbal" class="col-sm-2 control-label">Top Up</label>
-                            <div class="col-sm-10">
-                                <div class="input-group input-group-sm">
-                                    <span class="input-group-addon">€</span>
-                                    <input type="number" class="form-control" name="initialbal" placeholder="" required>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10 align-left">
                                 <div class="checkbox">
                                     <label>
@@ -152,43 +155,7 @@
 
 
             <div class="col-sm-5">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Camp reserve</h3>
-                    </div>
-                    <div class="panel-body">
-                        <div class="form-group">
-                            <label for="camp" class="col-sm-2 control-label">Camp Spot Number</label>
-                            <div class="col-sm-10">
-                                <input type="number" class="form-control" id="campspotnr" name="campspotnr"
-                                       placeholder="Enter your preferred Camp Spot Nr." required>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">Pay now?</label>
-                            <div class="col-sm-10 align-left">
-                                <div class="radio-inline">
-                                    <label>
-                                        <input id="camppay" name="camppay" value="yes" type="radio" required>
-                                        Yes!</label>
-                                </div>
-                                <div class="radio-inline">
-                                    <label>
-                                        <input id="camppay" name="camppay" value=no" type="radio" >
-                                        No</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel-footer" style="overflow:hidden;text-align:right;">
-                        <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10">
-                                <button type="submit" class="btn btn-success btn-sm">Check Availability</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+               
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -231,13 +198,12 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="form-register" style="overflow:hidden;text-align:center;">
-            <button type="submit" class="btn btn-success">Submit</button>
-            <button  class="btn btn-danger ">Cancel</button>
-        </div>
-    </form>
-
+            <div class="" style="text-align:center;">
+                <button type="submit" class="btn btn-success">Submit</button>
+                <button  class="btn btn-danger ">Cancel</button>
+            </div>
+        </form>
+    </div>
 </div>
 
 <div id="email-ticket" class="modal-window" data-modal="email-ticket"

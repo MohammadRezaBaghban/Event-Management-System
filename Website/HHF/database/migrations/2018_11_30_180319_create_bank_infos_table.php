@@ -14,7 +14,7 @@ class CreateBankInfosTable extends Migration
     public function up()
     {
         Schema::create('bank_infos', function (Blueprint $table) {
-            $table->string('bank_act_nr')->primary();
+            $table->increments('bank_act_nr');
             $table->string('holder_name');
             $table->timestamps();
         });
