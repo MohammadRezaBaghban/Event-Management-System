@@ -19,7 +19,7 @@ if(!isset($_SESSION["email"]) || $_SESSION["email"] !== true){
 
 
         try {
-            $myPDO = new PDO('mysql:host=studmysql01.fhict.local;dbname=dbi378474', 'dbi378474', '123456789');
+            $myPDO = new PDO('mysql:host=studmysql01.fhict.local;dbname=dbi400320', 'dbi400320', '12345678');
 // set the PDO error mode to exception
             $myPDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -35,9 +35,9 @@ if(!isset($_SESSION["email"]) || $_SESSION["email"] !== true){
                 if(isset($_SESSION['email'])){
 
                     $email = $_SESSION['email'];
-                echo "<div class='container'  style='background-image: url(../Images/Background/7.jpg);background-size: 100%;'><div class='jumbotron' align='middle'  style='background-image: url(../Images/Background/7.jpg);background-size: 100%;'><h1>Hi, $email!</h1><h2>log in succeed</h2>
-        <h3>redirecting to basket.....</h3></div></div>";
-                    RedirectToURL("?page=basket",3);
+                echo "<div class='container' onload='window.location.replace('?page=dashboard');'><div class='jumbotron' align='middle'><h1>Hi, $email!</h1><h2>log in succeed</h2>
+        <h3>redirecting to Dashboard.....</h3></div></div>";
+
                    }
              } else
                {  $GLOBALS['err'] .= ", Wrong Password";
@@ -48,9 +48,8 @@ if(!isset($_SESSION["email"]) || $_SESSION["email"] !== true){
     }
     else{if(isset($_SESSION["email"]) && $_SESSION['email']===true){
 
-        echo "<div class='container' ><div class='jumbotron' align='middle'><h1>You are already logged in</h1>
-        <p >redirecting to basket.....</p></div></div>";
-         RedirectToURL("?page=basket",3);
+        echo "<div class='container' onload='window.location.replace('?page=dashboard');'><div class='jumbotron' align='middle' ><h1>You are already logged in</h1><p >redirecting to Dashboard.....</p></div></div>";
+
 
      }
     }

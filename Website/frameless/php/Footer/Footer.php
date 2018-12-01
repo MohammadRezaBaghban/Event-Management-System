@@ -6,8 +6,8 @@
             <div class="col-md-6">
                 <ul class="footer-nav">
                     <li class="footer-nav-item"><a href="" class="navigation-link" data-toggle="modal" data-target="#email-ticket">Contact</a></li>
-                    <li class="footer-nav-item"><a href="#">Privacy policy</a></li>
-                    <li class="footer-nav-item"><a href="#">Press</a></li>
+                    <li class="footer-nav-item"><a href="?page=privacy">Privacy policy</a></li>
+                    <li class="footer-nav-item"><a href="?page=terms">Terms&Conditions</a></li>
                 </ul>
             </div>
 

@@ -6,13 +6,13 @@
 
         $('#addNew').live('click', function () {
             if (i < 6) {
-                $('<div id="person">' + '<p><strong>----------------------------------------------</strong> <div class="form-group " > <label for="fname" class="col-sm-2 control-label" >First Name</label> <div class="col-sm-10"> <input type="text" class="form-control" id="fname"placeholder="Enter your first name here"  name="fname' + i + '" required> </div> </div><div class="form-group"> <label for="lname" class="col-sm-2 control-label" >Last Name</label> <div class="col-sm-10"> <input type="text" class="form-control" id="lname"placeholder="Enter your last name here" name="lname' + i + '" required> </div> </div> <div class="form-group"> <label for="phonenr" class="col-sm-2 control-label">Phone Number</label> <div class="col-sm-10"> <div class="input-group input-group-sm"> <span class="input-group-addon">+</span> <input type="number" class="form-control" placeholder="" name="phone' + i + '" required> </div> </div> </div><a href="#" id="remNew">Remove</a> </p></div>').appendTo(addDiv);
+                $('<div id="person">' + '<p><strong>----------------------------------------------</strong> <div class="form-group " > <label for="fname" class="col-sm-2 control-label" >First Name</label> <div class="col-sm-10"> <input type="text" class="form-control" id="fname"placeholder="Enter your first name here"  name="fnames[]" required> </div> </div><div class="form-group"> <label for="lname" class="col-sm-2 control-label" >Last Name</label> <div class="col-sm-10"> <input type="text" class="form-control" id="lname"placeholder="Enter your last name here" name="lnames[]" required> </div> </div> <div class="form-group"> <label for="phonenr" class="col-sm-2 control-label">Phone Number</label> <div class="col-sm-10"> <div class="input-group input-group-sm"> <span class="input-group-addon">+</span> <input type="number" class="form-control" placeholder="" name="phones[]" required> </div> </div> </div><a href="#" id="remNew">Remove</a> </p></div>').appendTo(addDiv);
                 i++;
 
                 return false;
             }
             else {
-                $('<div id="person"><p ><strong>----------------------------------------------</strong> <div class="form-group" > <label for="fname" class="col-sm-2 control-label" >First Name</label> <div class="col-sm-10"> <input type="text" class="form-control" id="fname"placeholder="Enter your first name here"  name="fname' + i + '" required > </div> </div><div class="form-group"> <label for="lname" class="col-sm-2 control-label" >Last Name</label> <div class="col-sm-10"> <input type="text" class="form-control" id="lname"placeholder="Enter your last name here" name="lname' + i + '" required> </div> </div> <div class="form-group"> <label for="phonenr" class="col-sm-2 control-label">Phone Number</label> <div class="col-sm-10"> <div class="input-group input-group-sm"> <span class="input-group-addon">+</span> <input type="number" class="form-control" placeholder="" name="phone' + i + '" required> </div> </div> </div><a href="#" id="remNew">Remove</a> </p></div>').appendTo(addDiv);
+                $('<div id="person"><p ><strong>----------------------------------------------</strong> <div class="form-group" > <label for="fname" class="col-sm-2 control-label" >First Name</label> <div class="col-sm-10"> <input type="text" class="form-control" id="fname"placeholder="Enter your first name here"  name="fnames[]" required > </div> </div><div class="form-group"> <label for="lname" class="col-sm-2 control-label" >Last Name</label> <div class="col-sm-10"> <input type="text" class="form-control" id="lname"placeholder="Enter your last name here" name="lnames[]" required> </div> </div> <div class="form-group"> <label for="phonenr" class="col-sm-2 control-label">Phone Number</label> <div class="col-sm-10"> <div class="input-group input-group-sm"> <span class="input-group-addon">+</span> <input type="number" class="form-control" placeholder="" name="phones[]" required> </div> </div> </div><a href="#" id="remNew">Remove</a> </p></div>').appendTo(addDiv);
                 $('#addNew').toggle();
                 return false;
             }
@@ -29,7 +29,8 @@
 
 </script>
 <div class="container">
-    <form class="form-horizontal" role="form" action="<?php echo htmlspecialchars("?page=signup"); ?>" method="post"
+    <form class="form-horizontal" role="form" action="<?php if($_GET['type'] == 'vip'){echo htmlspecialchars("?page=signup&type=vip");}
+    else if($_GET['type'] == 'group'){echo htmlspecialchars("?page=signup&type=group");} else{ echo htmlspecialchars("?page=signup&type=individual");} ?>" method="post"
           enctype="multipart/form-data">
 
         <div class="row">
@@ -108,7 +109,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="initialbal" class="col-sm-2 control-label">Top Up</label>
+                            <label for="initialbal" class="col-sm-2 control-label">Top Up*</label>
                             <div class="col-sm-10">
                                 <div class="input-group input-group-sm">
                                     <span class="input-group-addon">€</span>
@@ -116,6 +117,16 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label for="initialbal" class="col-sm-10">*Initial amount of 500 Euros will be added automatically for groups! </label>
+                        </div>
+                        <div class="form-group">
+                            <label for="initialbal" class="col-sm-10">*Initial amount of 250 Euros will be added automatically for VIP! </label>
+                        </div>
+                        <div class="form-group">
+                            <label for="initialbal" class="col-sm-10">*Initial amount of 65 Euros will be added automatically for individual! </label>
+                        </div>
+
 
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10 align-left">
@@ -219,14 +230,14 @@
                                 <div class="form-group">
                                     <label for="fname" class="col-sm-2 control-label">First Name</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="fname" name="fname2"
+                                        <input type="text" class="form-control" id="fname" name="fnames[]"
                                                placeholder="Enter your first name here" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="lname" class="col-sm-2 control-label">Last Name</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="lname" name="lname2"
+                                        <input type="text" class="form-control" id="lname" name="lnames[]"
                                                placeholder="Enter your last name here" required>
                                     </div>
                                 </div>
@@ -235,7 +246,7 @@
                                     <div class="col-sm-10">
                                         <div class="input-group input-group-sm">
                                             <span class="input-group-addon">+</span>
-                                            <input type="number" class="form-control" placeholder="" name="phone2"
+                                            <input type="number" class="form-control" placeholder="" name="phones[]"
                                                    required>
                                         </div>
                                     </div>
