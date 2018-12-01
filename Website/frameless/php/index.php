@@ -2,20 +2,18 @@
 session_start();
 echo '<html>';
 
-if( isset($_GET['page']) )
-    {
+if (isset($_GET['page'])) {
     $page = $_GET['page'];
-    }else 
-    {
-        $page = "Home";
-    }
-    
+} else {
+    $page = "Home";
+}
 
-include './Others/Head.php';    
+
+include './Others/Head.php';
 include './Others/Navigationbar.php';
 include './Others/modelform.php';
 
-switch($page) {
+switch ($page) {
     case "Home":
         include "home.php";
         break;
@@ -34,9 +32,9 @@ switch($page) {
         include "./Footer/Privacy.php";
         break;
 
-    case "contact":
+    case "dashboard":
         echo '<body>';
-        include "./FormHandlers/Contact.php";
+        include "./dashboard/dashboard.php";
         break;
 
     case "terms":
@@ -67,7 +65,7 @@ switch($page) {
         echo '<body>';
         include "./SignUp-SignIn-SignOut/SignupForm.php";
         break;
-        case "signup":
+    case "signup":
         echo '<body>';
         include "./FormHandlers/Sign-up.php";
         break;
@@ -78,5 +76,5 @@ switch($page) {
 
 require './Footer/Footer.php';
 echo '</body>';
-echo'</html>';
+echo '</html>';
 ?>

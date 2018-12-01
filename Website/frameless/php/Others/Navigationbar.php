@@ -21,16 +21,9 @@
                         <li class="navigation-item"><a href="?page=home#activities" class="navigation-link">Activities</a></li>
                         <li class="navigation-item"><a href="?page=home#tickets" class="navigation-link">Tickets</a></li>
                         <li class="navigation-item"><a href="?page=schedule" class="navigation-link">Schedule</a></li>
-                        <li class="navigation-item"><a href="#" class="navigation-link" data-toggle="modal" data-target="#email-ticket"
-                            >Contact Us</a></li>
-                        <li class="navigation-item"><?php  if(isset($_SESSION['email'])){ ?>
-                                <a href="?page=dashboard">Profile</a>
-                            <?php } ?></li>
-                        <li class="navigation-item"><?php  if(!isset($_SESSION['email'])){ ?>
-                                <a href="?page=login">Sign In</a>
-                            <?php } ?><?php  if(isset($_SESSION['email'])){ ?>
-                                <a href="?page=logout">Log out</a>
-                            <?php } ?></li>
+                        <li class="navigation-item"><a href="#" class="navigation-link" data-toggle="modal" data-target="#email-ticket">Contact Us</a></li>
+                        <li class="navigation-item"><?php if(isset($_SESSION['email'])){ ?><a href="?page=dashboard">Profile</a><?php } ?></li>
+                        <li class="navigation-item"><?php if(!isset($_SESSION['email'])){ ?><a href="?page=login">Sign In</a><?php } ?><?php if(isset($_SESSION['email'])){ ?><a href="?page=logout">Log out</a><?php } ?></li>
 
                     </ul>
                 </div>
