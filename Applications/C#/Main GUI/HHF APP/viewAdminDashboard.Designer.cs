@@ -30,28 +30,35 @@ namespace HHF_APP
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(viewAdminDashboard));
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelPVis = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblVisitors = new System.Windows.Forms.Label();
             this.VisitCount = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.panelTicketS = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.lblTicketsSold = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.panelTSpent = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.lblTotalSpent = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.panel11 = new System.Windows.Forms.Panel();
+            this.panelTotalV = new System.Windows.Forms.Panel();
+            this.panel12 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.lblTotalVisitors = new System.Windows.Forms.Label();
-            this.panel14 = new System.Windows.Forms.Panel();
+            this.panelSpots = new System.Windows.Forms.Panel();
+            this.panel15 = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
             this.lblFreeSpots = new System.Windows.Forms.Label();
             this.lblBookedSpots = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.panel17 = new System.Windows.Forms.Panel();
+            this.panelTBalance = new System.Windows.Forms.Panel();
+            this.panelAddEmp = new System.Windows.Forms.Panel();
+            this.panel18 = new System.Windows.Forms.Panel();
             this.panel19 = new System.Windows.Forms.Panel();
             this.lblTotalBalance = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -63,7 +70,7 @@ namespace HHF_APP
             this.btnSearchEmployee = new System.Windows.Forms.Button();
             this.btnChangePassword = new System.Windows.Forms.Button();
             this.lbEmployees = new System.Windows.Forms.ListBox();
-            this.panel20 = new System.Windows.Forms.Panel();
+            this.panelMom = new System.Windows.Forms.Panel();
             this.panel21 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.lbATMLog = new System.Windows.Forms.ListBox();
@@ -71,39 +78,48 @@ namespace HHF_APP
             this.btnSelectLogFile = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.tbAtmLogPath = new System.Windows.Forms.TextBox();
-            this.panel18 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
+            this.addEmployee2 = new HHF_APP.AddEmployee();
+            this.panelPVis.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.panelTicketS.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
+            this.panelTSpent.SuspendLayout();
             this.panel9.SuspendLayout();
-            this.panel11.SuspendLayout();
+            this.panelTotalV.SuspendLayout();
             this.panel13.SuspendLayout();
-            this.panel14.SuspendLayout();
+            this.panelSpots.SuspendLayout();
             this.panel16.SuspendLayout();
-            this.panel17.SuspendLayout();
+            this.panelTBalance.SuspendLayout();
+            this.panelAddEmp.SuspendLayout();
             this.panel19.SuspendLayout();
             this.panel10.SuspendLayout();
-            this.panel20.SuspendLayout();
+            this.panelMom.SuspendLayout();
             this.panel21.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // panelPVis
             // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(4, -2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(243, 114);
-            this.panel1.TabIndex = 1;
+            this.panelPVis.BackColor = System.Drawing.Color.Transparent;
+            this.panelPVis.Controls.Add(this.panel3);
+            this.panelPVis.Controls.Add(this.panel2);
+            this.panelPVis.Location = new System.Drawing.Point(4, -2);
+            this.panelPVis.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelPVis.Name = "panelPVis";
+            this.panelPVis.Size = new System.Drawing.Size(243, 114);
+            this.panelPVis.TabIndex = 1;
+            // 
+            // panel3
+            // 
+            this.panel3.AutoSize = true;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Location = new System.Drawing.Point(16, 9);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(56, 53);
+            this.panel3.TabIndex = 1;
             // 
             // panel2
             // 
@@ -138,16 +154,29 @@ namespace HHF_APP
             this.VisitCount.Text = "Present Visitors";
             this.VisitCount.Click += new System.EventHandler(this.VisitCount_Click);
             // 
-            // panel4
+            // panelTicketS
             // 
-            this.panel4.BackColor = System.Drawing.Color.Transparent;
-            this.panel4.Controls.Add(this.panel5);
-            this.panel4.Controls.Add(this.panel6);
-            this.panel4.Location = new System.Drawing.Point(249, -2);
-            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(243, 114);
-            this.panel4.TabIndex = 2;
+            this.panelTicketS.BackColor = System.Drawing.Color.Transparent;
+            this.panelTicketS.Controls.Add(this.panel5);
+            this.panelTicketS.Controls.Add(this.panel6);
+            this.panelTicketS.Location = new System.Drawing.Point(249, -2);
+            this.panelTicketS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelTicketS.Name = "panelTicketS";
+            this.panelTicketS.Size = new System.Drawing.Size(243, 114);
+            this.panelTicketS.TabIndex = 2;
+            // 
+            // panel5
+            // 
+            this.panel5.AutoSize = true;
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
+            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Location = new System.Drawing.Point(18, 9);
+            this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(56, 53);
+            this.panel5.TabIndex = 1;
             // 
             // panel6
             // 
@@ -181,16 +210,29 @@ namespace HHF_APP
             this.label2.TabIndex = 0;
             this.label2.Text = "Tickets Sold";
             // 
-            // panel7
+            // panelTSpent
             // 
-            this.panel7.BackColor = System.Drawing.Color.Transparent;
-            this.panel7.Controls.Add(this.panel8);
-            this.panel7.Controls.Add(this.panel9);
-            this.panel7.Location = new System.Drawing.Point(495, -2);
-            this.panel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(243, 114);
-            this.panel7.TabIndex = 2;
+            this.panelTSpent.BackColor = System.Drawing.Color.Transparent;
+            this.panelTSpent.Controls.Add(this.panel8);
+            this.panelTSpent.Controls.Add(this.panel9);
+            this.panelTSpent.Location = new System.Drawing.Point(495, -2);
+            this.panelTSpent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelTSpent.Name = "panelTSpent";
+            this.panelTSpent.Size = new System.Drawing.Size(243, 114);
+            this.panelTSpent.TabIndex = 2;
+            // 
+            // panel8
+            // 
+            this.panel8.AutoSize = true;
+            this.panel8.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.panel8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel8.BackgroundImage")));
+            this.panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel8.Location = new System.Drawing.Point(15, 9);
+            this.panel8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(56, 53);
+            this.panel8.TabIndex = 1;
             // 
             // panel9
             // 
@@ -225,16 +267,29 @@ namespace HHF_APP
             this.label4.Text = "Total Spent";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // panel11
+            // panelTotalV
             // 
-            this.panel11.BackColor = System.Drawing.Color.Transparent;
-            this.panel11.Controls.Add(this.panel12);
-            this.panel11.Controls.Add(this.panel13);
-            this.panel11.Location = new System.Drawing.Point(248, 128);
-            this.panel11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(243, 114);
-            this.panel11.TabIndex = 3;
+            this.panelTotalV.BackColor = System.Drawing.Color.Transparent;
+            this.panelTotalV.Controls.Add(this.panel12);
+            this.panelTotalV.Controls.Add(this.panel13);
+            this.panelTotalV.Location = new System.Drawing.Point(248, 128);
+            this.panelTotalV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelTotalV.Name = "panelTotalV";
+            this.panelTotalV.Size = new System.Drawing.Size(243, 114);
+            this.panelTotalV.TabIndex = 3;
+            // 
+            // panel12
+            // 
+            this.panel12.AutoSize = true;
+            this.panel12.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.panel12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel12.BackgroundImage")));
+            this.panel12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel12.Location = new System.Drawing.Point(15, 9);
+            this.panel12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(56, 53);
+            this.panel12.TabIndex = 1;
             // 
             // panel13
             // 
@@ -269,16 +324,29 @@ namespace HHF_APP
             this.lblTotalVisitors.TabIndex = 1;
             this.lblTotalVisitors.Text = "00000";
             // 
-            // panel14
+            // panelSpots
             // 
-            this.panel14.BackColor = System.Drawing.Color.Transparent;
-            this.panel14.Controls.Add(this.panel15);
-            this.panel14.Controls.Add(this.panel16);
-            this.panel14.Location = new System.Drawing.Point(495, 128);
-            this.panel14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(243, 114);
-            this.panel14.TabIndex = 3;
+            this.panelSpots.BackColor = System.Drawing.Color.Transparent;
+            this.panelSpots.Controls.Add(this.panel15);
+            this.panelSpots.Controls.Add(this.panel16);
+            this.panelSpots.Location = new System.Drawing.Point(495, 128);
+            this.panelSpots.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelSpots.Name = "panelSpots";
+            this.panelSpots.Size = new System.Drawing.Size(243, 114);
+            this.panelSpots.TabIndex = 3;
+            // 
+            // panel15
+            // 
+            this.panel15.AutoSize = true;
+            this.panel15.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.panel15.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel15.BackgroundImage")));
+            this.panel15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel15.Location = new System.Drawing.Point(15, 9);
+            this.panel15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(56, 53);
+            this.panel15.TabIndex = 1;
             // 
             // panel16
             // 
@@ -325,16 +393,39 @@ namespace HHF_APP
             this.label8.Text = "Booked && Free Spots";
             this.label8.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // panel17
+            // panelTBalance
             // 
-            this.panel17.BackColor = System.Drawing.Color.Transparent;
-            this.panel17.Controls.Add(this.panel18);
-            this.panel17.Controls.Add(this.panel19);
-            this.panel17.Location = new System.Drawing.Point(6, 128);
-            this.panel17.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(243, 114);
-            this.panel17.TabIndex = 3;
+            this.panelTBalance.BackColor = System.Drawing.Color.Transparent;
+            this.panelTBalance.Controls.Add(this.panel18);
+            this.panelTBalance.Controls.Add(this.panel19);
+            this.panelTBalance.Location = new System.Drawing.Point(6, 128);
+            this.panelTBalance.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelTBalance.Name = "panelTBalance";
+            this.panelTBalance.Size = new System.Drawing.Size(243, 114);
+            this.panelTBalance.TabIndex = 1;
+            // 
+            // panelAddEmp
+            // 
+            this.panelAddEmp.BackColor = System.Drawing.Color.SeaShell;
+            this.panelAddEmp.Controls.Add(this.addEmployee2);
+            this.panelAddEmp.Location = new System.Drawing.Point(426, 0);
+            this.panelAddEmp.Name = "panelAddEmp";
+            this.panelAddEmp.Size = new System.Drawing.Size(254, 191);
+            this.panelAddEmp.TabIndex = 1;
+            this.panelAddEmp.Visible = false;
+            // 
+            // panel18
+            // 
+            this.panel18.AutoSize = true;
+            this.panel18.BackColor = System.Drawing.Color.Aqua;
+            this.panel18.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel18.BackgroundImage")));
+            this.panel18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel18.Location = new System.Drawing.Point(15, 9);
+            this.panel18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(56, 53);
+            this.panel18.TabIndex = 1;
             // 
             // panel19
             // 
@@ -386,6 +477,7 @@ namespace HHF_APP
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.BurlyWood;
+            this.panel10.Controls.Add(this.panelAddEmp);
             this.panel10.Controls.Add(this.btnRemoveEmployee);
             this.panel10.Controls.Add(this.btnAddEmployee);
             this.panel10.Controls.Add(this.tbSearchEmployee);
@@ -395,7 +487,7 @@ namespace HHF_APP
             this.panel10.Location = new System.Drawing.Point(3, 271);
             this.panel10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(813, 193);
+            this.panel10.Size = new System.Drawing.Size(824, 193);
             this.panel10.TabIndex = 6;
             // 
             // btnRemoveEmployee
@@ -423,6 +515,7 @@ namespace HHF_APP
             this.btnAddEmployee.TabIndex = 4;
             this.btnAddEmployee.Text = "Add";
             this.btnAddEmployee.UseVisualStyleBackColor = false;
+            this.btnAddEmployee.Click += new System.EventHandler(this.btnAddEmployee_Click);
             // 
             // tbSearchEmployee
             // 
@@ -464,23 +557,23 @@ namespace HHF_APP
             this.lbEmployees.Location = new System.Drawing.Point(4, 11);
             this.lbEmployees.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lbEmployees.Name = "lbEmployees";
-            this.lbEmployees.Size = new System.Drawing.Size(685, 173);
+            this.lbEmployees.Size = new System.Drawing.Size(667, 173);
             this.lbEmployees.TabIndex = 0;
             // 
-            // panel20
+            // panelMom
             // 
-            this.panel20.BackColor = System.Drawing.Color.BurlyWood;
-            this.panel20.Controls.Add(this.panel17);
-            this.panel20.Controls.Add(this.panel4);
-            this.panel20.Controls.Add(this.panel1);
-            this.panel20.Controls.Add(this.panel14);
-            this.panel20.Controls.Add(this.panel7);
-            this.panel20.Controls.Add(this.panel11);
-            this.panel20.Location = new System.Drawing.Point(2, 2);
-            this.panel20.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(816, 257);
-            this.panel20.TabIndex = 2;
+            this.panelMom.BackColor = System.Drawing.Color.BurlyWood;
+            this.panelMom.Controls.Add(this.panelTBalance);
+            this.panelMom.Controls.Add(this.panelTicketS);
+            this.panelMom.Controls.Add(this.panelPVis);
+            this.panelMom.Controls.Add(this.panelSpots);
+            this.panelMom.Controls.Add(this.panelTSpent);
+            this.panelMom.Controls.Add(this.panelTotalV);
+            this.panelMom.Location = new System.Drawing.Point(2, 2);
+            this.panelMom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelMom.Name = "panelMom";
+            this.panelMom.Size = new System.Drawing.Size(825, 264);
+            this.panelMom.TabIndex = 100;
             // 
             // panel21
             // 
@@ -494,7 +587,7 @@ namespace HHF_APP
             this.panel21.Location = new System.Drawing.Point(4, 470);
             this.panel21.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(811, 81);
+            this.panel21.Size = new System.Drawing.Size(823, 81);
             this.panel21.TabIndex = 7;
             // 
             // label13
@@ -560,83 +653,12 @@ namespace HHF_APP
             this.tbAtmLogPath.Size = new System.Drawing.Size(417, 20);
             this.tbAtmLogPath.TabIndex = 0;
             // 
-            // panel18
+            // addEmployee2
             // 
-            this.panel18.AutoSize = true;
-            this.panel18.BackColor = System.Drawing.Color.Aqua;
-            this.panel18.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel18.BackgroundImage")));
-            this.panel18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel18.Location = new System.Drawing.Point(15, 9);
-            this.panel18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(56, 53);
-            this.panel18.TabIndex = 1;
-            // 
-            // panel5
-            // 
-            this.panel5.AutoSize = true;
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
-            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Location = new System.Drawing.Point(18, 9);
-            this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(56, 53);
-            this.panel5.TabIndex = 1;
-            // 
-            // panel3
-            // 
-            this.panel3.AutoSize = true;
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Location = new System.Drawing.Point(16, 9);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(56, 53);
-            this.panel3.TabIndex = 1;
-            // 
-            // panel15
-            // 
-            this.panel15.AutoSize = true;
-            this.panel15.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.panel15.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel15.BackgroundImage")));
-            this.panel15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel15.Location = new System.Drawing.Point(15, 9);
-            this.panel15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(56, 53);
-            this.panel15.TabIndex = 1;
-            // 
-            // panel8
-            // 
-            this.panel8.AutoSize = true;
-            this.panel8.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.panel8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel8.BackgroundImage")));
-            this.panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel8.Location = new System.Drawing.Point(15, 9);
-            this.panel8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(56, 53);
-            this.panel8.TabIndex = 1;
-            // 
-            // panel12
-            // 
-            this.panel12.AutoSize = true;
-            this.panel12.BackColor = System.Drawing.Color.MediumSpringGreen;
-            this.panel12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel12.BackgroundImage")));
-            this.panel12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel12.Location = new System.Drawing.Point(15, 9);
-            this.panel12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(56, 53);
-            this.panel12.TabIndex = 1;
+            this.addEmployee2.Location = new System.Drawing.Point(4, 6);
+            this.addEmployee2.Name = "addEmployee2";
+            this.addEmployee2.Size = new System.Drawing.Size(249, 184);
+            this.addEmployee2.TabIndex = 0;
             // 
             // viewAdminDashboard
             // 
@@ -647,40 +669,41 @@ namespace HHF_APP
             this.Controls.Add(this.panel21);
             this.Controls.Add(this.panel10);
             this.Controls.Add(this.btnRefresh);
-            this.Controls.Add(this.panel20);
+            this.Controls.Add(this.panelMom);
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "viewAdminDashboard";
-            this.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Padding = new System.Windows.Forms.Padding(4);
             this.Size = new System.Drawing.Size(834, 570);
             this.Load += new System.EventHandler(this.viewAdminDashboard_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panelPVis.ResumeLayout(false);
+            this.panelPVis.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            this.panelTicketS.ResumeLayout(false);
+            this.panelTicketS.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
+            this.panelTSpent.ResumeLayout(false);
+            this.panelTSpent.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
+            this.panelTotalV.ResumeLayout(false);
+            this.panelTotalV.PerformLayout();
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
-            this.panel14.ResumeLayout(false);
-            this.panel14.PerformLayout();
+            this.panelSpots.ResumeLayout(false);
+            this.panelSpots.PerformLayout();
             this.panel16.ResumeLayout(false);
             this.panel16.PerformLayout();
-            this.panel17.ResumeLayout(false);
-            this.panel17.PerformLayout();
+            this.panelTBalance.ResumeLayout(false);
+            this.panelTBalance.PerformLayout();
+            this.panelAddEmp.ResumeLayout(false);
             this.panel19.ResumeLayout(false);
             this.panel19.PerformLayout();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
-            this.panel20.ResumeLayout(false);
+            this.panelMom.ResumeLayout(false);
             this.panel21.ResumeLayout(false);
             this.panel21.PerformLayout();
             this.ResumeLayout(false);
@@ -690,32 +713,32 @@ namespace HHF_APP
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelPVis;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblVisitors;
         private System.Windows.Forms.Label VisitCount;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panelTicketS;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label lblTicketsSold;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panelTSpent;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label lblTotalSpent;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Panel panelTotalV;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblTotalVisitors;
-        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.Panel panelSpots;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Label lblBookedSpots;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Panel panel17;
+        private System.Windows.Forms.Panel panelTBalance;
         private System.Windows.Forms.Panel panel18;
         private System.Windows.Forms.Panel panel19;
         private System.Windows.Forms.Label lblTotalBalance;
@@ -727,7 +750,7 @@ namespace HHF_APP
         private System.Windows.Forms.Button btnSearchEmployee;
         private System.Windows.Forms.Button btnChangePassword;
         private System.Windows.Forms.ListBox lbEmployees;
-        private System.Windows.Forms.Panel panel20;
+        private System.Windows.Forms.Panel panelMom;
         private System.Windows.Forms.Panel panel21;
         private System.Windows.Forms.Button btnSelectLogFile;
         private System.Windows.Forms.Label label12;
@@ -737,5 +760,7 @@ namespace HHF_APP
         private System.Windows.Forms.Button btnReadATMLog;
         private System.Windows.Forms.Button btnRemoveEmployee;
         private System.Windows.Forms.Button btnAddEmployee;
+        private System.Windows.Forms.Panel panelAddEmp;
+        private AddEmployee addEmployee2;
     }
 }

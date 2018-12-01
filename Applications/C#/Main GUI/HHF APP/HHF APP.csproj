@@ -32,8 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MySql.Data">
-      <HintPath>..\..\..\..\..\..\PCS3\week 6 mySql-database_on_Hera - STARTUP\MySql.Data.dll</HintPath>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="Spire.Barcode">
       <HintPath>C:\Program Files (x86)\e-iceblue\Spire.BarCode\Bin\NET4.0\Spire.Barcode.dll</HintPath>
