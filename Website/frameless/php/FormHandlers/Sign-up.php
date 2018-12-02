@@ -1,10 +1,11 @@
 <?php
-
+require "../vendor/autoload.php";
 function RedirectToURL($url, $waitmsg = 0.4)
 {
     header("Refresh:$waitmsg; URL= $url");
     exit;
 }
+
 
 function test_input($data)
 {
@@ -95,14 +96,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $camppay = test_input($_POST['camppay']);
         }
 
-        if (isset($_POST['fnames']) && isset($_POST['lnames']) && isset($_POST['phones'])) {
+        if (isset($_POST['fnames']) && isset($_POST['lnames']) && isset($_POST['emails'])) {
             $nvals = count($_REQUEST['fnames']);
             $fnames = $_POST['fnames'];
             $lnames = $_POST['lnames'];
-            $phones = $_POST['phones'];
-//                $fnames[$i] = test_input($_POST['fname' . $i]);
-//                $lnames[$i] = test_input($_POST['lname' . $i]);
-//                $phones[$i] = test_input($_POST['phone' . $i]);
+            $emails = $_POST['emails'];
+
         }
     }
 
@@ -124,6 +123,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 }
 
+//for mailing the user his id
+function SendMail($username, $userid, $mail)
+{
+    $generator = new Picqer\Barcode\BarcodeGeneratorHTML();
+    $barcode = $generator->getBarcode($userid, $generator::TYPE_CODE_128);
+
+    $message = '<html><body>';
+    $message .= 'Dear <strong>';
+    $message .= $username . '!</strong>, you have booked your place successfully in our <strong>HHF</strong> event.<strong>';
+    $message .= $userid . '</strong> is your user id and below you code find your BarCode, in case of any accident you can always use them 
+    for the entrance of the event.';
+    $message .= '<br><br>';
+    $message .= $barcode;
+    $message .= '<br><br> You will have a printed version of the barcode upon checking in!';
+    $message .= '<br> Incase you need to contact us,<br> Feel free to send us an email at:<br>';
+    $message .= 'Hamidisubhi@gmail.com <br><br> <strong>HHF Admins</strong>';
+    $message .= '</body></html>';
+    $headers = "MIME-Version: 1.0\r\n";
+    $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+    mail($mail, " SoMoTech || Sign up confirmation", $message, $headers);
+}
 
 function validateform()
 {
@@ -144,17 +164,34 @@ function validateform()
     if ($_POST['email1'] !== $_POST['email2']) {
         $err2 .= "| emails Don't Match |";
     }
+    try {
+        $myPDO = new PDO('mysql:host=studmysql01.fhict.local;dbname=dbi400320', 'dbi400320', '12345678');
+        $myPDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $query = $myPDO->prepare('SELECT is_reserved FROM camp_spots where spot_nr=:nr');
+        $query->execute([':nr' => $_POST['campspotnr']]);
+        $result = $query->fetch(PDO::FETCH_ASSOC);
+    }catch (PDOException $e){
+        $err2 .= '| Could not validate spot |';
+        }
+
+        if (isset($result)){
+           if($result['is_reserved']=="yes"){
+               $err2.= "| Camp Spot is already reserved |";
+           }
+        }
 
     //Then in the last block it check if the error didn't be set, it does not allow the input to be registered on server.
     if ($err2 === "") {
         return 1;
     } else {
-        return 0;
+        return $err2;
     }
 }
 
 if ($_GET['type'] === "group" || $_GET['type'] === "individual" || $_GET['type'] === "vip") {
     if (validateform() == 1) {
+
 
 
         try {
@@ -172,11 +209,11 @@ if ($_GET['type'] === "group" || $_GET['type'] === "individual" || $_GET['type']
             }
 
             //create account for person 1
-            $sql = 'insert into accounts values(account_id,:email,:psw,:iban,:initbal,:valid)';
+            $sql = 'insert into accounts values(account_id,:email,:phone,:psw,:iban,:initbal,:valid)';
             $sth = $myPDO->prepare($sql);
             $signup_psw = PASSWORD_HASH($signup_psw, PASSWORD_DEFAULT);
             $valid = "yes";
-            $sth->execute([':email' => $signup_email, ':psw' => $signup_psw, ':iban' => $iban, ':initbal' => $initialbal, ':valid' => $valid]);
+            $sth->execute([':email' => $signup_email,':phone'=>$phone, ':psw' => $signup_psw, ':iban' => $iban, ':initbal' => $initialbal, ':valid' => $valid]);
 
             //get account id for usage in creating users
             $query = $myPDO->prepare('SELECT account_id FROM accounts WHERE email=:email');
@@ -197,13 +234,15 @@ if ($_GET['type'] === "group" || $_GET['type'] === "individual" || $_GET['type']
                 }
                 $group_id++;
                 // store the users information in the users table
-                $sql = 'insert into users values(user_id,:fname,:lname,:actID,:phone,:grID,:admin,:status,:vip)';
+                $sql = 'insert into users values(user_id,:fname,:lname,:actID,:mail,:grID,:admin,:status,:vip)';
                 $sth = $myPDO->prepare($sql);
 
                 //create the first user and assign him him as a master of his group
-                $sth->execute([':fname' => $GLOBALS['fname'], ':lname' => $GLOBALS['lname'], ':actID' => $act_id, ':phone' => $GLOBALS['phone'],
+                $sth->execute([':fname' => $GLOBALS['fname'], ':lname' => $GLOBALS['lname'], ':actID' => $act_id, ':mail' => $GLOBALS['signup_email'],
                     ':grID' => $group_id
                     , ':admin' => "yes", ':status' => null, ':vip' => "no"]);
+
+
 
                 //see the last assigned user id in order to create the ticket of users
                 $query = $myPDO->prepare('SELECT max(user_id) as user_id FROM users');
@@ -214,7 +253,7 @@ if ($_GET['type'] === "group" || $_GET['type'] === "individual" || $_GET['type']
                 if (isset($result['user_id'])) {
                     $user_id = (int)$result['user_id'];
                 }
-
+                SendMail($fname,$user_id,$signup_email);
                 //create a ticket for the user
                 $sql = 'insert into tickets values(ticket_id,:userid,:dt)';
                 $sth = $myPDO->prepare($sql);
@@ -227,9 +266,9 @@ if ($_GET['type'] === "group" || $_GET['type'] === "individual" || $_GET['type']
                 //do the same steps as above to the rest members of the group
                 while ($i < 5 && isset($fnames[$i])) {
 
-                    $sql = 'insert into users values(user_id,:fname,:lname,:actID,:phone,:grID,:admin,:status,:vip)';
+                    $sql = 'insert into users values(user_id,:fname,:lname,:actID,:mail,:grID,:admin,:status,:vip)';
                     $sth = $myPDO->prepare($sql);
-                    $sth->execute([':fname' => $fnames[$i], ':lname' => $lnames[$i], ':actID' => $act_id, ':phone' => $phones[$i],
+                    $sth->execute([':fname' => $fnames[$i], ':lname' => $lnames[$i], ':actID' => $act_id, ':mail' => $emails[$i],
                         ':grID' => $group_id
                         , ':admin' => "no", ':status' => null, ':vip' => "no"]);
 
@@ -237,6 +276,7 @@ if ($_GET['type'] === "group" || $_GET['type'] === "individual" || $_GET['type']
                     $sth = $myPDO->prepare($sql);
                     $timestamp = date("Y-m-d h:i:s");
                     $sth->execute([':userid' => $user_id, ':dt' => $timestamp]);
+                    SendMail($fnames[$i],$user_id,$emails[$i]);
                     $i++;
                     $user_id++;
                 }
@@ -273,7 +313,7 @@ if ($_GET['type'] === "group" || $_GET['type'] === "individual" || $_GET['type']
             if ($_GET['type'] === "vip" || $_GET['type'] === "individual") {
 
 
-                $sql = 'insert into users values(user_id,:fname,:lname,:actID,:phone,:grID,:admin,:status,:vip)';
+                $sql = 'insert into users values(user_id,:fname,:lname,:actID,:mail,:grID,:admin,:status,:vip)';
                 $sth = $myPDO->prepare($sql);
                 $vip = "no";
                 if ($_GET['type'] === "vip") {
@@ -282,7 +322,7 @@ if ($_GET['type'] === "group" || $_GET['type'] === "individual" || $_GET['type']
 
 
                 //create the first user and assign him him as a master of his group
-                $sth->execute([':fname' => $GLOBALS['fname'], ':lname' => $GLOBALS['lname'], ':actID' => $act_id, ':phone' => $GLOBALS['phone'],
+                $sth->execute([':fname' => $GLOBALS['fname'], ':lname' => $GLOBALS['lname'], ':actID' => $act_id, ':mail' => $GLOBALS['signup_email'],
                     ':grID' => null
                     , ':admin' => "yes", ':status' => null, ':vip' => $vip]);
 
@@ -294,8 +334,8 @@ if ($_GET['type'] === "group" || $_GET['type'] === "individual" || $_GET['type']
                     $user_id = (int)$result['user_id'];
 
                 }
+                SendMail($fname,$user_id,$signup_email);
 
-                $user_id++;
 
                 $sql = 'insert into tickets values(ticket_id,:userid,:dt)';
                 $sth = $myPDO->prepare($sql);
@@ -329,8 +369,10 @@ if ($_GET['type'] === "group" || $_GET['type'] === "individual" || $_GET['type']
 
             //if no error then apply statements otherwise catch exception
             $myPDO->commit();
+
+
             $temp = $signup_email;
-            echo "<div class='container'><div class='jumbotron' align='middle'><h1>Sign up succeeded</h1><h2>Your username is the same as your email: $temp</h2><h3> to log in <a href='?page=login'>click here</a></h3></div></div>";
+            echo "<div class='container'><div class='jumbotron' align='middle'><h1>Sign up succeeded</h1><h2>Your username is the same as your email: $temp</h2><h3> to log in <a href='?page=login' STYLE='font-weight: bold; font-min-size: medium;'>click here</a></h3></div></div>";
 
         } catch
         (PDOException $e) {

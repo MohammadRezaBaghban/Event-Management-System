@@ -6,13 +6,13 @@
 
         $('#addNew').live('click', function () {
             if (i < 6) {
-                $('<div id="person">' + '<p><strong>----------------------------------------------</strong> <div class="form-group " > <label for="fname" class="col-sm-2 control-label" >First Name</label> <div class="col-sm-10"> <input type="text" class="form-control" id="fname"placeholder="Enter your first name here"  name="fnames[]" required> </div> </div><div class="form-group"> <label for="lname" class="col-sm-2 control-label" >Last Name</label> <div class="col-sm-10"> <input type="text" class="form-control" id="lname"placeholder="Enter your last name here" name="lnames[]" required> </div> </div> <div class="form-group"> <label for="phonenr" class="col-sm-2 control-label">Phone Number</label> <div class="col-sm-10"> <div class="input-group input-group-sm"> <span class="input-group-addon">+</span> <input type="number" class="form-control" placeholder="" name="phones[]" required> </div> </div> </div><a href="#" id="remNew">Remove</a> </p></div>').appendTo(addDiv);
+                $('<div id="person">' + '<p><strong>----------------------------------------------</strong> <div class="form-group " > <label for="fname" class="col-sm-2 control-label" >First Name</label> <div class="col-sm-10"> <input type="text" class="form-control" id="fname"placeholder="Enter your first name here"  name="fnames[]" required> </div> </div><div class="form-group"> <label for="lname" class="col-sm-2 control-label" >Last Name</label> <div class="col-sm-10"> <input type="text" class="form-control" id="lname"placeholder="Enter your last name here" name="lnames[]" required> </div> </div><div class="form-group"> <label for="mail" class="col-sm-2 control-label">Email</label><div class="col-sm-10"><div class="input-group input-group-sm"><span class="input-group-addon">@</span><input type="text" class="form-control" placeholder="" name="emails[]" required></div></div></div><a href="#" id="remNew">Remove</a> </p></div>').appendTo(addDiv);
                 i++;
 
                 return false;
             }
             else {
-                $('<div id="person"><p ><strong>----------------------------------------------</strong> <div class="form-group" > <label for="fname" class="col-sm-2 control-label" >First Name</label> <div class="col-sm-10"> <input type="text" class="form-control" id="fname"placeholder="Enter your first name here"  name="fnames[]" required > </div> </div><div class="form-group"> <label for="lname" class="col-sm-2 control-label" >Last Name</label> <div class="col-sm-10"> <input type="text" class="form-control" id="lname"placeholder="Enter your last name here" name="lnames[]" required> </div> </div> <div class="form-group"> <label for="phonenr" class="col-sm-2 control-label">Phone Number</label> <div class="col-sm-10"> <div class="input-group input-group-sm"> <span class="input-group-addon">+</span> <input type="number" class="form-control" placeholder="" name="phones[]" required> </div> </div> </div><a href="#" id="remNew">Remove</a> </p></div>').appendTo(addDiv);
+                $('<div id="person"><p ><strong>----------------------------------------------</strong> <div class="form-group" > <label for="fname" class="col-sm-2 control-label" >First Name</label> <div class="col-sm-10"> <input type="text" class="form-control" id="fname"placeholder="Enter your first name here"  name="fnames[]" required > </div> </div><div class="form-group"> <label for="lname" class="col-sm-2 control-label" >Last Name</label> <div class="col-sm-10"> <input type="text" class="form-control" id="lname"placeholder="Enter your last name here" name="lnames[]" required> </div> </div> <div class="form-group"> <label for="mail" class="col-sm-2 control-label">Email</label> <div class="col-sm-10"> <div class="input-group input-group-sm"> <span class="input-group-addon">@</span> <input type="text" class="form-control" placeholder="" name="emails[]" required> </div> </div> </div><a href="#" id="remNew">Remove</a> </p></div>').appendTo(addDiv);
                 $('#addNew').toggle();
                 return false;
             }
@@ -242,12 +242,11 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="phonenr" class="col-sm-2 control-label">Phone Number</label>
+                                    <label for="mail" class="col-sm-2 control-label">Email</label>
                                     <div class="col-sm-10">
                                         <div class="input-group input-group-sm">
-                                            <span class="input-group-addon">+</span>
-                                            <input type="number" class="form-control" placeholder="" name="phones[]"
-                                                   required>
+                                            <span class="input-group-addon">@</span>
+                                            <input type="text" class="form-control" placeholder="" name="emails[]" required>
                                         </div>
                                     </div>
                                 </div>
