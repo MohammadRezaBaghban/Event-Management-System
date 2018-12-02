@@ -10,7 +10,8 @@ function test_input($data) {
     $data = stripslashes($data);
     $data = htmlspecialchars($data);
     return $data;
-} $err= "" ;
+}
+$err= "" ;
 if(!isset($_SESSION["email"]) || $_SESSION["email"] !== true){
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 // The request is using the POST method

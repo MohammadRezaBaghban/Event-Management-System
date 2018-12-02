@@ -97,9 +97,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         if (isset($_POST['fnames']) && isset($_POST['lnames']) && isset($_POST['phones'])) {
             $nvals = count($_REQUEST['fnames']);
-            $fnames=$_POST['fnames'];
-            $lnames=$_POST['lnames'];
-            $phones=$_POST['phones'];
+            $fnames = $_POST['fnames'];
+            $lnames = $_POST['lnames'];
+            $phones = $_POST['phones'];
 //                $fnames[$i] = test_input($_POST['fname' . $i]);
 //                $lnames[$i] = test_input($_POST['lname' . $i]);
 //                $phones[$i] = test_input($_POST['phone' . $i]);
@@ -157,12 +157,12 @@ if ($_GET['type'] === "group" || $_GET['type'] === "individual" || $_GET['type']
     if (validateform() == 1) {
 
 
-
         try {
             $myPDO = new PDO('mysql:host=studmysql01.fhict.local;dbname=dbi400320', 'dbi400320', '12345678');
             $myPDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             $myPDO->beginTransaction();
+
             if ($_GET['type'] === "group") {
                 $initialbal += 500;
             } else if ($_GET['type'] === "individual") {
@@ -188,45 +188,42 @@ if ($_GET['type'] === "group" || $_GET['type'] === "individual" || $_GET['type']
             if ($_GET['type'] === "group") {
 
                 //get the highest group id and add 1 to it to be assigned to the new group
-                $query = $myPDO->prepare('SELECT max(group_id) FROM users');
+                $query = $myPDO->prepare('SELECT max(group_id) as group_id FROM users');
                 $query->execute();
                 $result = $query->fetch(PDO::FETCH_ASSOC);
-                if (!isset($result['group_id'])) {
-                    $group_id = 1;
-                } else {
-                    $group_id = $result['group_id'] + 1;
-                }
+                if (isset($result)) {
+                    $group_id = (int)$result['group_id'];
 
+                }
+                $group_id++;
                 // store the users information in the users table
                 $sql = 'insert into users values(user_id,:fname,:lname,:actID,:phone,:grID,:admin,:status,:vip)';
                 $sth = $myPDO->prepare($sql);
 
                 //create the first user and assign him him as a master of his group
-                $sth->execute([':fname' => $GLOBALS['fname'], ':lname' =>$GLOBALS['lname'], ':actID' => $act_id, ':phone' => $GLOBALS['phone'],
+                $sth->execute([':fname' => $GLOBALS['fname'], ':lname' => $GLOBALS['lname'], ':actID' => $act_id, ':phone' => $GLOBALS['phone'],
                     ':grID' => $group_id
                     , ':admin' => "yes", ':status' => null, ':vip' => "no"]);
 
                 //see the last assigned user id in order to create the ticket of users
-                $query = $myPDO->prepare('SELECT max(user_id) FROM users');
+                $query = $myPDO->prepare('SELECT max(user_id) as user_id FROM users');
                 $query->execute();
                 $result = $query->fetch(PDO::FETCH_ASSOC);
 
-                if (!isset($result['user_id'])) {
-                    $user_id = 1;
-                } else {
-                    $user_id = $result['user_id'];
+                $user_id = 0;
+                if (isset($result['user_id'])) {
+                    $user_id = (int)$result['user_id'];
                 }
-
 
                 //create a ticket for the user
                 $sql = 'insert into tickets values(ticket_id,:userid,:dt)';
                 $sth = $myPDO->prepare($sql);
                 $timestamp = date("Y-m-d h:i:s");
-                $sth->execute([':userid' => $user_id,':dt'=>$timestamp]);
-                // , ':timetamp' => $_SERVER['REQUEST_TIME']
+                $sth->execute([':userid' => $user_id, ':dt' => $timestamp]);
+
 
                 $user_id++;
-                $i=0;
+                $i = 0;
                 //do the same steps as above to the rest members of the group
                 while ($i < 5 && isset($fnames[$i])) {
 
@@ -239,10 +236,11 @@ if ($_GET['type'] === "group" || $_GET['type'] === "individual" || $_GET['type']
                     $sql = 'insert into tickets values(ticket_id,:userid,:dt)';
                     $sth = $myPDO->prepare($sql);
                     $timestamp = date("Y-m-d h:i:s");
-                    $sth->execute([':userid' => $user_id,':dt'=>$timestamp]);
+                    $sth->execute([':userid' => $user_id, ':dt' => $timestamp]);
                     $i++;
                     $user_id++;
                 }
+
 
                 //create a camp reservation for the group
                 $sql = 'insert into camp_reservation values(:spot,:actid,:pay)';
@@ -254,10 +252,10 @@ if ($_GET['type'] === "group" || $_GET['type'] === "individual" || $_GET['type']
                 $sth = $myPDO->prepare($sql);
                 $datenow = date("Y-m-d");
                 $timenow = date("h:i:s");
-                $amount = 55 * count($fnames) + 10;
+                $amount = 55 * (count($fnames) + 1) + 10;
 
                 if ($camppay == "yes") {
-                    $amount += 20 * count($fnames);
+                    $amount += 20 * (count($fnames) + 1);
                 }
 
                 $currentbal = $initialbal - $amount;
@@ -272,11 +270,68 @@ if ($_GET['type'] === "group" || $_GET['type'] === "individual" || $_GET['type']
 
             }
 
+            if ($_GET['type'] === "vip" || $_GET['type'] === "individual") {
+
+
+                $sql = 'insert into users values(user_id,:fname,:lname,:actID,:phone,:grID,:admin,:status,:vip)';
+                $sth = $myPDO->prepare($sql);
+                $vip = "no";
+                if ($_GET['type'] === "vip") {
+                    $vip = "yes";
+                }
+
+
+                //create the first user and assign him him as a master of his group
+                $sth->execute([':fname' => $GLOBALS['fname'], ':lname' => $GLOBALS['lname'], ':actID' => $act_id, ':phone' => $GLOBALS['phone'],
+                    ':grID' => null
+                    , ':admin' => "yes", ':status' => null, ':vip' => $vip]);
+
+                $query = $myPDO->prepare('SELECT max(user_id) as user_id FROM users');
+                $query->execute();
+                $result = $query->fetch(PDO::FETCH_ASSOC);
+
+                if (isset($result['user_id'])) {
+                    $user_id = (int)$result['user_id'];
+
+                }
+
+                $user_id++;
+
+                $sql = 'insert into tickets values(ticket_id,:userid,:dt)';
+                $sth = $myPDO->prepare($sql);
+                $timestamp = date("Y-m-d h:i:s");
+                $sth->execute([':userid' => $user_id, ':dt' => $timestamp]);
+
+
+                //add a new transaction of fees and if camp pay is selected then add addional camping fees
+                $sql = 'insert into transactions values(transaction_id,:datetra,:timetra,:actID,:amount,:current_balance,:typetra)';
+                $sth = $myPDO->prepare($sql);
+                $datenow = date("Y-m-d");
+                $timenow = date("h:i:s");
+                $amount = 230;
+                $currentbal = $initialbal - $amount;
+                $sth->execute([':datetra' => $datenow, ':timetra' => $timenow, ':actID' => $act_id, ':amount' => $amount,
+                    ':current_balance' => $currentbal
+                    , ':typetra' => "registration"]);
+
+                if ($_GET['type'] === "vip") {
+                    //create a camp reservation for the vip
+                    $sql = 'insert into camp_reservation values(:spot,:actid,:pay)';
+                    $sth = $myPDO->prepare($sql);
+                    $sth->execute([':spot' => $campSpotNr, ':actid' => $act_id, ':pay' => "yes"]);
+
+
+                    //update the status of the camp spot to make it reserved
+                    $query = $myPDO->prepare('UPDATE camp_spots SET is_reserved = :reserv WHERE spot_nr = :nr');
+                    $query->execute([':nr' => $campSpotNr, ':reserv' => "yes"]);
+                }
+            }
+
             //if no error then apply statements otherwise catch exception
             $myPDO->commit();
             $temp = $signup_email;
-            echo "<div class='container'><div class='jumbotron' align='middle'><h1>Sign up succeeded</h1><h2>Your username is the same as your email: $temp</h2><h3>Redirecting to log in Page</h3></div></div>";
-            RedirectToURL("?page=login", 4);
+            echo "<div class='container'><div class='jumbotron' align='middle'><h1>Sign up succeeded</h1><h2>Your username is the same as your email: $temp</h2><h3> to log in <a href='?page=login'>click here</a></h3></div></div>";
+
         } catch
         (PDOException $e) {
             //an exception was thrown and this is the error

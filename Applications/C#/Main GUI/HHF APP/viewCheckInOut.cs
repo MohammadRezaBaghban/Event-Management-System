@@ -8,11 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Spire.Barcode;
+using Spire.Barcode.Implementation;
+using System.Diagnostics;
+using System.IO;
+using System.Drawing.Printing;
 
 namespace HHF_APP
 {
     public partial class viewCheckInOut : UserControl
     {
+        string filename;
+        private Font verdana10Font;
+        private StreamReader reader;
         public viewCheckInOut()
         {
             InitializeComponent();
@@ -35,6 +42,11 @@ namespace HHF_APP
 
         private void button2_Click(object sender, EventArgs e)
         {
+           
+        }
+
+        private void btnTicketPrint_Click(object sender, EventArgs e)
+        {
             try
             {
                 BarcodeSettings barsetting = new BarcodeSettings();
@@ -55,15 +67,27 @@ namespace HHF_APP
 
                 BarCodeGenerator bargenerator = new BarCodeGenerator(barsetting);
                 Image barcodeimage = bargenerator.GenerateImage();
-                
-                barcodeimage.Save("../../../"+tbUserId.Text+".png");
-                
-                System.Diagnostics.Process.Start("../../../" + tbUserId.Text + ".png");
+                filename = "C:/xampp/htdocs/ProP_Sems2/Applications/C#/Main GUI/HHF APP/bin/Debug/barcodes" + tbUserId.Text + ".png";
+                barcodeimage.Save(filename);
+                PrintDocument pd = new PrintDocument();
+                pd.PrintPage += PrintPage;
+                pd.Print();
+                Process.Start(filename);
+                // Process.Start(@filename);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+
+
         }
+        private void PrintPage(object o, PrintPageEventArgs e)
+        {
+            System.Drawing.Image img = System.Drawing.Image.FromFile(filename);
+            Point loc = new Point(100, 100);
+            e.Graphics.DrawImage(img, loc);
+        }
+
     }
 }

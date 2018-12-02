@@ -34,7 +34,7 @@
           enctype="multipart/form-data">
 
         <div class="row">
-            <div class="col-sm-7">
+            <div <?php if($_GET['type'] == 'individual'){ ?> class="col-sm-12" align="middle" <?php } if($_GET['type'] == 'group' || $_GET['type'] == 'vip'){ ?> class="col-sm-7" align="middle" <?php } ?>>
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">Booking Form</h3>
@@ -143,9 +143,9 @@
 
                 </div>
             </div>
+            <?php if ($_GET['type'] == 'vip') { ?>
+            <div class="col-sm-5" align="middle">
 
-            <div class="col-sm-5">
-                <?php if ($_GET['type'] == 'vip') { ?>
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">Camp reserve</h3>
@@ -176,12 +176,12 @@
                             </div>
                         </div>
                     </div>
-                    <?php } ?>
-                </div>
 
+                </div>
+                <?php } ?>
 
                 <?php if ($_GET['type'] == 'group') { ?>
-                    <div class="col-sm-5">
+                    <div class="col-sm-5" align="middle">
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h3 class="panel-title">Camp reserve</h3>
