@@ -1,6 +1,6 @@
 
 <?php
-session_start();
+
 session_destroy();
-header('Location: ?page=login');
+echo "<script>window.location.replace('?page=login');</script>";
 ?>

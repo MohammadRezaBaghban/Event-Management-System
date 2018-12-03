@@ -142,7 +142,7 @@ function SendMail($username, $userid, $mail)
     $message .= '</body></html>';
     $headers = "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-    mail($mail, " SoMoTech || Sign up confirmation", $message, $headers);
+    mail($mail, " HHF || Booking confirmation", $message, $headers);
 }
 
 function validateform()
@@ -171,15 +171,15 @@ function validateform()
         $query = $myPDO->prepare('SELECT is_reserved FROM camp_spots where spot_nr=:nr');
         $query->execute([':nr' => $_POST['campspotnr']]);
         $result = $query->fetch(PDO::FETCH_ASSOC);
-    }catch (PDOException $e){
+    } catch (PDOException $e) {
         $err2 .= '| Could not validate spot |';
-        }
+    }
 
-        if (isset($result)){
-           if($result['is_reserved']=="yes"){
-               $err2.= "| Camp Spot is already reserved |";
-           }
+    if (isset($result)) {
+        if ($result['is_reserved'] == "yes") {
+            $err2 .= "| Camp Spot is already reserved |";
         }
+    }
 
     //Then in the last block it check if the error didn't be set, it does not allow the input to be registered on server.
     if ($err2 === "") {
@@ -191,7 +191,6 @@ function validateform()
 
 if ($_GET['type'] === "group" || $_GET['type'] === "individual" || $_GET['type'] === "vip") {
     if (validateform() == 1) {
-
 
 
         try {
@@ -209,11 +208,12 @@ if ($_GET['type'] === "group" || $_GET['type'] === "individual" || $_GET['type']
             }
 
             //create account for person 1
-            $sql = 'insert into accounts values(account_id,:email,:phone,:psw,:iban,:initbal,:valid)';
+            $sql = 'insert into accounts values(account_id,:email,:phone,:psw,:iban,:initbal,:bal,:valid)';
             $sth = $myPDO->prepare($sql);
             $signup_psw = PASSWORD_HASH($signup_psw, PASSWORD_DEFAULT);
             $valid = "yes";
-            $sth->execute([':email' => $signup_email,':phone'=>$phone, ':psw' => $signup_psw, ':iban' => $iban, ':initbal' => $initialbal, ':valid' => $valid]);
+            $sth->execute([':email' => $signup_email, ':phone' => $phone, ':psw' => $signup_psw, ':iban' => $iban,
+                ':initbal' => $initialbal, ':bal' => $initialbal, ':valid' => $valid]);
 
             //get account id for usage in creating users
             $query = $myPDO->prepare('SELECT account_id FROM accounts WHERE email=:email');
@@ -243,7 +243,6 @@ if ($_GET['type'] === "group" || $_GET['type'] === "individual" || $_GET['type']
                     , ':admin' => "yes", ':status' => null, ':vip' => "no"]);
 
 
-
                 //see the last assigned user id in order to create the ticket of users
                 $query = $myPDO->prepare('SELECT max(user_id) as user_id FROM users');
                 $query->execute();
@@ -253,7 +252,7 @@ if ($_GET['type'] === "group" || $_GET['type'] === "individual" || $_GET['type']
                 if (isset($result['user_id'])) {
                     $user_id = (int)$result['user_id'];
                 }
-                SendMail($fname,$user_id,$signup_email);
+                SendMail($fname, $user_id, $signup_email);
                 //create a ticket for the user
                 $sql = 'insert into tickets values(ticket_id,:userid,:dt)';
                 $sth = $myPDO->prepare($sql);
@@ -276,7 +275,7 @@ if ($_GET['type'] === "group" || $_GET['type'] === "individual" || $_GET['type']
                     $sth = $myPDO->prepare($sql);
                     $timestamp = date("Y-m-d h:i:s");
                     $sth->execute([':userid' => $user_id, ':dt' => $timestamp]);
-                    SendMail($fnames[$i],$user_id,$emails[$i]);
+                    SendMail($fnames[$i], $user_id, $emails[$i]);
                     $i++;
                     $user_id++;
                 }
@@ -334,7 +333,7 @@ if ($_GET['type'] === "group" || $_GET['type'] === "individual" || $_GET['type']
                     $user_id = (int)$result['user_id'];
 
                 }
-                SendMail($fname,$user_id,$signup_email);
+                SendMail($fname, $user_id, $signup_email);
 
 
                 $sql = 'insert into tickets values(ticket_id,:userid,:dt)';
@@ -353,7 +352,9 @@ if ($_GET['type'] === "group" || $_GET['type'] === "individual" || $_GET['type']
                 $sth->execute([':datetra' => $datenow, ':timetra' => $timenow, ':actID' => $act_id, ':amount' => $amount,
                     ':current_balance' => $currentbal
                     , ':typetra' => "registration"]);
-
+                //update current bal in act table
+                $query = $myPDO->prepare('UPDATE accounts SET currentbal = :bal WHERE account_id = :nr');
+                $query->execute([':nr' => $act_id, ':bal' => $currentbal]);
                 if ($_GET['type'] === "vip") {
                     //create a camp reservation for the vip
                     $sql = 'insert into camp_reservation values(:spot,:actid,:pay)';
@@ -372,7 +373,7 @@ if ($_GET['type'] === "group" || $_GET['type'] === "individual" || $_GET['type']
 
 
             $temp = $signup_email;
-            echo "<div class='container'><div class='jumbotron' align='middle'><h1>Sign up succeeded</h1><h2>Your username is the same as your email: $temp</h2><h3> to log in <a href='?page=login' STYLE='font-weight: bold; font-min-size: medium;'>click here</a></h3></div></div>";
+            echo "<div class='container'><div class='jumbotron' align='middle'><h1>Sign up succeeded</h1><h2>Your username is the same as your email: $temp</h2><h3> Redirecting to log in</h3></div></div><script>setTimeout(function(){window.location.replace('?page=login');}, 3500);</script>";
 
         } catch
         (PDOException $e) {
@@ -380,8 +381,7 @@ if ($_GET['type'] === "group" || $_GET['type'] === "individual" || $_GET['type']
             $myPDO->rollBack();
             echo $e;
             $temp = $_POST['email1'];
-            echo "<div class='container'><div class='jumbotron' align='middle'><h1>Error!!!<h1><h2>An account with an email address of $temp has already been registered</h2><h3>Redirecting to log in Page</h3></div></div>";
-            RedirectToURL("?page=login", 4);
+            echo "<div class='container'><div class='jumbotron' align='middle'>An account with an email address of $temp has already been registered<h3>redirection to login</h3></div></div><script>setTimeout(function(){window.location.replace('?page=login');}, 5000);</script>";
         }
     }
 }

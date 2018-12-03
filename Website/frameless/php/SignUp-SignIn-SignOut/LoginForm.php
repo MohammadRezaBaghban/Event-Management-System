@@ -22,7 +22,7 @@
                         Login
                     </button>
                 </div>
-
+                <p ><a href="?page=forgot"> Forgot Password?</a></p>
             </form>
         </div>
     </div>

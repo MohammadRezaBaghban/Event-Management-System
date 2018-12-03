@@ -36,9 +36,7 @@ if(!isset($_SESSION["email"]) || $_SESSION["email"] !== true){
                 if(isset($_SESSION['email'])){
 
                     $email = $_SESSION['email'];
-                echo "<div class='container' onload='window.location.replace('?page=dashboard');'><div class='jumbotron' align='middle'><h1>Hi, $email!</h1><h2>log in succeed</h2>
-        <h3>redirecting to Dashboard.....</h3></div></div>";
-
+                echo "<div class='container'><div class='jumbotron' align='middle'><h1>Hi, $email!</h1><h2>log in succeed</h2><h3>redirecting to Dashboard.....</h3></div></div><script>setTimeout(function(){window.location.replace('?page=dashboard');}, 3400);</script>";
                    }
              } else
                {  $GLOBALS['err'] .= ", Wrong Password";
@@ -47,11 +45,9 @@ if(!isset($_SESSION["email"]) || $_SESSION["email"] !== true){
             echo "<div class='container'><div class='jumbotron' align='middle'><h1>ERROR, Could not connect to server</h2></div></div>";
         }
     }
-    else{if(isset($_SESSION["email"]) && $_SESSION['email']===true){
-
-        echo "<div class='container' onload='window.location.replace('?page=dashboard');'><div class='jumbotron' align='middle' ><h1>You are already logged in</h1><p >redirecting to Dashboard.....</p></div></div>";
-
-
+    else{
+        if(isset($_SESSION["email"])){
+            echo "<div class='container' ><div class='jumbotron' align='middle' ><h1>You are already logged in</h1><p >redirecting to Dashboard.....</p></div></div><script>setTimeout(function() {window.location.replace('?page=dashboard');}, 3400);</script>";
      }
     }
 }

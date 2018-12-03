@@ -14,7 +14,10 @@ function RedirectToURL($url, $waitmsg = 0.4)
 }
 
 try {
-    require '../database/dbconnect.php';
+    $myPDO = new PDO('mysql:host=studmysql01.fhict.local;dbname=dbi400320', 'dbi400320', '12345678');
+// set the PDO error mode to exception
+    $myPDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
 
 }
 catch (PDexception $e){

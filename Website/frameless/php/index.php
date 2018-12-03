@@ -1,17 +1,25 @@
 <?php
-session_start();
-echo '<html>';
 
+
+session_start();
 if (isset($_GET['page'])) {
     $page = $_GET['page'];
 } else {
     $page = "Home";
 }
-
-
+if(isset($_SESSION['email'])){
+    $login=1;
+}
+else $login=0;
+echo '<html>';
 include './Others/Head.php';
+
+echo '<body>';
+
 include './Others/Navigationbar.php';
+
 include './Others/modelform.php';
+
 
 switch ($page) {
     case "Home":
@@ -19,54 +27,54 @@ switch ($page) {
         break;
 
     case "schedule":
-        echo '<body>';
+
         include './Others/schedule.php';
         break;
 
     case "login":
-        echo '<body>';
+
         include "./FormHandlers/Login.php";
         break;
     case "privacy":
-        echo '<body>';
+
         include "./Footer/Privacy.php";
         break;
 
     case "dashboard":
-        echo '<body>';
+
         include "./dashboard/dashboard.php";
         break;
 
     case "terms":
-        echo '<body>';
+
         include "./Footer/Terms.php";
         break;
     case  "logout":
-        echo '<body>';
+
         include "./SignUp-SignIn-SignOut/SignOut.php";
         break;
     case "forgot":
-        echo '<body>';
+
         include "psw_reset/forgot_password.php";
         break;
     case "change":
-        echo '<body>';
+
         include "psw_reset/change.php";
         break;
     case "resetpass" :
-        echo '<body>';
+
         include "psw_reset/reset_password.php";
         break;
     case "reset":
-        echo '<body>';
+
         include "psw_reset/reset.php";
         break;
     case "booking":
-        echo '<body>';
+
         include "./SignUp-SignIn-SignOut/SignupForm.php";
         break;
     case "signup":
-        echo '<body>';
+
         include "./FormHandlers/Sign-up.php";
         break;
     default:

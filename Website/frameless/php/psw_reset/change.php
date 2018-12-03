@@ -1,7 +1,10 @@
 <?php
 require_once "random_compat/lib/random.php";
 try {
-    require '../database/dbconnect.php';
+    $myPDO = new PDO('mysql:host=studmysql01.fhict.local;dbname=dbi400320', 'dbi400320', '12345678');
+// set the PDO error mode to exception
+    $myPDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
 
 } catch (PDexception $e) {
     echo "failed to connect to db failed";
