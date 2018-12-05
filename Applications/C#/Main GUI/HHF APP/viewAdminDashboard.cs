@@ -15,6 +15,7 @@ namespace HHF_APP
     
     public partial class viewAdminDashboard : UserControl
     {
+        private DataHelper dh;
         int i = -1;
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -29,7 +30,7 @@ namespace HHF_APP
         public viewAdminDashboard()
         {
             InitializeComponent();
-            
+            dh = new DataHelper();
             
         }
         
@@ -64,11 +65,6 @@ namespace HHF_APP
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnAddEmployee_Click(object sender, EventArgs e)
         {
             i++;
@@ -84,6 +80,17 @@ namespace HHF_APP
         private void addEmployee1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            lblVisitors.Text = Convert.ToString(dh.CountVisitors());
+            lblTicketsSold.Text = Convert.ToString(dh.CountTickts());
+            lblTotalSpent.Text = Convert.ToString(dh.TotalSpent());
+            lblTotalBalance.Text = Convert.ToString(dh.TotalBalance());
+            lblTotalVisitors.Text = Convert.ToString(dh.TotalVisitors());
+            lblBookedSpots.Text = Convert.ToString(dh.CampSpotsBooked());
+            lblFreeSpots.Text = Convert.ToString(10000 - Convert.ToInt32(lblBookedSpots.Text));
         }
     }
 }

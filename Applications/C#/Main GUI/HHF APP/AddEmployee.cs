@@ -24,29 +24,55 @@ namespace HHF_APP
             
             String fName;
             String lName;
+            String phoneNr;
+            String position;
+            String address;
+            String postcode;
+            String email;
             String password;
 
-            if (tbEmpFname.Text != "" && tbEmpLname.Text != "" && tbEmpPassword.Text != "")
+            if (tbFname.Text != "" && tbLname.Text != "" && tbPhoneNr.Text != "" && tbPosition.Text != "" && tbAddress.Text != "" && tbPostcode.Text != "" && tbEmail.Text != "" && tbPassword.Text != "")
             {
-                fName = Convert.ToString(tbEmpFname.Text);
-                lName = Convert.ToString(tbEmpLname.Text);
-                password = Convert.ToString(tbEmpPassword.Text);
-                int nrAdded = dh.AddEmployee(fName, lName, password);
-                if (nrAdded > 0)
+                fName = Convert.ToString(tbFname.Text);
+                lName = Convert.ToString(tbLname.Text);
+                phoneNr = Convert.ToString(tbPhoneNr.Text);
+                position = Convert.ToString(tbPosition.Text);
+                address = Convert.ToString(tbAddress.Text);
+                postcode = Convert.ToString(tbPostcode.Text);
+                email = Convert.ToString(tbEmail.Text);
+                password = Convert.ToString(tbPassword.Text);
+
+                bool fNameResult = fName.All(Char.IsLetter);
+                bool lNameResult = lName.All(Char.IsLetter);
+                bool phoneNrResult = phoneNr.All(Char.IsDigit);
+                bool positionResult = position.All(Char.IsLetter);
+                bool emailResult = email.Contains("@");
+                
+
+
+
+                if (fNameResult == true && lNameResult == true && phoneNrResult == true && positionResult == true && emailResult == true)
                 {
-                    MessageBox.Show("Succesfully added to database");
-                    tbEmpFname.Clear();
-                    tbEmpLname.Clear();
-                    tbEmpPassword.Clear();
+                   // int nrAdded = dh.AddEmployee(fName, lName, phoneNr, position, address, postcode);
+                    int nrAdded2 = dh.AddEmployeeCred(email, password);
+                    if (/*(nrAdded + */nrAdded2 > 0)
+                    {
+                        MessageBox.Show("Succesfully added to database");
+                        
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error when adding to database");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Error when adding to database");
+                    MessageBox.Show("Some info provided is incorrect");
                 }
             }
        
            
             
-        }
+        } 
     }
 }

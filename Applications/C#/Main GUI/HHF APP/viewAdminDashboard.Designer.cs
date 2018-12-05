@@ -454,19 +454,31 @@ namespace HHF_APP
             // 
             this.panelAddEmp.BackColor = System.Drawing.Color.SeaShell;
             this.panelAddEmp.Controls.Add(this.addEmployee2);
+<<<<<<< HEAD
             this.panelAddEmp.Location = new System.Drawing.Point(497, 0);
             this.panelAddEmp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelAddEmp.Name = "panelAddEmp";
             this.panelAddEmp.Size = new System.Drawing.Size(296, 235);
+=======
+            this.panelAddEmp.Location = new System.Drawing.Point(107, 0);
+            this.panelAddEmp.Name = "panelAddEmp";
+            this.panelAddEmp.Size = new System.Drawing.Size(488, 191);
+>>>>>>> 818435b1abccdb817e0c7d5b6614de3ca3bd7c31
             this.panelAddEmp.TabIndex = 1;
             this.panelAddEmp.Visible = false;
             // 
             // addEmployee2
             // 
+<<<<<<< HEAD
             this.addEmployee2.Location = new System.Drawing.Point(5, 7);
             this.addEmployee2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.addEmployee2.Name = "addEmployee2";
             this.addEmployee2.Size = new System.Drawing.Size(290, 226);
+=======
+            this.addEmployee2.Location = new System.Drawing.Point(3, 3);
+            this.addEmployee2.Name = "addEmployee2";
+            this.addEmployee2.Size = new System.Drawing.Size(482, 184);
+>>>>>>> 818435b1abccdb817e0c7d5b6614de3ca3bd7c31
             this.addEmployee2.TabIndex = 0;
             // 
             // btnRefresh
@@ -481,7 +493,7 @@ namespace HHF_APP
             this.btnRefresh.TabIndex = 5;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = false;
-            this.btnRefresh.Click += new System.EventHandler(this.button2_Click);
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // panel10
             // 
