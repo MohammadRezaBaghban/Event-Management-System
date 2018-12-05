@@ -88,6 +88,12 @@
     <Compile Include="viewLending.Designer.cs">
       <DependentUpon>viewLending.cs</DependentUpon>
     </Compile>
+    <Compile Include="viewLogin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="viewLogin.Designer.cs">
+      <DependentUpon>viewLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="viewStore.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -130,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="viewLending.resx">
       <DependentUpon>viewLending.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewLogin.resx">
+      <DependentUpon>viewLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="viewStore.resx">
       <DependentUpon>viewStore.cs</DependentUpon>

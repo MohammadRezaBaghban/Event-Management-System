@@ -129,10 +129,10 @@ namespace HHF_APP
             this.btnCheckIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCheckIn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCheckIn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnCheckIn.Location = new System.Drawing.Point(372, 174);
+            this.btnCheckIn.Location = new System.Drawing.Point(372, 132);
             this.btnCheckIn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCheckIn.Name = "btnCheckIn";
-            this.btnCheckIn.Size = new System.Drawing.Size(96, 38);
+            this.btnCheckIn.Size = new System.Drawing.Size(96, 84);
             this.btnCheckIn.TabIndex = 18;
             this.btnCheckIn.Text = "Check In";
             this.btnCheckIn.UseVisualStyleBackColor = false;
@@ -142,7 +142,7 @@ namespace HHF_APP
             this.btnTicketPrint.BackColor = System.Drawing.SystemColors.Window;
             this.btnTicketPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTicketPrint.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTicketPrint.Location = new System.Drawing.Point(372, 120);
+            this.btnTicketPrint.Location = new System.Drawing.Point(372, 86);
             this.btnTicketPrint.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnTicketPrint.Name = "btnTicketPrint";
             this.btnTicketPrint.Size = new System.Drawing.Size(96, 38);
@@ -156,7 +156,7 @@ namespace HHF_APP
             this.btnTicketFind.BackColor = System.Drawing.Color.Wheat;
             this.btnTicketFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTicketFind.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTicketFind.Location = new System.Drawing.Point(372, 68);
+            this.btnTicketFind.Location = new System.Drawing.Point(372, 31);
             this.btnTicketFind.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnTicketFind.Name = "btnTicketFind";
             this.btnTicketFind.Size = new System.Drawing.Size(96, 38);

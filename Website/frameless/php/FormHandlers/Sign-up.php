@@ -126,24 +126,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 //for mailing the user his id
 function SendMail($username, $userid, $mail)
 {
-    $generator = new Picqer\Barcode\BarcodeGeneratorHTML();
-    $barcode = $generator->getBarcode($userid, $generator::TYPE_CODE_128);
+
+    $generator = new \Picqer\Barcode\BarcodeGeneratorPNG();
+    $barcode = $generator->getBarcode($userid, $generator::TYPE_CODABAR);
 
     $message = '<html><body>';
     $message .= 'Dear <strong>';
-    $message .= $username . '!</strong>, you have booked your place successfully in our <strong>HHF</strong> event.<strong>';
+    $message .= $username . '!</strong>,<br> you have booked your place successfully in our <strong>HHF</strong> event.<strong><br>';
     $message .= $userid . '</strong> is your user id and below you code find your BarCode, in case of any accident you can always use them 
     for the entrance of the event.';
     $message .= '<br><br>';
-    $message .= $barcode;
-    $message .= '<br><br> You will have a printed version of the barcode upon checking in!';
-    $message .= '<br> Incase you need to contact us,<br> Feel free to send us an email at:<br>';
-    $message .= 'Hamidisubhi@gmail.com <br><br> <strong>HHF Admins</strong>';
+    $message .= '<img src="data:image/png;base64,' . base64_encode($barcode) . '">';
+    $message .= '<br> You will have a printed version of the barcode upon checking in!';
+    $message .= '<br> Incase you need to contact us,<br> Feel free to send us an email at:<br><br>';
+    $message .= 'Hamidisubhi@gmail.com <br> <strong>HHF Admins</strong>';
     $message .= '</body></html>';
     $headers = "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+
     mail($mail, " HHF || Booking confirmation", $message, $headers);
+
 }
+
 
 function validateform()
 {
@@ -291,7 +295,7 @@ if ($_GET['type'] === "group" || $_GET['type'] === "individual" || $_GET['type']
                 $sth = $myPDO->prepare($sql);
                 $datenow = date("Y-m-d");
                 $timenow = date("h:i:s");
-                $amount = 55 * (count($fnames) + 1) + 10;
+                $amount = 55 * (count($fnames)+1);
 
                 if ($camppay == "yes") {
                     $amount += 20 * (count($fnames) + 1);
@@ -347,7 +351,8 @@ if ($_GET['type'] === "group" || $_GET['type'] === "individual" || $_GET['type']
                 $sth = $myPDO->prepare($sql);
                 $datenow = date("Y-m-d");
                 $timenow = date("h:i:s");
-                $amount = 230;
+                if($_GET['type'] === "vip"){$amount=230;}
+                else {$amount = 55;}
                 $currentbal = $initialbal - $amount;
                 $sth->execute([':datetra' => $datenow, ':timetra' => $timenow, ':actID' => $act_id, ':amount' => $amount,
                     ':current_balance' => $currentbal

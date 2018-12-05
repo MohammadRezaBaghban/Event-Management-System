@@ -1,9 +1,9 @@
 <?php
 require_once "random_compat/lib/random.php";
 try {
-    $myPDO = new PDO('mysql:host=studmysql01.fhict.local;dbname=dbi400320', 'dbi400320', '12345678');
+    $conn = new PDO('mysql:host=studmysql01.fhict.local;dbname=dbi400320', 'dbi400320', '12345678');
 // set the PDO error mode to exception
-    $myPDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
 } catch (PDexception $e) {
@@ -27,12 +27,12 @@ if (isset($_POST["ForgotPassword"])) {
     if ($userExists["email"]) {
         // Create a unique token. This will never leave PHP unencrypted.
         $selector = bin2hex(random_bytes(8));
-        //$selector = bin2hex(random_int(10000000,99999999));
+
         $token = random_bytes(32);
-        //$token = random_int(10000000000000000000000000000000,99999999999999999999999999999999);
+
         $validator = bin2hex($token);
 
-        $url = "hhf.hera.fhict.nl/php/?page=resetpass&selector=$selector&validator=$validator";
+        $url = "hhf.hera.fhict.nl/php/index.php?page=resetpass&selector=$selector&validator=$validator";
 
         // Token expiration
         $expires = new DateTime('NOW');
