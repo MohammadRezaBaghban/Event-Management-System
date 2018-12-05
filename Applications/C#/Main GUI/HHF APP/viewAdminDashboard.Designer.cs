@@ -62,7 +62,6 @@ namespace HHF_APP
             this.lblTotalBalance = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.panelAddEmp = new System.Windows.Forms.Panel();
-            this.addEmployee2 = new HHF_APP.AddEmployee();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
             this.btnRemoveEmployee = new System.Windows.Forms.Button();
@@ -79,6 +78,7 @@ namespace HHF_APP
             this.btnSelectLogFile = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.tbAtmLogPath = new System.Windows.Forms.TextBox();
+            this.addEmployee2 = new HHF_APP.AddEmployee();
             this.panelPVis.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelTicketS.SuspendLayout();
@@ -454,18 +454,11 @@ namespace HHF_APP
             // 
             this.panelAddEmp.BackColor = System.Drawing.Color.SeaShell;
             this.panelAddEmp.Controls.Add(this.addEmployee2);
-            this.panelAddEmp.Location = new System.Drawing.Point(107, 0);
+            this.panelAddEmp.Location = new System.Drawing.Point(4, 3);
             this.panelAddEmp.Name = "panelAddEmp";
             this.panelAddEmp.Size = new System.Drawing.Size(488, 191);
             this.panelAddEmp.TabIndex = 1;
             this.panelAddEmp.Visible = false;
-            // 
-            // addEmployee2
-            // 
-            this.addEmployee2.Location = new System.Drawing.Point(3, 3);
-            this.addEmployee2.Name = "addEmployee2";
-            this.addEmployee2.Size = new System.Drawing.Size(482, 184);
-            this.addEmployee2.TabIndex = 0;
             // 
             // btnRefresh
             // 
@@ -659,6 +652,13 @@ namespace HHF_APP
             this.tbAtmLogPath.Name = "tbAtmLogPath";
             this.tbAtmLogPath.Size = new System.Drawing.Size(417, 20);
             this.tbAtmLogPath.TabIndex = 0;
+            // 
+            // addEmployee2
+            // 
+            this.addEmployee2.Location = new System.Drawing.Point(3, 6);
+            this.addEmployee2.Name = "addEmployee2";
+            this.addEmployee2.Size = new System.Drawing.Size(482, 184);
+            this.addEmployee2.TabIndex = 0;
             // 
             // viewAdminDashboard
             // 

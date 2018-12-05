@@ -53,16 +53,27 @@ namespace HHF_APP
 
                 if (fNameResult == true && lNameResult == true && phoneNrResult == true && positionResult == true && emailResult == true)
                 {
-                   // int nrAdded = dh.AddEmployee(fName, lName, phoneNr, position, address, postcode);
-                    int nrAdded2 = dh.AddEmployeeCred(email, password);
-                    if (/*(nrAdded + */nrAdded2 > 0)
+                    int nrAdded = dh.AddEmployee(fName, lName, phoneNr, position, address, postcode);
+                    int nrAdded2 = dh.AddEmployeeCred(fName, lName, email, password);
+                    if (nrAdded2 + nrAdded > 1)
                     {
                         MessageBox.Show("Succesfully added to database");
+
+                        tbFname.Clear();
+                        tbLname.Clear();
+                        tbPhoneNr.Clear();
+                        tbPosition.Clear();
+                        tbAddress.Clear();
+                        tbPostcode.Clear();
+                        tbEmail.Clear();
+                        tbPassword.Clear();
                         
                     }
                     else
                     {
+                       // dh.RemoveEmployee1(fName, lName);
                         MessageBox.Show("Error when adding to database");
+                        
                     }
                 }
                 else

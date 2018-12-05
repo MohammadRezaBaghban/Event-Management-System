@@ -55,15 +55,44 @@ namespace HHF_APP
                 }
 
             }
-        public int AddEmployeeCred(String email, String password)
+
+        public int RemoveEmployee1(String fName, String lName) /* Not Working ATM */
         {
-            String idea1 = "(SELECT MAX(emp_id) FROM employees)";
-            String query ="INSERT INTO emp_cred VALUES (@empID, @email, @password)";
+            String query = "DELETE FROM employees WHERE emp_id IN (SELECT MAX(emp_id) FROM employees) AND fname = @fName AND lname = @lName";
+            MySqlCommand command = new MySqlCommand(query, connection);
+            command.Parameters.AddWithValue("@fName", fName);  
+            command.Parameters.AddWithValue("@lName", lName);
+ 
+
+            try
+            {
+                connection.Open();
+                int nrOfRecordsChanged = command.ExecuteNonQuery();
+                return nrOfRecordsChanged;
+            }
+            catch
+            {
+
+                return -1;
+
+            }
+
+            finally
+            {
+                connection.Close();
+            }
+
+        }
+
+        public int AddEmployeeCred(String fname, String lname, String email, String password)
+        {
+            String query = "INSERT INTO emp_cred(emp_id, email, password) VALUES ((SELECT emp_id FROM employees WHERE fname = @fname AND lname = @lname), @email, @password)";
    
             MySqlCommand command = new MySqlCommand(query, connection);
-            command.Parameters.AddWithValue("@empID", idea1);
             command.Parameters.AddWithValue("@email", email);
             command.Parameters.AddWithValue("@password", password);
+            command.Parameters.AddWithValue("@fname", fname);
+            command.Parameters.AddWithValue("@lname", lname);
 
             try
             {
