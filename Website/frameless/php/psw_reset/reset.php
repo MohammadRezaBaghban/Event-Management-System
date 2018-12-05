@@ -14,20 +14,17 @@ function RedirectToURL($url, $waitmsg = 0.4)
 }
 
 try {
-    $myPDO = new PDO('mysql:host=studmysql01.fhict.local;dbname=dbi400320', 'dbi400320', '12345678');
+    $conn = new PDO('mysql:host=studmysql01.fhict.local;dbname=dbi400320', 'dbi400320', '12345678');
 // set the PDO error mode to exception
-    $myPDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+
+} catch (PDexception $e) {
 
 }
-catch (PDexception $e){
-
-}
-if (isset($_POST["ResetPasswordForm"]))
-
-{
-    $selector=$_POST["selector"];
-    $validator=$_POST["validator"];
+if (isset($_POST["ResetPasswordForm"])) {
+    $selector = $_POST["selector"];
+    $validator = $_POST["validator"];
     // Gather the post data
 
     $password = $_POST["password"];
@@ -38,63 +35,53 @@ if (isset($_POST["ResetPasswordForm"]))
 //diff methode
     $query = $conn->prepare('SELECT * FROM password_reset WHERE selector = :selector AND  expires > :timex');
 //store the time to check whether the time has passed one hour
-    $time=time();
+    $time = time();
 
-   $query->execute([':timex' => $time,':selector'=> $selector]);
+    $query->execute([':timex' => $time, ':selector' => $selector]);
 
     $result = $query->fetch(PDO::FETCH_ASSOC);
     $user = $result['email'];
     $auth_token = $result['token'];
     $calc = hash('sha256', hex2bin($validator));
 //check whether the there is a result fetched
-    if ( empty( $result ) ) {
+    if (empty($result)) {
         echo "empty";
-        return array('status'=>0,'message'=>'There was an error processing your request. Error Code: 002');
+        return array('status' => 0, 'message' => 'There was an error processing your request. Error Code: 002');
     }
 
 
 //validate whether the tokens match
-    if (hash_equals( $calc, $auth_token))
-
-    {
-        if ($password == $confirmpassword)
-
-       {
+    if (hash_equals($calc, $auth_token)) {
+        if ($password == $confirmpassword) {
 
             //has and secure the password
 
-            $password = password_hash($password,PASSWORD_DEFAULT);
-
+            $password = password_hash($password, PASSWORD_DEFAULT);
 
 
             // Update the user's password
 
-                $query = $conn->prepare('UPDATE accounts SET password = :password WHERE email = :email');
+            $query = $conn->prepare('UPDATE accounts SET password = :password WHERE email = :email');
 
-                $query->bindParam(':password', $password);
+            $query->bindParam(':password', $password);
 
-                $query->bindParam(':email', $user);
+            $query->bindParam(':email', $user);
 
-                $query->execute();
+            $query->execute();
             //delete the tokens to prevent reusing the link again
-           $query = $conn->prepare('delete from password_reset where email = :email');
+            $query = $conn->prepare('delete from password_reset where email = :email');
 
-           $query->bindParam(':email', $user);
+            $query->bindParam(':email', $user);
 
-           $query->execute();
-           $conn = null;
+            $query->execute();
+            $conn = null;
             echo "Your password has been successfully reset.";
-            echo "redirecting to login page!";
-           RedirectToURL("?page=login",3);
-        }
 
-        else
+        } else
 
             echo "Your password's do not match.";
 
-    }
-
-    else
+    } else
 
         echo "Your password reset key is invalid.";
 

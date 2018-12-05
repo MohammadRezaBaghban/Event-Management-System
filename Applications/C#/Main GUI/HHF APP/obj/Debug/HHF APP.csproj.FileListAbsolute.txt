@@ -77,3 +77,4 @@ C:\xampp\htdocs\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF_APP.vi
 C:\xampp\htdocs\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF APP.csproj.GenerateResource.Cache
 C:\xampp\htdocs\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF APP.exe
 C:\xampp\htdocs\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF APP.pdb
+C:\xampp\htdocs\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF_APP.viewLogin.resources

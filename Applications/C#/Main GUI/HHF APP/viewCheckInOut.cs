@@ -63,7 +63,7 @@ namespace HHF_APP
                 barsetting.Data2D = tbUserId.Text;
 
                 //generate EAN128 barcode
-                barsetting.Type = BarCodeType.EAN128;
+                barsetting.Type = BarCodeType.Codabar;
 
                 BarCodeGenerator bargenerator = new BarCodeGenerator(barsetting);
                 Image barcodeimage = bargenerator.GenerateImage();
