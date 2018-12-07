@@ -358,7 +358,7 @@ namespace HHF_APP
             this.storeBtn.Name = "storeBtn";
             this.storeBtn.Size = new System.Drawing.Size(289, 92);
             this.storeBtn.TabIndex = 1;
-            this.storeBtn.Text = "              Store";
+            this.storeBtn.Text = "              Article";
             this.storeBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.storeBtn.UseVisualStyleBackColor = false;
             this.storeBtn.Click += new System.EventHandler(this.button2_Click);
