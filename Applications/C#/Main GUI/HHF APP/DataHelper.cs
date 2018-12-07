@@ -236,6 +236,35 @@ namespace HHF_APP
                 connection.Close();
             }
         }
+
+
+        public bool appLogin(string fname, string password)
+        {
+            string joinQuery = "SELECT COUNT(*) as cnt FROM check_emp WHERE fname=@fname AND password =@password";
+
+            MySqlCommand command = new MySqlCommand(joinQuery, connection);
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@fname", fname);
+            command.Parameters.AddWithValue("@password", password);
+            try
+            {
+                connection.Open();
+
+                if (command.ExecuteScalar().ToString() == "1")
+                {
+                    return true;
+                }
+                else { return false; }
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
     }
             
 }
