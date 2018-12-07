@@ -37,6 +37,7 @@ namespace HHF_APP
         private viewStore viewStore1;
         private viewTickets viewTickets1;
         private viewLogin viewLogin1;
+
         // private viewAdminDashboard viewAdminDashboard1;
         //       private viewAdminDashboard viewAdminDashboard1;
         //// Type conflicts with imported type

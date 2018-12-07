@@ -21,7 +21,7 @@ namespace HHF_APP
             InitializeComponent();
             sidepanelforBTNs.Height = AdminBtn.Height;
             sidepanelforBTNs.Top = AdminBtn.Top;
-           viewAdminDashboard1.BringToFront();
+           viewLogin1.SendToBack();
             //SoundPlayer my_sound = new SoundPlayer("F:/xxxxxx.wave"); //put your own .4wave file path
             //my_sound.Play();
             //my_sound.Stop();
@@ -147,6 +147,7 @@ namespace HHF_APP
             this.viewCheckInOut1 = new HHF_APP.viewCheckInOut();
             this.viewCamping1 = new HHF_APP.viewCamping();
             this.viewAdminDashboard1 = new HHF_APP.viewAdminDashboard();
+            this.viewLogin1 = new HHF_APP.viewLogin();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -554,6 +555,14 @@ namespace HHF_APP
             this.viewAdminDashboard1.Size = new System.Drawing.Size(968, 702);
             this.viewAdminDashboard1.TabIndex = 3;
             // 
+            // viewLogin1
+            // 
+            this.viewLogin1.Location = new System.Drawing.Point(0, 0);
+            this.viewLogin1.Margin = new System.Windows.Forms.Padding(2);
+            this.viewLogin1.Name = "viewLogin1";
+            this.viewLogin1.Size = new System.Drawing.Size(1282, 806);
+            this.viewLogin1.TabIndex = 4;
+            // 
             // Form1
             // 
             this.AllowDrop = true;
@@ -570,6 +579,7 @@ namespace HHF_APP
             this.Controls.Add(this.viewAdminDashboard1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.viewLogin1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -609,7 +619,7 @@ namespace HHF_APP
 
         private void LogoutBtn_Click(object sender, EventArgs e)
         {
-
+            viewLogin1.BringToFront();
         }
     }
 }
