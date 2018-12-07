@@ -62,7 +62,6 @@ namespace HHF_APP
             this.lblTotalBalance = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.panelAddEmp = new System.Windows.Forms.Panel();
-            this.addEmployee2 = new HHF_APP.AddEmployee();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
             this.btnRemoveEmployee = new System.Windows.Forms.Button();
@@ -79,6 +78,8 @@ namespace HHF_APP
             this.btnSelectLogFile = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.tbAtmLogPath = new System.Windows.Forms.TextBox();
+            this.addEmployee2 = new HHF_APP.AddEmployee();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panelPVis.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelTicketS.SuspendLayout();
@@ -461,14 +462,6 @@ namespace HHF_APP
             this.panelAddEmp.TabIndex = 1;
             this.panelAddEmp.Visible = false;
             // 
-            // addEmployee2
-            // 
-            this.addEmployee2.Location = new System.Drawing.Point(16, 2);
-            this.addEmployee2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.addEmployee2.Name = "addEmployee2";
-            this.addEmployee2.Size = new System.Drawing.Size(445, 150);
-            this.addEmployee2.TabIndex = 0;
-            // 
             // btnRefresh
             // 
             this.btnRefresh.BackColor = System.Drawing.Color.Orange;
@@ -486,6 +479,7 @@ namespace HHF_APP
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.BurlyWood;
+            this.panel10.Controls.Add(this.panel1);
             this.panel10.Controls.Add(this.panelAddEmp);
             this.panel10.Controls.Add(this.btnRemoveEmployee);
             this.panel10.Controls.Add(this.btnAddEmployee);
@@ -546,6 +540,7 @@ namespace HHF_APP
             this.btnSearchEmployee.TabIndex = 2;
             this.btnSearchEmployee.Text = "Search";
             this.btnSearchEmployee.UseVisualStyleBackColor = false;
+            this.btnSearchEmployee.Click += new System.EventHandler(this.btnSearchEmployee_Click);
             // 
             // btnChangePassword
             // 
@@ -559,6 +554,7 @@ namespace HHF_APP
             this.btnChangePassword.TabIndex = 1;
             this.btnChangePassword.Text = "Change Password";
             this.btnChangePassword.UseVisualStyleBackColor = false;
+            this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
             // 
             // lbEmployees
             // 
@@ -663,6 +659,22 @@ namespace HHF_APP
             this.tbAtmLogPath.Size = new System.Drawing.Size(417, 20);
             this.tbAtmLogPath.TabIndex = 0;
             // 
+            // addEmployee2
+            // 
+            this.addEmployee2.Location = new System.Drawing.Point(16, 2);
+            this.addEmployee2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.addEmployee2.Name = "addEmployee2";
+            this.addEmployee2.Size = new System.Drawing.Size(445, 150);
+            this.addEmployee2.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Moccasin;
+            this.panel1.Location = new System.Drawing.Point(497, 28);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(170, 152);
+            this.panel1.TabIndex = 6;
+            // 
             // viewAdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -675,7 +687,7 @@ namespace HHF_APP
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "viewAdminDashboard";
-            this.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Padding = new System.Windows.Forms.Padding(4);
             this.Size = new System.Drawing.Size(834, 570);
             this.Load += new System.EventHandler(this.viewAdminDashboard_Load);
             this.panelPVis.ResumeLayout(false);
@@ -764,5 +776,6 @@ namespace HHF_APP
         private System.Windows.Forms.Button btnAddEmployee;
         private System.Windows.Forms.Panel panelAddEmp;
         private AddEmployee addEmployee2;
+        private System.Windows.Forms.Panel panel1;
     }
 }

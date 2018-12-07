@@ -92,5 +92,71 @@ namespace HHF_APP
             lblBookedSpots.Text = Convert.ToString(dh.CampSpotsBooked());
             lblFreeSpots.Text = Convert.ToString(10000 - Convert.ToInt32(lblBookedSpots.Text));
         }
+
+        private void btnSearchEmployee_Click(object sender, EventArgs e)
+        {
+            lbEmployees.Items.Clear();
+            String input = tbSearchEmployee.Text;
+            bool isText = input.All(char.IsLetter);
+            bool isNum = input.All(char.IsDigit);
+            String isEmpty = "";
+
+            try
+            {
+
+                if (input == isEmpty)
+                {
+                    List<Employee> empList = dh.GetEmployees();
+                    foreach (Employee emp in empList)
+                    {
+                        lbEmployees.Items.Add(emp.ToAString());
+                    }
+                }
+                else if (isText == true)
+                {
+                    List<Employee> empList = dh.GetEmployees(input);
+                    foreach(Employee emp in empList)
+                    {
+                        lbEmployees.Items.Add(emp.ToAString());
+                    }
+                }
+                else if (isNum == true)
+                {
+                    List<Employee> empList = dh.GetEmployees(Convert.ToInt32(input));
+                    foreach (Employee emp in empList)
+                    {
+                        lbEmployees.Items.Add(emp.ToAString());
+                    }
+                }
+                else if(input == isEmpty)
+                {
+                    List<Employee> empList = dh.GetEmployees();
+                    foreach (Employee emp in empList)
+                    {
+                        lbEmployees.Items.Add(emp.ToAString());
+                    }
+                }
+                
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+        }
+
+        private void btnChangePassword_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                String user = lbEmployees.SelectedItem.ToString();
+                char idNr = user[0];
+                MessageBox.Show(idNr.ToString());
+            }
+            catch
+            {
+                MessageBox.Show("Select an employee before proceeding");
+            }
+        }
     }
 }

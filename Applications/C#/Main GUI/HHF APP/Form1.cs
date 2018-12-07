@@ -21,7 +21,7 @@ namespace HHF_APP
             InitializeComponent();
             sidepanelforBTNs.Height = AdminBtn.Height;
             sidepanelforBTNs.Top = AdminBtn.Top;
-             viewLogin1.BringToFront();
+           viewAdminDashboard1.BringToFront();
             //SoundPlayer my_sound = new SoundPlayer("F:/xxxxxx.wave"); //put your own .4wave file path
             //my_sound.Play();
             //my_sound.Stop();
@@ -141,13 +141,12 @@ namespace HHF_APP
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.viewLogin1 = new HHF_APP.viewLogin();
-            this.viewTickets1 = new HHF_APP.viewTickets();
-            this.viewStore1 = new HHF_APP.viewStore();
-            this.viewLending1 = new HHF_APP.viewLending();
-            this.viewCheckInOut1 = new HHF_APP.viewCheckInOut();
-            this.viewCamping1 = new HHF_APP.viewCamping();
             this.viewAdminDashboard1 = new HHF_APP.viewAdminDashboard();
+            this.viewCamping1 = new HHF_APP.viewCamping();
+            this.viewCheckInOut1 = new HHF_APP.viewCheckInOut();
+            this.viewLending1 = new HHF_APP.viewLending();
+            this.viewStore1 = new HHF_APP.viewStore();
+            this.viewTickets1 = new HHF_APP.viewTickets();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -169,7 +168,7 @@ namespace HHF_APP
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(314, 758);
+            this.panel1.Size = new System.Drawing.Size(314, 786);
             this.panel1.TabIndex = 0;
             // 
             // panel6
@@ -203,7 +202,7 @@ namespace HHF_APP
             this.pictureBox2.Location = new System.Drawing.Point(260, 0);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(48, 53);
+            this.pictureBox2.Size = new System.Drawing.Size(48, 46);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
@@ -246,7 +245,7 @@ namespace HHF_APP
             this.LogoutBtn.ForeColor = System.Drawing.Color.White;
             this.LogoutBtn.Image = ((System.Drawing.Image)(resources.GetObject("LogoutBtn.Image")));
             this.LogoutBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.LogoutBtn.Location = new System.Drawing.Point(75, 601);
+            this.LogoutBtn.Location = new System.Drawing.Point(73, 628);
             this.LogoutBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LogoutBtn.Name = "LogoutBtn";
             this.LogoutBtn.Size = new System.Drawing.Size(148, 46);
@@ -254,7 +253,6 @@ namespace HHF_APP
             this.LogoutBtn.Text = "Log out";
             this.LogoutBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.LogoutBtn.UseVisualStyleBackColor = false;
-            this.LogoutBtn.Click += new System.EventHandler(this.LogoutBtn_Click);
             // 
             // sidepanelforBTNs
             // 
@@ -408,7 +406,7 @@ namespace HHF_APP
             this.panel4.Location = new System.Drawing.Point(314, 0);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(965, 86);
+            this.panel4.Size = new System.Drawing.Size(968, 86);
             this.panel4.TabIndex = 2;
             // 
             // panel3
@@ -430,7 +428,7 @@ namespace HHF_APP
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Font = new System.Drawing.Font("Myriad Hebrew", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(292, 14);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
@@ -492,67 +490,6 @@ namespace HHF_APP
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // viewLogin1
-            // 
-            this.viewLogin1.Location = new System.Drawing.Point(-1, 1);
-            this.viewLogin1.Margin = new System.Windows.Forms.Padding(1);
-            this.viewLogin1.Name = "viewLogin1";
-            this.viewLogin1.Size = new System.Drawing.Size(1279, 758);
-            this.viewLogin1.TabIndex = 4;
-            this.viewLogin1.Load += new System.EventHandler(this.viewLogin1_Load);
-            // 
-            // viewTickets1
-            // 
-            this.viewTickets1.BackColor = System.Drawing.Color.Linen;
-            this.viewTickets1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.viewTickets1.Location = new System.Drawing.Point(318, 79);
-            this.viewTickets1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.viewTickets1.Name = "viewTickets1";
-            this.viewTickets1.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.viewTickets1.Size = new System.Drawing.Size(961, 727);
-            this.viewTickets1.TabIndex = 8;
-            // 
-            // viewStore1
-            // 
-            this.viewStore1.BackColor = System.Drawing.Color.Linen;
-            this.viewStore1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.viewStore1.Location = new System.Drawing.Point(314, 78);
-            this.viewStore1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.viewStore1.Name = "viewStore1";
-            this.viewStore1.Size = new System.Drawing.Size(965, 702);
-            this.viewStore1.TabIndex = 7;
-            // 
-            // viewLending1
-            // 
-            this.viewLending1.BackColor = System.Drawing.Color.Linen;
-            this.viewLending1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.viewLending1.Location = new System.Drawing.Point(314, 78);
-            this.viewLending1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.viewLending1.Name = "viewLending1";
-            this.viewLending1.Size = new System.Drawing.Size(965, 702);
-            this.viewLending1.TabIndex = 6;
-            // 
-            // viewCheckInOut1
-            // 
-            this.viewCheckInOut1.BackColor = System.Drawing.Color.Linen;
-            this.viewCheckInOut1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.viewCheckInOut1.Location = new System.Drawing.Point(314, 78);
-            this.viewCheckInOut1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.viewCheckInOut1.Name = "viewCheckInOut1";
-            this.viewCheckInOut1.Padding = new System.Windows.Forms.Padding(5);
-            this.viewCheckInOut1.Size = new System.Drawing.Size(965, 702);
-            this.viewCheckInOut1.TabIndex = 5;
-            // 
-            // viewCamping1
-            // 
-            this.viewCamping1.BackColor = System.Drawing.Color.Linen;
-            this.viewCamping1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.viewCamping1.Location = new System.Drawing.Point(314, 85);
-            this.viewCamping1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.viewCamping1.Name = "viewCamping1";
-            this.viewCamping1.Size = new System.Drawing.Size(968, 702);
-            this.viewCamping1.TabIndex = 4;
-            // 
             // viewAdminDashboard1
             // 
             this.viewAdminDashboard1.BackColor = System.Drawing.Color.Linen;
@@ -564,13 +501,64 @@ namespace HHF_APP
             this.viewAdminDashboard1.Size = new System.Drawing.Size(968, 702);
             this.viewAdminDashboard1.TabIndex = 3;
             // 
+            // viewCamping1
+            // 
+            this.viewCamping1.BackColor = System.Drawing.Color.Linen;
+            this.viewCamping1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.viewCamping1.Location = new System.Drawing.Point(314, 85);
+            this.viewCamping1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.viewCamping1.Name = "viewCamping1";
+            this.viewCamping1.Size = new System.Drawing.Size(973, 702);
+            this.viewCamping1.TabIndex = 4;
+            // 
+            // viewCheckInOut1
+            // 
+            this.viewCheckInOut1.BackColor = System.Drawing.Color.Linen;
+            this.viewCheckInOut1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.viewCheckInOut1.Location = new System.Drawing.Point(314, 78);
+            this.viewCheckInOut1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.viewCheckInOut1.Name = "viewCheckInOut1";
+            this.viewCheckInOut1.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.viewCheckInOut1.Size = new System.Drawing.Size(973, 702);
+            this.viewCheckInOut1.TabIndex = 5;
+            // 
+            // viewLending1
+            // 
+            this.viewLending1.BackColor = System.Drawing.Color.Linen;
+            this.viewLending1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.viewLending1.Location = new System.Drawing.Point(314, 78);
+            this.viewLending1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.viewLending1.Name = "viewLending1";
+            this.viewLending1.Size = new System.Drawing.Size(965, 702);
+            this.viewLending1.TabIndex = 6;
+            // 
+            // viewStore1
+            // 
+            this.viewStore1.BackColor = System.Drawing.Color.Linen;
+            this.viewStore1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.viewStore1.Location = new System.Drawing.Point(314, 78);
+            this.viewStore1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.viewStore1.Name = "viewStore1";
+            this.viewStore1.Size = new System.Drawing.Size(973, 702);
+            this.viewStore1.TabIndex = 7;
+            // 
+            // viewTickets1
+            // 
+            this.viewTickets1.BackColor = System.Drawing.Color.Linen;
+            this.viewTickets1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.viewTickets1.Location = new System.Drawing.Point(318, 79);
+            this.viewTickets1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.viewTickets1.Name = "viewTickets1";
+            this.viewTickets1.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.viewTickets1.Size = new System.Drawing.Size(964, 727);
+            this.viewTickets1.TabIndex = 8;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Chocolate;
-            this.ClientSize = new System.Drawing.Size(1279, 758);
-            this.Controls.Add(this.viewLogin1);
+            this.ClientSize = new System.Drawing.Size(1282, 786);
             this.Controls.Add(this.viewTickets1);
             this.Controls.Add(this.viewStore1);
             this.Controls.Add(this.viewLending1);
@@ -613,16 +601,6 @@ namespace HHF_APP
         private void button2_Click_1(object sender, EventArgs e)
         {
 
-        }
-
-        private void viewLogin1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LogoutBtn_Click(object sender, EventArgs e)
-        {
-            this.viewLogin1.BringToFront();
         }
     }
 }

@@ -53,27 +53,28 @@ namespace HHF_APP
 
                 if (fNameResult == true && lNameResult == true && phoneNrResult == true && positionResult == true && emailResult == true)
                 {
-                    int nrAdded = dh.AddEmployee(fName, lName, phoneNr, position, address, postcode);
-                    int nrAdded2 = dh.AddEmployeeCred(fName, lName, email, password);
-                    if (nrAdded2 + nrAdded > 1)
-                    {
-                        MessageBox.Show("Succesfully added to database");
+                    int nrAdded = dh.AddEmployee(fName, lName, email, password, phoneNr, position, address, postcode);
 
-                        tbFname.Clear();
-                        tbLname.Clear();
-                        tbPhoneNr.Clear();
-                        tbPosition.Clear();
-                        tbAddress.Clear();
-                        tbPostcode.Clear();
-                        tbEmail.Clear();
-                        tbPassword.Clear();
-                        
-                    }
-                    else
+                    try
                     {
-                       // dh.RemoveEmployee1(fName, lName);
-                        MessageBox.Show("Error when adding to database");
-                        
+                        if (nrAdded > 0)
+                        {
+                            MessageBox.Show("Succesfully added to database");
+
+                            tbFname.Clear();
+                            tbLname.Clear();
+                            tbPhoneNr.Clear();
+                            tbPosition.Clear();
+                            tbAddress.Clear();
+                            tbPostcode.Clear();
+                            tbEmail.Clear();
+                            tbPassword.Clear();
+
+                        }
+                    }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
                     }
                 }
                 else
