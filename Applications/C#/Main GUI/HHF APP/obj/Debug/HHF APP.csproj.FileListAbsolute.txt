@@ -104,3 +104,5 @@ C:\Users\Ov\Desktop\Prop_Sems2\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\D
 C:\xampp\htdocs\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF APP.csprojAssemblyReference.cache
 C:\xampp\htdocs\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF APP.csproj.CoreCompileInputs.cache
 C:\xampp\htdocs\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF APP.csproj.CopyComplete
+C:\Mrbh\University\Fontys\3rd Block\ProP\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF_APP.AddEmployee.resources
+C:\Mrbh\University\Fontys\3rd Block\ProP\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF_APP.viewLogin.resources
