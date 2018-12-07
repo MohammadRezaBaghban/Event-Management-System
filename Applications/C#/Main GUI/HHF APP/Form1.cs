@@ -169,7 +169,7 @@ namespace HHF_APP
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(314, 705);
+            this.panel1.Size = new System.Drawing.Size(314, 758);
             this.panel1.TabIndex = 0;
             // 
             // panel6
@@ -203,7 +203,7 @@ namespace HHF_APP
             this.pictureBox2.Location = new System.Drawing.Point(260, 0);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(48, 0);
+            this.pictureBox2.Size = new System.Drawing.Size(48, 53);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
@@ -246,7 +246,7 @@ namespace HHF_APP
             this.LogoutBtn.ForeColor = System.Drawing.Color.White;
             this.LogoutBtn.Image = ((System.Drawing.Image)(resources.GetObject("LogoutBtn.Image")));
             this.LogoutBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.LogoutBtn.Location = new System.Drawing.Point(73, 628);
+            this.LogoutBtn.Location = new System.Drawing.Point(75, 601);
             this.LogoutBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LogoutBtn.Name = "LogoutBtn";
             this.LogoutBtn.Size = new System.Drawing.Size(148, 46);
@@ -254,6 +254,7 @@ namespace HHF_APP
             this.LogoutBtn.Text = "Log out";
             this.LogoutBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.LogoutBtn.UseVisualStyleBackColor = false;
+            this.LogoutBtn.Click += new System.EventHandler(this.LogoutBtn_Click);
             // 
             // sidepanelforBTNs
             // 
@@ -493,10 +494,10 @@ namespace HHF_APP
             // 
             // viewLogin1
             // 
-            this.viewLogin1.Location = new System.Drawing.Point(0, 0);
+            this.viewLogin1.Location = new System.Drawing.Point(-1, 1);
             this.viewLogin1.Margin = new System.Windows.Forms.Padding(1);
             this.viewLogin1.Name = "viewLogin1";
-            this.viewLogin1.Size = new System.Drawing.Size(1279, 705);
+            this.viewLogin1.Size = new System.Drawing.Size(1279, 758);
             this.viewLogin1.TabIndex = 4;
             this.viewLogin1.Load += new System.EventHandler(this.viewLogin1_Load);
             // 
@@ -568,7 +569,7 @@ namespace HHF_APP
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Chocolate;
-            this.ClientSize = new System.Drawing.Size(1279, 705);
+            this.ClientSize = new System.Drawing.Size(1279, 758);
             this.Controls.Add(this.viewLogin1);
             this.Controls.Add(this.viewTickets1);
             this.Controls.Add(this.viewStore1);
@@ -617,6 +618,11 @@ namespace HHF_APP
         private void viewLogin1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void LogoutBtn_Click(object sender, EventArgs e)
+        {
+            this.viewLogin1.BringToFront();
         }
     }
 }

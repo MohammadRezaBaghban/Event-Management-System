@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
@@ -42,11 +43,11 @@ namespace HHF_APP
                     int nrOfRecordsChanged = command.ExecuteNonQuery();
                     return nrOfRecordsChanged;
                 }
-                catch
+                catch(Exception ex)
                 {
-              
+
                     return -1;
-               
+
                 }
             
                 finally
@@ -244,7 +245,7 @@ namespace HHF_APP
 
             MySqlCommand command = new MySqlCommand(joinQuery, connection);
             command.Parameters.Clear();
-            command.Parameters.AddWithValue("@fname", email);
+            command.Parameters.AddWithValue("@email", email);
             command.Parameters.AddWithValue("@password", password);
             try
             {
