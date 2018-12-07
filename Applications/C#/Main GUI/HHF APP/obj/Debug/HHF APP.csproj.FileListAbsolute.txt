@@ -64,7 +64,6 @@ C:\xampp\htdocs\ProP_Sems2\Applications\C#\Main GUI\HHF APP\bin\Debug\Spire.Barc
 C:\xampp\htdocs\ProP_Sems2\Applications\C#\Main GUI\HHF APP\bin\Debug\Spire.License.dll
 C:\xampp\htdocs\ProP_Sems2\Applications\C#\Main GUI\HHF APP\bin\Debug\Spire.Barcode.xml
 C:\xampp\htdocs\ProP_Sems2\Applications\C#\Main GUI\HHF APP\bin\Debug\Spire.License.xml
-C:\xampp\htdocs\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF APP.csprojResolveAssemblyReference.cache
 C:\xampp\htdocs\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF_APP.AddEmployee.resources
 C:\xampp\htdocs\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF_APP.Form1.resources
 C:\xampp\htdocs\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF_APP.Properties.Resources.resources
@@ -102,3 +101,6 @@ C:\Users\Ov\Desktop\Prop_Sems2\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\D
 C:\Users\Ov\Desktop\Prop_Sems2\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF APP.csproj.CopyComplete
 C:\Users\Ov\Desktop\Prop_Sems2\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF APP.exe
 C:\Users\Ov\Desktop\Prop_Sems2\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF APP.pdb
+C:\xampp\htdocs\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF APP.csprojAssemblyReference.cache
+C:\xampp\htdocs\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF APP.csproj.CoreCompileInputs.cache
+C:\xampp\htdocs\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF APP.csproj.CopyComplete
