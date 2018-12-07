@@ -333,6 +333,36 @@ namespace HHF_APP
             command.Parameters.AddWithValue("@password", password);
             command.Parameters.AddWithValue("@emp_id", empId);
         }
+
+
+        public bool appLogin(string email, string password)
+        {
+            string joinQuery = "SELECT COUNT(*) as cnt FROM employees WHERE email=@email AND password =@password";
+
+            MySqlCommand command = new MySqlCommand(joinQuery, connection);
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@email", email);
+            command.Parameters.AddWithValue("@password", password);
+            try
+            {
+                connection.Open();
+
+                if (command.ExecuteScalar().ToString() == "1")
+                {
+                    return true;
+                }
+                else { return false; }
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
     }
-            
+
 }

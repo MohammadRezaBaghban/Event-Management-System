@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HHF_APP
 {
-    class Employee
+    public class Employee
     {
         private int idNr;
         private String fName;
