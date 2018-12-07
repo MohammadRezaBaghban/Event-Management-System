@@ -21,10 +21,10 @@ namespace HHF_APP
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string userName = tbUsername.Text;
+            string email = tbEmail.Text;
             string passWord = tbPassword.Text;
 
-            if (dh.appLogin(userName, passWord) == true)
+            if (dh.appLogin(email, passWord) == true)
             {
                 this.SendToBack();
             }
