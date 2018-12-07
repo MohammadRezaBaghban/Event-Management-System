@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -290,6 +291,7 @@ namespace HHF_APP
 
         public List<Employee> GetEmployees(int idnr)
         {
+
             String query = "SELECT emp_id, fname, lname, position FROM employees WHERE emp_id = @idNr";
             MySqlCommand command = new MySqlCommand(query, connection);
             command.Parameters.AddWithValue("@idNr", idnr);
@@ -332,6 +334,7 @@ namespace HHF_APP
             MySqlCommand command = new MySqlCommand(query, connection);
             command.Parameters.AddWithValue("@password", password);
             command.Parameters.AddWithValue("@emp_id", empId);
+            
         }
 
 
@@ -363,6 +366,96 @@ namespace HHF_APP
             }
         }
 
+        public int addTransaction(int userid, decimal amount, string type)
+        {
+            int act_id = -1;
+            decimal balance=0.0m;
+
+            using (connection)
+            {
+                connection.Open();
+                MySqlTransaction tran = connection.BeginTransaction();
+
+                try
+                {
+                    //get act id of that person
+                    String query = "SELECT account_id FROM users WHERE user_id = @idNr and status = @status";
+                    MySqlCommand command = new MySqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@idNr", userid);
+                    command.Parameters.AddWithValue("@status", "checked_in");
+
+                    MySqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        act_id = Convert.ToInt32(reader["account_id"]);
+                    }
+
+                    if (act_id == -1)
+                    {
+                        throw new System.Exception("Either the person is not checked or User does not exists");
+                    }
+                    //get the balance of the account
+                    query = "SELECT current_balance FROM accounts WHERE account_id = @idNr";
+                    command = new MySqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@idNr", act_id);
+                    reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        balance = Convert.ToDecimal(reader["current_balance"]);
+                    }
+
+                    //validate whether the balance is sufficent
+                    if (balance-amount<0)
+                    {
+                        throw new Exception("Balance is insufficient");
+                    }
+
+                    //create new transaction
+                    query =
+                        "INSERT INTO employees(transaction_id, date, time, account_id, amount, current_balance, type) VALUES (@transaction_id, @date, @time, @account_id, @amount, @current_balance, @type)";
+                    command= new MySqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@transaction_id", null);
+                    command.Parameters.AddWithValue("@date", DateTime.Now.ToString("yyyy'-'MM'-'dd"));
+                    command.Parameters.AddWithValue("@time", DateTime.Now.ToString("HH:mm:ss"));
+                    command.Parameters.AddWithValue("@account_id", act_id);
+                    command.Parameters.AddWithValue("@amount", amount);
+                    command.Parameters.AddWithValue("@current_balance", balance);
+                    command.Parameters.AddWithValue("@type", type);
+
+
+                    int nrOfRecordsChanged = command.ExecuteNonQuery();
+
+                    //if the compiler reachs here that means every thing went fine and now we have to update the current balance
+
+                    query = "UPDATE accounts SET current_balance = @bal WHERE account_id = @id";
+                    command = new MySqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@bal", balance-amount);
+                    command.Parameters.AddWithValue("@id", act_id);
+
+
+                    command.ExecuteNonQuery();
+                    if (Convert.ToInt32(command.ExecuteNonQuery()) <= 0) {throw new Exception("Error While Updating the balance");}
+                    tran.Commit();
+                    return 1;
+
+                }
+                catch (Exception ex)
+                {
+                    try
+                    {
+                        tran.Rollback();
+                    }
+                    catch (Exception exRollback)
+                    {
+                        MessageBox.Show(exRollback.Message);
+                    }
+
+                    MessageBox.Show(ex.Message);
+                    throw ;
+
+                }
+            }
+        }
     }
 
 }
