@@ -238,13 +238,13 @@ namespace HHF_APP
         }
 
 
-        public bool appLogin(string fname, string password)
+        public bool appLogin(string email, string password)
         {
-            string joinQuery = "SELECT COUNT(*) as cnt FROM check_emp WHERE fname=@fname AND password =@password";
+            string joinQuery = "SELECT COUNT(*) as cnt FROM employees WHERE email=@email AND password =@password";
 
             MySqlCommand command = new MySqlCommand(joinQuery, connection);
             command.Parameters.Clear();
-            command.Parameters.AddWithValue("@fname", fname);
+            command.Parameters.AddWithValue("@fname", email);
             command.Parameters.AddWithValue("@password", password);
             try
             {
