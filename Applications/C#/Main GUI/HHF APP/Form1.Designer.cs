@@ -29,7 +29,7 @@ namespace HHF_APP
         public System.Windows.Forms.TextBox tbBarcode;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnscanBarcodeMainForm;
         private viewAdminDashboard viewAdminDashboard1;
         private viewCamping viewCamping1;
         private viewCheckInOut viewCheckInOut1;

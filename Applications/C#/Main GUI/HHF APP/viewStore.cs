@@ -157,38 +157,54 @@ namespace HHF_APP
 
         private void btnConfirmFood_Click(object sender, EventArgs e)
         {
+            
             decimal totalfood=0m;
-            try
-            {
+            var confirmResult =  MessageBox.Show("Are you sure you want to confirm order?",
+                "Confirm Order",
+                MessageBoxButtons.YesNo);
 
-                lbBasket_Click(sender, e);
-                Form1 myParent = (Form1)this.Parent;
-                 int user_id = Convert.ToInt32(myParent.tbBarcode.Text);
-                
-                if (user_id > 0 )
-                 {
-                foreach (Article a in lbBasket.Items)
+            if (confirmResult == DialogResult.Yes)
+            {
+                try
                 {
-                    if (a is Food)
+
+                    lbBasket_Click(sender, e);
+                    Form1 myParent = (Form1) this.Parent;
+                    int user_id = Convert.ToInt32(myParent.tbBarcode.Text);
+
+                    if (user_id > 0)
                     {
-                        totalfood += a.GetPrice();
+                        foreach (Article a in lbBasket.Items)
+                        {
+                            if (a is Food)
+                            {
+                                totalfood += a.GetPrice();
+                            }
+                        }
+
+
+
+                        decimal total;
+                        total = Convert.ToDecimal(lblTotal.Text);
+                        int checkinsertion=1;
+                        int checkinsertion2 = 1;
+                        if (total - totalfood != 0)
+                        {
+                            if (dh.addTransaction(user_id, (total - totalfood), "items") != 1) checkinsertion = 0;
+                        }
+
+                        if (totalfood > 0) {if (dh.addTransaction(user_id, totalfood, "food")!= 1) checkinsertion2=0;}
+
+                        if (checkinsertion == 1 && checkinsertion2 == 1)
+                            MessageBox.Show("Order Complete!");
                     }
                 }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message);
 
-                
 
-                decimal total;
-                total = Convert.ToDecimal(lblTotal.Text);
-                
-                dh.addTransaction(user_id, (total-totalfood), "items");
-                dh.addTransaction(user_id, totalfood, "food");
-            }
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show(exception.Message);
-
-               
+                }
             }
         }
 

@@ -413,17 +413,16 @@ namespace HHF_APP
                     }
 
                     //create new transaction
-                    query =
-                        "INSERT INTO employees(date, time, account_id, amount, current_balance, type) VALUES (@date, @time, @account_id, @amount, @current_balance, @type)";
+                    query ="INSERT INTO transactions (`date`, `time`, `account_id`, `amount`, `current_balance`, `type`) VALUES (@date, @time, @account_id, @amount, @current_balance, @type)";
                     command= new MySqlCommand(query, connection);
+                    string s = DateTime.Now.ToString("yyyy-MM-dd");
+                    command.Parameters.AddWithValue("@date", s);
+                    s= DateTime.Now.ToString("HH:mm:ss");
+                    command.Parameters.AddWithValue("@time",s);
                     
-                    command.Parameters.AddWithValue("@date", DateTime.Now.ToString("yyyy'-'MM'-'dd"));
-                    MessageBox.Show("Test 1 + " + DateTime.Now.ToString("yyyy'-'MM'-'dd"));
-                    command.Parameters.AddWithValue("@time", DateTime.Now.ToString("HH:mm:ss"));
-                    MessageBox.Show("Test 1 + " + DateTime.Now.ToString("HH:mm:ss"));
                     command.Parameters.AddWithValue("@account_id", act_id);
                     command.Parameters.AddWithValue("@amount", amount);
-                    command.Parameters.AddWithValue("@current_balance", balance);
+                    command.Parameters.AddWithValue("@current_balance", balance-amount);
                     command.Parameters.AddWithValue("@type", type);
 
 
@@ -431,7 +430,7 @@ namespace HHF_APP
                     reader.Close();
                     //if the compiler reachs here that means every thing went fine and now we have to update the current balance
 
-                    query = "UPDATE accounts SET current_balance = @bal WHERE account_id = @id";
+                    query = "UPDATE accounts SET currentbal = @bal WHERE account_id = @id";
                     command = new MySqlCommand(query, connection);
                     command.Parameters.AddWithValue("@bal", balance-amount);
                     command.Parameters.AddWithValue("@id", act_id);
@@ -455,7 +454,7 @@ namespace HHF_APP
                     }
 
                     MessageBox.Show(ex.Message);
-                    return -66;
+                    return -1;
 
 
                 }
