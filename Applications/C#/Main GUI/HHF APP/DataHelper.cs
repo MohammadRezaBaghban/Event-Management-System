@@ -394,29 +394,33 @@ namespace HHF_APP
                     {
                         throw new System.Exception("Either the person is not checked or User does not exists");
                     }
+
+                    reader.Close();
                     //get the balance of the account
-                    query = "SELECT current_balance FROM accounts WHERE account_id = @idNr";
+                    query = "SELECT currentbal FROM accounts WHERE account_id = @idNr";
                     command = new MySqlCommand(query, connection);
                     command.Parameters.AddWithValue("@idNr", act_id);
                     reader = command.ExecuteReader();
                     while (reader.Read())
                     {
-                        balance = Convert.ToDecimal(reader["current_balance"]);
+                        balance = Convert.ToDecimal(reader["currentbal"]);
                     }
-
+                    reader.Close();
                     //validate whether the balance is sufficent
-                    if (balance-amount<0)
+                    if (balance-amount<0 && amount >0)
                     {
                         throw new Exception("Balance is insufficient");
                     }
 
                     //create new transaction
                     query =
-                        "INSERT INTO employees(transaction_id, date, time, account_id, amount, current_balance, type) VALUES (@transaction_id, @date, @time, @account_id, @amount, @current_balance, @type)";
+                        "INSERT INTO employees(date, time, account_id, amount, current_balance, type) VALUES (@date, @time, @account_id, @amount, @current_balance, @type)";
                     command= new MySqlCommand(query, connection);
-                    command.Parameters.AddWithValue("@transaction_id", null);
+                    
                     command.Parameters.AddWithValue("@date", DateTime.Now.ToString("yyyy'-'MM'-'dd"));
+                    MessageBox.Show("Test 1 + " + DateTime.Now.ToString("yyyy'-'MM'-'dd"));
                     command.Parameters.AddWithValue("@time", DateTime.Now.ToString("HH:mm:ss"));
+                    MessageBox.Show("Test 1 + " + DateTime.Now.ToString("HH:mm:ss"));
                     command.Parameters.AddWithValue("@account_id", act_id);
                     command.Parameters.AddWithValue("@amount", amount);
                     command.Parameters.AddWithValue("@current_balance", balance);
@@ -424,7 +428,7 @@ namespace HHF_APP
 
 
                     int nrOfRecordsChanged = command.ExecuteNonQuery();
-
+                    reader.Close();
                     //if the compiler reachs here that means every thing went fine and now we have to update the current balance
 
                     query = "UPDATE accounts SET current_balance = @bal WHERE account_id = @id";
@@ -451,7 +455,8 @@ namespace HHF_APP
                     }
 
                     MessageBox.Show(ex.Message);
-                    throw ;
+                    return -66;
+
 
                 }
             }

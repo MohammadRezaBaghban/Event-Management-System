@@ -1,35 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Media;
-
-
 
 namespace HHF_APP
 {
     public partial class Form1 : Form
     {
-        
         public Form1()
         {
             InitializeComponent();
             sidepanelforBTNs.Height = AdminBtn.Height;
             sidepanelforBTNs.Top = AdminBtn.Top;
-           viewLogin1.SendToBack();
+            viewLogin1.SendToBack();
             //SoundPlayer my_sound = new SoundPlayer("F:/xxxxxx.wave"); //put your own .4wave file path
             //my_sound.Play();
             //my_sound.Stop();
-           
-
         }
 
-      
 
         private void ticketsBtn_Click(object sender, EventArgs e)
         {
@@ -37,7 +25,6 @@ namespace HHF_APP
             sidepanelforBTNs.Top = ticketsBtn.Top;
             viewTickets1.BringToFront();
             panel3.Visible = false;
-            
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -45,8 +32,7 @@ namespace HHF_APP
             sidepanelforBTNs.Height = checkinBTn.Height;
             sidepanelforBTNs.Top = checkinBTn.Top;
             panel3.Visible = false;
-             viewCheckInOut1.BringToFront();
-
+            viewCheckInOut1.BringToFront();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -54,7 +40,7 @@ namespace HHF_APP
             sidepanelforBTNs.Height = storeBtn.Height;
             sidepanelforBTNs.Top = storeBtn.Top;
             panel3.Visible = true;
-             viewStore1.BringToFront();
+            viewStore1.BringToFront();
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -62,7 +48,7 @@ namespace HHF_APP
             sidepanelforBTNs.Height = campBtn.Height;
             sidepanelforBTNs.Top = campBtn.Top;
             panel3.Visible = true;
-             viewCamping1.BringToFront();
+            viewCamping1.BringToFront();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -70,36 +56,33 @@ namespace HHF_APP
             sidepanelforBTNs.Height = lendBtn.Height;
             sidepanelforBTNs.Top = lendBtn.Top;
             panel3.Visible = true;
-              viewLending1.BringToFront();
-
+            viewLending1.BringToFront();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             sidepanelforBTNs.Height = AdminBtn.Height;
             sidepanelforBTNs.Top = AdminBtn.Top;
-          viewAdminDashboard1.BringToFront();
+            viewAdminDashboard1.BringToFront();
             panel3.Visible = false;
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
-      
+
         private void pictureBox3_MouseEnter(object sender, EventArgs e)
         {
             pictureBox3.BackColor = Color.DarkRed;
         }
 
-       
+
         private void pictureBox3_MouseLeave(object sender, EventArgs e)
         {
             pictureBox3.BackColor = Color.Transparent;
@@ -107,514 +90,529 @@ namespace HHF_APP
 
         private void viewCheckInOut1_Load(object sender, EventArgs e)
         {
-
         }
 
         private void viewTickets1_Load(object sender, EventArgs e)
         {
-
         }
 
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.LogoutBtn = new System.Windows.Forms.Button();
-            this.sidepanelforBTNs = new System.Windows.Forms.Panel();
-            this.AdminBtn = new System.Windows.Forms.Button();
-            this.lendBtn = new System.Windows.Forms.Button();
-            this.campBtn = new System.Windows.Forms.Button();
-            this.checkinBTn = new System.Windows.Forms.Button();
-            this.storeBtn = new System.Windows.Forms.Button();
-            this.ticketsBtn = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.tbBarcode = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.viewTickets1 = new HHF_APP.viewTickets();
-            this.viewStore1 = new HHF_APP.viewStore();
-            this.viewLending1 = new HHF_APP.viewLending();
-            this.viewCheckInOut1 = new HHF_APP.viewCheckInOut();
-            this.viewCamping1 = new HHF_APP.viewCamping();
-            this.viewAdminDashboard1 = new HHF_APP.viewAdminDashboard();
-            this.viewLogin1 = new HHF_APP.viewLogin();
-            this.panel1.SuspendLayout();
-            this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.panel4.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.SuspendLayout();
+            var resources =
+                new ComponentResourceManager(typeof(Form1));
+            panel1 = new Panel();
+            panel6 = new Panel();
+            pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
+            label1 = new Label();
+            panel2 = new Panel();
+            LogoutBtn = new Button();
+            sidepanelforBTNs = new Panel();
+            AdminBtn = new Button();
+            lendBtn = new Button();
+            campBtn = new Button();
+            checkinBTn = new Button();
+            storeBtn = new Button();
+            ticketsBtn = new Button();
+            pictureBox3 = new PictureBox();
+            panel4 = new Panel();
+            panel3 = new Panel();
+            button2 = new Button();
+            label4 = new Label();
+            tbBarcode = new TextBox();
+            label3 = new Label();
+            label2 = new Label();
+            button1 = new Button();
+            viewTickets1 = new viewTickets();
+            viewStore1 = new viewStore();
+            viewLending1 = new viewLending();
+            viewCheckInOut1 = new viewCheckInOut();
+            viewCamping1 = new viewCamping();
+            viewAdminDashboard1 = new viewAdminDashboard();
+            viewLogin1 = new viewLogin();
+            panel1.SuspendLayout();
+            panel6.SuspendLayout();
+            ((ISupportInitialize) pictureBox1).BeginInit();
+            ((ISupportInitialize) pictureBox2).BeginInit();
+            panel2.SuspendLayout();
+            ((ISupportInitialize) pictureBox3).BeginInit();
+            panel4.SuspendLayout();
+            panel3.SuspendLayout();
+            SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(104)))), ((int)(((byte)(28)))));
-            this.panel1.Controls.Add(this.panel6);
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(314, 786);
-            this.panel1.TabIndex = 0;
+            panel1.BackColor = Color.FromArgb(219, 104,
+                28);
+            panel1.Controls.Add(panel6);
+            panel1.Controls.Add(pictureBox2);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(panel2);
+            panel1.Dock = DockStyle.Left;
+            panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(3, 2, 3, 2);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(314, 786);
+            panel1.TabIndex = 0;
             // 
             // panel6
             // 
-            this.panel6.BackColor = System.Drawing.Color.Black;
-            this.panel6.Controls.Add(this.pictureBox1);
-            this.panel6.Location = new System.Drawing.Point(19, 0);
-            this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(86, 110);
-            this.panel6.TabIndex = 3;
+            panel6.BackColor = Color.Black;
+            panel6.Controls.Add(pictureBox1);
+            panel6.Location = new Point(19, 0);
+            panel6.Margin = new Padding(3, 2, 3, 2);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(86, 110);
+            panel6.TabIndex = 3;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 7);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(78, 102);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.BackgroundImage =
+                (Image) resources.GetObject("pictureBox1.BackgroundImage");
+            pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox1.Location = new Point(3, 7);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(78, 102);
+            pictureBox1.TabIndex = 3;
+            pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(260, 0);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(48, 46);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
+            pictureBox2.Anchor =
+                AnchorStyles.Top |
+                AnchorStyles.Bottom
+                | AnchorStyles.Left
+                | AnchorStyles.Right;
+            pictureBox2.Image = (Image) resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(260, 0);
+            pictureBox2.Margin = new Padding(3, 2, 3, 2);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(48, 46);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 1;
+            pictureBox2.TabStop = false;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.label1.Location = new System.Drawing.Point(149, 74);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(146, 30);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "USER NAME";
+            label1.AutoSize = true;
+            label1.Font = new Font("Tahoma", 15F);
+            label1.Location = new Point(149, 74);
+            label1.Name = "label1";
+            label1.Size = new Size(146, 30);
+            label1.TabIndex = 2;
+            label1.Text = "USER NAME";
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(104)))), ((int)(((byte)(28)))));
-            this.panel2.Controls.Add(this.LogoutBtn);
-            this.panel2.Controls.Add(this.sidepanelforBTNs);
-            this.panel2.Controls.Add(this.AdminBtn);
-            this.panel2.Controls.Add(this.lendBtn);
-            this.panel2.Controls.Add(this.campBtn);
-            this.panel2.Controls.Add(this.checkinBTn);
-            this.panel2.Controls.Add(this.storeBtn);
-            this.panel2.Controls.Add(this.ticketsBtn);
-            this.panel2.Location = new System.Drawing.Point(3, 107);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(311, 677);
-            this.panel2.TabIndex = 0;
+            panel2.BackColor = Color.FromArgb(219, 104,
+                28);
+            panel2.Controls.Add(LogoutBtn);
+            panel2.Controls.Add(sidepanelforBTNs);
+            panel2.Controls.Add(AdminBtn);
+            panel2.Controls.Add(lendBtn);
+            panel2.Controls.Add(campBtn);
+            panel2.Controls.Add(checkinBTn);
+            panel2.Controls.Add(storeBtn);
+            panel2.Controls.Add(ticketsBtn);
+            panel2.Location = new Point(3, 107);
+            panel2.Margin = new Padding(3, 2, 3, 2);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(311, 677);
+            panel2.TabIndex = 0;
             // 
             // LogoutBtn
             // 
-            this.LogoutBtn.BackColor = System.Drawing.Color.Black;
-            this.LogoutBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.LogoutBtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.LogoutBtn.FlatAppearance.BorderSize = 0;
-            this.LogoutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LogoutBtn.Font = new System.Drawing.Font("Century Gothic", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogoutBtn.ForeColor = System.Drawing.Color.White;
-            this.LogoutBtn.Image = ((System.Drawing.Image)(resources.GetObject("LogoutBtn.Image")));
-            this.LogoutBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.LogoutBtn.Location = new System.Drawing.Point(73, 628);
-            this.LogoutBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.LogoutBtn.Name = "LogoutBtn";
-            this.LogoutBtn.Size = new System.Drawing.Size(148, 46);
-            this.LogoutBtn.TabIndex = 6;
-            this.LogoutBtn.Text = "Log out";
-            this.LogoutBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.LogoutBtn.UseVisualStyleBackColor = false;
-            this.LogoutBtn.Click += new System.EventHandler(this.LogoutBtn_Click);
+            LogoutBtn.BackColor = Color.Black;
+            LogoutBtn.BackgroundImageLayout = ImageLayout.Zoom;
+            LogoutBtn.FlatAppearance.BorderColor = Color.White;
+            LogoutBtn.FlatAppearance.BorderSize = 0;
+            LogoutBtn.FlatStyle = FlatStyle.Flat;
+            LogoutBtn.Font = new Font("Century Gothic", 13.2F, FontStyle.Bold,
+                GraphicsUnit.Point, 0);
+            LogoutBtn.ForeColor = Color.White;
+            LogoutBtn.Image = (Image) resources.GetObject("LogoutBtn.Image");
+            LogoutBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            LogoutBtn.Location = new Point(73, 628);
+            LogoutBtn.Margin = new Padding(3, 2, 3, 2);
+            LogoutBtn.Name = "LogoutBtn";
+            LogoutBtn.Size = new Size(148, 46);
+            LogoutBtn.TabIndex = 6;
+            LogoutBtn.Text = "Log out";
+            LogoutBtn.TextAlign = ContentAlignment.MiddleRight;
+            LogoutBtn.UseVisualStyleBackColor = false;
+            LogoutBtn.Click += LogoutBtn_Click;
             // 
             // sidepanelforBTNs
             // 
-            this.sidepanelforBTNs.BackColor = System.Drawing.Color.Black;
-            this.sidepanelforBTNs.Location = new System.Drawing.Point(3, 18);
-            this.sidepanelforBTNs.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.sidepanelforBTNs.Name = "sidepanelforBTNs";
-            this.sidepanelforBTNs.Size = new System.Drawing.Size(10, 59);
-            this.sidepanelforBTNs.TabIndex = 0;
+            sidepanelforBTNs.BackColor = Color.Black;
+            sidepanelforBTNs.Location = new Point(3, 18);
+            sidepanelforBTNs.Margin = new Padding(3, 2, 3, 2);
+            sidepanelforBTNs.Name = "sidepanelforBTNs";
+            sidepanelforBTNs.Size = new Size(10, 59);
+            sidepanelforBTNs.TabIndex = 0;
             // 
             // AdminBtn
             // 
-            this.AdminBtn.BackColor = System.Drawing.Color.Transparent;
-            this.AdminBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.AdminBtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.AdminBtn.FlatAppearance.BorderSize = 0;
-            this.AdminBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AdminBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AdminBtn.Image = ((System.Drawing.Image)(resources.GetObject("AdminBtn.Image")));
-            this.AdminBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AdminBtn.Location = new System.Drawing.Point(16, 2);
-            this.AdminBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.AdminBtn.Name = "AdminBtn";
-            this.AdminBtn.Size = new System.Drawing.Size(289, 92);
-            this.AdminBtn.TabIndex = 4;
-            this.AdminBtn.Text = "              Admin Dashboard";
-            this.AdminBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AdminBtn.UseVisualStyleBackColor = false;
-            this.AdminBtn.Click += new System.EventHandler(this.button4_Click);
+            AdminBtn.BackColor = Color.Transparent;
+            AdminBtn.DialogResult = DialogResult.Cancel;
+            AdminBtn.FlatAppearance.BorderColor = Color.White;
+            AdminBtn.FlatAppearance.BorderSize = 0;
+            AdminBtn.FlatStyle = FlatStyle.Flat;
+            AdminBtn.Font = new Font("Century Gothic", 12F, FontStyle.Bold,
+                GraphicsUnit.Point, 0);
+            AdminBtn.Image = (Image) resources.GetObject("AdminBtn.Image");
+            AdminBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            AdminBtn.Location = new Point(16, 2);
+            AdminBtn.Margin = new Padding(3, 2, 3, 2);
+            AdminBtn.Name = "AdminBtn";
+            AdminBtn.Size = new Size(289, 92);
+            AdminBtn.TabIndex = 4;
+            AdminBtn.Text = "              Admin Dashboard";
+            AdminBtn.TextAlign = ContentAlignment.MiddleLeft;
+            AdminBtn.UseVisualStyleBackColor = false;
+            AdminBtn.Click += button4_Click;
             // 
             // lendBtn
             // 
-            this.lendBtn.BackColor = System.Drawing.Color.Transparent;
-            this.lendBtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.lendBtn.FlatAppearance.BorderSize = 0;
-            this.lendBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lendBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lendBtn.Image = ((System.Drawing.Image)(resources.GetObject("lendBtn.Image")));
-            this.lendBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lendBtn.Location = new System.Drawing.Point(16, 473);
-            this.lendBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.lendBtn.Name = "lendBtn";
-            this.lendBtn.Size = new System.Drawing.Size(289, 92);
-            this.lendBtn.TabIndex = 3;
-            this.lendBtn.Text = "              Material Lend";
-            this.lendBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lendBtn.UseVisualStyleBackColor = false;
-            this.lendBtn.Click += new System.EventHandler(this.button5_Click);
+            lendBtn.BackColor = Color.Transparent;
+            lendBtn.FlatAppearance.BorderColor = Color.White;
+            lendBtn.FlatAppearance.BorderSize = 0;
+            lendBtn.FlatStyle = FlatStyle.Flat;
+            lendBtn.Font = new Font("Century Gothic", 12F, FontStyle.Bold,
+                GraphicsUnit.Point, 0);
+            lendBtn.Image = (Image) resources.GetObject("lendBtn.Image");
+            lendBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            lendBtn.Location = new Point(16, 473);
+            lendBtn.Margin = new Padding(3, 2, 3, 2);
+            lendBtn.Name = "lendBtn";
+            lendBtn.Size = new Size(289, 92);
+            lendBtn.TabIndex = 3;
+            lendBtn.Text = "              Material Lend";
+            lendBtn.TextAlign = ContentAlignment.MiddleLeft;
+            lendBtn.UseVisualStyleBackColor = false;
+            lendBtn.Click += button5_Click;
             // 
             // campBtn
             // 
-            this.campBtn.BackColor = System.Drawing.Color.Transparent;
-            this.campBtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.campBtn.FlatAppearance.BorderSize = 0;
-            this.campBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.campBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.campBtn.Image = ((System.Drawing.Image)(resources.GetObject("campBtn.Image")));
-            this.campBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.campBtn.Location = new System.Drawing.Point(16, 379);
-            this.campBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.campBtn.Name = "campBtn";
-            this.campBtn.Size = new System.Drawing.Size(295, 92);
-            this.campBtn.TabIndex = 2;
-            this.campBtn.Text = "              Camping Check                             in/out";
-            this.campBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.campBtn.UseVisualStyleBackColor = false;
-            this.campBtn.Click += new System.EventHandler(this.button6_Click);
+            campBtn.BackColor = Color.Transparent;
+            campBtn.FlatAppearance.BorderColor = Color.White;
+            campBtn.FlatAppearance.BorderSize = 0;
+            campBtn.FlatStyle = FlatStyle.Flat;
+            campBtn.Font = new Font("Century Gothic", 12F, FontStyle.Bold,
+                GraphicsUnit.Point, 0);
+            campBtn.Image = (Image) resources.GetObject("campBtn.Image");
+            campBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            campBtn.Location = new Point(16, 379);
+            campBtn.Margin = new Padding(3, 2, 3, 2);
+            campBtn.Name = "campBtn";
+            campBtn.Size = new Size(295, 92);
+            campBtn.TabIndex = 2;
+            campBtn.Text = "              Camping Check                             in/out";
+            campBtn.TextAlign = ContentAlignment.MiddleLeft;
+            campBtn.UseVisualStyleBackColor = false;
+            campBtn.Click += button6_Click;
             // 
             // checkinBTn
             // 
-            this.checkinBTn.BackColor = System.Drawing.Color.Transparent;
-            this.checkinBTn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.checkinBTn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.checkinBTn.FlatAppearance.BorderSize = 0;
-            this.checkinBTn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.checkinBTn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkinBTn.Image = ((System.Drawing.Image)(resources.GetObject("checkinBTn.Image")));
-            this.checkinBTn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.checkinBTn.Location = new System.Drawing.Point(16, 191);
-            this.checkinBTn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.checkinBTn.Name = "checkinBTn";
-            this.checkinBTn.Size = new System.Drawing.Size(289, 92);
-            this.checkinBTn.TabIndex = 1;
-            this.checkinBTn.Text = "               Check in/out";
-            this.checkinBTn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.checkinBTn.UseVisualStyleBackColor = false;
-            this.checkinBTn.Click += new System.EventHandler(this.button3_Click);
+            checkinBTn.BackColor = Color.Transparent;
+            checkinBTn.DialogResult = DialogResult.Cancel;
+            checkinBTn.FlatAppearance.BorderColor = Color.White;
+            checkinBTn.FlatAppearance.BorderSize = 0;
+            checkinBTn.FlatStyle = FlatStyle.Flat;
+            checkinBTn.Font = new Font("Century Gothic", 12F, FontStyle.Bold,
+                GraphicsUnit.Point, 0);
+            checkinBTn.Image = (Image) resources.GetObject("checkinBTn.Image");
+            checkinBTn.ImageAlign = ContentAlignment.MiddleLeft;
+            checkinBTn.Location = new Point(16, 191);
+            checkinBTn.Margin = new Padding(3, 2, 3, 2);
+            checkinBTn.Name = "checkinBTn";
+            checkinBTn.Size = new Size(289, 92);
+            checkinBTn.TabIndex = 1;
+            checkinBTn.Text = "               Check in/out";
+            checkinBTn.TextAlign = ContentAlignment.MiddleLeft;
+            checkinBTn.UseVisualStyleBackColor = false;
+            checkinBTn.Click += button3_Click;
             // 
             // storeBtn
             // 
-            this.storeBtn.BackColor = System.Drawing.Color.Transparent;
-            this.storeBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.storeBtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.storeBtn.FlatAppearance.BorderSize = 0;
-            this.storeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.storeBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.storeBtn.Image = ((System.Drawing.Image)(resources.GetObject("storeBtn.Image")));
-            this.storeBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.storeBtn.Location = new System.Drawing.Point(16, 286);
-            this.storeBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.storeBtn.Name = "storeBtn";
-            this.storeBtn.Size = new System.Drawing.Size(289, 92);
-            this.storeBtn.TabIndex = 1;
-            this.storeBtn.Text = "              Article";
-            this.storeBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.storeBtn.UseVisualStyleBackColor = false;
-            this.storeBtn.Click += new System.EventHandler(this.button2_Click);
+            storeBtn.BackColor = Color.Transparent;
+            storeBtn.DialogResult = DialogResult.Cancel;
+            storeBtn.FlatAppearance.BorderColor = Color.White;
+            storeBtn.FlatAppearance.BorderSize = 0;
+            storeBtn.FlatStyle = FlatStyle.Flat;
+            storeBtn.Font = new Font("Century Gothic", 12F, FontStyle.Bold,
+                GraphicsUnit.Point, 0);
+            storeBtn.Image = (Image) resources.GetObject("storeBtn.Image");
+            storeBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            storeBtn.Location = new Point(16, 286);
+            storeBtn.Margin = new Padding(3, 2, 3, 2);
+            storeBtn.Name = "storeBtn";
+            storeBtn.Size = new Size(289, 92);
+            storeBtn.TabIndex = 1;
+            storeBtn.Text = "              Store";
+            storeBtn.TextAlign = ContentAlignment.MiddleLeft;
+            storeBtn.UseVisualStyleBackColor = false;
+            storeBtn.Click += button2_Click;
             // 
             // ticketsBtn
             // 
-            this.ticketsBtn.BackColor = System.Drawing.Color.Transparent;
-            this.ticketsBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.ticketsBtn.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.ticketsBtn.FlatAppearance.BorderSize = 0;
-            this.ticketsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ticketsBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ticketsBtn.Image = ((System.Drawing.Image)(resources.GetObject("ticketsBtn.Image")));
-            this.ticketsBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ticketsBtn.Location = new System.Drawing.Point(16, 97);
-            this.ticketsBtn.Margin = new System.Windows.Forms.Padding(0, 0, 0, 2);
-            this.ticketsBtn.Name = "ticketsBtn";
-            this.ticketsBtn.Size = new System.Drawing.Size(289, 92);
-            this.ticketsBtn.TabIndex = 0;
-            this.ticketsBtn.Text = "              Tickets";
-            this.ticketsBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ticketsBtn.UseVisualStyleBackColor = false;
-            this.ticketsBtn.Click += new System.EventHandler(this.ticketsBtn_Click);
+            ticketsBtn.BackColor = Color.Transparent;
+            ticketsBtn.DialogResult = DialogResult.Cancel;
+            ticketsBtn.FlatAppearance.BorderColor = Color.Black;
+            ticketsBtn.FlatAppearance.BorderSize = 0;
+            ticketsBtn.FlatStyle = FlatStyle.Flat;
+            ticketsBtn.Font = new Font("Century Gothic", 12F, FontStyle.Bold,
+                GraphicsUnit.Point, 0);
+            ticketsBtn.Image = (Image) resources.GetObject("ticketsBtn.Image");
+            ticketsBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            ticketsBtn.Location = new Point(16, 97);
+            ticketsBtn.Margin = new Padding(0, 0, 0, 2);
+            ticketsBtn.Name = "ticketsBtn";
+            ticketsBtn.Size = new Size(289, 92);
+            ticketsBtn.TabIndex = 0;
+            ticketsBtn.Text = "              Tickets";
+            ticketsBtn.TextAlign = ContentAlignment.MiddleLeft;
+            ticketsBtn.UseVisualStyleBackColor = false;
+            ticketsBtn.Click += ticketsBtn_Click;
             // 
             // pictureBox3
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.White;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(936, 0);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox3.Size = new System.Drawing.Size(31, 34);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 1;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
-            this.pictureBox3.MouseEnter += new System.EventHandler(this.pictureBox3_MouseEnter);
-            this.pictureBox3.MouseLeave += new System.EventHandler(this.pictureBox3_MouseLeave);
+            pictureBox3.BackColor = Color.White;
+            pictureBox3.Image = (Image) resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(936, 0);
+            pictureBox3.Margin = new Padding(3, 2, 3, 2);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Padding = new Padding(3, 2, 3, 2);
+            pictureBox3.Size = new Size(31, 34);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.TabIndex = 1;
+            pictureBox3.TabStop = false;
+            pictureBox3.Click += pictureBox3_Click;
+            pictureBox3.MouseEnter += pictureBox3_MouseEnter;
+            pictureBox3.MouseLeave += pictureBox3_MouseLeave;
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.Chocolate;
-            this.panel4.Controls.Add(this.panel3);
-            this.panel4.Controls.Add(this.pictureBox3);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(314, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(968, 86);
-            this.panel4.TabIndex = 2;
+            panel4.BackColor = Color.Chocolate;
+            panel4.Controls.Add(panel3);
+            panel4.Controls.Add(pictureBox3);
+            panel4.Dock = DockStyle.Top;
+            panel4.Location = new Point(314, 0);
+            panel4.Margin = new Padding(3, 2, 3, 2);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(968, 86);
+            panel4.TabIndex = 2;
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel3.Controls.Add(this.button2);
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.tbBarcode);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.button1);
-            this.panel3.Location = new System.Drawing.Point(0, 31);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(968, 48);
-            this.panel3.TabIndex = 4;
+            panel3.BackColor = Color.FromArgb(224, 224,
+                224);
+            panel3.Controls.Add(button2);
+            panel3.Controls.Add(label4);
+            panel3.Controls.Add(tbBarcode);
+            panel3.Controls.Add(label3);
+            panel3.Controls.Add(label2);
+            panel3.Controls.Add(button1);
+            panel3.Location = new Point(0, 31);
+            panel3.Margin = new Padding(3, 2, 3, 2);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(968, 48);
+            panel3.TabIndex = 4;
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Myriad Hebrew", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(292, 14);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(71, 25);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Search";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            button2.BackColor = Color.FromArgb(255, 255,
+                192);
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Myriad Hebrew", 7.8F, FontStyle.Bold,
+                GraphicsUnit.Point, 0);
+            button2.Location = new Point(292, 14);
+            button2.Margin = new Padding(3, 2, 3, 2);
+            button2.Name = "button2";
+            button2.Size = new Size(71, 25);
+            button2.TabIndex = 5;
+            button2.Text = "Search";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click_1;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Sitka Small", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(5, 9);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(111, 28);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Ticket ID:";
+            label4.AutoSize = true;
+            label4.Font = new Font("Sitka Small", 10.8F, FontStyle.Bold,
+                GraphicsUnit.Point, 0);
+            label4.Location = new Point(5, 9);
+            label4.Name = "label4";
+            label4.Size = new Size(111, 28);
+            label4.TabIndex = 4;
+            label4.Text = "Ticket ID:";
             // 
             // tbBarcode
             // 
-            this.tbBarcode.Location = new System.Drawing.Point(117, 14);
-            this.tbBarcode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbBarcode.Name = "tbBarcode";
-            this.tbBarcode.Size = new System.Drawing.Size(170, 24);
-            this.tbBarcode.TabIndex = 3;
+            tbBarcode.Location = new Point(117, 14);
+            tbBarcode.Margin = new Padding(3, 2, 3, 2);
+            tbBarcode.Name = "tbBarcode";
+            tbBarcode.Size = new Size(170, 24);
+            tbBarcode.TabIndex = 3;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Sitka Small", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(602, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 28);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Balance:";
+            label3.AutoSize = true;
+            label3.Font = new Font("Sitka Small", 10.8F, FontStyle.Bold,
+                GraphicsUnit.Point, 0);
+            label3.Location = new Point(602, 9);
+            label3.Name = "label3";
+            label3.Size = new Size(99, 28);
+            label3.TabIndex = 2;
+            label3.Text = "Balance:";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Sitka Small", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(377, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 28);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Name:";
+            label2.AutoSize = true;
+            label2.Font = new Font("Sitka Small", 10.8F, FontStyle.Bold,
+                GraphicsUnit.Point, 0);
+            label2.Location = new Point(377, 9);
+            label2.Name = "label2";
+            label2.Size = new Size(78, 28);
+            label2.TabIndex = 1;
+            label2.Text = "Name:";
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(791, 2);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(174, 43);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Scan Barcode";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            button1.BackColor = SystemColors.HighlightText;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold,
+                GraphicsUnit.Point, 0);
+            button1.Location = new Point(791, 2);
+            button1.Margin = new Padding(3, 2, 3, 2);
+            button1.Name = "button1";
+            button1.Size = new Size(174, 43);
+            button1.TabIndex = 0;
+            button1.Text = "Scan Barcode";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // viewTickets1
             // 
-            this.viewTickets1.BackColor = System.Drawing.Color.Linen;
-            this.viewTickets1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.viewTickets1.Location = new System.Drawing.Point(318, 79);
-            this.viewTickets1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.viewTickets1.Name = "viewTickets1";
-            this.viewTickets1.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.viewTickets1.Size = new System.Drawing.Size(964, 727);
-            this.viewTickets1.TabIndex = 8;
+            viewTickets1.BackColor = Color.Linen;
+            viewTickets1.BackgroundImageLayout = ImageLayout.Zoom;
+            viewTickets1.Location = new Point(318, 79);
+            viewTickets1.Margin = new Padding(3, 2, 3, 2);
+            viewTickets1.Name = "viewTickets1";
+            viewTickets1.Padding = new Padding(5, 5, 5, 5);
+            viewTickets1.Size = new Size(964, 727);
+            viewTickets1.TabIndex = 8;
             // 
             // viewStore1
             // 
-            this.viewStore1.BackColor = System.Drawing.Color.Linen;
-            this.viewStore1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.viewStore1.Location = new System.Drawing.Point(314, 78);
-            this.viewStore1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.viewStore1.Name = "viewStore1";
-            this.viewStore1.Size = new System.Drawing.Size(973, 702);
-            this.viewStore1.TabIndex = 7;
+            viewStore1.BackColor = Color.Linen;
+            viewStore1.BackgroundImageLayout = ImageLayout.Zoom;
+            viewStore1.Location = new Point(314, 78);
+            viewStore1.Margin = new Padding(3, 2, 3, 2);
+            viewStore1.Name = "viewStore1";
+            viewStore1.Size = new Size(973, 702);
+            viewStore1.TabIndex = 7;
             // 
             // viewLending1
             // 
-            this.viewLending1.BackColor = System.Drawing.Color.Linen;
-            this.viewLending1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.viewLending1.Location = new System.Drawing.Point(314, 78);
-            this.viewLending1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.viewLending1.Name = "viewLending1";
-            this.viewLending1.Size = new System.Drawing.Size(965, 702);
-            this.viewLending1.TabIndex = 6;
+            viewLending1.BackColor = Color.Linen;
+            viewLending1.BackgroundImageLayout = ImageLayout.Zoom;
+            viewLending1.Location = new Point(314, 78);
+            viewLending1.Margin = new Padding(3, 2, 3, 2);
+            viewLending1.Name = "viewLending1";
+            viewLending1.Size = new Size(965, 702);
+            viewLending1.TabIndex = 6;
             // 
             // viewCheckInOut1
             // 
-            this.viewCheckInOut1.BackColor = System.Drawing.Color.Linen;
-            this.viewCheckInOut1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.viewCheckInOut1.Location = new System.Drawing.Point(314, 78);
-            this.viewCheckInOut1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.viewCheckInOut1.Name = "viewCheckInOut1";
-            this.viewCheckInOut1.Padding = new System.Windows.Forms.Padding(5);
-            this.viewCheckInOut1.Size = new System.Drawing.Size(973, 702);
-            this.viewCheckInOut1.TabIndex = 5;
+            viewCheckInOut1.BackColor = Color.Linen;
+            viewCheckInOut1.BackgroundImageLayout = ImageLayout.Zoom;
+            viewCheckInOut1.Location = new Point(314, 78);
+            viewCheckInOut1.Margin = new Padding(3, 2, 3, 2);
+            viewCheckInOut1.Name = "viewCheckInOut1";
+            viewCheckInOut1.Padding = new Padding(5);
+            viewCheckInOut1.Size = new Size(973, 702);
+            viewCheckInOut1.TabIndex = 5;
             // 
             // viewCamping1
             // 
-            this.viewCamping1.BackColor = System.Drawing.Color.Linen;
-            this.viewCamping1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.viewCamping1.Location = new System.Drawing.Point(314, 85);
-            this.viewCamping1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.viewCamping1.Name = "viewCamping1";
-            this.viewCamping1.Size = new System.Drawing.Size(973, 702);
-            this.viewCamping1.TabIndex = 4;
+            viewCamping1.BackColor = Color.Linen;
+            viewCamping1.BackgroundImageLayout = ImageLayout.Zoom;
+            viewCamping1.Location = new Point(314, 85);
+            viewCamping1.Margin = new Padding(3, 2, 3, 2);
+            viewCamping1.Name = "viewCamping1";
+            viewCamping1.Size = new Size(973, 702);
+            viewCamping1.TabIndex = 4;
             // 
             // viewAdminDashboard1
             // 
-            this.viewAdminDashboard1.BackColor = System.Drawing.Color.Linen;
-            this.viewAdminDashboard1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.viewAdminDashboard1.Location = new System.Drawing.Point(314, 85);
-            this.viewAdminDashboard1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.viewAdminDashboard1.Name = "viewAdminDashboard1";
-            this.viewAdminDashboard1.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.viewAdminDashboard1.Size = new System.Drawing.Size(968, 702);
-            this.viewAdminDashboard1.TabIndex = 3;
+            viewAdminDashboard1.BackColor = Color.Linen;
+            viewAdminDashboard1.BackgroundImageLayout = ImageLayout.Zoom;
+            viewAdminDashboard1.Location = new Point(314, 85);
+            viewAdminDashboard1.Margin = new Padding(3, 2, 3, 2);
+            viewAdminDashboard1.Name = "viewAdminDashboard1";
+            viewAdminDashboard1.Padding = new Padding(5, 5, 5, 5);
+            viewAdminDashboard1.Size = new Size(968, 702);
+            viewAdminDashboard1.TabIndex = 3;
             // 
             // viewLogin1
             // 
-            this.viewLogin1.Location = new System.Drawing.Point(0, 0);
-            this.viewLogin1.Margin = new System.Windows.Forms.Padding(2);
-            this.viewLogin1.Name = "viewLogin1";
-            this.viewLogin1.Size = new System.Drawing.Size(1282, 806);
-            this.viewLogin1.TabIndex = 4;
+            viewLogin1.Location = new Point(0, 0);
+            viewLogin1.Margin = new Padding(2);
+            viewLogin1.Name = "viewLogin1";
+            viewLogin1.Size = new Size(1282, 806);
+            viewLogin1.TabIndex = 4;
             // 
             // Form1
             // 
-            this.AllowDrop = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Chocolate;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1282, 786);
-            this.Controls.Add(this.viewTickets1);
-            this.Controls.Add(this.viewStore1);
-            this.Controls.Add(this.viewLending1);
-            this.Controls.Add(this.viewCheckInOut1);
-            this.Controls.Add(this.viewCamping1);
-            this.Controls.Add(this.viewAdminDashboard1);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.viewLogin1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "Form1";
-            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "4";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.ResumeLayout(false);
-
+            AllowDrop = true;
+            AutoScaleDimensions = new SizeF(7F, 16F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Chocolate;
+            BackgroundImageLayout = ImageLayout.None;
+            ClientSize = new Size(1282, 786);
+            Controls.Add(viewTickets1);
+            Controls.Add(viewStore1);
+            Controls.Add(viewLending1);
+            Controls.Add(viewCheckInOut1);
+            Controls.Add(viewCamping1);
+            Controls.Add(viewAdminDashboard1);
+            Controls.Add(panel4);
+            Controls.Add(panel1);
+            Controls.Add(viewLogin1);
+            FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon) resources.GetObject("$this.Icon");
+            ImeMode = ImeMode.Off;
+            Margin = new Padding(3, 2, 3, 2);
+            Name = "Form1";
+            SizeGripStyle = SizeGripStyle.Show;
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "4";
+            Load += Form1_Load;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panel6.ResumeLayout(false);
+            ((ISupportInitialize) pictureBox1).EndInit();
+            ((ISupportInitialize) pictureBox2).EndInit();
+            panel2.ResumeLayout(false);
+            ((ISupportInitialize) pictureBox3).EndInit();
+            panel4.ResumeLayout(false);
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            ResumeLayout(false);
         }
 
         private void panel5_Paint(object sender, PaintEventArgs e)
         {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
         }
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-
         }
 
         private void LogoutBtn_Click(object sender, EventArgs e)
@@ -623,4 +621,3 @@ namespace HHF_APP
         }
     }
 }
-

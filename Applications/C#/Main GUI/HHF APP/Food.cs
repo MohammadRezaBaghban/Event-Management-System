@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HHF_APP
 {
-    class Food : Articles
+    class Food : Article
     {   //here we have enums to be used in the constructors and in the ToString
         public enum type {Meal,Drink}
 
@@ -17,22 +17,25 @@ namespace HHF_APP
         private decimal Amount;
 
         //constructor for Meals
-        public Food(string name, decimal price, int quantity, bool Chili,bool Double, bool Menu) : base(name, price, quantity)
+        public Food(string name, decimal price, int quantity, ArticleType atype, bool Chili,bool Double, bool Menu) : base(name, price, quantity,atype)
         {
             this.tyoeOfFood = type.Meal;
             this.Chili = Chili;
             this.Double = Double;
             this.Menu = Menu;
-         
+            Amount = 0m;
         }
 
         //constructor for drinks
-        public Food(string name, decimal price, int quantity) : base(name, price, quantity)
+        public Food(string name, decimal price, int quantity, ArticleType atype) : base(name, price, quantity,atype)
         {
             this.tyoeOfFood = type.Drink;
         }
         public override decimal GetPrice()
         {
+            Amount = 0m;
+            Amount += base.GetPrice();
+
             if (Chili)
             {
                 Amount += 1;
@@ -48,14 +51,14 @@ namespace HHF_APP
                 Amount += 6;
             }
 
-            Amount += base.GetPrice();
+          
 
             return Amount;
         }
 
         public override string ToString()
         {
-             string msj=base.ToString() + Amount;
+             string msj=base.ToString()+GetPrice();
             if (tyoeOfFood == type.Meal)
             {
                 if (Menu)
@@ -65,7 +68,7 @@ namespace HHF_APP
 
                 if (Chili || Double)
                 {
-                    msj += "with Add-ons: ";
+                    msj += ", with Add-ons: ";
                     if (Double)
                     {
                         msj += "| Double Toppings |";
@@ -80,7 +83,8 @@ namespace HHF_APP
                 return msj;
             }
 
-            return string.Format(base.ToString() + Amount);
+            return base.ToString() + GetPrice();
+
         }
     }
 }
