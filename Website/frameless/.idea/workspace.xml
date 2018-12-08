@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="57a408cb-29f0-4aa9-a724-f4cc8cea0832" name="Default Changelist" comment="connecting signup form to db plus validation for password repeat and mail validation on php an js">
-      <change beforePath="$PROJECT_DIR$/../../Applications/C#/Main GUI/.vs/Main GUI/v15/Server/sqlite3/storage.ide" beforeDir="false" afterPath="$PROJECT_DIR$/../../Applications/C#/Main GUI/.vs/Main GUI/v15/Server/sqlite3/storage.ide" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Applications/C#/Main GUI/.vs/Main GUI/v15/Server/sqlite3/storage.ide-wal" beforeDir="false" afterPath="$PROJECT_DIR$/../../Applications/C#/Main GUI/.vs/Main GUI/v15/Server/sqlite3/storage.ide-wal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Applications/C#/Main GUI/HHF APP/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Applications/C#/Main GUI/HHF APP/Form1.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Applications/C#/Main GUI/HHF APP/Store.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Applications/C#/Main GUI/HHF APP/obj/Debug/HHF APP.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../Applications/C#/Main GUI/HHF APP/obj/Debug/HHF APP.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/php/random_compat" beforeDir="false" afterPath="$PROJECT_DIR$/php/random_compat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/php/random_compat/other/build_phar.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/random_compat/other/build_phar.php" afterDir="false" />
     </list>
@@ -92,14 +87,15 @@
     <session id="-1785616159">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="11" />
+          <entry key="project.closed" value="12" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.12" value="2" />
           <entry key="project.open.time.13" value="2" />
+          <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.16" value="3" />
           <entry key="project.open.time.18" value="3" />
           <entry key="project.open.time.24" value="1" />
-          <entry key="project.opened" value="12" />
+          <entry key="project.opened" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -481,6 +477,7 @@
       <workItem from="1543932491154" duration="1891000" />
       <workItem from="1543962461412" duration="3671000" />
       <workItem from="1544176150463" duration="86000" />
+      <workItem from="1544270214445" duration="439000" />
     </task>
     <task id="LOCAL-00001" summary="updating and connecting contact form to db">
       <created>1538835584591</created>
@@ -500,7 +497,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="146975000" />
+    <option name="totallyTimeSpent" value="147414000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
