@@ -238,9 +238,10 @@ namespace HHF_APP
             }
         }
 
-
+        //Function for login 
         public bool appLogin(string email, string password)
         {
+            //Count because the number of records for succesfull login should be q as there is only one user with such records
             string joinQuery = "SELECT COUNT(*) as cnt FROM employees WHERE email=@email AND password =@password";
 
             MySqlCommand command = new MySqlCommand(joinQuery, connection);
@@ -266,6 +267,138 @@ namespace HHF_APP
                 connection.Close();
             }
         }
-    }
+
+        //Function for finding the User and his Tickets
+
+        public string holderName; public int actId,ticketId;
+        public bool checkTicket(int user_id)
+        {
+            string query = "SELECT usr.fname , usr.lname , usr.account_id ,t.ticket_id FROM users AS usr JOIN tickets AS t on usr.user_id=t.user_id  where usr.user_id=@user_id";
+            MySqlCommand command = new MySqlCommand(query, connection);
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@user_id", user_id);
+
+            try
+            {
+                connection.Open();
+                MySqlDataReader reader = command.ExecuteReader();
+                bool temp=false;
+                while (reader.Read())
+                {
+                    this.holderName = Convert.ToString(reader["fname"]);
+                    this.holderName += " " + reader["lname"].ToString();
+                    this.actId = Convert.ToInt32(reader["account_id"]);
+                    this.ticketId = Convert.ToInt32(reader["ticket_id"]);
+                    temp = true;
+                }
+
+                if (temp==false)
+                {
+                    return false;
+                }
+                else { return true; }
+
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        //Function for checking in users
+        public int checkIn(int user_id)
+        {
+            string check_in_query = "UPDATE users SET status='checked_in'  where user_id=@user_id";
+            MySqlCommand command = new MySqlCommand(check_in_query, connection);
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@user_id", user_id);
             
+            try
+            {
+                connection.Open();
+                int checkedRecords = command.ExecuteNonQuery();
+                return checkedRecords;
+            }
+            catch
+            {
+                return -1;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        //Function for checking if users are already checkd in
+        public int checkedIn(int user_id)
+        {
+            string check_in_query = "SELECT status FROM users WHERE user_id=@user_id and status='checked_in'";
+            MySqlCommand command = new MySqlCommand(check_in_query, connection);
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@user_id", user_id);
+
+            try
+            {
+                connection.Open();
+                int checkedRecords = command.ExecuteNonQuery();
+                return checkedRecords;
+            }
+            catch
+            {
+                return -1;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+
+        public int ticketBalance, ticketRefund;
+        public string ticketStatus,ticketType;
+        public bool checkInOutInfo(int user_id)
+        {
+            string query =
+                "SELECT tr.type,a.is_valid,tr.current_balance FROM accounts AS a  JOIN users AS usr ON a.account_id=usr.account_id JOIN transactions AS tr ON tr.account_id=a.account_id where usr.user_id =@user_id";
+            MySqlCommand command = new MySqlCommand(query, connection);
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@user_id", user_id);
+
+            try
+            {
+                connection.Open();
+                MySqlDataReader reader = command.ExecuteReader();
+                bool temp = false;
+                while (reader.Read())
+                {
+                    this.ticketType = Convert.ToString(reader["type"]);
+                    this.ticketStatus = Convert.ToString(reader["is_valid"]);
+                    this.ticketBalance = Convert.ToInt32(reader["current_balance"]);
+                    this.ticketRefund = Convert.ToInt32(reader["current_balance"]);
+                    temp= true;
+                }
+
+                if (temp == false)
+                {
+                    return false;
+                }
+                else { return true; }
+
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+    }
+
 }

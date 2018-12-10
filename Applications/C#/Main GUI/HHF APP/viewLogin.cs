@@ -29,6 +29,8 @@ namespace HHF_APP
                 this.SendToBack();
             }
             else { MessageBox.Show("Incorrect Username or Password"); }
+            tbEmail.Clear();
+            tbPassword.Clear();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
