@@ -14,21 +14,24 @@ namespace HHF_APP
     {
 
         public MySqlConnection connection;
+
         public DataHelper()
         {
             String connectionInfo = "server=studmysql01.fhict.local;" +
-                                "database=dbi400320;" +
-                                "user id=dbi400320;" +
-                                "Pwd=12345678;" +
-                                "connect timeout=30;";
+                                    "database=dbi400320;" +
+                                    "user id=dbi400320;" +
+                                    "Pwd=12345678;" +
+                                    "connect timeout=30;";
 
             connection = new MySqlConnection(connectionInfo);
         }
 
 
-        public int AddEmployee(String fName, String lName, String email, String password, String phoneNr, String position, String street, String postcode)
+        public int AddEmployee(String fName, String lName, String email, String password, String phoneNr,
+            String position, String street, String postcode)
         {
-            String query = "INSERT INTO employees(emp_id, fname, lname, email, password, phone_nr, position, street, postcode) VALUES (@empID, @fName, @lName, @email, @password, @phoneNr, @position, @street, @postcode)";
+            String query =
+                "INSERT INTO employees(emp_id, fname, lname, email, password, phone_nr, position, street, postcode) VALUES (@empID, @fName, @lName, @email, @password, @phoneNr, @position, @street, @postcode)";
             MySqlCommand command = new MySqlCommand(query, connection);
             command.Parameters.AddWithValue("@empID", null);
             command.Parameters.AddWithValue("@fName", fName);
@@ -62,7 +65,8 @@ namespace HHF_APP
 
         public int RemoveEmployee1(String fName, String lName) /* Not Working ATM */
         {
-            String query = "DELETE FROM employees WHERE emp_id IN (SELECT MAX(emp_id) FROM employees) AND fname = @fName AND lname = @lName";
+            String query =
+                "DELETE FROM employees WHERE emp_id IN (SELECT MAX(emp_id) FROM employees) AND fname = @fName AND lname = @lName";
             MySqlCommand command = new MySqlCommand(query, connection);
             command.Parameters.AddWithValue("@fName", fName);
             command.Parameters.AddWithValue("@lName", lName);
@@ -213,6 +217,7 @@ namespace HHF_APP
                 connection.Close();
             }
         }
+
         public List<Employee> GetEmployees()
         {
             String query = "SELECT emp_id, fname, lname, position FROM employees";
@@ -247,6 +252,7 @@ namespace HHF_APP
             {
                 connection.Close();
             }
+
             return temp;
         }
 
@@ -285,6 +291,7 @@ namespace HHF_APP
             {
                 connection.Close();
             }
+
             return temp;
         }
 
@@ -324,6 +331,7 @@ namespace HHF_APP
             {
                 connection.Close();
             }
+
             return temp;
         }
 
@@ -333,7 +341,7 @@ namespace HHF_APP
             MySqlCommand command = new MySqlCommand(query, connection);
             command.Parameters.AddWithValue("@password", password);
             command.Parameters.AddWithValue("@emp_id", empId);
-            
+
         }
 
         //Function for login 
@@ -355,7 +363,10 @@ namespace HHF_APP
                 {
                     return true;
                 }
-                else { return false; }
+                else
+                {
+                    return false;
+                }
             }
             catch
             {
@@ -367,12 +378,12 @@ namespace HHF_APP
             }
         }
 
-        //Function for finding the User and his Tickets
 
-        public string holderName; public int actId,ticketId;
-        public bool checkTicket(int user_id)
+
+        public Person checkTicket1(int user_id)
         {
-            string query = "SELECT usr.fname , usr.lname , usr.account_id ,t.ticket_id FROM users AS usr JOIN tickets AS t on usr.user_id=t.user_id  where usr.user_id=@user_id";
+            string query =
+                "SELECT usr.fname , usr.lname , usr.account_id ,t.ticket_id, ac.currentbal FROM users AS usr JOIN tickets AS t on usr.user_id=t.user_id,accounts ac  where usr.user_id=@user_id and usr.account_id= ac.account_id";
             MySqlCommand command = new MySqlCommand(query, connection);
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@user_id", user_id);
@@ -381,26 +392,27 @@ namespace HHF_APP
             {
                 connection.Open();
                 MySqlDataReader reader = command.ExecuteReader();
-                bool temp=false;
+                Person temp = null;
                 while (reader.Read())
                 {
-                    this.holderName = Convert.ToString(reader["fname"]);
-                    this.holderName += " " + reader["lname"].ToString();
-                    this.actId = Convert.ToInt32(reader["account_id"]);
-                    this.ticketId = Convert.ToInt32(reader["ticket_id"]);
-                    temp = true;
+                    temp = new Person(user_id, Convert.ToString(reader["fname"]), Convert.ToString(reader["lname"]),
+                        Convert.ToInt32(reader["account_id"]), Convert.ToInt32(reader["ticket_id"]),
+                        Convert.ToDecimal(reader["currentbal"]));
                 }
 
-                if (temp==false)
+                if (temp != null)
                 {
-                    return false;
+                    return temp;
                 }
-                else { return true; }
+                else
+                {
+                    return null;
+                }
 
             }
             catch
             {
-                return false;
+                return null;
             }
             finally
             {
@@ -415,7 +427,7 @@ namespace HHF_APP
             MySqlCommand command = new MySqlCommand(check_in_query, connection);
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@user_id", user_id);
-            
+
             try
             {
                 connection.Open();
@@ -458,7 +470,8 @@ namespace HHF_APP
 
 
         public int ticketBalance, ticketRefund;
-        public string ticketStatus,ticketType;
+        public string ticketStatus, ticketType;
+
         public bool checkInOutInfo(int user_id)
         {
             string query =
@@ -478,15 +491,17 @@ namespace HHF_APP
                     this.ticketStatus = Convert.ToString(reader["is_valid"]);
                     this.ticketBalance = Convert.ToInt32(reader["current_balance"]);
                     this.ticketRefund = Convert.ToInt32(reader["current_balance"]);
-                    temp= true;
+                    temp = true;
                 }
 
                 if (temp == false)
                 {
                     return false;
                 }
-                else { return true; }
-
+                else
+                {
+                    return true;
+                }
             }
             catch
             {
@@ -497,14 +512,15 @@ namespace HHF_APP
                 connection.Close();
             }
         }
-    }
 
 
 
-    public int addTransaction(int userid, decimal amount, string type)
+
+
+        public int addTransaction(int userid, decimal amount, string type)
         {
             int act_id = -1;
-            decimal balance=0.0m;
+            decimal balance = 0.0m;
 
             using (connection)
             {
@@ -540,24 +556,26 @@ namespace HHF_APP
                     {
                         balance = Convert.ToDecimal(reader["currentbal"]);
                     }
+
                     reader.Close();
                     //validate whether the balance is sufficent
-                    if (balance-amount<0 && amount >0)
+                    if (balance - amount < 0 && amount > 0)
                     {
                         throw new Exception("Balance is insufficient");
                     }
 
                     //create new transaction
-                    query ="INSERT INTO transactions (`date`, `time`, `account_id`, `amount`, `current_balance`, `type`) VALUES (@date, @time, @account_id, @amount, @current_balance, @type)";
-                    command= new MySqlCommand(query, connection);
+                    query =
+                        "INSERT INTO transactions (`date`, `time`, `account_id`, `amount`, `current_balance`, `type`) VALUES (@date, @time, @account_id, @amount, @current_balance, @type)";
+                    command = new MySqlCommand(query, connection);
                     string s = DateTime.Now.ToString("yyyy-MM-dd");
                     command.Parameters.AddWithValue("@date", s);
-                    s= DateTime.Now.ToString("HH:mm:ss");
-                    command.Parameters.AddWithValue("@time",s);
-                    
+                    s = DateTime.Now.ToString("HH:mm:ss");
+                    command.Parameters.AddWithValue("@time", s);
+
                     command.Parameters.AddWithValue("@account_id", act_id);
                     command.Parameters.AddWithValue("@amount", amount);
-                    command.Parameters.AddWithValue("@current_balance", balance-amount);
+                    command.Parameters.AddWithValue("@current_balance", balance - amount);
                     command.Parameters.AddWithValue("@type", type);
 
 
@@ -567,12 +585,16 @@ namespace HHF_APP
 
                     query = "UPDATE accounts SET currentbal = @bal WHERE account_id = @id";
                     command = new MySqlCommand(query, connection);
-                    command.Parameters.AddWithValue("@bal", balance-amount);
+                    command.Parameters.AddWithValue("@bal", balance - amount);
                     command.Parameters.AddWithValue("@id", act_id);
 
 
                     command.ExecuteNonQuery();
-                    if (Convert.ToInt32(command.ExecuteNonQuery()) <= 0) {throw new Exception("Error While Updating the balance");}
+                    if (Convert.ToInt32(command.ExecuteNonQuery()) <= 0)
+                    {
+                        throw new Exception("Error While Updating the balance");
+                    }
+
                     tran.Commit();
                     return 1;
 
@@ -595,4 +617,5 @@ namespace HHF_APP
                 }
             }
         }
+    }
 }
