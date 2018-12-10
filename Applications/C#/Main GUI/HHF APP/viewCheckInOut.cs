@@ -20,9 +20,11 @@ namespace HHF_APP
         string filename;
         private Font verdana10Font;
         private StreamReader reader;
+        private DataHelper dh;
         public viewCheckInOut()
         {
             InitializeComponent();
+            dh = new DataHelper();
         }
 
         private void viewCheckInOut_Load(object sender, EventArgs e)
@@ -89,5 +91,40 @@ namespace HHF_APP
             e.Graphics.DrawImage(img, loc);
         }
 
+        private void btnTicketFind_Click(object sender, EventArgs e)
+        {
+            int user_id = Convert.ToInt32(tbUserId.Text);
+            if (dh.checkTicket(user_id)==true && dh.checkInOutInfo(user_id)==true)
+            {
+                lblHolderName.Text = dh.holderName;
+                lblAccountID.Text = Convert.ToString(dh.actId);
+                lblTicketID.Text = Convert.ToString(dh.ticketId);
+                lblTicketType.Text = Convert.ToString(dh.ticketType);
+                lblTicketStatus.Text = Convert.ToString(dh.ticketStatus);
+                lblBalance.Text = Convert.ToString(dh.ticketBalance);
+                lblRefundAmount.Text = Convert.ToString(dh.ticketRefund);
+            }
+            else { MessageBox.Show("User with user id : "+user_id+" Not Found"); }
+        }
+
+        private void btnCheckIn_Click(object sender, EventArgs e)
+        {
+            int user_id = Convert.ToInt32(tbUserId.Text);
+            if (dh.checkIn(user_id) == 1)
+            {
+                if (dh.checkedIn(user_id) == 1)
+                {
+                    MessageBox.Show("Person Already Checked In");
+                }
+                else { MessageBox.Show("Check In successfull"); }
+
+            }
+            else { MessageBox.Show("Could not check in user"); }
+        }
+
+        private void lblBalance_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
