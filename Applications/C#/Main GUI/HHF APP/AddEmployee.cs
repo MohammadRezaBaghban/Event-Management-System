@@ -69,6 +69,8 @@ namespace HHF_APP
                             tbPostcode.Clear();
                             tbEmail.Clear();
                             tbPassword.Clear();
+                            Panel myParent = (Panel) this.Parent;
+                            myParent.Visible = false;
 
                         }
                     }

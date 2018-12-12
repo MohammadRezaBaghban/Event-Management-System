@@ -12,6 +12,7 @@ namespace HHF_APP
         public Form1()
         {
             InitializeComponent();
+            viewAdminDashboard1.BringToFront();
             sidepanelforBTNs.Height = AdminBtn.Height;
             sidepanelforBTNs.Top = AdminBtn.Top;
             viewLogin1.SendToBack();
@@ -68,14 +69,14 @@ namespace HHF_APP
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblbal = new System.Windows.Forms.Label();
+            this.lblname = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.tbBarcode = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnscanBarcodeMainForm = new System.Windows.Forms.Button();
-            this.lblname = new System.Windows.Forms.Label();
-            this.lblbal = new System.Windows.Forms.Label();
             this.viewTickets1 = new HHF_APP.viewTickets();
             this.viewStore1 = new HHF_APP.viewStore();
             this.viewLending1 = new HHF_APP.viewLending();
@@ -364,15 +365,35 @@ namespace HHF_APP
             this.panel3.Size = new System.Drawing.Size(968, 48);
             this.panel3.TabIndex = 4;
             // 
+            // lblbal
+            // 
+            this.lblbal.AutoSize = true;
+            this.lblbal.Font = new System.Drawing.Font("Sitka Small", 9.8F, System.Drawing.FontStyle.Bold);
+            this.lblbal.Location = new System.Drawing.Point(693, 9);
+            this.lblbal.Name = "lblbal";
+            this.lblbal.Size = new System.Drawing.Size(60, 25);
+            this.lblbal.TabIndex = 7;
+            this.lblbal.Text = "........";
+            // 
+            // lblname
+            // 
+            this.lblname.AutoSize = true;
+            this.lblname.Font = new System.Drawing.Font("Sitka Small", 9.8F, System.Drawing.FontStyle.Bold);
+            this.lblname.Location = new System.Drawing.Point(426, 9);
+            this.lblname.Name = "lblname";
+            this.lblname.Size = new System.Drawing.Size(66, 25);
+            this.lblname.TabIndex = 6;
+            this.lblname.Text = ".........";
+            // 
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Font = new System.Drawing.Font("Myriad Hebrew", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(292, 14);
+            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 8.2F, System.Drawing.FontStyle.Bold);
+            this.btnSearch.Location = new System.Drawing.Point(278, 6);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(71, 25);
+            this.btnSearch.Size = new System.Drawing.Size(71, 36);
             this.btnSearch.TabIndex = 5;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
@@ -390,7 +411,7 @@ namespace HHF_APP
             // 
             // tbBarcode
             // 
-            this.tbBarcode.Location = new System.Drawing.Point(117, 14);
+            this.tbBarcode.Location = new System.Drawing.Point(102, 12);
             this.tbBarcode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbBarcode.Name = "tbBarcode";
             this.tbBarcode.Size = new System.Drawing.Size(170, 24);
@@ -400,7 +421,7 @@ namespace HHF_APP
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Sitka Small", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(602, 9);
+            this.label3.Location = new System.Drawing.Point(600, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(99, 28);
             this.label3.TabIndex = 2;
@@ -410,7 +431,7 @@ namespace HHF_APP
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Sitka Small", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(377, 9);
+            this.label2.Location = new System.Drawing.Point(350, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 28);
             this.label2.TabIndex = 1;
@@ -429,26 +450,6 @@ namespace HHF_APP
             this.btnscanBarcodeMainForm.Text = "Scan Barcode";
             this.btnscanBarcodeMainForm.UseVisualStyleBackColor = false;
             this.btnscanBarcodeMainForm.Click += new System.EventHandler(this.btnscanBarcodeMainForm_Click);
-            // 
-            // lblname
-            // 
-            this.lblname.AutoSize = true;
-            this.lblname.Font = new System.Drawing.Font("Sitka Small", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblname.Location = new System.Drawing.Point(461, 9);
-            this.lblname.Name = "lblname";
-            this.lblname.Size = new System.Drawing.Size(75, 28);
-            this.lblname.TabIndex = 6;
-            this.lblname.Text = ".........";
-            // 
-            // lblbal
-            // 
-            this.lblbal.AutoSize = true;
-            this.lblbal.Font = new System.Drawing.Font("Sitka Small", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblbal.Location = new System.Drawing.Point(693, 9);
-            this.lblbal.Name = "lblbal";
-            this.lblbal.Size = new System.Drawing.Size(68, 28);
-            this.lblbal.TabIndex = 7;
-            this.lblbal.Text = "........";
             // 
             // viewTickets1
             // 
@@ -509,7 +510,7 @@ namespace HHF_APP
             this.viewAdminDashboard1.Location = new System.Drawing.Point(314, 85);
             this.viewAdminDashboard1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.viewAdminDashboard1.Name = "viewAdminDashboard1";
-            this.viewAdminDashboard1.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.viewAdminDashboard1.Padding = new System.Windows.Forms.Padding(5);
             this.viewAdminDashboard1.Size = new System.Drawing.Size(968, 702);
             this.viewAdminDashboard1.TabIndex = 3;
             // 
@@ -608,6 +609,7 @@ namespace HHF_APP
         {
             sidepanelforBTNs.Height = AdminBtn.Height;
             sidepanelforBTNs.Top = AdminBtn.Top;
+            viewAdminDashboard1.btnRefresh_Click(sender,e);
             viewAdminDashboard1.BringToFront();
             panel3.Visible = false;
         }
@@ -616,7 +618,7 @@ namespace HHF_APP
         {
             sidepanelforBTNs.Height = ticketsBtn.Height;
             sidepanelforBTNs.Top = ticketsBtn.Top;
-            panel3.Visible = true;
+            panel3.Visible = false;
             viewTickets1.BringToFront();
         }
 

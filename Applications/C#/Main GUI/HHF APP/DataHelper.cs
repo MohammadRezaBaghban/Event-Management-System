@@ -27,11 +27,9 @@ namespace HHF_APP
         }
 
 
-        public int AddEmployee(String fName, String lName, String email, String password, String phoneNr,
-            String position, String street, String postcode)
+        public int AddEmployee(String fName, String lName, String email, String password, String phoneNr, String position, String street, String postcode)
         {
-            String query =
-                "INSERT INTO employees(emp_id, fname, lname, email, password, phone_nr, position, street, postcode) VALUES (@empID, @fName, @lName, @email, @password, @phoneNr, @position, @street, @postcode)";
+            String query = "INSERT INTO employees(emp_id, fname, lname, email, password, phone_nr, position, street, postcode) VALUES (@empID, @fName, @lName, @email, @password, @phoneNr, @position, @street, @postcode)";
             MySqlCommand command = new MySqlCommand(query, connection);
             command.Parameters.AddWithValue("@empID", null);
             command.Parameters.AddWithValue("@fName", fName);
@@ -63,36 +61,7 @@ namespace HHF_APP
 
         }
 
-        public int RemoveEmployee1(String fName, String lName) /* Not Working ATM */
-        {
-            String query =
-                "DELETE FROM employees WHERE emp_id IN (SELECT MAX(emp_id) FROM employees) AND fname = @fName AND lname = @lName";
-            MySqlCommand command = new MySqlCommand(query, connection);
-            command.Parameters.AddWithValue("@fName", fName);
-            command.Parameters.AddWithValue("@lName", lName);
-
-
-            try
-            {
-                connection.Open();
-                int nrOfRecordsChanged = command.ExecuteNonQuery();
-                return nrOfRecordsChanged;
-            }
-            catch
-            {
-
-                return -1;
-
-            }
-
-            finally
-            {
-                connection.Close();
-            }
-
-        }
-
-        public int CountVisitors()
+         public int CountVisitors()
         {
             String query = "SELECT COUNT(*) FROM users WHERE status = 'checked_in'";
             MySqlCommand command = new MySqlCommand(query, connection);
@@ -252,7 +221,6 @@ namespace HHF_APP
             {
                 connection.Close();
             }
-
             return temp;
         }
 
@@ -291,13 +259,11 @@ namespace HHF_APP
             {
                 connection.Close();
             }
-
             return temp;
         }
 
         public List<Employee> GetEmployees(int idnr)
         {
-
             String query = "SELECT emp_id, fname, lname, position FROM employees WHERE emp_id = @idNr";
             MySqlCommand command = new MySqlCommand(query, connection);
             command.Parameters.AddWithValue("@idNr", idnr);
@@ -331,17 +297,60 @@ namespace HHF_APP
             {
                 connection.Close();
             }
-
             return temp;
         }
 
-        public void ChangePassword(String empId, String password)
+        public int ChangePassword(String index, String password)
         {
+          
+
             String query = "UPDATE employees SET password = @password WHERE emp_id = @emp_id";
             MySqlCommand command = new MySqlCommand(query, connection);
             command.Parameters.AddWithValue("@password", password);
-            command.Parameters.AddWithValue("@emp_id", empId);
+            command.Parameters.AddWithValue("@emp_id", index);
 
+            try
+            {
+                connection.Open();
+                int nrOfRecordsChanged = command.ExecuteNonQuery();
+                return nrOfRecordsChanged;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return -1;
+
+            }
+
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        public int DeleteEmployee(String id)
+        {
+            String query = "DELETE FROM employees WHERE emp_id = @emp_id";
+            MySqlCommand command = new MySqlCommand(query, connection);
+            command.Parameters.AddWithValue("@emp_id", id);
+
+            try
+            {
+                connection.Open();
+                int nrOfRecordsChanged = command.ExecuteNonQuery();
+                return nrOfRecordsChanged;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return -1;
+
+            }
+
+            finally
+            {
+                connection.Close();
+            }
         }
 
         //Function for login 
@@ -529,24 +538,47 @@ namespace HHF_APP
 
                 try
                 {
-                    //get act id of that person
-                    String query = "SELECT account_id FROM users WHERE user_id = @idNr and status = @status";
-                    MySqlCommand command = new MySqlCommand(query, connection);
-                    command.Parameters.AddWithValue("@idNr", userid);
-                    command.Parameters.AddWithValue("@status", "checked_in");
-
-                    MySqlDataReader reader = command.ExecuteReader();
-                    while (reader.Read())
+                    String query;
+                    MySqlCommand command;
+                    MySqlDataReader reader;
+                    if (type == "deposit")
                     {
-                        act_id = Convert.ToInt32(reader["account_id"]);
+                        //get act id of that person
+                        query = "SELECT account_id FROM users WHERE user_id = @idNr";
+                        command = new MySqlCommand(query, connection);
+                        command.Parameters.AddWithValue("@idNr", userid);
+                        reader = command.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            act_id = Convert.ToInt32(reader["account_id"]);
+                        }
+                        if (act_id == -1)
+                        {
+                            throw new System.Exception("Either the person is not checked or User does not exists");
+                        }
+                        reader.Close();
+                    }
+                    else
+                    {
+                        //get act id of that person
+                    
+                        query = "SELECT account_id FROM users WHERE user_id = @idNr and status= @status";
+                        command = new MySqlCommand(query, connection);
+                        command.Parameters.AddWithValue("@idNr", userid);
+                        command.Parameters.AddWithValue("@status", "checked_in");
+                         reader = command.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            act_id = Convert.ToInt32(reader["account_id"]);
+                        }
+                        if (act_id == -1)
+                        {
+                            throw new System.Exception("Either the person is not checked or User does not exists");
+                        }
+                        reader.Close();
                     }
 
-                    if (act_id == -1)
-                    {
-                        throw new System.Exception("Either the person is not checked or User does not exists");
-                    }
 
-                    reader.Close();
                     //get the balance of the account
                     query = "SELECT currentbal FROM accounts WHERE account_id = @idNr";
                     command = new MySqlCommand(query, connection);
@@ -556,43 +588,81 @@ namespace HHF_APP
                     {
                         balance = Convert.ToDecimal(reader["currentbal"]);
                     }
-
                     reader.Close();
-                    //validate whether the balance is sufficent
-                    if (balance - amount < 0 && amount > 0)
+
+                    if (type == "deposit")
                     {
-                        throw new Exception("Balance is insufficient");
+                        //create new transaction
+                        query =
+                            "INSERT INTO transactions (`date`, `time`, `account_id`, `amount`, `current_balance`, `type`) VALUES (@date, @time, @account_id, @amount, @current_balance, @type)";
+                        command = new MySqlCommand(query, connection);
+                        string s = DateTime.Now.ToString("yyyy-MM-dd");
+                        command.Parameters.AddWithValue("@date", s);
+                        s = DateTime.Now.ToString("HH:mm:ss");
+                        command.Parameters.AddWithValue("@time", s);
+
+                        command.Parameters.AddWithValue("@account_id", act_id);
+                        command.Parameters.AddWithValue("@amount", amount);
+                        command.Parameters.AddWithValue("@current_balance", balance + amount);
+                        command.Parameters.AddWithValue("@type", type);
+
+
+                        int nrOfRecordsChanged = command.ExecuteNonQuery();
+                        reader.Close();
+                        //if the compiler reachs here that means every thing went fine and now we have to update the current balance
+
+                        query = "UPDATE accounts SET currentbal = @bal WHERE account_id = @id";
+                        command = new MySqlCommand(query, connection);
+                        command.Parameters.AddWithValue("@bal", balance + amount);
+                        command.Parameters.AddWithValue("@id", act_id);
+
+
+                        command.ExecuteNonQuery();
+                        if (Convert.ToInt32(command.ExecuteNonQuery()) <= 0)
+                        {
+                            throw new Exception("Error While Updating the balance");
+                        }
+                        reader.Close();
                     }
-
-                    //create new transaction
-                    query =
-                        "INSERT INTO transactions (`date`, `time`, `account_id`, `amount`, `current_balance`, `type`) VALUES (@date, @time, @account_id, @amount, @current_balance, @type)";
-                    command = new MySqlCommand(query, connection);
-                    string s = DateTime.Now.ToString("yyyy-MM-dd");
-                    command.Parameters.AddWithValue("@date", s);
-                    s = DateTime.Now.ToString("HH:mm:ss");
-                    command.Parameters.AddWithValue("@time", s);
-
-                    command.Parameters.AddWithValue("@account_id", act_id);
-                    command.Parameters.AddWithValue("@amount", amount);
-                    command.Parameters.AddWithValue("@current_balance", balance - amount);
-                    command.Parameters.AddWithValue("@type", type);
-
-
-                    int nrOfRecordsChanged = command.ExecuteNonQuery();
-                    reader.Close();
-                    //if the compiler reachs here that means every thing went fine and now we have to update the current balance
-
-                    query = "UPDATE accounts SET currentbal = @bal WHERE account_id = @id";
-                    command = new MySqlCommand(query, connection);
-                    command.Parameters.AddWithValue("@bal", balance - amount);
-                    command.Parameters.AddWithValue("@id", act_id);
-
-
-                    command.ExecuteNonQuery();
-                    if (Convert.ToInt32(command.ExecuteNonQuery()) <= 0)
+                    else
                     {
-                        throw new Exception("Error While Updating the balance");
+                        //validate whether the balance is sufficent
+                        if (balance - amount < 0 && amount > 0)
+                        {
+                            throw new Exception("Balance is insufficient");
+                        }
+
+                        //create new transaction
+                        query =
+                            "INSERT INTO transactions (`date`, `time`, `account_id`, `amount`, `current_balance`, `type`) VALUES (@date, @time, @account_id, @amount, @current_balance, @type)";
+                        command = new MySqlCommand(query, connection);
+                        string s = DateTime.Now.ToString("yyyy-MM-dd");
+                        command.Parameters.AddWithValue("@date", s);
+                        s = DateTime.Now.ToString("HH:mm:ss");
+                        command.Parameters.AddWithValue("@time", s);
+
+                        command.Parameters.AddWithValue("@account_id", act_id);
+                        command.Parameters.AddWithValue("@amount", amount);
+                        command.Parameters.AddWithValue("@current_balance", balance - amount);
+                        command.Parameters.AddWithValue("@type", type);
+
+
+                        int nrOfRecordsChanged = command.ExecuteNonQuery();
+                        reader.Close();
+                        //if the compiler reachs here that means every thing went fine and now we have to update the current balance
+
+                        query = "UPDATE accounts SET currentbal = @bal WHERE account_id = @id";
+                        command = new MySqlCommand(query, connection);
+                        command.Parameters.AddWithValue("@bal", balance - amount);
+                        command.Parameters.AddWithValue("@id", act_id);
+
+
+                        command.ExecuteNonQuery();
+                        if (Convert.ToInt32(command.ExecuteNonQuery()) <= 0)
+                        {
+                            throw new Exception("Error While Updating the balance");
+                        }
+                        reader.Close();
                     }
 
                     tran.Commit();
@@ -607,13 +677,10 @@ namespace HHF_APP
                     }
                     catch (Exception exRollback)
                     {
-                        MessageBox.Show(exRollback.Message);
+                       throw new Exception(exRollback.Message);
                     }
 
-                    MessageBox.Show(ex.Message);
-                    return -1;
-
-
+                    throw new Exception(ex.Message);
                 }
             }
         }
