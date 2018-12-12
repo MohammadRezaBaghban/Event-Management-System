@@ -15,8 +15,8 @@
         public int User_id { get => user_id; }
         public int Act_id { get => act_id;  }
         public int Ticket_id { get => ticket_id; }
-        public string Fname { get => fname; }
-        public string Lname { get => lname;  }
+        public string name { get => fname+" "+lname; }
+        
         public decimal Balance { get => balance; }
     }
 }

@@ -164,7 +164,7 @@ namespace HHF_APP
             this.btnTicketFind.TabIndex = 16;
             this.btnTicketFind.Text = "Find";
             this.btnTicketFind.UseVisualStyleBackColor = false;
-            this.btnTicketFind.Click += new System.EventHandler(this.btnTicketFind_Click);
+            //this.btnTicketFind.Click += new System.EventHandler(this.btnTicketFind_Click);
             // 
             // panel1
             // 

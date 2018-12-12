@@ -444,7 +444,7 @@ namespace HHF_APP
             }
         }
 
-        //Function for checking if users are already checkd in
+        //Function for checking if users are already checked in
         public int checkedIn(int user_id)
         {
             string check_in_query = "SELECT status FROM users WHERE user_id=@user_id and status='checked_in'";

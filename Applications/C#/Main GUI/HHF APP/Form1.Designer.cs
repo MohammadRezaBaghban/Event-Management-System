@@ -24,7 +24,7 @@ namespace HHF_APP
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.TextBox tbBarcode;
         private System.Windows.Forms.Label label3;
@@ -37,6 +37,8 @@ namespace HHF_APP
         private viewStore viewStore1;
         private viewTickets viewTickets1;
         private viewLogin viewLogin1;
+        private System.Windows.Forms.Label lblbal;
+        private System.Windows.Forms.Label lblname;
 
         // private viewAdminDashboard viewAdminDashboard1;
         //       private viewAdminDashboard viewAdminDashboard1;

@@ -488,7 +488,7 @@
             this.btnAdd1.TabIndex = 1;
             this.btnAdd1.Text = "Add";
             this.btnAdd1.UseVisualStyleBackColor = false;
-            this.btnAdd1.Click += new System.EventHandler(this.lbBasket_Click);
+            this.btnAdd1.Click += new System.EventHandler(this.btnAdd1_Click);
             // 
             // panel2
             // 
@@ -617,7 +617,7 @@
             this.btnAdd2.TabIndex = 1;
             this.btnAdd2.Text = "Add";
             this.btnAdd2.UseVisualStyleBackColor = false;
-            this.btnAdd2.Click += new System.EventHandler(this.lbBasket_Click);
+            this.btnAdd2.Click += new System.EventHandler(this.btnAdd2_Click);
             // 
             // panel3
             // 
@@ -746,7 +746,7 @@
             this.btnAdd3.TabIndex = 1;
             this.btnAdd3.Text = "Add";
             this.btnAdd3.UseVisualStyleBackColor = false;
-            this.btnAdd3.Click += new System.EventHandler(this.lbBasket_Click);
+            this.btnAdd3.Click += new System.EventHandler(this.btnAdd3_Click);
             // 
             // panel4
             // 
@@ -836,7 +836,7 @@
             this.btnAdd4.TabIndex = 1;
             this.btnAdd4.Text = "Add";
             this.btnAdd4.UseVisualStyleBackColor = false;
-            this.btnAdd4.Click += new System.EventHandler(this.lbBasket_Click);
+            this.btnAdd4.Click += new System.EventHandler(this.btnAdd4_Click);
             // 
             // drinks
             // 
@@ -905,7 +905,7 @@
             // 
             // nudDrink1
             // 
-            this.nudDrink1.Location = new System.Drawing.Point(208, 154);
+            this.nudDrink1.Location = new System.Drawing.Point(208, 153);
             this.nudDrink1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nudDrink1.Maximum = new decimal(new int[] {
             10,
@@ -951,7 +951,7 @@
             this.btnAddDrink1.TabIndex = 1;
             this.btnAddDrink1.Text = "Add";
             this.btnAddDrink1.UseVisualStyleBackColor = false;
-            this.btnAddDrink1.Click += new System.EventHandler(this.lbBasket_Click);
+            this.btnAddDrink1.Click += new System.EventHandler(this.btnAddDrink1_Click);
             // 
             // panel6
             // 
@@ -1041,7 +1041,7 @@
             this.btnAddDrink2.TabIndex = 1;
             this.btnAddDrink2.Text = "Add";
             this.btnAddDrink2.UseVisualStyleBackColor = false;
-            this.btnAddDrink2.Click += new System.EventHandler(this.lbBasket_Click);
+            this.btnAddDrink2.Click += new System.EventHandler(this.btnAddDrink2_Click);
             // 
             // panel7
             // 
@@ -1131,7 +1131,7 @@
             this.btnAddDrink3.TabIndex = 1;
             this.btnAddDrink3.Text = "Add";
             this.btnAddDrink3.UseVisualStyleBackColor = false;
-            this.btnAddDrink3.Click += new System.EventHandler(this.lbBasket_Click);
+            this.btnAddDrink3.Click += new System.EventHandler(this.btnAddDrink3_Click);
             // 
             // panel9
             // 
@@ -1221,7 +1221,7 @@
             this.btnAddDrink4.TabIndex = 1;
             this.btnAddDrink4.Text = "Add";
             this.btnAddDrink4.UseVisualStyleBackColor = false;
-            this.btnAddDrink4.Click += new System.EventHandler(this.lbBasket_Click);
+            this.btnAddDrink4.Click += new System.EventHandler(this.btnAddDrink4_Click);
             // 
             // Items
             // 
@@ -1335,7 +1335,7 @@
             this.btnItem1.TabIndex = 1;
             this.btnItem1.Text = "Add";
             this.btnItem1.UseVisualStyleBackColor = false;
-            this.btnItem1.Click += new System.EventHandler(this.lbBasket_Click);
+            this.btnItem1.Click += new System.EventHandler(this.btnItemDrink1_Click);
             // 
             // panel11
             // 
@@ -1425,7 +1425,7 @@
             this.btnItem2.TabIndex = 1;
             this.btnItem2.Text = "Add";
             this.btnItem2.UseVisualStyleBackColor = false;
-            this.btnItem2.Click += new System.EventHandler(this.lbBasket_Click);
+            this.btnItem2.Click += new System.EventHandler(this.btnItem2_Click);
             // 
             // panel12
             // 
@@ -1515,7 +1515,7 @@
             this.btnItemDrink3.TabIndex = 1;
             this.btnItemDrink3.Text = "Add";
             this.btnItemDrink3.UseVisualStyleBackColor = false;
-            this.btnItemDrink3.Click += new System.EventHandler(this.lbBasket_Click);
+            this.btnItemDrink3.Click += new System.EventHandler(this.btnItemDrink3_Click);
             // 
             // panel13
             // 
@@ -1605,7 +1605,7 @@
             this.btnItemDrink4.TabIndex = 1;
             this.btnItemDrink4.Text = "Add";
             this.btnItemDrink4.UseVisualStyleBackColor = false;
-            this.btnItemDrink4.Click += new System.EventHandler(this.lbBasket_Click);
+            this.btnItemDrink4.Click += new System.EventHandler(this.btnItemDrink4_Click);
             // 
             // viewStore
             // 

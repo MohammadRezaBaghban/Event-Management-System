@@ -94,17 +94,18 @@ namespace HHF_APP
         private void btnTicketFind_Click(object sender, EventArgs e)
         {
             int user_id = Convert.ToInt32(tbUserId.Text);
-            if (dh.checkTicket(user_id)==true && dh.checkInOutInfo(user_id)==true)
+            Person temp= dh.checkTicket1(user_id);
+            if (temp != null && dh.checkInOutInfo(user_id) == true)
             {
-                lblHolderName.Text = dh.holderName;
-                lblAccountID.Text = Convert.ToString(dh.actId);
-                lblTicketID.Text = Convert.ToString(dh.ticketId);
+                lblHolderName.Text = temp.name;
+                lblAccountID.Text = Convert.ToString(temp.Act_id);
+                lblTicketID.Text = Convert.ToString(temp.Ticket_id);
                 lblTicketType.Text = Convert.ToString(dh.ticketType);
                 lblTicketStatus.Text = Convert.ToString(dh.ticketStatus);
-                lblBalance.Text = Convert.ToString(dh.ticketBalance);
-                lblRefundAmount.Text = Convert.ToString(dh.ticketRefund);
+                lblBalance.Text = Convert.ToString(temp.Balance);
+                lblRefundAmount.Text = Convert.ToString(temp.Balance);
             }
-            else { MessageBox.Show("User with user id : "+user_id+" Not Found"); }
+            else { MessageBox.Show("User with user id : " + user_id + " Not Found"); }
         }
 
         private void btnCheckIn_Click(object sender, EventArgs e)

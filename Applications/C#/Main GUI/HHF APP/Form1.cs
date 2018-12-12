@@ -6,75 +6,27 @@ using System.Windows.Forms;
 namespace HHF_APP
 {
     public partial class Form1 : Form
-    {
+    {   DataHelper dh=new DataHelper();
+        private bool mouseDown;
+        private Point lastLocation;
         public Form1()
         {
             InitializeComponent();
             sidepanelforBTNs.Height = AdminBtn.Height;
             sidepanelforBTNs.Top = AdminBtn.Top;
             viewLogin1.SendToBack();
+            viewCamping1.Enabled = false;
+            viewLending1.Enabled = false;
+            viewStore1.Enabled = false;
+            lblbal.Text = "......";
+            lblname.Text = "......";
             //SoundPlayer my_sound = new SoundPlayer("F:/xxxxxx.wave"); //put your own .4wave file path
             //my_sound.Play();
             //my_sound.Stop();
         }
 
 
-        private void ticketsBtn_Click(object sender, EventArgs e)
-        {
-            sidepanelforBTNs.Height = ticketsBtn.Height;
-            sidepanelforBTNs.Top = ticketsBtn.Top;
-            viewTickets1.BringToFront();
-            panel3.Visible = false;
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            sidepanelforBTNs.Height = checkinBTn.Height;
-            sidepanelforBTNs.Top = checkinBTn.Top;
-            panel3.Visible = false;
-            viewCheckInOut1.BringToFront();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            sidepanelforBTNs.Height = storeBtn.Height;
-            sidepanelforBTNs.Top = storeBtn.Top;
-            panel3.Visible = true;
-            viewStore1.BringToFront();
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            sidepanelforBTNs.Height = campBtn.Height;
-            sidepanelforBTNs.Top = campBtn.Top;
-            panel3.Visible = true;
-            viewCamping1.BringToFront();
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            sidepanelforBTNs.Height = lendBtn.Height;
-            sidepanelforBTNs.Top = lendBtn.Top;
-            panel3.Visible = true;
-            viewLending1.BringToFront();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            sidepanelforBTNs.Height = AdminBtn.Height;
-            sidepanelforBTNs.Top = AdminBtn.Top;
-            viewAdminDashboard1.BringToFront();
-            panel3.Visible = false;
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+      
 
 
         private void pictureBox3_MouseEnter(object sender, EventArgs e)
@@ -116,12 +68,14 @@ namespace HHF_APP
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.tbBarcode = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnscanBarcodeMainForm = new System.Windows.Forms.Button();
+            this.lblname = new System.Windows.Forms.Label();
+            this.lblbal = new System.Windows.Forms.Label();
             this.viewTickets1 = new HHF_APP.viewTickets();
             this.viewStore1 = new HHF_APP.viewStore();
             this.viewLending1 = new HHF_APP.viewLending();
@@ -235,6 +189,7 @@ namespace HHF_APP
             this.LogoutBtn.Text = "Log out";
             this.LogoutBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.LogoutBtn.UseVisualStyleBackColor = false;
+            this.LogoutBtn.Click += new System.EventHandler(this.LogoutBtn_Click_1);
             // 
             // sidepanelforBTNs
             // 
@@ -263,6 +218,7 @@ namespace HHF_APP
             this.AdminBtn.Text = "              Admin Dashboard";
             this.AdminBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.AdminBtn.UseVisualStyleBackColor = false;
+            this.AdminBtn.Click += new System.EventHandler(this.AdminBtn_Click_1);
             // 
             // lendBtn
             // 
@@ -281,6 +237,7 @@ namespace HHF_APP
             this.lendBtn.Text = "              Material Lend";
             this.lendBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lendBtn.UseVisualStyleBackColor = false;
+            this.lendBtn.Click += new System.EventHandler(this.lendBtn_Click_1);
             // 
             // campBtn
             // 
@@ -299,6 +256,7 @@ namespace HHF_APP
             this.campBtn.Text = "              Camping Check                             in/out";
             this.campBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.campBtn.UseVisualStyleBackColor = false;
+            this.campBtn.Click += new System.EventHandler(this.campBtn_Click_1);
             // 
             // checkinBTn
             // 
@@ -318,6 +276,7 @@ namespace HHF_APP
             this.checkinBTn.Text = "               Check in/out";
             this.checkinBTn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.checkinBTn.UseVisualStyleBackColor = false;
+            this.checkinBTn.Click += new System.EventHandler(this.checkinBTn_Click);
             // 
             // storeBtn
             // 
@@ -337,6 +296,7 @@ namespace HHF_APP
             this.storeBtn.Text = "              Store";
             this.storeBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.storeBtn.UseVisualStyleBackColor = false;
+            this.storeBtn.Click += new System.EventHandler(this.storeBtn_Click);
             // 
             // ticketsBtn
             // 
@@ -356,6 +316,7 @@ namespace HHF_APP
             this.ticketsBtn.Text = "              Tickets";
             this.ticketsBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ticketsBtn.UseVisualStyleBackColor = false;
+            this.ticketsBtn.Click += new System.EventHandler(this.ticketsBtn_Click);
             // 
             // pictureBox3
             // 
@@ -369,6 +330,10 @@ namespace HHF_APP
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 1;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click_1);
+            this.pictureBox3.MouseEnter += new System.EventHandler(this.pictureBox3_MouseEnter);
+            this.pictureBox3.MouseLeave += new System.EventHandler(this.pictureBox3_MouseLeave);
+            this.pictureBox3.MouseHover += new System.EventHandler(this.pictureBox3_MouseLeave);
             // 
             // panel4
             // 
@@ -385,7 +350,9 @@ namespace HHF_APP
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel3.Controls.Add(this.button2);
+            this.panel3.Controls.Add(this.lblbal);
+            this.panel3.Controls.Add(this.lblname);
+            this.panel3.Controls.Add(this.btnSearch);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.tbBarcode);
             this.panel3.Controls.Add(this.label3);
@@ -397,19 +364,19 @@ namespace HHF_APP
             this.panel3.Size = new System.Drawing.Size(968, 48);
             this.panel3.TabIndex = 4;
             // 
-            // button2
+            // btnSearch
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Myriad Hebrew", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(292, 14);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(71, 25);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Search";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click_2);
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("Myriad Hebrew", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Location = new System.Drawing.Point(292, 14);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(71, 25);
+            this.btnSearch.TabIndex = 5;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // label4
             // 
@@ -417,9 +384,9 @@ namespace HHF_APP
             this.label4.Font = new System.Drawing.Font("Sitka Small", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(5, 9);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(111, 28);
+            this.label4.Size = new System.Drawing.Size(102, 28);
             this.label4.TabIndex = 4;
-            this.label4.Text = "Ticket ID:";
+            this.label4.Text = "Barcode:";
             // 
             // tbBarcode
             // 
@@ -463,6 +430,26 @@ namespace HHF_APP
             this.btnscanBarcodeMainForm.UseVisualStyleBackColor = false;
             this.btnscanBarcodeMainForm.Click += new System.EventHandler(this.btnscanBarcodeMainForm_Click);
             // 
+            // lblname
+            // 
+            this.lblname.AutoSize = true;
+            this.lblname.Font = new System.Drawing.Font("Sitka Small", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblname.Location = new System.Drawing.Point(461, 9);
+            this.lblname.Name = "lblname";
+            this.lblname.Size = new System.Drawing.Size(75, 28);
+            this.lblname.TabIndex = 6;
+            this.lblname.Text = ".........";
+            // 
+            // lblbal
+            // 
+            this.lblbal.AutoSize = true;
+            this.lblbal.Font = new System.Drawing.Font("Sitka Small", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblbal.Location = new System.Drawing.Point(693, 9);
+            this.lblbal.Name = "lblbal";
+            this.lblbal.Size = new System.Drawing.Size(68, 28);
+            this.lblbal.TabIndex = 7;
+            this.lblbal.Text = "........";
+            // 
             // viewTickets1
             // 
             this.viewTickets1.BackColor = System.Drawing.Color.Linen;
@@ -501,7 +488,7 @@ namespace HHF_APP
             this.viewCheckInOut1.Location = new System.Drawing.Point(314, 78);
             this.viewCheckInOut1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.viewCheckInOut1.Name = "viewCheckInOut1";
-            this.viewCheckInOut1.Padding = new System.Windows.Forms.Padding(5);
+            this.viewCheckInOut1.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.viewCheckInOut1.Size = new System.Drawing.Size(973, 702);
             this.viewCheckInOut1.TabIndex = 5;
             // 
@@ -581,23 +568,129 @@ namespace HHF_APP
         {
         }
 
-        private void button2_Click_1(object sender, EventArgs e)
-        {
-        }
+       
 
         private void LogoutBtn_Click(object sender, EventArgs e)
         {
             viewLogin1.BringToFront();
         }
 
-        private void button2_Click_2(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void btnscanBarcodeMainForm_Click(object sender, EventArgs e)
         {
             tbBarcode.Focus();
+        }
+
+
+        private void Form1_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseDown = true;
+            lastLocation = e.Location;
+        }
+
+        private void Form1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if(mouseDown)
+            {
+                this.Location = new Point(
+                    (this.Location.X - lastLocation.X) + e.X, (this.Location.Y - lastLocation.Y) + e.Y);
+
+                this.Update();
+            }
+        }
+
+        private void Form1_MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
+        }
+
+        private void AdminBtn_Click_1(object sender, EventArgs e)
+        {
+            sidepanelforBTNs.Height = AdminBtn.Height;
+            sidepanelforBTNs.Top = AdminBtn.Top;
+            viewAdminDashboard1.BringToFront();
+            panel3.Visible = false;
+        }
+
+        private void ticketsBtn_Click(object sender, EventArgs e)
+        {
+            sidepanelforBTNs.Height = ticketsBtn.Height;
+            sidepanelforBTNs.Top = ticketsBtn.Top;
+            panel3.Visible = true;
+            viewTickets1.BringToFront();
+        }
+
+        private void checkinBTn_Click(object sender, EventArgs e)
+        {
+            
+            sidepanelforBTNs.Height = checkinBTn.Height;
+            sidepanelforBTNs.Top = checkinBTn.Top;
+            panel3.Visible = false;
+            viewCheckInOut1.BringToFront();
+        }
+
+        private void storeBtn_Click(object sender, EventArgs e)
+        {
+            sidepanelforBTNs.Height = storeBtn.Height;
+            sidepanelforBTNs.Top = storeBtn.Top;
+            panel3.Visible = true;
+            viewStore1.BringToFront();
+        }
+
+        private void campBtn_Click_1(object sender, EventArgs e)
+        {
+            sidepanelforBTNs.Height = campBtn.Height;
+            sidepanelforBTNs.Top = campBtn.Top;
+            panel3.Visible = true;
+            viewCamping1.BringToFront();
+        }
+
+        private void lendBtn_Click_1(object sender, EventArgs e)
+        {
+            sidepanelforBTNs.Height = lendBtn.Height;
+            sidepanelforBTNs.Top = lendBtn.Top;
+            panel3.Visible = true;
+            viewLending1.BringToFront();
+        }
+
+        private void LogoutBtn_Click_1(object sender, EventArgs e)
+        {
+            viewLogin1.BringToFront();
+        }
+
+        public void btnSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Person p = dh.checkTicket1(Convert.ToInt32(tbBarcode.Text));
+                if (p != null)
+                {
+                    viewCamping1.Enabled = true;
+                    viewLending1.Enabled = true;
+                    viewStore1.Enabled = true;
+                    lblbal.Text = p.Balance.ToString();
+                    lblname.Text = p.name;
+                    
+                }
+                else
+                {
+                    viewCamping1.Enabled = false;
+                    viewLending1.Enabled = false;
+                    viewStore1.Enabled = false;
+                    lblbal.Text = "......";
+                    lblname.Text = "......";
+                    
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void pictureBox3_Click_1(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

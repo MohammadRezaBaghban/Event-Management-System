@@ -35,6 +35,7 @@ namespace HHF_APP
             newArticle = new Food("Pizza", 10, Convert.ToInt32(Math.Round(nud1.Value)), ArtTypeFood, cbChili1.Checked,
                 cbDoubleTopping1.Checked, cbMenu1.Checked);
             lbBasket.Items.Add(newArticle);
+            lbBasket_Click(sender,e);
         }
 
         private void btnAdd2_Click(object sender, EventArgs e)
@@ -42,6 +43,7 @@ namespace HHF_APP
             newArticle = new Food("Shawarma", 6, Convert.ToInt32(Math.Round(nud2.Value)), ArtTypeFood, cbChili2.Checked,
                 cbDoubleTopping2.Checked, cbMenu2.Checked);
             lbBasket.Items.Add(newArticle);
+            lbBasket_Click(sender,e);
         }
 
         private void btnAdd3_Click(object sender, EventArgs e)
@@ -49,20 +51,23 @@ namespace HHF_APP
             newArticle = new Food("Cheese Burger", (decimal) 8.5, Convert.ToInt32(Math.Round(nud3.Value)), ArtTypeFood,
                 cbChili3.Checked, cbDouble.Checked, cbMenu3.Checked);
             lbBasket.Items.Add(newArticle);
-            dh = new DataHelper();
+            lbBasket_Click(sender,e);
         }
 
         private void btnAdd4_Click(object sender, EventArgs e)
         {
             newArticle = new Food("Greek Salad", (decimal) 4.5, Convert.ToInt32(Math.Round(nud4.Value)), ArtTypeFood);
             lbBasket.Items.Add(newArticle);
+            lbBasket_Click(sender,e);
+
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnAddDrink1_Click(object sender, EventArgs e)
         {
             newArticle = new Food("Cola-Original", (decimal) 1.75, Convert.ToInt32(Math.Round(nudDrink1.Value)),
                 ArtTypeItem);
             lbBasket.Items.Add(newArticle);
+            lbBasket_Click(sender,e);
         }
 
         private void btnAddDrink2_Click(object sender, EventArgs e)
@@ -70,24 +75,28 @@ namespace HHF_APP
             newArticle = new Food("Cola-Zero", (decimal) 1.75, Convert.ToInt32(Math.Round(nudDrink2.Value)),
                 ArtTypeItem);
             lbBasket.Items.Add(newArticle);
+            lbBasket_Click(sender,e);
         }
 
         private void btnAddDrink3_Click(object sender, EventArgs e)
         {
             newArticle = new Food("Fanta", (decimal) 1.75, Convert.ToInt32(Math.Round(nudDrink3.Value)), ArtTypeItem);
             lbBasket.Items.Add(newArticle);
+            lbBasket_Click(sender,e);
         }
 
         private void btnAddDrink4_Click(object sender, EventArgs e)
         {
             newArticle = new Food("Sprite", (decimal) 1.75, Convert.ToInt32(Math.Round(nudDrink4.Value)), ArtTypeItem);
             lbBasket.Items.Add(newArticle);
+            lbBasket_Click(sender,e);
         }
 
         private void btnItemDrink1_Click(object sender, EventArgs e)
         {
             newArticle = new Article("Halloween Plate", 5, Convert.ToInt32(Math.Round(nudItem1.Value)), ArtTypeItem);
             lbBasket.Items.Add(newArticle);
+            lbBasket_Click(sender,e);
         }
 
         private void btnItem2_Click(object sender, EventArgs e)
@@ -95,18 +104,21 @@ namespace HHF_APP
             newArticle = new Article("Halloween Mug", (decimal) 3.5, Convert.ToInt32(Math.Round(nudItem2.Value)),
                 ArtTypeItem);
             lbBasket.Items.Add(newArticle);
+            lbBasket_Click(sender,e);
         }
 
         private void btnItemDrink3_Click(object sender, EventArgs e)
         {
             newArticle = new Article("H Power Bank", 19, Convert.ToInt32(Math.Round(nudItem3.Value)), ArtTypeItem);
             lbBasket.Items.Add(newArticle);
+            lbBasket_Click(sender,e);
         }
 
         private void btnItemDrink4_Click(object sender, EventArgs e)
         {
             newArticle = new Article("Mask", (decimal) 10.5, Convert.ToInt32(Math.Round(nudItem4.Value)), ArtTypeItem);
             lbBasket.Items.Add(newArticle);
+            lbBasket_Click(sender,e);
         }
 
         private void lbBasket_Click(object sender, EventArgs e)
@@ -124,6 +136,7 @@ namespace HHF_APP
         private void lbChangeQuantity_Click(object sender, EventArgs e)
         {
             (lbBasket.SelectedItem as Article)?.ChangeQuantity(Convert.ToInt32(tbquantity.Text));
+            lbBasket.Items[lbBasket.SelectedIndex] = lbBasket.Items[lbBasket.SelectedIndex];
             lbBasket_Click( sender,  e);
         }
 
@@ -196,7 +209,16 @@ namespace HHF_APP
                         if (totalfood > 0) {if (dh.addTransaction(user_id, totalfood, "food")!= 1) checkinsertion2=0;}
 
                         if (checkinsertion == 1 && checkinsertion2 == 1)
+                        {
                             MessageBox.Show("Order Complete!");
+                            lbBasket.Items.Clear();
+                            myParent.tbBarcode.Text = "0";
+                            myParent.btnSearch_Click(sender,e);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error while adding order!");
+                        }
                     }
                 }
                 catch (Exception exception)
