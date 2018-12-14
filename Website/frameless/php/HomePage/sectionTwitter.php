@@ -5,6 +5,7 @@
             <div class="widget about-widget">
                 <h6 class="widget-head">Quotes That We Believe In As <span class="highlight">HHF</span> Community </h6>
                 <p class="text-alt" style="color: white;">
+                    <br>
                     <small>
                         Productivity is never an accident. It is always
                         the result of a commitment to excellence,
@@ -22,7 +23,10 @@
                         we lose the excitement of possibilities. Dreaming, after all,
                         is a form of planning
                     </small>
-
+                    <br>
+                    <br>
+                    <br>
+                    THIS SITE WAS CREATED BY: SHEMA M.Gael , Subhi Hamidi , Reza Mohammad , Ryan Hermelijn
                 </p>
             </div>
         </div>

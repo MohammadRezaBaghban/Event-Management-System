@@ -26,6 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $fnames[] = null;
     $lnames[] = null;
     $phones[] = null;
+    global $err;
 
     if (empty($_POST['fname1'])) {
         $err .= " The first name field is empty |";
@@ -56,32 +57,32 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     if (empty($_POST['passwd1'])) {
-        $err .= "The password field is empty |";
+        $err .= " The password field is empty |";
     } else {
         $signup_psw = $_POST['passwd1'];
 
     }
     if (empty($_POST['passwd2'])) {
-        $err .= "The password confirm field is empty |";
+        $err .= " The password confirm field is empty |";
     } else {
         $signup_pswrep = $_POST['passwd2'];
 
     }
     if (empty($_POST['phonenr'])) {
-        $err .= "The phone field is empty |";
+        $err .= " The phone field is empty |";
     } else {
         $phone = test_input($_POST['phonenr']);
 
     }
 
     if (empty($_POST['iban'])) {
-        $err .= "The IBAN field is empty |";
+        $err .= " The IBAN field is empty |";
     } else {
         $iban = test_input($_POST['iban']);
     }
 
     if (empty($_POST['initialbal'])) {
-        $err .= "The Top-Up field is empty |";
+        $err .= " The Top-Up field is empty |";
     } else {
         $initialbal = test_input($_POST['initialbal']);
 
@@ -91,7 +92,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($_GET['type'] === "group") {
         $i = 1;
         if (empty($_POST['camppay'])) {
-            $err .= " The pay button is not selected empty |";
+            $err .= " The pay button is not selected |";
         } else {
             $camppay = test_input($_POST['camppay']);
         }
@@ -114,13 +115,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $campSpotNr = test_input($_POST['campspotnr']);
         }
     }
-
-
-    if ($err !== "|") {
-        echo "$err";
-    }
-
-
 }
 
 //for mailing the user his id
@@ -151,7 +145,7 @@ function SendMail($username, $userid, $mail)
 
 function validateform()
 {
-    $err2 = "";
+    global $err2;
     //Here when the email does not in correct format it change the the value of $err
     if (!filter_var($GLOBALS['signup_email'], FILTER_VALIDATE_EMAIL)) {
 
@@ -195,8 +189,6 @@ function validateform()
 
 if ($_GET['type'] === "group" || $_GET['type'] === "individual" || $_GET['type'] === "vip") {
     if (validateform() == 1) {
-
-
         try {
             $myPDO = new PDO('mysql:host=studmysql01.fhict.local;dbname=dbi400320', 'dbi400320', '12345678');
             $myPDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -286,7 +278,7 @@ if ($_GET['type'] === "group" || $_GET['type'] === "individual" || $_GET['type']
 
 
                 //create a camp reservation for the group
-                $sql = 'insert into camp_reservation values(:spot,:actid,:pay)';
+                $sql = 'insert into camp_reservation values(:spot,:actid,:pay,null)';
                 $sth = $myPDO->prepare($sql);
                 $sth->execute([':spot' => $campSpotNr, ':actid' => $act_id, ':pay' => $camppay]);
 
@@ -295,7 +287,7 @@ if ($_GET['type'] === "group" || $_GET['type'] === "individual" || $_GET['type']
                 $sth = $myPDO->prepare($sql);
                 $datenow = date("Y-m-d");
                 $timenow = date("h:i:s");
-                $amount = 55 * (count($fnames)+1);
+                $amount = 55 * (count($fnames) + 1);
 
                 if ($camppay == "yes") {
                     $amount += 20 * (count($fnames) + 1);
@@ -351,8 +343,11 @@ if ($_GET['type'] === "group" || $_GET['type'] === "individual" || $_GET['type']
                 $sth = $myPDO->prepare($sql);
                 $datenow = date("Y-m-d");
                 $timenow = date("h:i:s");
-                if($_GET['type'] === "vip"){$amount=230;}
-                else {$amount = 55;}
+                if ($_GET['type'] === "vip") {
+                    $amount = 230;
+                } else {
+                    $amount = 55;
+                }
                 $currentbal = $initialbal - $amount;
                 $sth->execute([':datetra' => $datenow, ':timetra' => $timenow, ':actID' => $act_id, ':amount' => $amount,
                     ':current_balance' => $currentbal
@@ -362,7 +357,7 @@ if ($_GET['type'] === "group" || $_GET['type'] === "individual" || $_GET['type']
                 $query->execute([':nr' => $act_id, ':bal' => $currentbal]);
                 if ($_GET['type'] === "vip") {
                     //create a camp reservation for the vip
-                    $sql = 'insert into camp_reservation values(:spot,:actid,:pay)';
+                    $sql = 'insert into camp_reservation values(:spot,:actid,:pay,null)';
                     $sth = $myPDO->prepare($sql);
                     $sth->execute([':spot' => $campSpotNr, ':actid' => $act_id, ':pay' => "yes"]);
 
@@ -378,20 +373,18 @@ if ($_GET['type'] === "group" || $_GET['type'] === "individual" || $_GET['type']
 
 
             $temp = $signup_email;
-            echo "<div class='container'><div class='jumbotron' align='middle'><h1>Sign up succeeded</h1><h2>Your username is the same as your email: $temp</h2><h3> Redirecting to log in</h3></div></div><script>setTimeout(function(){window.location.replace('?page=login');}, 3500);</script>";
+            echo "<div class='container'><div class='jumbotron' align='middle'><h1>Sign up succeeded</h1><h2>Your username is the same as your email: $temp</h2><h3> Redirecting to log in</h3></div></div><script>setTimeout(function(){window.location.replace('?page=login');}, 3000);</script>";
 
         } catch
         (PDOException $e) {
             //an exception was thrown and this is the error
             $myPDO->rollBack();
-            echo $e;
+            echo $e->getMessage();
             $temp = $_POST['email1'];
-            echo "<div class='container'><div class='jumbotron' align='middle'>An account with an email address of $temp has already been registered<h3>redirection to login</h3></div></div><script>setTimeout(function(){window.location.replace('?page=login');}, 5000);</script>";
+            echo "<div class='container'><div class='jumbotron' align='middle'>An account with an email address of $temp has already been registered<h3>redirection to login</h3></div></div><script>setTimeout(function(){window.location.replace('?page=login');}, 2500);</script>";
         }
-    }
-    else
-        {
-            echo "<script>setTimeout(function(){window.location.replace('?page=booking');}, 5000);</script>";
+    } else {
+        include "./SignUp-SignIn-SignOut/SignupForm.php";
     }
 }
 

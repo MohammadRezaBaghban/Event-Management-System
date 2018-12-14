@@ -2,7 +2,7 @@
     <div class="container">
         <span class="icon section-icon icon-shopping-04"></span>
         <h3 style="color: black;">Tickets</h3>
-        <p class="text-alt">Get yours why they are still <span class="highlight">available</span></p>
+        <p class="text-alt">Get yours while they are still <span class="highlight">available</span></p>
         <br/>
         <br/>
 
@@ -17,7 +17,6 @@
                         <ul>
                             <li><span class="fa fa-info check-icon"></span>€10 Registration Fee</li>
                             <li><span class="fa fa-ban check-icon"></span>Camping <span class="bold">NOT</span> Available</li>
-                            <li><span class="fa fa-info check-icon"></span>€10 Registration Fee</li>
                         </ul>
                     </div>
                     <a href="?page=booking&type=individual" class="btn btn-lg btn-outline-clr">Buy now</a>
@@ -57,7 +56,7 @@
                             <li><span class="fa fa-check check-icon"></span>Up to 6 People</li>
                             <li><span class="fa fa-check check-icon"></span>Camping Available for </li>
                             <li><span class="fa fa-info check-icon"></span>€20/Person</li>
-                            <li><span class="fa fa-info check-icon"></span>€10 Registration Fee</li>
+
                         </ul>
                     </div>
                     <a href="?page=booking&type=group" class="btn btn-lg btn-outline-clr">Buy now</a>

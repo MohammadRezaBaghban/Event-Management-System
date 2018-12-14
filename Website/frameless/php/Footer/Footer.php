@@ -18,7 +18,7 @@
                     <li class="socials-nav-item"><a href="#"><span class="fa fa-instagram"></span></a></li>
                 </ul>
 
-                <p class="text-alt"><small>HHF All Rights Reserved © 2018</small></p>
+                <p class="text-alt"><small>HHF All Rights Reserved © 2018 </small></p>
             </div>
 
         </div>

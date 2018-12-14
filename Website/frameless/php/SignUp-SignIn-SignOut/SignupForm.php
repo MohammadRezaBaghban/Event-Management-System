@@ -29,9 +29,7 @@
 
 </script>
 <div>
-<?php
-if(isset($err2)){echo $err2;}
-?>
+
 </div>
 <div class="container">
     <form class="form-horizontal" role="form" action="<?php if($_GET['type'] == 'vip'){echo htmlspecialchars("?page=signup&type=vip");}
@@ -40,11 +38,15 @@ if(isset($err2)){echo $err2;}
 
         <div class="row">
             <div <?php if($_GET['type'] == 'individual'){ ?> class="col-sm-12" align="middle" <?php } if($_GET['type'] == 'group' || $_GET['type'] == 'vip'){ ?> class="col-sm-7" align="middle" <?php } ?>>
+
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">Booking Form</h3>
                     </div>
-
+                    <p style="color:red;"><?php
+                        if(isset($GLOBALS['err'])&&$GLOBALS['err']!=="|"){echo $GLOBALS['err'];}
+                        if(isset($GLOBALS['err2'])){echo $GLOBALS['err2'];}
+                        ?></p>
                     <div class="panel-body">
 
                         <div class="form-group">
