@@ -389,6 +389,10 @@ if ($_GET['type'] === "group" || $_GET['type'] === "individual" || $_GET['type']
             echo "<div class='container'><div class='jumbotron' align='middle'>An account with an email address of $temp has already been registered<h3>redirection to login</h3></div></div><script>setTimeout(function(){window.location.replace('?page=login');}, 5000);</script>";
         }
     }
+    else
+        {
+            echo "<script>setTimeout(function(){window.location.replace('?page=booking');}, 5000);</script>";
+    }
 }
 
 ?>

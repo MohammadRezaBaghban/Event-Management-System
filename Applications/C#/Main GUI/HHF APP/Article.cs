@@ -13,9 +13,9 @@ namespace HHF_APP
         //storing the name, price and quantity of food
         private string name;
         private decimal price;
-        private int quantity;
+        private int quantity,article_nr;
         private ArticleType tpArticleType;
-
+        private string loanedArticleStatus,loanedArticle;
         //constructor
         public Article(string name,
             decimal price,
@@ -27,7 +27,12 @@ namespace HHF_APP
             this.quantity = quantity;
             tpArticleType = type;
         }
-
+        public Article(string type, string status, int articleNr)
+        {
+            this.loanedArticle = type;
+            this.loanedArticleStatus = status;
+            this.article_nr = articleNr;
+        }
         //methods
 
         //return price
@@ -51,6 +56,10 @@ namespace HHF_APP
             if (tpArticleType == ArticleType.Food) return string.Format(name + ", Quantitiy: " + quantity + ", Amount: €");
 
             return string.Format(name + ", Quantitiy: " + quantity + ", Amount: €" + GetPrice());
+        }
+        public string GetLoanedArticles()
+        {
+            return "Article Type : " + " " + loanedArticle + " " + "Status :" + " " + loanedArticleStatus +" "+"Article Nr "+this.article_nr;
         }
     }
 }

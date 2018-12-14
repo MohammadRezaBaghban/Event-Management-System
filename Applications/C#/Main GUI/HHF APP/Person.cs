@@ -1,22 +1,72 @@
-﻿namespace HHF_APP
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace HHF_APP
 {
-    public class Person
+    class Person
     {
         private int user_id, act_id, ticket_id;
-        private string fname, lname;
+        private string group_id;
+        private string fname, lname,status,tickettype,loanStatus;
         private decimal balance;
 
 
-        public Person(int user_id, string fname, string lname, int act_id, int ticket_id
-,
-            decimal balance)
-        { this.user_id = user_id;this.act_id = act_id;this.fname = fname;this.lname = lname; this.ticket_id = ticket_id;this.balance = balance;}
+        public Person(int user_id, string groupId,string fname, string lname, int act_id, int ticket_id, decimal balance,string valid,string tictype)
+        {
+            this.user_id = user_id;
+            this.group_id = groupId;
+            this.act_id = act_id;
+            this.fname = fname;
+            this.lname = lname;
+            
+            if (valid == "yes")
+            {
+                this.status = "VALID";
+            }
+            else this.status = "NOT VALID";
 
-        public int User_id { get => user_id; }
-        public int Act_id { get => act_id;  }
-        public int Ticket_id { get => ticket_id; }
-        public string name { get => fname+" "+lname; }
-        
-        public decimal Balance { get => balance; }
+
+            if (tictype == "yes")
+            {
+                this.tickettype = "VIP";
+            }
+            else if (tictype == "no")
+            {
+                this.tickettype = "INDIVIDUAL";
+            }
+            else if (tictype == "no" && groupId == "NULL")
+            {
+                this.tickettype = "GROUP";
+            }
+            else { this.tickettype = "ERROR"; }
+
+            this.ticket_id = ticket_id;
+            this.balance = balance;
+        }
+
+
+        public Person(string fname, string lname , string groupid)
+        {
+            this.fname = fname;
+            this.lname = lname;
+            this.group_id = groupid;
+        }
+
+        public int getUserId { get => user_id; }
+        public int getActId { get => act_id; }
+        public int getTicketId { get => ticket_id; }
+        public string getName { get => fname + " " + lname; }
+        public string getTicketvalidity { get => status; }
+        public string getTicketType { get => tickettype; }
+        public decimal getBalance { get => balance; }
+
+        public override string ToString()
+        {
+            return "Name(s) :"+" "+ this.getName + "" +"Group id :" +"" + this.group_id;
+        }
+
     }
 }

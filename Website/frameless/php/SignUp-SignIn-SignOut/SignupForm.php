@@ -28,6 +28,11 @@
     });
 
 </script>
+<div>
+<?php
+if(isset($err2)){echo $err2;}
+?>
+</div>
 <div class="container">
     <form class="form-horizontal" role="form" action="<?php if($_GET['type'] == 'vip'){echo htmlspecialchars("?page=signup&type=vip");}
     else if($_GET['type'] == 'group'){echo htmlspecialchars("?page=signup&type=group");} else{ echo htmlspecialchars("?page=signup&type=individual");} ?>" method="post"

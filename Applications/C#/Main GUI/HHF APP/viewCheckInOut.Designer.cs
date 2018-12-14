@@ -29,6 +29,7 @@ namespace HHF_APP
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(viewCheckInOut));
             this.PnlUser = new System.Windows.Forms.Panel();
             this.btnCheckIn = new System.Windows.Forms.Button();
@@ -47,8 +48,6 @@ namespace HHF_APP
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.label7 = new System.Windows.Forms.Label();
             this.gbLoanedItems = new System.Windows.Forms.GroupBox();
-            this.lblArticleType = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
             this.btnReturnArticles = new System.Windows.Forms.Button();
             this.lbLoanedItems = new System.Windows.Forms.ListBox();
             this.btnRefundAndCheckOut = new System.Windows.Forms.Button();
@@ -91,6 +90,9 @@ namespace HHF_APP
             this.label21 = new System.Windows.Forms.Label();
             this.gbGroupMembers = new System.Windows.Forms.GroupBox();
             this.lbGroupMembers = new System.Windows.Forms.ListBox();
+            this.lblArticlenr = new System.Windows.Forms.Label();
+            this.tbArticleNr = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.PnlUser.SuspendLayout();
             this.panel1.SuspendLayout();
             this.gbLoanedItems.SuspendLayout();
@@ -164,7 +166,7 @@ namespace HHF_APP
             this.btnTicketFind.TabIndex = 16;
             this.btnTicketFind.Text = "Find";
             this.btnTicketFind.UseVisualStyleBackColor = false;
-            //this.btnTicketFind.Click += new System.EventHandler(this.btnTicketFind_Click);
+            this.btnTicketFind.Click += new System.EventHandler(this.btnTicketFind_Click);
             // 
             // panel1
             // 
@@ -295,42 +297,19 @@ namespace HHF_APP
             // gbLoanedItems
             // 
             this.gbLoanedItems.BackColor = System.Drawing.Color.MistyRose;
-            this.gbLoanedItems.Controls.Add(this.lblArticleType);
-            this.gbLoanedItems.Controls.Add(this.label28);
+            this.gbLoanedItems.Controls.Add(this.tbArticleNr);
+            this.gbLoanedItems.Controls.Add(this.lblArticlenr);
             this.gbLoanedItems.Controls.Add(this.btnReturnArticles);
             this.gbLoanedItems.Controls.Add(this.lbLoanedItems);
             this.gbLoanedItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbLoanedItems.Location = new System.Drawing.Point(831, 452);
+            this.gbLoanedItems.Location = new System.Drawing.Point(732, 452);
             this.gbLoanedItems.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.gbLoanedItems.Name = "gbLoanedItems";
             this.gbLoanedItems.Padding = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.gbLoanedItems.Size = new System.Drawing.Size(807, 266);
+            this.gbLoanedItems.Size = new System.Drawing.Size(922, 277);
             this.gbLoanedItems.TabIndex = 15;
             this.gbLoanedItems.TabStop = false;
             this.gbLoanedItems.Text = "Loaned Items";
-            // 
-            // lblArticleType
-            // 
-            this.lblArticleType.AutoSize = true;
-            this.lblArticleType.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblArticleType.Location = new System.Drawing.Point(658, 41);
-            this.lblArticleType.Name = "lblArticleType";
-            this.lblArticleType.Size = new System.Drawing.Size(137, 45);
-            this.lblArticleType.TabIndex = 26;
-            this.lblArticleType.Text = "---------";
-            // 
-            // label28
-            // 
-            this.label28.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.label28.Location = new System.Drawing.Point(456, 41);
-            this.label28.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(202, 45);
-            this.label28.TabIndex = 26;
-            this.label28.Text = "Article Type: ";
             // 
             // btnReturnArticles
             // 
@@ -338,13 +317,14 @@ namespace HHF_APP
             this.btnReturnArticles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReturnArticles.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.btnReturnArticles.ForeColor = System.Drawing.Color.Crimson;
-            this.btnReturnArticles.Location = new System.Drawing.Point(425, 184);
+            this.btnReturnArticles.Location = new System.Drawing.Point(694, 183);
             this.btnReturnArticles.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnReturnArticles.Name = "btnReturnArticles";
-            this.btnReturnArticles.Size = new System.Drawing.Size(362, 69);
+            this.btnReturnArticles.Size = new System.Drawing.Size(218, 71);
             this.btnReturnArticles.TabIndex = 13;
             this.btnReturnArticles.Text = "Return";
             this.btnReturnArticles.UseVisualStyleBackColor = false;
+            this.btnReturnArticles.Click += new System.EventHandler(this.btnReturnArticles_Click);
             // 
             // lbLoanedItems
             // 
@@ -354,7 +334,7 @@ namespace HHF_APP
             this.lbLoanedItems.Location = new System.Drawing.Point(10, 42);
             this.lbLoanedItems.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.lbLoanedItems.Name = "lbLoanedItems";
-            this.lbLoanedItems.Size = new System.Drawing.Size(409, 152);
+            this.lbLoanedItems.Size = new System.Drawing.Size(639, 226);
             this.lbLoanedItems.TabIndex = 15;
             // 
             // btnRefundAndCheckOut
@@ -392,7 +372,7 @@ namespace HHF_APP
             this.gbTransaction.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.gbTransaction.Name = "gbTransaction";
             this.gbTransaction.Padding = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.gbTransaction.Size = new System.Drawing.Size(1618, 344);
+            this.gbTransaction.Size = new System.Drawing.Size(1632, 344);
             this.gbTransaction.TabIndex = 7;
             this.gbTransaction.TabStop = false;
             this.gbTransaction.Text = "Transaction";
@@ -453,7 +433,7 @@ namespace HHF_APP
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.label22.Location = new System.Drawing.Point(765, 272);
+            this.label22.Location = new System.Drawing.Point(779, 272);
             this.label22.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(275, 45);
@@ -466,7 +446,7 @@ namespace HHF_APP
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.label16.Location = new System.Drawing.Point(765, 219);
+            this.label16.Location = new System.Drawing.Point(779, 219);
             this.label16.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(271, 45);
@@ -479,7 +459,7 @@ namespace HHF_APP
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.label15.Location = new System.Drawing.Point(765, 117);
+            this.label15.Location = new System.Drawing.Point(779, 117);
             this.label15.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(271, 45);
@@ -492,7 +472,7 @@ namespace HHF_APP
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.label14.Location = new System.Drawing.Point(765, 169);
+            this.label14.Location = new System.Drawing.Point(779, 169);
             this.label14.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(320, 45);
@@ -505,7 +485,7 @@ namespace HHF_APP
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.label13.Location = new System.Drawing.Point(765, 66);
+            this.label13.Location = new System.Drawing.Point(779, 66);
             this.label13.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(236, 45);
@@ -520,7 +500,7 @@ namespace HHF_APP
             this.lblTransations.Location = new System.Drawing.Point(15, 66);
             this.lblTransations.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.lblTransations.Name = "lblTransations";
-            this.lblTransations.Size = new System.Drawing.Size(736, 139);
+            this.lblTransations.Size = new System.Drawing.Size(736, 274);
             this.lblTransations.TabIndex = 0;
             // 
             // btnTransactionFile
@@ -547,7 +527,7 @@ namespace HHF_APP
             this.pnlTicket.Location = new System.Drawing.Point(831, 69);
             this.pnlTicket.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.pnlTicket.Name = "pnlTicket";
-            this.pnlTicket.Size = new System.Drawing.Size(797, 358);
+            this.pnlTicket.Size = new System.Drawing.Size(823, 358);
             this.pnlTicket.TabIndex = 17;
             // 
             // panel9
@@ -560,7 +540,7 @@ namespace HHF_APP
             this.panel9.Location = new System.Drawing.Point(425, 17);
             this.panel9.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(336, 158);
+            this.panel9.Size = new System.Drawing.Size(351, 158);
             this.panel9.TabIndex = 15;
             // 
             // panel14
@@ -582,7 +562,7 @@ namespace HHF_APP
             this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(130, 9);
+            this.label18.Location = new System.Drawing.Point(145, 9);
             this.label18.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(199, 45);
@@ -598,7 +578,7 @@ namespace HHF_APP
             this.panel15.Location = new System.Drawing.Point(5, 56);
             this.panel15.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(298, 98);
+            this.panel15.Size = new System.Drawing.Size(319, 98);
             this.panel15.TabIndex = 0;
             // 
             // lblTicketStatus
@@ -633,7 +613,7 @@ namespace HHF_APP
             this.panel2.Location = new System.Drawing.Point(22, 184);
             this.panel2.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(343, 158);
+            this.panel2.Size = new System.Drawing.Size(372, 158);
             this.panel2.TabIndex = 3;
             // 
             // panel3
@@ -655,7 +635,7 @@ namespace HHF_APP
             this.VisitCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.VisitCount.AutoSize = true;
             this.VisitCount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VisitCount.Location = new System.Drawing.Point(142, 11);
+            this.VisitCount.Location = new System.Drawing.Point(171, 11);
             this.VisitCount.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.VisitCount.Name = "VisitCount";
             this.VisitCount.Size = new System.Drawing.Size(128, 45);
@@ -670,7 +650,7 @@ namespace HHF_APP
             this.pnlBalance.Location = new System.Drawing.Point(5, 56);
             this.pnlBalance.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.pnlBalance.Name = "pnlBalance";
-            this.pnlBalance.Size = new System.Drawing.Size(311, 98);
+            this.pnlBalance.Size = new System.Drawing.Size(362, 98);
             this.pnlBalance.TabIndex = 0;
             // 
             // lblBalance
@@ -695,7 +675,7 @@ namespace HHF_APP
             this.panel5.Location = new System.Drawing.Point(22, 17);
             this.panel5.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(343, 158);
+            this.panel5.Size = new System.Drawing.Size(372, 158);
             this.panel5.TabIndex = 4;
             // 
             // panel6
@@ -717,7 +697,7 @@ namespace HHF_APP
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(137, 9);
+            this.label2.Location = new System.Drawing.Point(166, 9);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(179, 45);
@@ -733,7 +713,7 @@ namespace HHF_APP
             this.pnlTicketType.Location = new System.Drawing.Point(5, 56);
             this.pnlTicketType.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.pnlTicketType.Name = "pnlTicketType";
-            this.pnlTicketType.Size = new System.Drawing.Size(311, 98);
+            this.pnlTicketType.Size = new System.Drawing.Size(362, 98);
             this.pnlTicketType.TabIndex = 0;
             // 
             // lblTicketType
@@ -768,7 +748,7 @@ namespace HHF_APP
             this.panel11.Location = new System.Drawing.Point(425, 184);
             this.panel11.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(336, 158);
+            this.panel11.Size = new System.Drawing.Size(351, 158);
             this.panel11.TabIndex = 10;
             // 
             // panel12
@@ -790,7 +770,7 @@ namespace HHF_APP
             this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(130, 11);
+            this.label12.Location = new System.Drawing.Point(145, 11);
             this.label12.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(129, 45);
@@ -840,7 +820,7 @@ namespace HHF_APP
             this.gbGroupMembers.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.gbGroupMembers.Name = "gbGroupMembers";
             this.gbGroupMembers.Padding = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.gbGroupMembers.Size = new System.Drawing.Size(807, 266);
+            this.gbGroupMembers.Size = new System.Drawing.Size(708, 277);
             this.gbGroupMembers.TabIndex = 16;
             this.gbGroupMembers.TabStop = false;
             this.gbGroupMembers.Text = "Group Members";
@@ -853,8 +833,30 @@ namespace HHF_APP
             this.lbGroupMembers.Location = new System.Drawing.Point(15, 42);
             this.lbGroupMembers.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.lbGroupMembers.Name = "lbGroupMembers";
-            this.lbGroupMembers.Size = new System.Drawing.Size(781, 152);
+            this.lbGroupMembers.Size = new System.Drawing.Size(675, 226);
             this.lbGroupMembers.TabIndex = 15;
+            // 
+            // lblArticlenr
+            // 
+            this.lblArticlenr.AutoSize = true;
+            this.lblArticlenr.Location = new System.Drawing.Point(659, 63);
+            this.lblArticlenr.Name = "lblArticlenr";
+            this.lblArticlenr.Size = new System.Drawing.Size(168, 37);
+            this.lblArticlenr.TabIndex = 16;
+            this.lblArticlenr.Text = "Article Nr :";
+            // 
+            // tbArticleNr
+            // 
+            this.tbArticleNr.Location = new System.Drawing.Point(824, 56);
+            this.tbArticleNr.Name = "tbArticleNr";
+            this.tbArticleNr.Size = new System.Drawing.Size(88, 44);
+            this.tbArticleNr.TabIndex = 17;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // viewCheckInOut
             // 
@@ -955,8 +957,6 @@ namespace HHF_APP
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.GroupBox gbGroupMembers;
         private System.Windows.Forms.ListBox lbGroupMembers;
-        private System.Windows.Forms.Label lblArticleType;
-        private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label lblTransactionTime;
         private System.Windows.Forms.Label lblTransactionDate;
         private System.Windows.Forms.Label lblTransactionAmount;
@@ -967,6 +967,9 @@ namespace HHF_APP
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox tbArticleNr;
+        private System.Windows.Forms.Label lblArticlenr;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }
 #pragma warning restore CS0436

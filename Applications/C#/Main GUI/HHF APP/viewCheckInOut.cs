@@ -93,39 +93,115 @@ namespace HHF_APP
 
         private void btnTicketFind_Click(object sender, EventArgs e)
         {
-            int user_id = Convert.ToInt32(tbUserId.Text);
-            Person temp= dh.checkTicket1(user_id);
-            if (temp != null && dh.checkInOutInfo(user_id) == true)
+            if(tbUserId.Text == "")
             {
-                lblHolderName.Text = temp.name;
-                lblAccountID.Text = Convert.ToString(temp.Act_id);
-                lblTicketID.Text = Convert.ToString(temp.Ticket_id);
-                lblTicketType.Text = Convert.ToString(dh.ticketType);
-                lblTicketStatus.Text = Convert.ToString(dh.ticketStatus);
-                lblBalance.Text = Convert.ToString(temp.Balance);
-                lblRefundAmount.Text = Convert.ToString(temp.Balance);
+                MessageBox.Show("User id field Empty");
             }
-            else { MessageBox.Show("User with user id : " + user_id + " Not Found"); }
+            try
+            {
+                Person temp = dh.checkTicket(Convert.ToInt32(tbUserId.Text));
+                if (temp != null && dh.checkInOutInfo(temp.getUserId) == true && dh.getGroupMembers(temp.getUserId) != null && dh.getAllTransactions(temp.getUserId) != null)
+                {
+                    lblHolderName.Text = temp.getName;
+                    lblAccountID.Text = Convert.ToString(temp.getActId);
+                    lblTicketID.Text = Convert.ToString(temp.getTicketId);
+                    lblTicketType.Text = Convert.ToString(temp.getTicketType);
+                    lblTicketStatus.Text = Convert.ToString(temp.getTicketvalidity);
+                    lblBalance.Text = Convert.ToString(temp.getBalance);
+                    lblRefundAmount.Text = Convert.ToString(temp.getBalance);
+
+                    List<Person> getListGroupMembers = dh.getGroupMembers(temp.getUserId);
+                    List<Article> getListLoanedArticles = dh.getLoanedArticles(temp.getUserId);
+                    List<Transactions> getListTransactions = dh.getAllTransactions(temp.getUserId);
+                    this.lbGroupMembers.Items.Clear();
+                    this.lbLoanedItems.Items.Clear();
+
+                    foreach (Person p in getListGroupMembers)
+                    {
+                        lbGroupMembers.Items.Add(p.ToString());
+                    }
+
+                    foreach (Article A in getListLoanedArticles)
+                    {
+                        lbLoanedItems.Items.Add(A.GetLoanedArticles());
+                    }
+
+                    foreach (Transactions tr in getListTransactions)
+                    {
+                        lblTransations.Items.Add(tr.ToString());
+                    }
+                }
+                else { MessageBox.Show("User with user id : " + temp.getUserId + " Not Found"); }
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Check Input fields");
+            }
         }
 
         private void btnCheckIn_Click(object sender, EventArgs e)
         {
-            int user_id = Convert.ToInt32(tbUserId.Text);
-            if (dh.checkIn(user_id) == 1)
+            if (tbUserId.Text == "")
             {
-                if (dh.checkedIn(user_id) == 1)
-                {
-                    MessageBox.Show("Person Already Checked In");
-                }
-                else { MessageBox.Show("Check In successfull"); }
-
+                MessageBox.Show("User id field empty");
             }
-            else { MessageBox.Show("Could not check in user"); }
+            try
+            {
+                int user_id = Convert.ToInt32(tbUserId.Text);
+                if (dh.checkIn(user_id) == 1)
+                {
+                    if (dh.checkedIn(user_id) == 1)
+                    {
+                        MessageBox.Show("Person Already Checked In");
+                    }
+                    else { MessageBox.Show("Check In successfull"); }
+
+                }
+                else { MessageBox.Show("Could not check in user"); }
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Check input fields");
+            }
         }
 
         private void lblBalance_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnReturnArticles_Click(object sender, EventArgs e)
+        {
+            
+            if(tbUserId.Text =="" && tbArticleNr.Text =="")
+            {
+                MessageBox.Show("Article Nr Field Empty!!");
+            }
+            try
+            {
+                int user_id = Convert.ToInt32(tbUserId.Text);
+                int article_nr = Convert.ToInt32(tbArticleNr.Text);
+                Person temp = dh.checkTicket(Convert.ToInt32(tbUserId.Text));
+                if (dh.ReturnLoanedMaterials(user_id, article_nr) == 1)
+                {
+                    MessageBox.Show("Item" +
+                                    " with article nr" + article_nr + " returned");
+                    lbLoanedItems.Items.Clear();
+                    List<Article> getListLoanedArticles = dh.getLoanedArticles(temp.getUserId);
+                    foreach (Article A in getListLoanedArticles)
+                    {
+                        lbLoanedItems.Items.Add(A.GetLoanedArticles());
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Incorrect article nr or connection time out");
+                }
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Input fields empty");
+            }
         }
     }
 }

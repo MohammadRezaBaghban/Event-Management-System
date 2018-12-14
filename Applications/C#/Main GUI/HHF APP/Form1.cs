@@ -12,10 +12,10 @@ namespace HHF_APP
         public Form1()
         {
             InitializeComponent();
-            viewAdminDashboard1.BringToFront();
+            
             sidepanelforBTNs.Height = AdminBtn.Height;
             sidepanelforBTNs.Top = AdminBtn.Top;
-            viewLogin1.SendToBack();
+            viewLogin1.BringToFront();
             viewCamping1.Enabled = false;
             viewLending1.Enabled = false;
             viewStore1.Enabled = false;
@@ -664,14 +664,14 @@ namespace HHF_APP
         {
             try
             {
-                Person p = dh.checkTicket1(Convert.ToInt32(tbBarcode.Text));
+                Person p = dh.checkTicket(Convert.ToInt32(tbBarcode.Text));
                 if (p != null)
                 {
                     viewCamping1.Enabled = true;
                     viewLending1.Enabled = true;
                     viewStore1.Enabled = true;
-                    lblbal.Text = p.Balance.ToString();
-                    lblname.Text = p.name;
+                    lblbal.Text = p.getBalance.ToString();
+                    lblname.Text = p.getName;
                     
                 }
                 else

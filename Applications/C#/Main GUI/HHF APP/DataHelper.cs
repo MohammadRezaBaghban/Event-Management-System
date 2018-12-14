@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Util;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
@@ -14,7 +15,7 @@ namespace HHF_APP
     {
 
         public MySqlConnection connection;
-
+        private Article art;
         public DataHelper()
         {
             String connectionInfo = "server=studmysql01.fhict.local;" +
@@ -389,10 +390,10 @@ namespace HHF_APP
 
 
 
-        public Person checkTicket1(int user_id)
+        public Person checkTicket(int user_id)
         {
             string query =
-                "SELECT usr.fname , usr.lname , usr.account_id ,t.ticket_id, ac.currentbal FROM users AS usr JOIN tickets AS t on usr.user_id=t.user_id,accounts ac  where usr.user_id=@user_id and usr.account_id= ac.account_id";
+                "SELECT usr.group_id,usr.fname , usr.lname , usr.account_id ,t.ticket_id,ac.is_valid,usr.is_vip, ac.currentbal FROM users AS usr JOIN tickets AS t on usr.user_id=t.user_id,accounts ac  where usr.user_id=@user_id and usr.account_id= ac.account_id";
             MySqlCommand command = new MySqlCommand(query, connection);
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@user_id", user_id);
@@ -404,9 +405,12 @@ namespace HHF_APP
                 Person temp = null;
                 while (reader.Read())
                 {
-                    temp = new Person(user_id, Convert.ToString(reader["fname"]), Convert.ToString(reader["lname"]),
-                        Convert.ToInt32(reader["account_id"]), Convert.ToInt32(reader["ticket_id"]),
-                        Convert.ToDecimal(reader["currentbal"]));
+                    temp =
+                        new Person(
+                            user_id, Convert.ToString(reader["group_id"]), Convert.ToString(reader["fname"]),
+                            Convert.ToString(reader["lname"]), Convert.ToInt32(reader["account_id"]),
+                            Convert.ToInt32(reader["ticket_id"]), Convert.ToDecimal(reader["currentbal"]),
+                            Convert.ToString(reader["is_valid"]), Convert.ToString(reader["is_vip"]));
                 }
 
                 if (temp != null)
@@ -477,14 +481,11 @@ namespace HHF_APP
             }
         }
 
-
         public int ticketBalance, ticketRefund;
-        public string ticketStatus, ticketType;
-
         public bool checkInOutInfo(int user_id)
         {
             string query =
-                "SELECT tr.type,a.is_valid,tr.current_balance FROM accounts AS a  JOIN users AS usr ON a.account_id=usr.account_id JOIN transactions AS tr ON tr.account_id=a.account_id where usr.user_id =@user_id";
+                "SELECT tr.current_balance FROM accounts AS a  JOIN users AS usr ON a.account_id=usr.account_id JOIN transactions AS tr ON tr.account_id=a.account_id where usr.user_id =@user_id";
             MySqlCommand command = new MySqlCommand(query, connection);
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@user_id", user_id);
@@ -496,8 +497,6 @@ namespace HHF_APP
                 bool temp = false;
                 while (reader.Read())
                 {
-                    this.ticketType = Convert.ToString(reader["type"]);
-                    this.ticketStatus = Convert.ToString(reader["is_valid"]);
                     this.ticketBalance = Convert.ToInt32(reader["current_balance"]);
                     this.ticketRefund = Convert.ToInt32(reader["current_balance"]);
                     temp = true;
@@ -507,10 +506,8 @@ namespace HHF_APP
                 {
                     return false;
                 }
-                else
-                {
-                    return true;
-                }
+                else { return true; }
+
             }
             catch
             {
@@ -683,6 +680,139 @@ namespace HHF_APP
                     throw new Exception(ex.Message);
                 }
             }
+        }
+        public List<Person> getGroupMembers(int user_id)
+        {
+            string sql = "Select * FROM users where group_id = (SELECT group_id from users where user_id=@user_id)";
+            MySqlCommand command = new MySqlCommand(sql, connection);
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@user_id", user_id);
+
+            try
+            {
+                connection.Open();
+                MySqlDataReader reader = command.ExecuteReader();
+                List<Person> tempList = new List<Person>();
+                while (reader.Read())
+                {
+                    tempList.Add(new Person(Convert.ToString(reader["fname"]),
+                        Convert.ToString(reader["lname"]), Convert.ToString(reader["group_id"])));
+                }
+                if (tempList != null)
+                {
+                    return tempList;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch
+            {
+                return null;
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+        public List<Article> getLoanedArticles(int user_id)
+        {
+            string sql = "Select art.type,lo.article_status,lo.article_nr FROM articles AS art JOIN loaned AS lo on art.article_nr=lo.article_nr JOIN transactions as tr on tr.transaction_id = lo.transaction_id JOIN accounts as a on tr.account_id=a.account_id JOIN users as usr on a.account_id=usr.account_id where usr.user_id=@user_id";
+            MySqlCommand command = new MySqlCommand(sql, connection);
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@user_id", user_id);
+
+            try
+            {
+                connection.Open();
+                MySqlDataReader reader = command.ExecuteReader();
+                List<Article> tempList = new List<Article>();
+                while (reader.Read())
+                {
+
+                    tempList.Add(new Article(Convert.ToString(reader["type"])
+                        , Convert.ToString(reader["article_status"]) , Convert.ToInt32(reader["article_nr"])));
+                }
+                if (tempList != null)
+                {
+                    return tempList;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch
+            {
+                return null;
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        public int ReturnLoanedMaterials(int user_id, int articled_nr)
+        {
+            string query = "UPDATE loaned SET loaned.article_status='returned' WHERE loaned.transaction_id = (SELECT tr.transaction_id FROM transactions as tr JOIN accounts as a on tr.account_id=a.account_id JOIN users as usr ON a.account_id=usr.account_id WHERE usr.user_id=@user_id) AND loaned.article_nr=@article_nr";
+            MySqlCommand command = new MySqlCommand(query, connection);
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@user_id", user_id);
+            command.Parameters.AddWithValue("@article_nr", articled_nr);
+
+            try
+            {
+                connection.Open();
+                int checkedRecords = command.ExecuteNonQuery();
+                return checkedRecords;
+            }
+            catch
+            {
+                return -1;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+        public List<Transactions> getAllTransactions(int user_id)
+        {
+            string sql = "SELECT tr.transaction_id,tr.type,tr.amount,tr.date,tr.time FROM transactions as tr JOIN accounts as a on tr.account_id=a.account_id JOIN users as usr on a.account_id=usr.account_id where usr.user_id=@user_id";
+            MySqlCommand command = new MySqlCommand(sql, connection);
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@user_id", user_id);
+
+            try
+            {
+                connection.Open();
+                MySqlDataReader reader = command.ExecuteReader();
+                List<Transactions> tempList = new List<Transactions>();
+                while (reader.Read())
+                {
+
+                    tempList.Add(new Transactions(Convert.ToInt32(reader["transaction_id"]), 
+                        Convert.ToInt32(reader["amount"]), Convert.ToString(reader["type"]),
+                        Convert.ToString(reader["date"]),Convert.ToString(reader["time"])));
+                }
+                if (tempList != null)
+                {
+                    return tempList;
+                }
+            }
+            catch
+            {
+                return null;
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return null;
         }
     }
 }
