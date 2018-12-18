@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Spire.Barcode;
-using Spire.Barcode.Implementation;
+//using Spire.Barcode;
+//using Spire.Barcode.Implementation;
 using System.Diagnostics;
 using System.IO;
 using System.Drawing.Printing;
@@ -49,6 +49,7 @@ namespace HHF_APP
 
         private void btnTicketPrint_Click(object sender, EventArgs e)
         {
+            /*
             try
             {
                 BarcodeSettings barsetting = new BarcodeSettings();
@@ -81,7 +82,7 @@ namespace HHF_APP
             {
                 MessageBox.Show(ex.Message);
             }
-
+            */
 
         }
         private void PrintPage(object o, PrintPageEventArgs e)

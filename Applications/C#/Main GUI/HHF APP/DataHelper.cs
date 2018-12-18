@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,7 @@ using System.Web.Util;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace HHF_APP
 {
@@ -15,14 +17,12 @@ namespace HHF_APP
     {
 
         public MySqlConnection connection;
+        public static String connectionInfo;
         private Article art;
         public DataHelper()
         {
-            String connectionInfo = "server=studmysql01.fhict.local;" +
-                                    "database=dbi400320;" +
-                                    "user id=dbi400320;" +
-                                    "Pwd=12345678;" +
-                                    "connect timeout=30;";
+           
+            connectionInfo = ConfigurationManager.ConnectionStrings["myPhpAdmin"].ConnectionString;
 
             connection = new MySqlConnection(connectionInfo);
         }
@@ -31,6 +31,7 @@ namespace HHF_APP
         public int AddEmployee(String fName, String lName, String email, String password, String phoneNr, String position, String street, String postcode)
         {
             String query = "INSERT INTO employees(emp_id, fname, lname, email, password, phone_nr, position, street, postcode) VALUES (@empID, @fName, @lName, @email, @password, @phoneNr, @position, @street, @postcode)";
+            String query1 = $"INSERT INTO employees(emp_id, fname, lname, email, password, phone_nr, position, street, postcode) VALUES ({null}, {fName}, {lName}, {email}, {password}, {phoneNr}, {position}, {street}, {postcode})";
             MySqlCommand command = new MySqlCommand(query, connection);
             command.Parameters.AddWithValue("@empID", null);
             command.Parameters.AddWithValue("@fName", fName);
@@ -360,7 +361,7 @@ namespace HHF_APP
         {
             //Count because the number of records for succesfull login should be q as there is only one user with such records
             string joinQuery = "SELECT COUNT(*) as cnt FROM employees WHERE email=@email AND password =@password";
-
+            //string join1Query = $"SELECT COUNT(*) as cnt FROM employees WHERE email='{email}' AND password ='{password}'";
             MySqlCommand command = new MySqlCommand(joinQuery, connection);
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@email", email);
@@ -814,5 +815,7 @@ namespace HHF_APP
 
             return null;
         }
+
+        
     }
 }

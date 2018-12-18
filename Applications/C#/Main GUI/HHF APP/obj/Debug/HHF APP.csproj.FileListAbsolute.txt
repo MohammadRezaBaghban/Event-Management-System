@@ -27,14 +27,6 @@ C:\Mrbh\University\Fontys\3rd Block\ProP\ProP_Sems2\Applications\C#\Main GUI\HHF
 C:\Mrbh\University\Fontys\3rd Block\ProP\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF_APP.viewTickets.resources
 C:\Mrbh\University\Fontys\3rd Block\ProP\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF_APP.viewCheckInOut.resources
 C:\Mrbh\University\Fontys\3rd Block\ProP\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF APP.csproj.GenerateResource.Cache
-C:\Mrbh\University\Fontys\3rd Block\ProP\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF APP.exe
-C:\Mrbh\University\Fontys\3rd Block\ProP\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF APP.pdb
-C:\Mrbh\University\Fontys\3rd Block\ProP\ProP_Sems2\Applications\C#\Main GUI\HHF APP\bin\Debug\HHF APP.exe.config
-C:\Mrbh\University\Fontys\3rd Block\ProP\ProP_Sems2\Applications\C#\Main GUI\HHF APP\bin\Debug\HHF APP.exe
-C:\Mrbh\University\Fontys\3rd Block\ProP\ProP_Sems2\Applications\C#\Main GUI\HHF APP\bin\Debug\HHF APP.pdb
-C:\Mrbh\University\Fontys\3rd Block\ProP\ProP_Sems2\Applications\C#\Main GUI\HHF APP\bin\Debug\Spire.License.dll
-C:\Mrbh\University\Fontys\3rd Block\ProP\ProP_Sems2\Applications\C#\Main GUI\HHF APP\bin\Debug\Spire.Barcode.xml
-C:\Mrbh\University\Fontys\3rd Block\ProP\ProP_Sems2\Applications\C#\Main GUI\HHF APP\bin\Debug\Spire.License.xml
 C:\Users\Ryan\ProP_Sems2\Applications\C#\Main GUI\HHF APP\bin\Debug\HHF APP.exe.config
 C:\Users\Ryan\ProP_Sems2\Applications\C#\Main GUI\HHF APP\bin\Debug\HHF APP.exe
 C:\Users\Ryan\ProP_Sems2\Applications\C#\Main GUI\HHF APP\bin\Debug\HHF APP.pdb
@@ -107,3 +99,10 @@ C:\xampp\htdocs\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF APP.cs
 C:\xampp\htdocs\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF.exe
 C:\xampp\htdocs\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF.pdb
 C:\xampp\htdocs\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF APP.csprojAssemblyReference.cache
+C:\Mrbh\University\Fontys\3rd Block\ProP\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF_APP.PasswordPanel.resources
+C:\Mrbh\University\Fontys\3rd Block\ProP\ProP_Sems2\Applications\C#\Main GUI\HHF APP\bin\Debug\HHF.exe.config
+C:\Mrbh\University\Fontys\3rd Block\ProP\ProP_Sems2\Applications\C#\Main GUI\HHF APP\bin\Debug\HHF.exe
+C:\Mrbh\University\Fontys\3rd Block\ProP\ProP_Sems2\Applications\C#\Main GUI\HHF APP\bin\Debug\HHF.pdb
+C:\Mrbh\University\Fontys\3rd Block\ProP\ProP_Sems2\Applications\C#\Main GUI\HHF APP\bin\Debug\MySql.Data.dll
+C:\Mrbh\University\Fontys\3rd Block\ProP\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF.exe
+C:\Mrbh\University\Fontys\3rd Block\ProP\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF.pdb

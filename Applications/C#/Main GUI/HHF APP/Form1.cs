@@ -13,9 +13,9 @@ namespace HHF_APP
         {
             InitializeComponent();
             
-            sidepanelforBTNs.Height = AdminBtn.Height;
-            sidepanelforBTNs.Top = AdminBtn.Top;
-            viewLogin1.BringToFront();
+            //sidepanelforBTNs.Height = AdminBtn.Height;
+            //sidepanelforBTNs.Top = AdminBtn.Top;
+            //viewLogin1.BringToFront();
             viewCamping1.Enabled = false;
             viewLending1.Enabled = false;
             viewStore1.Enabled = false;
@@ -644,7 +644,9 @@ namespace HHF_APP
             sidepanelforBTNs.Height = campBtn.Height;
             sidepanelforBTNs.Top = campBtn.Top;
             panel3.Visible = true;
+            viewCamping1.LoadAvailable();
             viewCamping1.BringToFront();
+            viewCamping1.Enabled = true;
         }
 
         private void lendBtn_Click_1(object sender, EventArgs e)
