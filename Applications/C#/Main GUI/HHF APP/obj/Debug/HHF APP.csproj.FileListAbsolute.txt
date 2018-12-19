@@ -106,3 +106,24 @@ C:\Mrbh\University\Fontys\3rd Block\ProP\ProP_Sems2\Applications\C#\Main GUI\HHF
 C:\Mrbh\University\Fontys\3rd Block\ProP\ProP_Sems2\Applications\C#\Main GUI\HHF APP\bin\Debug\MySql.Data.dll
 C:\Mrbh\University\Fontys\3rd Block\ProP\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF.exe
 C:\Mrbh\University\Fontys\3rd Block\ProP\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF.pdb
+C:\Users\Ov\Desktop\ProP_Sems2\Applications\C#\Main GUI\HHF APP\bin\Debug\HHF.exe.config
+C:\Users\Ov\Desktop\ProP_Sems2\Applications\C#\Main GUI\HHF APP\bin\Debug\HHF.exe
+C:\Users\Ov\Desktop\ProP_Sems2\Applications\C#\Main GUI\HHF APP\bin\Debug\HHF.pdb
+C:\Users\Ov\Desktop\ProP_Sems2\Applications\C#\Main GUI\HHF APP\bin\Debug\MySql.Data.dll
+C:\Users\Ov\Desktop\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF APP.csprojAssemblyReference.cache
+C:\Users\Ov\Desktop\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF_APP.AddEmployee.resources
+C:\Users\Ov\Desktop\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF_APP.Form1.resources
+C:\Users\Ov\Desktop\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF_APP.PasswordPanel.resources
+C:\Users\Ov\Desktop\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF_APP.Properties.Resources.resources
+C:\Users\Ov\Desktop\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF_APP.viewAdminDashboard.resources
+C:\Users\Ov\Desktop\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF_APP.viewCamping.resources
+C:\Users\Ov\Desktop\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF_APP.viewLending.resources
+C:\Users\Ov\Desktop\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF_APP.viewLogin.resources
+C:\Users\Ov\Desktop\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF_APP.viewStore.resources
+C:\Users\Ov\Desktop\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF_APP.viewTickets.resources
+C:\Users\Ov\Desktop\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF_APP.viewCheckInOut.resources
+C:\Users\Ov\Desktop\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF APP.csproj.GenerateResource.cache
+C:\Users\Ov\Desktop\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF APP.csproj.CoreCompileInputs.cache
+C:\Users\Ov\Desktop\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF APP.csproj.CopyComplete
+C:\Users\Ov\Desktop\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF.exe
+C:\Users\Ov\Desktop\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF.pdb

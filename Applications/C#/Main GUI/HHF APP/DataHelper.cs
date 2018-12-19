@@ -782,7 +782,7 @@ namespace HHF_APP
         }
         public List<Transactions> getAllTransactions(int user_id)
         {
-            string sql = "SELECT tr.transaction_id,tr.type,tr.amount,tr.date,tr.time FROM transactions as tr JOIN accounts as a on tr.account_id=a.account_id JOIN users as usr on a.account_id=usr.account_id where usr.user_id=@user_id";
+            string sql = "SELECT tr.transaction_id,tr.amount,tr.type,tr.date,tr.time FROM transactions as tr JOIN accounts as a on tr.account_id=a.account_id JOIN users as usr on a.account_id=usr.account_id where usr.user_id=@user_id";
             MySqlCommand command = new MySqlCommand(sql, connection);
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@user_id", user_id);

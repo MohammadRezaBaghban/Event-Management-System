@@ -29,8 +29,8 @@ namespace HHF_APP
 
         public override string ToString()
         {
-            return "ID : " + this.getTransactionId + "Type : " + this.getTransactionType + "Amount :"
-                + this.getTransactionAmount + " Date: " + this.getTransactionDate + " Time: " + this.getTransactionTime;
+            return this.getTransactionId + ":" + this.getTransactionType + ":"
+                + this.getTransactionAmount + ":" + this.getTransactionDate + ":" + this.getTransactionTime;
         }
     }
 }
