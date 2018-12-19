@@ -30,30 +30,32 @@ namespace HHF_APP
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(viewCamping));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
             this.lbCampingHeader = new System.Windows.Forms.Label();
             this.panel15 = new System.Windows.Forms.Panel();
-            this.lblPaymentStatus = new System.Windows.Forms.Label();
+            this.lblCheckInSts = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.btnCCheckIn = new System.Windows.Forms.Button();
             this.btnCCheckOut = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BtnPay = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.LblPaymentSts = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.DG_ReservedSpots = new System.Windows.Forms.DataGridView();
             this.DG_AvailableSpots = new System.Windows.Forms.DataGridView();
             this.LAvailableSpot = new System.Windows.Forms.Label();
+            this.LOccupiedSpot = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel9.SuspendLayout();
             this.panel15.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -69,60 +71,60 @@ namespace HHF_APP
             this.panel9.Controls.Add(this.lbCampingHeader);
             this.panel9.Controls.Add(this.panel15);
             this.panel9.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel9.Location = new System.Drawing.Point(359, 555);
+            this.panel9.Location = new System.Drawing.Point(341, 547);
             this.panel9.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(240, 101);
+            this.panel9.Size = new System.Drawing.Size(272, 130);
             this.panel9.TabIndex = 15;
             // 
             // panel14
             // 
             this.panel14.AutoSize = true;
-            this.panel14.BackColor = System.Drawing.Color.LightCoral;
+            this.panel14.BackColor = System.Drawing.Color.Lime;
             this.panel14.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel14.BackgroundImage")));
             this.panel14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel14.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel14.Location = new System.Drawing.Point(4, 15);
+            this.panel14.Location = new System.Drawing.Point(4, 10);
             this.panel14.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(59, 56);
+            this.panel14.Size = new System.Drawing.Size(82, 72);
             this.panel14.TabIndex = 1;
             // 
             // lbCampingHeader
             // 
             this.lbCampingHeader.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbCampingHeader.AutoSize = true;
-            this.lbCampingHeader.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCampingHeader.Location = new System.Drawing.Point(80, 10);
+            this.lbCampingHeader.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.lbCampingHeader.Location = new System.Drawing.Point(87, 10);
             this.lbCampingHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbCampingHeader.Name = "lbCampingHeader";
-            this.lbCampingHeader.Size = new System.Drawing.Size(69, 30);
+            this.lbCampingHeader.Size = new System.Drawing.Size(181, 32);
             this.lbCampingHeader.TabIndex = 0;
-            this.lbCampingHeader.Text = "Status";
+            this.lbCampingHeader.Text = "Check-In Status";
             // 
             // panel15
             // 
             this.panel15.BackColor = System.Drawing.Color.White;
-            this.panel15.Controls.Add(this.lblPaymentStatus);
+            this.panel15.Controls.Add(this.lblCheckInSts);
             this.panel15.Controls.Add(this.label20);
             this.panel15.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel15.Location = new System.Drawing.Point(4, 42);
+            this.panel15.Location = new System.Drawing.Point(4, 53);
             this.panel15.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(233, 51);
+            this.panel15.Size = new System.Drawing.Size(264, 70);
             this.panel15.TabIndex = 0;
             // 
-            // lblPaymentStatus
+            // lblCheckInSts
             // 
-            this.lblPaymentStatus.AutoSize = true;
-            this.lblPaymentStatus.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPaymentStatus.Location = new System.Drawing.Point(130, 11);
-            this.lblPaymentStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblPaymentStatus.Name = "lblPaymentStatus";
-            this.lblPaymentStatus.Size = new System.Drawing.Size(53, 30);
-            this.lblPaymentStatus.TabIndex = 2;
-            this.lblPaymentStatus.Text = "-----";
+            this.lblCheckInSts.AutoSize = true;
+            this.lblCheckInSts.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCheckInSts.Location = new System.Drawing.Point(90, 23);
+            this.lblCheckInSts.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCheckInSts.Name = "lblCheckInSts";
+            this.lblCheckInSts.Size = new System.Drawing.Size(58, 30);
+            this.lblCheckInSts.TabIndex = 2;
+            this.lblCheckInSts.Text = "-----";
             // 
             // label20
             // 
@@ -141,13 +143,14 @@ namespace HHF_APP
             this.btnCCheckIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCCheckIn.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCCheckIn.ForeColor = System.Drawing.Color.DarkGreen;
-            this.btnCCheckIn.Location = new System.Drawing.Point(371, 672);
+            this.btnCCheckIn.Location = new System.Drawing.Point(544, 700);
             this.btnCCheckIn.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnCCheckIn.Name = "btnCCheckIn";
-            this.btnCCheckIn.Size = new System.Drawing.Size(220, 120);
-            this.btnCCheckIn.TabIndex = 11;
+            this.btnCCheckIn.Size = new System.Drawing.Size(162, 120);
+            this.btnCCheckIn.TabIndex = 4;
             this.btnCCheckIn.Text = "Check In";
             this.btnCCheckIn.UseVisualStyleBackColor = false;
+            this.btnCCheckIn.Click += new System.EventHandler(this.btnCCheckIn_Click);
             // 
             // btnCCheckOut
             // 
@@ -155,27 +158,29 @@ namespace HHF_APP
             this.btnCCheckOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCCheckOut.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCCheckOut.ForeColor = System.Drawing.Color.Red;
-            this.btnCCheckOut.Location = new System.Drawing.Point(628, 672);
+            this.btnCCheckOut.Location = new System.Drawing.Point(747, 700);
             this.btnCCheckOut.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnCCheckOut.Name = "btnCCheckOut";
-            this.btnCCheckOut.Size = new System.Drawing.Size(220, 120);
-            this.btnCCheckOut.TabIndex = 17;
+            this.btnCCheckOut.Size = new System.Drawing.Size(162, 120);
+            this.btnCCheckOut.TabIndex = 5;
             this.btnCCheckOut.Text = "Check Out";
             this.btnCCheckOut.UseVisualStyleBackColor = false;
+            this.btnCCheckOut.Click += new System.EventHandler(this.btnCCheckOut_Click);
             // 
-            // button1
+            // BtnPay
             // 
-            this.button1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.DarkGreen;
-            this.button1.Location = new System.Drawing.Point(863, 563);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(69, 86);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "Pay";
-            this.button1.UseVisualStyleBackColor = false;
+            this.BtnPay.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BtnPay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnPay.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnPay.ForeColor = System.Drawing.Color.DarkGreen;
+            this.BtnPay.Location = new System.Drawing.Point(341, 700);
+            this.BtnPay.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.BtnPay.Name = "BtnPay";
+            this.BtnPay.Size = new System.Drawing.Size(162, 120);
+            this.BtnPay.TabIndex = 3;
+            this.BtnPay.Text = "Pay";
+            this.BtnPay.UseVisualStyleBackColor = false;
+            this.BtnPay.Click += new System.EventHandler(this.BtnMakePayment_Click);
             // 
             // panel1
             // 
@@ -184,60 +189,60 @@ namespace HHF_APP
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(615, 555);
+            this.panel1.Location = new System.Drawing.Point(637, 547);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(240, 101);
+            this.panel1.Size = new System.Drawing.Size(272, 130);
             this.panel1.TabIndex = 19;
             // 
             // panel2
             // 
             this.panel2.AutoSize = true;
-            this.panel2.BackColor = System.Drawing.Color.LawnGreen;
+            this.panel2.BackColor = System.Drawing.Color.Chartreuse;
             this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(4, 15);
+            this.panel2.Location = new System.Drawing.Point(8, 10);
             this.panel2.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(59, 56);
+            this.panel2.Size = new System.Drawing.Size(82, 72);
             this.panel2.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(73, 11);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label1.Location = new System.Drawing.Point(90, 10);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 30);
+            this.label1.Size = new System.Drawing.Size(178, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Payment Status";
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.LblPaymentSts);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel3.Location = new System.Drawing.Point(4, 42);
+            this.panel3.Location = new System.Drawing.Point(4, 53);
             this.panel3.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(233, 51);
+            this.panel3.Size = new System.Drawing.Size(264, 70);
             this.panel3.TabIndex = 0;
             // 
-            // label2
+            // LblPaymentSts
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(130, 11);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 30);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "-----";
+            this.LblPaymentSts.AutoSize = true;
+            this.LblPaymentSts.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblPaymentSts.Location = new System.Drawing.Point(94, 23);
+            this.LblPaymentSts.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblPaymentSts.Name = "LblPaymentSts";
+            this.LblPaymentSts.Size = new System.Drawing.Size(58, 30);
+            this.LblPaymentSts.TabIndex = 2;
+            this.LblPaymentSts.Text = "-----";
             // 
             // label3
             // 
@@ -280,24 +285,24 @@ namespace HHF_APP
             this.DG_ReservedSpots.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.DG_ReservedSpots.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.DG_ReservedSpots.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Cornsilk;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DG_ReservedSpots.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Cornsilk;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DG_ReservedSpots.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DG_ReservedSpots.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.NullValue = "Null";
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Cornsilk;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DG_ReservedSpots.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.NullValue = "Null";
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Cornsilk;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DG_ReservedSpots.DefaultCellStyle = dataGridViewCellStyle2;
             this.DG_ReservedSpots.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.DG_ReservedSpots.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.DG_ReservedSpots.Location = new System.Drawing.Point(417, 97);
@@ -306,7 +311,7 @@ namespace HHF_APP
             this.DG_ReservedSpots.RowTemplate.Height = 28;
             this.DG_ReservedSpots.Size = new System.Drawing.Size(808, 294);
             this.DG_ReservedSpots.StandardTab = true;
-            this.DG_ReservedSpots.TabIndex = 24;
+            this.DG_ReservedSpots.TabIndex = 2;
             // 
             // DG_AvailableSpots
             // 
@@ -318,24 +323,24 @@ namespace HHF_APP
             this.DG_AvailableSpots.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.DG_AvailableSpots.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.DG_AvailableSpots.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Cornsilk;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DG_AvailableSpots.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Cornsilk;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DG_AvailableSpots.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.DG_AvailableSpots.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle12.NullValue = "Null";
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.Cornsilk;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DG_AvailableSpots.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.NullValue = "Null";
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Cornsilk;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DG_AvailableSpots.DefaultCellStyle = dataGridViewCellStyle4;
             this.DG_AvailableSpots.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.DG_AvailableSpots.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.DG_AvailableSpots.Location = new System.Drawing.Point(29, 97);
@@ -344,16 +349,38 @@ namespace HHF_APP
             this.DG_AvailableSpots.RowTemplate.Height = 28;
             this.DG_AvailableSpots.Size = new System.Drawing.Size(364, 294);
             this.DG_AvailableSpots.StandardTab = true;
-            this.DG_AvailableSpots.TabIndex = 25;
+            this.DG_AvailableSpots.TabIndex = 1;
             // 
             // LAvailableSpot
             // 
             this.LAvailableSpot.AutoSize = true;
             this.LAvailableSpot.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LAvailableSpot.Location = new System.Drawing.Point(272, 13);
+            this.LAvailableSpot.Location = new System.Drawing.Point(21, 49);
             this.LAvailableSpot.Name = "LAvailableSpot";
-            this.LAvailableSpot.Size = new System.Drawing.Size(0, 45);
+            this.LAvailableSpot.Size = new System.Drawing.Size(55, 45);
             this.LAvailableSpot.TabIndex = 26;
+            this.LAvailableSpot.Text = "Nr";
+            // 
+            // LOccupiedSpot
+            // 
+            this.LOccupiedSpot.AutoSize = true;
+            this.LOccupiedSpot.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LOccupiedSpot.Location = new System.Drawing.Point(409, 49);
+            this.LOccupiedSpot.Name = "LOccupiedSpot";
+            this.LOccupiedSpot.Size = new System.Drawing.Size(55, 45);
+            this.LOccupiedSpot.TabIndex = 27;
+            this.LOccupiedSpot.Text = "Nr";
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.button2.Location = new System.Drawing.Point(1072, 46);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(153, 45);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "Refresh";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // viewCamping
             // 
@@ -361,12 +388,14 @@ namespace HHF_APP
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.LOccupiedSpot);
             this.Controls.Add(this.LAvailableSpot);
             this.Controls.Add(this.DG_AvailableSpots);
             this.Controls.Add(this.DG_ReservedSpots);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.BtnPay);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnCCheckOut);
             this.Controls.Add(this.btnCCheckIn);
@@ -375,7 +404,6 @@ namespace HHF_APP
             this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Name = "viewCamping";
             this.Size = new System.Drawing.Size(1251, 878);
-            this.Load += new System.EventHandler(this.viewCamping_Load);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.panel15.ResumeLayout(false);
@@ -397,21 +425,23 @@ namespace HHF_APP
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Label lbCampingHeader;
         private System.Windows.Forms.Panel panel15;
-        private System.Windows.Forms.Label lblPaymentStatus;
+        private System.Windows.Forms.Label lblCheckInSts;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Button btnCCheckIn;
         private System.Windows.Forms.Button btnCCheckOut;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BtnPay;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label LblPaymentSts;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView DG_ReservedSpots;
-        private System.Windows.Forms.DataGridView DG_AvailableSpots;
         private System.Windows.Forms.Label LAvailableSpot;
+        private System.Windows.Forms.Label LOccupiedSpot;
+        private System.Windows.Forms.Button button2;
+        public System.Windows.Forms.DataGridView DG_ReservedSpots;
+        public System.Windows.Forms.DataGridView DG_AvailableSpots;
     }
 }

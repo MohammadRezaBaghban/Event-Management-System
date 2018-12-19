@@ -12,13 +12,16 @@ namespace HHF_APP
         public Form1()
         {
             InitializeComponent();
-            
+
             //sidepanelforBTNs.Height = AdminBtn.Height;
             //sidepanelforBTNs.Top = AdminBtn.Top;
+            sidepanelforBTNs.Height = ticketsBtn.Height;
+            sidepanelforBTNs.Top = ticketsBtn.Top;
             //viewLogin1.BringToFront();
             viewCamping1.Enabled = false;
             viewLending1.Enabled = false;
             viewStore1.Enabled = false;
+            viewCamping1.LoadAvailable();
             lblbal.Text = "......";
             lblname.Text = "......";
             //SoundPlayer my_sound = new SoundPlayer("F:/xxxxxx.wave"); //put your own .4wave file path
@@ -635,6 +638,7 @@ namespace HHF_APP
         {
             sidepanelforBTNs.Height = storeBtn.Height;
             sidepanelforBTNs.Top = storeBtn.Top;
+            viewStore1.Enabled = true;
             panel3.Visible = true;
             viewStore1.BringToFront();
         }
@@ -644,7 +648,6 @@ namespace HHF_APP
             sidepanelforBTNs.Height = campBtn.Height;
             sidepanelforBTNs.Top = campBtn.Top;
             panel3.Visible = true;
-            viewCamping1.LoadAvailable();
             viewCamping1.BringToFront();
             viewCamping1.Enabled = true;
         }
@@ -669,11 +672,36 @@ namespace HHF_APP
                 Person p = dh.checkTicket(Convert.ToInt32(tbBarcode.Text));
                 if (p != null)
                 {
-                    viewCamping1.Enabled = true;
                     viewLending1.Enabled = true;
                     viewStore1.Enabled = true;
                     lblbal.Text = p.getBalance.ToString();
                     lblname.Text = p.getName;
+                    if (sidepanelforBTNs.Top == campBtn.Top)
+                    {
+                        foreach (DataGridViewRow r in viewCamping1.DG_ReservedSpots.Rows)
+                        {
+                            r.Selected = false;
+
+                        }
+
+                        if (!dh.CheckCampReservation(p.getActId))
+                        {
+                            MessageBox.Show($"There is no reserved camping spot for this account!");
+                            
+                        }
+                        else
+                        {
+                            foreach (DataGridViewRow r in viewCamping1.DG_ReservedSpots.Rows)
+                            {
+                                if (r.Cells[0].Value.ToString() == p.getActId.ToString())
+                                {
+                                    r.Selected = true;
+                                }
+                            }
+
+                            viewCamping1.SelectionChecking();
+                        }
+                    }                    
                     
                 }
                 else

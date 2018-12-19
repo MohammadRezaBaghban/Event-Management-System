@@ -31,7 +31,7 @@ namespace HHF_APP
         public int AddEmployee(String fName, String lName, String email, String password, String phoneNr, String position, String street, String postcode)
         {
             String query = "INSERT INTO employees(emp_id, fname, lname, email, password, phone_nr, position, street, postcode) VALUES (@empID, @fName, @lName, @email, @password, @phoneNr, @position, @street, @postcode)";
-            String query1 = $"INSERT INTO employees(emp_id, fname, lname, email, password, phone_nr, position, street, postcode) VALUES ({null}, {fName}, {lName}, {email}, {password}, {phoneNr}, {position}, {street}, {postcode})";
+            
             MySqlCommand command = new MySqlCommand(query, connection);
             command.Parameters.AddWithValue("@empID", null);
             command.Parameters.AddWithValue("@fName", fName);
@@ -718,6 +718,7 @@ namespace HHF_APP
                 connection.Close();
             }
         }
+
         public List<Article> getLoanedArticles(int user_id)
         {
             string sql = "Select art.type,lo.article_status,lo.article_nr FROM articles AS art JOIN loaned AS lo on art.article_nr=lo.article_nr JOIN transactions as tr on tr.transaction_id = lo.transaction_id JOIN accounts as a on tr.account_id=a.account_id JOIN users as usr on a.account_id=usr.account_id where usr.user_id=@user_id";
@@ -816,6 +817,29 @@ namespace HHF_APP
             return null;
         }
 
-        
+        public bool CheckCampReservation(int accountId)
+        {
+            string query = $"Select Count(*) " +
+                           $"From camp_reservation " +
+                           $"Where account_id = '{accountId}';";
+            int temp = -100000000;
+            using (MySqlConnection con = new MySqlConnection(DataHelper.connectionInfo))
+            {
+                using (MySqlCommand cmd = new MySqlCommand(query, con))
+                {
+                    con.Open();
+                    temp = Convert.ToInt32(cmd.ExecuteScalar());
+                }
+            }
+
+            if (temp==1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
