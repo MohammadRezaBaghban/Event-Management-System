@@ -63,9 +63,59 @@ namespace HHF_APP.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap item_XL_6389448_3729210 {
+            get {
+                object obj = ResourceManager.GetObject("item_XL_6389448_3729210", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logo_halloween_24_opacity {
             get {
                 object obj = ResourceManager.GetObject("logo halloween 24 opacity", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Micro_USB {
+            get {
+                object obj = ResourceManager.GetObject("Micro USB", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap power_bank_personalizado_branco_halloween_2_270c5c2e {
+            get {
+                object obj = ResourceManager.GetObject("power-bank-personalizado-branco-halloween-2-270c5c2e", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Powerbank_1 {
+            get {
+                object obj = ResourceManager.GetObject("Powerbank 1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Torch {
+            get {
+                object obj = ResourceManager.GetObject("Torch", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

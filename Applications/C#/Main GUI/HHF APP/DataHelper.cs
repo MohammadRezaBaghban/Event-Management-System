@@ -817,6 +817,23 @@ namespace HHF_APP
             return null;
         }
 
+        public decimal CurrentBalance(int accountId)
+        {
+            decimal temp;
+            using (MySqlConnection con = new MySqlConnection(connectionInfo))
+            {
+                string query = $"Select currentbal " +
+                               $"From accounts " +
+                               $"Where account_id = {accountId};";
+                using (MySqlCommand cmd = new MySqlCommand(query, con))
+                {
+                    con.Open();
+                    temp = Convert.ToDecimal(cmd.ExecuteScalar());
+                }
+            }
+
+            return temp;
+        }
         public bool CheckCampReservation(int accountId)
         {
             string query = $"Select Count(*) " +
@@ -841,5 +858,57 @@ namespace HHF_APP
                 return false;
             }
         }
+
+        public int NrOfMembersInAGroup(int accountid)
+        {
+            int result = -1;
+            using (MySqlConnection con = new MySqlConnection(connectionInfo))
+            {
+                string query = "Select Count(*) " +
+                               "From users " +
+                               $"Where account_id={accountid};";
+                using (MySqlCommand cmd = new MySqlCommand(query, con))
+                {
+                    con.Open();
+                    result = Convert.ToInt32(cmd.ExecuteScalar());
+                }
+            }
+
+            return result;
+        }
+
+        public bool CheckInStatus(int userId)
+        {
+            using (MySqlConnection con = new MySqlConnection(connectionInfo))
+            {
+                string result = " ";               
+                con.Open();
+                string query = $"Select status From users where user_id = {userId} ";
+                using (MySqlCommand cmd = new MySqlCommand(query, con))
+                {
+                   
+                    result = cmd.ExecuteScalar().ToString();
+                    
+                }
+                if (result == "checked_in")
+                {
+                    return true;
+                }
+                else
+                {
+                    if (result == "check_out")
+                    {
+                        MessageBox.Show($"This account has already checked-out from the event!\nYou can not perform any tasks related to this account", "Check Out Done");
+                    }
+                    else
+                    {
+                        MessageBox.Show($"This account has not been checked-in in the event!\nPlease Check In in \"Check In\\Out Section\"", "Check In Needed");
+                    }
+                    return false;
+                }
+            }
+        }
+
+
     }
 }

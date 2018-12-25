@@ -19,10 +19,14 @@ namespace HHF_APP
         private String cs;
         private string PaymentStatus;
         private string CheckInStatus;
+        public int userId;
+        private DataHelper dh;
         public viewCamping()
         {
             InitializeComponent();
             cs = DataHelper.connectionInfo;
+            dh = new DataHelper();
+            
         }
 
        
@@ -112,99 +116,76 @@ namespace HHF_APP
             return result;
         }
 
-        public decimal CurrentBalance(int accountId)
-        {
-            decimal temp;
-            using (MySqlConnection con = new MySqlConnection(cs))
-            {
-                string query = $"Select currentbal " +
-                               $"From accounts " +
-                               $"Where account_id = {accountId};";
-                using (MySqlCommand cmd = new MySqlCommand(query, con))
-                {
-                    con.Open();
-                    temp = Convert.ToDecimal(cmd.ExecuteScalar());
-                }
-            }
-
-            return temp;
-        }
-
+        
         public bool MakeCampingPayment(int accountId, decimal price)
         {
             int nreffectedrecords =-1;
             //Check if the account balance
-            if (CurrentBalance(accountId) - price < 0)
+            if (dh.CurrentBalance(accountId) - price < 0)
             {
                 MessageBox.Show($"Account Id {accountId} does not have enough balance!\n" +
-                                $"More {price - CurrentBalance(accountId)} € is needed.");
+                                $"More {price - dh.CurrentBalance(accountId)} € is needed.");
             }
             else
             {
                 //Show a brief balance and recipt info and then ask for confirmation
                 var result = MessageBox.Show(
-                    $"Current Account Balance {CurrentBalance(accountId)} €.\n" +
+                    $"Current Account Balance {dh.CurrentBalance(accountId)} €.\n" +
                     $"The fee of camping is {price} € (including 10 € late service fee)\n" +
-                    $"After payment, the remianing balance would be {CurrentBalance(accountId) - price} €\n" +
+                    $"After payment, the remianing balance would be {dh.CurrentBalance(accountId) - price} €\n" +
                     $"Do you want to proceed this payment?", $"Ask for permission", MessageBoxButtons.YesNo
                     );
-                    //Create a new record in transaction Table
-                    if (result == DialogResult.Yes)
+                //Create a new record in transaction Table
+                if (result == DialogResult.Yes)
+                {
+
+                    using (MySqlConnection con = new MySqlConnection(cs))
                     {
-                        using (MySqlConnection con = new MySqlConnection(cs))
+                        con.Open();
+                        MySqlTransaction trans = con.BeginTransaction();
+                        string date = DateTime.Now.ToString("yyyy-MM-dd");
+                        string time = DateTime.Now.ToString("HH:mm:ss");
+                        string query = $"Insert Into transactions (`date`, `time`,`account_id`, `amount`, `current_balance`, `type`) VALUES " +
+                                       $"('{date}','{time}', {accountId}, {price}, {dh.CurrentBalance(accountId)-price}, 'camp')";
+                        using (MySqlCommand cmd = new MySqlCommand(query, con,trans))
                         {
-                            string date = DateTime.Now.ToString("yyyy-MM-dd");
-                            string time = DateTime.Now.ToString("HH:mm:ss");
-                            string query = $"Insert Into transactions (`date`, `time`,`account_id`, `amount`, `current_balance`, `type`) VALUES " +
-                                           $"('{date}','{time}', {accountId}, {price}, {CurrentBalance(accountId)-price}, 'camp')";
-                            using (MySqlCommand cmd = new MySqlCommand(query, con))
+                            try
                             {
-                                con.Open();
                                 nreffectedrecords = cmd.ExecuteNonQuery();
-                            }
-                        }
-                        //Update the reservation status of camp spot
-                        if (nreffectedrecords > 0)
-                        {
-                            using (MySqlConnection con = new MySqlConnection(cs))
-                            {
-
-                                string query = $"Update camp_reservation set is_paid ='yes' where account_id = {accountId}";
-                                using (MySqlCommand cmd = new MySqlCommand(query, con))
+                                if (nreffectedrecords > 0)
                                 {
-                                    con.Open();
+                                    //Update the reservation status of camp spot
+                                    cmd.CommandText = $"Update camp_reservation set is_paid ='yes' where account_id = {accountId}";
                                     nreffectedrecords = cmd.ExecuteNonQuery();
-                                }
-                            }
-                            //Update the new Balance of account of following purchases.
-                            if (nreffectedrecords > 0)
-                            {
-                                using (MySqlConnection con = new MySqlConnection(cs))
-                                {
-
-                                    string query = $"Update accounts set currentbal ='{CurrentBalance(accountId) - price}' where account_id = {accountId}";
-                                    using (MySqlCommand cmd = new MySqlCommand(query, con))
+                                    if (nreffectedrecords > 0)
                                     {
-                                        con.Open();
+                                        cmd.CommandText =
+                                            $"Update accounts set currentbal ='{dh.CurrentBalance(accountId) - price}' where account_id = {accountId}";
                                         nreffectedrecords = cmd.ExecuteNonQuery();
                                     }
-                                }
+                                    if (nreffectedrecords > 0)
+                                    {
+                                    trans.Commit();
+                                        return true;
+                                    }
                             }
+                            }
+                            catch (Exception ex)
+                            {
+                                trans.Rollback();
+                                MessageBox.Show($"{ex.Message}");
+                                return false;
+                            }
+                            
                         }
                     }
+                    
+                }
 
                 
             }
 
-            if (nreffectedrecords > 0)
-            {
-                    return true;
-            }
-            else
-            {
-                return false;
-            }
- 
+            return false;
         }
 
         public bool CheckInCheckOut(int accountId, string status)
@@ -334,41 +315,43 @@ namespace HHF_APP
         {
             if (SelectionChecking())
             {
-                if (PaymentStatus == " - Has Not Paid")
+                int accountId = Convert.ToInt32(DG_ReservedSpots.SelectedRows[0].Cells[0].Value);
+                if (dh.CheckInStatus(userId))
                 {
-                    bool result = false;
-                    int accountId = Convert.ToInt32(DG_ReservedSpots.SelectedRows[0].Cells[0].Value);
-                    int NrMembers = NrOfMembersInAGroup(accountId);
-                    if (NrMembers > 1)
+                    if (PaymentStatus == " - Has Not Paid")
                     {
-                        decimal price = 10 + NrMembers * 20 + 10 /*Late Payment*/;
-                        result = MakeCampingPayment(accountId, price);
-                    }
-                    else
-                    {
-                        decimal price = 10 + 120 + 20 + 10;
-                        result = MakeCampingPayment(accountId, price);
-                    }
+                        bool result = false;
+                        int NrMembers = NrOfMembersInAGroup(accountId);
+                        if (NrMembers > 1)
+                        {
+                            decimal price = 10 + NrMembers * 20 + 10 /*Late Payment*/;
+                            result = MakeCampingPayment(accountId, price);
+                        }
+                        else
+                        {
+                            decimal price = 10 + 120 + 20 + 10;
+                            result = MakeCampingPayment(accountId, price);
+                        }
 
-                    if (result)
-                    {
-                        DG_ReservedSpots.SelectedRows[0].Cells[3].Value = " + Already Paid";
-                        LblPaymentSts.Text = "Already Paid";
+                        if (result)
+                        {
+                            DG_ReservedSpots.SelectedRows[0].Cells[3].Value = " + Already Paid";
+                            LblPaymentSts.Text = "Already Paid";
+                            LblPaymentSts.BackColor = Color.LimeGreen;
+                        }
+                        else
+                        {
+                            MessageBox.Show($"Something wrong happened!");
+                        }
+
                     }
-                    else
+                    else if (PaymentStatus == " + Already Paid")
                     {
-                        MessageBox.Show($"Something wrong happened!");
+                        MessageBox.Show("This account has already paid!");
                     }
-                    
                 }
-                else if (PaymentStatus == " + Already Paid")
-                {
-                    MessageBox.Show("This account has already paid!");
-                }
+                
             }
-            
-            
-            
         }
 
         private void btnCCheckIn_Click(object sender, EventArgs e)
@@ -377,37 +360,39 @@ namespace HHF_APP
             if (SelectionChecking())
             {
                 int accountId = Convert.ToInt32(DG_ReservedSpots.SelectedRows[0].Cells[0].Value);
-                if (CheckInStatus == "Checked In")
+                if (dh.CheckInStatus(userId))
                 {
-                    MessageBox.Show("Tenant has has already checked in!");
-                }
-                else if (CheckInStatus == "Checked Out")
-                {
-                    MessageBox.Show("Tenant has already checked out!");
-                }
-                else if (CheckInStatus == "-----")
-                {
-                    if (PaymentStatus == " - Has Not Paid")
+                    if (CheckInStatus == "Checked In")
                     {
-                        MessageBox.Show("You cannot check in until make the payment!");
+                        MessageBox.Show("Tenant has has already checked in!");
                     }
-                    else
+                    else if (CheckInStatus == "Checked Out")
                     {
-                        status = CheckInCheckOut(accountId, "checked_in");
-                        if (status)
+                        MessageBox.Show("Tenant has already checked out!");
+                    }
+                    else if (CheckInStatus == "-----")
+                    {
+                        if (PaymentStatus == " - Has Not Paid")
                         {
-                            DG_ReservedSpots.SelectedRows[0].Cells[4].Value = "Checked In";
-                            lblCheckInSts.Text = "Checked-In";
-                            lblCheckInSts.ForeColor = Color.LimeGreen;
+                            MessageBox.Show("You cannot check in until make the payment!");
                         }
                         else
                         {
-                            MessageBox.Show("Something wrong happened!");
+                            status = CheckInCheckOut(accountId, "checked_in");
+                            if (status)
+                            {
+                                DG_ReservedSpots.SelectedRows[0].Cells[4].Value = "Checked In";
+                                lblCheckInSts.Text = "Checked-In";
+                                lblCheckInSts.ForeColor = Color.LimeGreen;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Something wrong happened!");
+                            }
+
                         }
-                        
                     }
                 }
-                
             }
         }
 
@@ -417,32 +402,37 @@ namespace HHF_APP
             if (SelectionChecking())
             {
                 int accountId = Convert.ToInt32(DG_ReservedSpots.SelectedRows[0].Cells[0].Value);
-                if (CheckInStatus == "Checked In")
+                if (dh.CheckInStatus(userId))
                 {
-                    status = CheckInCheckOut(accountId, "checked_out");
-                    if (status)
+                    if (CheckInStatus == "Checked In")
                     {
-                        DG_ReservedSpots.SelectedRows[0].Cells[4].Value = "Checked Out";
-                        lblCheckInSts.ForeColor = Color.DimGray;
-                        lblCheckInSts.Text = "Checked-Out";
-                        MessageBox.Show("Tenant checked out successfully!");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Something wrong happened!");
-                    }
-                    
-                }
-                else if (CheckInStatus == "Checked Out")
-                {
-                    MessageBox.Show("Tenant has has already checked out!");
+                        status = CheckInCheckOut(accountId, "checked_out");
+                        if (status)
+                        {
+                            DG_ReservedSpots.SelectedRows[0].Cells[4].Value = "Checked Out";
+                            lblCheckInSts.ForeColor = Color.DimGray;
+                            lblCheckInSts.Text = "Checked-Out";
+                            MessageBox.Show("Tenant checked out successfully!");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Something wrong happened!");
+                        }
 
-                }
-                else if (CheckInStatus == "-----")
-                {
-                    MessageBox.Show("First you need to check-in!");
+                    }
+                    else if (CheckInStatus == "Checked Out")
+                    {
+                        MessageBox.Show("Tenant has has already checked out!");
+
+                    }
+                    else if (CheckInStatus == "-----")
+                    {
+                        MessageBox.Show("First you need to check-in!");
+                    }
                 }
             }
         }
+
+        
     }
 }
