@@ -134,10 +134,20 @@ namespace HHF_APP
         }
 
         private void lbChangeQuantity_Click(object sender, EventArgs e)
-        {
+        {try
+            {
             (lbBasket.SelectedItem as Article)?.ChangeQuantity(Convert.ToInt32(tbquantity.Text));
             lbBasket.Items[lbBasket.SelectedIndex] = lbBasket.Items[lbBasket.SelectedIndex];
             lbBasket_Click( sender,  e);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Enter a number as quantity");
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Select something to change quantity");
+            }
         }
 
         private void btnRemoveBasketItem_Click(object sender, EventArgs e)
@@ -220,12 +230,14 @@ namespace HHF_APP
                             MessageBox.Show("Error while adding order!");
                         }
                     }
+                    else
+                    {
+                        throw new Exception("No person with that id");
+                    }
                 }
                 catch (Exception exception)
                 {
                     MessageBox.Show(exception.Message);
-
-
                 }
             }
         }

@@ -384,6 +384,7 @@ namespace HHF_APP
                                 DG_ReservedSpots.SelectedRows[0].Cells[4].Value = "Checked In";
                                 lblCheckInSts.Text = "Checked-In";
                                 lblCheckInSts.ForeColor = Color.LimeGreen;
+                                this.Enabled = false;
                             }
                             else
                             {
@@ -413,6 +414,7 @@ namespace HHF_APP
                             lblCheckInSts.ForeColor = Color.DimGray;
                             lblCheckInSts.Text = "Checked-Out";
                             MessageBox.Show("Tenant checked out successfully!");
+                            this.Enabled = false;
                         }
                         else
                         {

@@ -401,6 +401,8 @@ namespace HHF_APP
                         }
                     }
 
+                    this.Enabled = false;
+
                 }
             }
         }

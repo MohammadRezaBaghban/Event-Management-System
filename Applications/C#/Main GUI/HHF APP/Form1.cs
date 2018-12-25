@@ -13,20 +13,18 @@ namespace HHF_APP
         {
             InitializeComponent();
 
-            //sidepanelforBTNs.Height = AdminBtn.Height;
-            //sidepanelforBTNs.Top = AdminBtn.Top;
+            
+            panel3.Visible = false;
             sidepanelforBTNs.Height = ticketsBtn.Height;
             sidepanelforBTNs.Top = ticketsBtn.Top;
             //viewLogin1.BringToFront();
-            viewCamping1.Enabled = false;
+            
             viewLending1.Enabled = false;
             viewStore1.Enabled = false;
             viewCamping1.LoadAvailable();
+            viewCamping1.Enabled = false;
             lblbal.Text = "......";
             lblname.Text = "......";
-            //SoundPlayer my_sound = new SoundPlayer("F:/xxxxxx.wave"); //put your own .4wave file path
-            //my_sound.Play();
-            //my_sound.Stop();
         }
 
 
@@ -613,8 +611,8 @@ namespace HHF_APP
             sidepanelforBTNs.Height = AdminBtn.Height;
             sidepanelforBTNs.Top = AdminBtn.Top;
             viewAdminDashboard1.btnRefresh_Click(sender,e);
-            viewAdminDashboard1.BringToFront();
             panel3.Visible = false;
+            viewAdminDashboard1.BringToFront();
         }
 
         private void ticketsBtn_Click(object sender, EventArgs e)
@@ -638,7 +636,7 @@ namespace HHF_APP
         {
             sidepanelforBTNs.Height = storeBtn.Height;
             sidepanelforBTNs.Top = storeBtn.Top;
-            viewStore1.Enabled = true;
+            viewStore1.Enabled = false;
             panel3.Visible = true;
             viewStore1.BringToFront();
         }
@@ -649,7 +647,7 @@ namespace HHF_APP
             sidepanelforBTNs.Top = campBtn.Top;
             panel3.Visible = true;
             viewCamping1.BringToFront();
-            viewCamping1.Enabled = true;
+            viewCamping1.Enabled = false;
         }
 
         private void lendBtn_Click_1(object sender, EventArgs e)
@@ -657,7 +655,7 @@ namespace HHF_APP
             sidepanelforBTNs.Height = lendBtn.Height;
             sidepanelforBTNs.Top = lendBtn.Top;
             panel3.Visible = true;
-            viewLending1.Enabled = true;
+            viewLending1.Enabled = false;
             viewLending1.BringToFront();
         }
 
@@ -678,7 +676,7 @@ namespace HHF_APP
                     int input = p.getActId;
                     viewLending1.Enabled = true;
                     viewStore1.Enabled = true;
-                    
+                    viewCamping1.Enabled = true;
                     lblbal.Text = p.getBalance.ToString();
                     lblname.Text = p.getName;
                     if (sidepanelforBTNs.Top == campBtn.Top)
@@ -752,9 +750,10 @@ namespace HHF_APP
                 }
                 else
                 {
-                    MessageBox.Show($"User does not exist!");
-                    viewLending1.btnLendItem.Enabled = false;
+                    
+                    viewLending1.Enabled = false;
                     viewStore1.Enabled = false;
+                    viewCamping1.Enabled = false;
                     lblbal.Text = "......";
                     lblname.Text = "......";
                     
