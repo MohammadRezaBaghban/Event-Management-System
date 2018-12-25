@@ -27,7 +27,41 @@
         });
     });
 
+    function test()
+    {
+        var spotnr = document.getElementById('campspotnr').value;
+        var url = "Others/check_spot.php?$spotnr="+spotnr;
+
+        if (window.XMLHttpRequest)
+        {// code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp=new XMLHttpRequest();
+        }
+        else
+        {// code for IE6, IE5
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        xmlhttp.onreadystatechange=function()
+        {
+            if (xmlhttp.readyState==4 && xmlhttp.status==200)
+            {
+
+                var result = xmlhttp.responseText;
+                if(xmlhttp.responseText!='')
+                {
+                    document.getElementById('spotnr').innerHTML =result ;
+                }
+            }
+        }
+
+
+        xmlhttp.open("GET",url,true);
+
+        xmlhttp.send();
+
+    }
 </script>
+
 <div>
 
 </div>
@@ -177,8 +211,9 @@
                         </div>
                         <div class="panel-footer" style="overflow:hidden;text-align:right;">
                             <div class="form-group">
-                                <div class="col-sm-offset-2 col-sm-10">
-                                    <button type="button" class="btn btn-sm">Check Availability</button>
+                                <div class="col-sm-7" id="spotnr"></div>
+                                <div class="col-sm-5">
+                                    <button type="button" class="btn btn-sm" name="checkcamp" id="checkcamp" value="Validated" onclick="test();">Check Availability</button>
                                 </div>
                             </div>
                         </div>
@@ -212,7 +247,7 @@
                                         </div>
                                         <div class="radio-inline">
                                             <label>
-                                                <input id="camppay" name="camppay" value=no" type="radio">
+                                                <input id="camppay" name="camppay" value="no" type="radio">
                                                 No</label>
                                         </div>
                                     </div>
@@ -220,8 +255,9 @@
                             </div>
                             <div class="panel-footer" style="overflow:hidden;text-align:right;">
                                 <div class="form-group">
-                                    <div class="col-sm-offset-2 col-sm-10">
-                                        <button type="button" class="btn btn-sm">Check Availability</button>
+                                    <div class="col-sm-7" id="spotnr"></div>
+                                    <div class="col-sm-5">
+                                        <button type="button" class="btn btn-sm" name="checkcamp" id="checkcamp" value="Validated" onclick="test();">Check Availability</button>
                                     </div>
                                 </div>
                             </div>

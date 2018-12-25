@@ -8,7 +8,7 @@ try {
     echo $ex->getMessage();
 }
 if (isset($_SESSION['email'])) {
-    $sumdeposit=$sumregistration=$sumitems=$sumfood=$sumloan=$sumcamp=$currentbalance=$totalAmountSpent=$currentbalance=0;
+    $sumdeposit=$sumregistration=$sumitems=$sumfood=$sumloan=$currentbalance=$totalAmountSpent=$currentbalance=0;
     $paid="No";
     $campspot=0;
 
@@ -55,19 +55,9 @@ if (isset($_SESSION['email'])) {
     $query = $myPDO->prepare('SELECT sum(amount) as amount FROM transactions where account_id=(select account_id from accounts where email=:mail) and type="camp";');
     $query->execute([':mail' => $_SESSION['email']]);
     $result = $query->fetch(PDO::FETCH_ASSOC);
-    if(isset( $result['amount'])){$sumcamp = $result['amount'];}
-    $totalAmountSpent=$sumcamp+$sumloan+$sumfood+$sumitems+$sumregistration;
-    $datePoints = null;
-    $dataPoints = array(
-        array("label" => "Food", "y" => $sumfood),
-        array("label" => "Items", "y" => $sumitems),
-        array("label" => "Camp", "y" => $sumcamp),
-        array("label" => "Top Up", "y" => $sumdeposit),
-        array("label" => "Loan", "y" => $sumloan),
-        array("label" => "Registration", "y" => $sumregistration),
-
-    );
-}
+    if(isset( $result['amount'])){$sumregistration += $result['amount'];}
+    $totalAmountSpent=$sumloan+$sumfood+$sumitems+$sumregistration;
+    $data = array(round($sumloan, 0),round($sumfood, 0),round($sumitems, 0),round($sumregistration, 0),round($sumdeposit, 0));
 ?>
 <!DOCTYPE html>
 <html>
@@ -84,32 +74,15 @@ if (isset($_SESSION['email'])) {
     <link href="back_assets/css/style.css" rel="stylesheet" type="text/css"/>
 
     <script src="back_assets/js/modernizr.min.js"></script>
-    <script>
-        window.onload = function () {
 
-            var chart = new CanvasJS.Chart("chartContainer", {
-                animationEnabled: true,
-                theme: "light2", // "light1", "light2", "dark1", "dark2"
-                title: {
-                    text: "Transactions' amount on this account"
-                },
-                axisY: {
-                    title: "Amount",
-                    includeZero: false
-                },
-                data: [{
-                    type: "column",
-                    dataPoints: <?php echo json_encode($GLOBALS['dataPoints'], JSON_NUMERIC_CHECK); ?>
-                }]
-            });
-            chart.render();
 
-        }
-    </script>
 </head>
 
 <body>
-
+<script src="code/highcharts.js"></script>
+<script src="code/highcharts-3d.js"></script>
+<script src="code/modules/exporting.js"></script>
+<script src="code/modules/export-data.js"></script>
 <!-- Navigation Bar-->
 <header id="topnav">
     <div class="topbar-main">
@@ -194,7 +167,7 @@ if (isset($_SESSION['email'])) {
 
                     <div class="widget-chart-1">
                         <div class="widget-detail-1">
-                            <h2 class="p-t-10 mb-0"> €<?php echo $totalAmountSpent?> </h2>
+                            <h2 class="p-t-10 mb-0"> €<?php echo $totalAmountSpent; ?> </h2>
                         </div>
                     </div>
                 </div>
@@ -227,15 +200,61 @@ if (isset($_SESSION['email'])) {
             <div class="col-xl-4">
                 <div class="card-box">
                     <h4 class="header-title mt-0">Statistics</h4>
-                    <div id="chartContainer" style="height: 280px; width: 100%;"></div>
+                    <div id="container" style="height: 400px; width: 100%; min-width: 310px;
+    max-width: 800px;">
+                        <script type='text/javascript'>
+
+                            Highcharts.chart('container', {
+                                chart: {
+                                    type: 'column',
+                                    options3d: {
+                                        enabled: true,
+                                        alpha: 10,
+                                        beta: 25,
+                                        depth: 70
+                                    }
+                                },
+                                title: {
+                                    text: 'Total Spent Expenses'
+                                },
+                                subtitle: {
+                                    text: 'The amounts has been split by category'
+                                },
+                                plotOptions: {
+                                    column: {
+                                        depth: 25
+                                    }
+                                },
+                                xAxis: {
+                                    categories: ['Loan','Food','Items','Registration','Total Deposit']
+                                    labels: {
+                                        skew3d: true,
+                                        style: {
+                                            fontSize: '16px'
+                                        }
+                                    }
+                                },
+                                yAxis: {
+                                    title: {
+                                        text: null
+                                    }
+                                },
+                                series: [{
+                                    name: 'Amount',
+                                  data: [<?php echo join($data, ',') ?>]
+                                }]
+                            });
+                        </script>
+
+                    </div>
                 </div>
             </div><!-- end col -->
             <div class="col-xl-8">
                 <div class="card-box">
 
                     <h4 class="header-title mt-0 m-b-30">Group Members</h4>
-                    <h4 class="header-title mt-0 m-b-30 float-left">Spot # : <?php echo $campspot?></h4>
-                    <h4 class="header-title  mt-0 m-b-30 text-center" >Payment Status : <?php if($paid == "Paid"){echo "<span class='badge badge-success'>Paid</span>";}else{echo "<span class='badge badge-danger'>Pending</span>";} ?></h4>
+                    <h4 class="header-title mt-0 m-b-30 float-left">Spot # : <?php echo $campspot; ?></h4>
+                    <h4 class="header-title  mt-0 m-b-30 text-center" >Payment Status : <?php if($paid == "Paid"){echo "<span class='badge badge-success'>Paid</span>";}else{echo "<span class='badge badge-danger'>Pending</span>";} } ?></h4>
 
                     <div class="table-responsive">
                         <table class="table mb-0">
@@ -257,10 +276,10 @@ if (isset($_SESSION['email'])) {
                                     extract($result);
                                 ?>
                                 <tr>
-                                    <td><?php echo $user_id ?></td>
-                                    <td><?php echo $fname ?></td>
-                                    <td><?php echo $lname ?></td>
-                                    <td><?php echo $email ?></td>
+                                    <td><?php echo $user_id; ?></td>
+                                    <td><?php echo $fname; ?></td>
+                                    <td><?php echo $lname; ?></td>
+                                    <td><?php echo $email; ?></td>
                                 </tr>
                             <?php }} ?>
                             </tbody>

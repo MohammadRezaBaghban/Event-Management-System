@@ -165,18 +165,20 @@ function validateform()
     try {
         $myPDO = new PDO('mysql:host=studmysql01.fhict.local;dbname=dbi400320', 'dbi400320', '12345678');
         $myPDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-        $query = $myPDO->prepare('SELECT is_reserved FROM camp_spots where spot_nr=:nr');
-        $query->execute([':nr' => $_POST['campspotnr']]);
+        $vipcamp="yes";
+        if($_GET['type']=="group"){$vipcamp="no";}
+        $query = $myPDO->prepare('SELECT is_reserved FROM camp_spots where spot_nr=:nr and is_vip= :isvip ;');
+        $query->execute([':nr' => $_POST['campspotnr'],':isvip'=>$vipcamp]);
         $result = $query->fetch(PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
         $err2 .= '| Could not validate spot |';
     }
 
     if (isset($result)) {
-        if ($result['is_reserved'] == "yes") {
-            $err2 .= "| Camp Spot is already reserved |";
-        }
+        if ($result['is_reserved'] == "yes") {$err2 .= "| Camp Spot is already reserved |";}
+    }
+    else{
+        $err2.="| Camp Spot is not eligible for reservation (or Camp Spot does not exists) |";
     }
 
     //Then in the last block it check if the error didn't be set, it does not allow the input to be registered on server.
@@ -288,15 +290,28 @@ if ($_GET['type'] === "group" || $_GET['type'] === "individual" || $_GET['type']
                 $datenow = date("Y-m-d");
                 $timenow = date("h:i:s");
                 $amount = 55 * (count($fnames) + 1);
-
-                if ($camppay == "yes") {
-                    $amount += 20 * (count($fnames) + 1);
+                $campamount = 1;
+                if ($_GET['ref'] == "y") {
+                    $amount += 10;
                 }
-
                 $currentbal = $initialbal - $amount;
                 $sth->execute([':datetra' => $datenow, ':timetra' => $timenow, ':actID' => $act_id, ':amount' => $amount,
                     ':current_balance' => $currentbal
                     , ':typetra' => "registration"]);
+
+                if ($camppay == "yes") {
+                    $campamount += 20 * (count($fnames));
+                    $sql = 'insert into transactions values(transaction_id,:datetra,:timetra,:actID,:amount,:current_balance,:typetra)';
+                    $sth = $myPDO->prepare($sql);
+                    $datenow = date("Y-m-d");
+                    $timenow = date("h:i:s");
+
+                    $currentbal -=$campamount;
+                    $sth->execute([':datetra' => $datenow, ':timetra' => $timenow, ':actID' => $act_id, ':amount' => $campamount,
+                        ':current_balance' => $currentbal
+                        , ':typetra' => "camp"]);
+                }
+
 
 
                 //update the status of the camp spot to make it reserved
@@ -381,7 +396,7 @@ if ($_GET['type'] === "group" || $_GET['type'] === "individual" || $_GET['type']
             $myPDO->rollBack();
             echo $e->getMessage();
             $temp = $_POST['email1'];
-            echo "<div class='container'><div class='jumbotron' align='middle'>An account with an email address of $temp has already been registered<h3>redirection to login</h3></div></div><script>setTimeout(function(){window.location.replace('?page=login');}, 2500);</script>";
+            echo "<div class='container'><div class='jumbotron' align='middle'>An account with an email address of $temp has already been registered<h3>redirection to login</h3></div></div><script>setTimeout(function(){window.location.replace('?page=login');}, 6000);</script>";
         }
     } else {
         include "./SignUp-SignIn-SignOut/SignupForm.php";
