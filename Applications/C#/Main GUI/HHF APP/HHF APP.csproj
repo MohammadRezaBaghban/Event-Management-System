@@ -200,8 +200,13 @@
     <None Include="Resources\logo halloween 24 opacity.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\power-bank-personalizado-branco-halloween-2-270c5c2e.jpeg" />
+    <None Include="Resources\Powerbank 1.png" />
+    <None Include="Resources\Torch.jpg" />
     <None Include="Resources\easy-greek-salad-3.jpg" />
     <Content Include="logo halloween %281%29.ico" />
+    <None Include="Resources\Micro USB.jpg" />
+    <None Include="Resources\item_XL_6389448_3729210.jpg" />
     <Content Include="Resources\money-refund.png" />
   </ItemGroup>
   <ItemGroup>

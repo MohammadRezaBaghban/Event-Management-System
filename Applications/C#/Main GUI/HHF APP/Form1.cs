@@ -657,6 +657,7 @@ namespace HHF_APP
             sidepanelforBTNs.Height = lendBtn.Height;
             sidepanelforBTNs.Top = lendBtn.Top;
             panel3.Visible = true;
+            viewLending1.Enabled = true;
             viewLending1.BringToFront();
         }
 
@@ -669,45 +670,90 @@ namespace HHF_APP
         {
             try
             {
+                viewLending1.accountFound = false;
+                
                 Person p = dh.checkTicket(Convert.ToInt32(tbBarcode.Text));
                 if (p != null)
                 {
+                    int input = p.getActId;
                     viewLending1.Enabled = true;
                     viewStore1.Enabled = true;
+                    
                     lblbal.Text = p.getBalance.ToString();
                     lblname.Text = p.getName;
                     if (sidepanelforBTNs.Top == campBtn.Top)
                     {
-                        foreach (DataGridViewRow r in viewCamping1.DG_ReservedSpots.Rows)
-                        {
-                            r.Selected = false;
-
-                        }
-
-                        if (!dh.CheckCampReservation(p.getActId))
-                        {
-                            MessageBox.Show($"There is no reserved camping spot for this account!");
-                            
-                        }
-                        else
+                        viewCamping1.userId = p.getUserId;
+                        if (dh.CheckInStatus(p.getUserId))
                         {
                             foreach (DataGridViewRow r in viewCamping1.DG_ReservedSpots.Rows)
                             {
-                                if (r.Cells[0].Value.ToString() == p.getActId.ToString())
-                                {
-                                    r.Selected = true;
-                                }
+                                r.Selected = false;
+
                             }
 
-                            viewCamping1.SelectionChecking();
+                            if (!dh.CheckCampReservation(p.getActId))
+                            {
+                                MessageBox.Show($"There is no reserved camping spot for this account!");
+
+                            }
+                            else
+                            {
+                                foreach (DataGridViewRow r in viewCamping1.DG_ReservedSpots.Rows)
+                                {
+                                    if (r.Cells[0].Value.ToString() == p.getActId.ToString())
+                                    {
+                                        r.Selected = true;
+                                    }
+                                }
+
+                                viewCamping1.SelectionChecking();
+                            }
                         }
-                    }                    
+                       
+                    }else if (sidepanelforBTNs.Top == lendBtn.Top)
+                    {
+                        if (dh.CheckInStatus(p.getUserId))
+                        {
+                            viewLending1.accountFound = true;
+                            viewLending1.userId = p.getUserId;
+                            viewLending1.accountId = input;
+                            viewLending1.btnLendItem.Enabled = true;
+                            bool hasRecord = false;
+                            int index = -1;
+                            viewLending1.DG_LoanedArticels.Sort(viewLending1.DG_LoanedArticels.Columns[1], ListSortDirection.Ascending);
+
+                            foreach (DataGridViewRow r in viewLending1.DG_LoanedArticels.Rows)
+                            {
+                                if (r.Cells[1].Value.ToString() == input.ToString() && !hasRecord)
+                                {
+                                    hasRecord = true;
+                                    r.Selected = true;
+                                    index = r.Index;
+                                    continue;
+                                }
+                                r.Selected = false;
+
+                            }
+
+                            if (!hasRecord)
+                            {
+                                MessageBox.Show($"There is no lending record for this account.", "Notification");
+                            }
+
+                        }
+                        else
+                        {
+                            viewLending1.btnLendItem.Enabled = false;
+                        }
+                    }
+                    
                     
                 }
                 else
                 {
-                    viewCamping1.Enabled = false;
-                    viewLending1.Enabled = false;
+                    MessageBox.Show($"User does not exist!");
+                    viewLending1.btnLendItem.Enabled = false;
                     viewStore1.Enabled = false;
                     lblbal.Text = "......";
                     lblname.Text = "......";
