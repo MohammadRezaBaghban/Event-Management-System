@@ -727,7 +727,8 @@ namespace HHF_APP
 
         public int RefundCloseAccount(int user_id)
         {
-            string query = "UPDATE users, accounts AS a, transactions AS tr SET users.status ='check_out', a.is_valid='no', a.currentbal= 0 WHERE users.account_id = a.account_id AND a.account_id = tr.account_id AND users.user_id=@user_id AND users.is_admin='yes'";
+            int checkedRecords=0;
+            string query = "Select * from users where is_admin='no' AND user_id=@user_id";
             MySqlCommand command = new MySqlCommand(query, connection);
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@user_id", user_id);
@@ -735,22 +736,68 @@ namespace HHF_APP
             try
             {
                 connection.Open();
-                int checkedRecords = command.ExecuteNonQuery();
-                return checkedRecords;
+                checkedRecords = command.ExecuteNonQuery();
+              
             }
             catch
             {
-                return -1;
+               
             }
             finally
             {
                 connection.Close();
             }
+
+            if (checkedRecords==0) {
+                query = "UPDATE users, accounts AS a, transactions AS tr SET users.status ='check_out', a.is_valid='no', a.currentbal= 0 WHERE users.account_id = a.account_id AND a.account_id = tr.account_id AND users.user_id=@user_id AND users.is_admin='yes' AND users.status='checked_in'";
+                command = new MySqlCommand(query, connection);
+                command.Parameters.Clear();
+                command.Parameters.AddWithValue("@user_id", user_id);
+
+                try
+                {
+                    connection.Open();
+                    checkedRecords = command.ExecuteNonQuery();
+                    return checkedRecords;
+                }
+                catch
+                {
+                    return -1;
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+            else
+            {
+                query = "UPDATE users SET users.status ='check_out' WHERE users.user_id=@user_id AND users.status='checked_in'";
+                command = new MySqlCommand(query, connection);
+                command.Parameters.Clear();
+                command.Parameters.AddWithValue("@user_id", user_id);
+
+                try
+                {
+                    connection.Open();
+                    checkedRecords = command.ExecuteNonQuery();
+                    return checkedRecords;
+                }
+                catch
+                {
+                    return -1;
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+
+
         }
 
-        public List<Article> getLoanedArticles(int user_id)
+        public List<ReturnLoaned> getLoanedArticles(int user_id)
         {
-            string sql = "Select art.type,lo.article_status,lo.article_nr FROM articles AS art JOIN loaned AS lo on art.article_nr=lo.article_nr JOIN transactions as tr on tr.transaction_id = lo.transaction_id JOIN accounts as a on tr.account_id=a.account_id JOIN users as usr on a.account_id=usr.account_id where usr.user_id=@user_id AND tr.type='loan'";
+            string sql = "Select art.type,lo.article_status,lo.article_nr,lo.transaction_id,lo.loaned_id FROM articles AS art JOIN loaned AS lo on art.article_nr=lo.article_nr JOIN transactions as tr on tr.transaction_id = lo.transaction_id JOIN accounts as a on tr.account_id=a.account_id JOIN users as usr on a.account_id=usr.account_id where usr.user_id=@user_id AND tr.type='loan'";
             MySqlCommand command = new MySqlCommand(sql, connection);
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@user_id", user_id);
@@ -759,21 +806,19 @@ namespace HHF_APP
             {
                 connection.Open();
                 MySqlDataReader reader = command.ExecuteReader();
-                List<Article> tempList = new List<Article>();
+                List<ReturnLoaned> tempList = new List<ReturnLoaned>();
                 while (reader.Read())
                 {
 
-                    tempList.Add(new Article(Convert.ToString(reader["type"])
-                        , Convert.ToString(reader["article_status"]) , Convert.ToInt32(reader["article_nr"])));
+                    tempList.Add(new ReturnLoaned(Convert.ToInt32(reader["loaned_id"])
+                        , Convert.ToInt32(reader["transaction_id"]) , Convert.ToInt32(reader["article_nr"])
+                        , Convert.ToString(reader["article_status"]), Convert.ToString(reader["type"])
+                        ));
                 }
-                if (tempList != null)
-                {
-                    return tempList;
-                }
-                else
-                {
-                    return null;
-                }
+                return tempList;
+                
+               
+              
             }
             catch
             {
@@ -786,13 +831,12 @@ namespace HHF_APP
             }
         }
 
-        public int ReturnLoanedMaterials(int user_id, int articled_nr)
+        public int ReturnLoanedMaterials(ReturnLoaned rl)
         {
-            string query = "UPDATE loaned SET loaned.article_status='returned' WHERE loaned.transaction_id = (SELECT tr.transaction_id FROM transactions as tr JOIN accounts as a on tr.account_id=a.account_id JOIN users as usr ON a.account_id=usr.account_id WHERE usr.user_id=@user_id) AND loaned.article_nr=@article_nr";
+            string query = "UPDATE loaned SET loaned.article_status='returned' WHERE loaned.loaned_id = @rl";
             MySqlCommand command = new MySqlCommand(query, connection);
             command.Parameters.Clear();
-            command.Parameters.AddWithValue("@user_id", user_id);
-            command.Parameters.AddWithValue("@article_nr", articled_nr);
+            command.Parameters.AddWithValue("@rl", rl.getLoanedId);
 
             try
             {
@@ -800,8 +844,9 @@ namespace HHF_APP
                 int checkedRecords = command.ExecuteNonQuery();
                 return checkedRecords;
             }
-            catch
+            catch(Exception e)
             {
+                MessageBox.Show(e.Message);
                 return -1;
             }
             finally
