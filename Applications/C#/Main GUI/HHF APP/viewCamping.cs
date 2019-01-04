@@ -316,7 +316,8 @@ namespace HHF_APP
             if (SelectionChecking())
             {
                 int accountId = Convert.ToInt32(DG_ReservedSpots.SelectedRows[0].Cells[0].Value);
-                if (dh.CheckInStatus(userId))
+
+                if (dh.CheckInStatus(accountId))
                 {
                     if (PaymentStatus == " - Has Not Paid")
                     {
@@ -360,7 +361,7 @@ namespace HHF_APP
             if (SelectionChecking())
             {
                 int accountId = Convert.ToInt32(DG_ReservedSpots.SelectedRows[0].Cells[0].Value);
-                if (dh.CheckInStatus(userId))
+                if (dh.CheckInStatus(accountId))
                 {
                     if (CheckInStatus == "Checked In")
                     {
@@ -384,7 +385,7 @@ namespace HHF_APP
                                 DG_ReservedSpots.SelectedRows[0].Cells[4].Value = "Checked In";
                                 lblCheckInSts.Text = "Checked-In";
                                 lblCheckInSts.ForeColor = Color.LimeGreen;
-                                this.Enabled = false;
+                                
                             }
                             else
                             {
@@ -403,7 +404,7 @@ namespace HHF_APP
             if (SelectionChecking())
             {
                 int accountId = Convert.ToInt32(DG_ReservedSpots.SelectedRows[0].Cells[0].Value);
-                if (dh.CheckInStatus(userId))
+                if (dh.CheckInStatus(accountId))
                 {
                     if (CheckInStatus == "Checked In")
                     {
@@ -414,7 +415,7 @@ namespace HHF_APP
                             lblCheckInSts.ForeColor = Color.DimGray;
                             lblCheckInSts.Text = "Checked-Out";
                             MessageBox.Show("Tenant checked out successfully!");
-                            this.Enabled = false;
+                           
                         }
                         else
                         {

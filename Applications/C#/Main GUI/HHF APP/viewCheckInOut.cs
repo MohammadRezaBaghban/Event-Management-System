@@ -215,7 +215,7 @@ namespace HHF_APP
             try
             {
                 string value = lblTransations.SelectedItem.ToString();
-                string[] result = value.Split(new[] { ':' });
+                string[] result = value.Split(new[] { ',' });
 
                 lblTransactionID.Text = result[0];
                 lblTransactionType.Text = result[1];
@@ -234,14 +234,7 @@ namespace HHF_APP
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
                     fileName = sfd.FileName;
-                }
-                else
-                {
-                    MessageBox.Show("Operation Cancelled");
-                }
-            }
-
-            FileStream fs = null;
+                    FileStream fs = null;
             StreamWriter sw = null;
             fs = new FileStream(fileName, FileMode.OpenOrCreate, FileAccess.Write);
             sw = new StreamWriter(fs);
@@ -289,6 +282,14 @@ namespace HHF_APP
                 if (sw != null) sw.Close();
                 if (fs != null) fs.Close();
             }
+                }
+                else
+                {
+                    MessageBox.Show("Operation Cancelled");
+                }
+            }
+
+            
         }
     }
 }

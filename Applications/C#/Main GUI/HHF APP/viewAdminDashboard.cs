@@ -18,8 +18,7 @@ namespace HHF_APP
     public partial class viewAdminDashboard : UserControl
     {
         private DataHelper dh;
-        int i = -1;
-        int j = -1;
+        
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -45,6 +44,7 @@ namespace HHF_APP
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             btnRefresh_Click( sender, e);
             btnSearchEmployee_Click(sender,e);
+            rbArticle_Click(sender, e);
         }
 
         private void buttonModified1_Click(object sender, EventArgs e)
@@ -246,6 +246,76 @@ namespace HHF_APP
                     }
                 }
             }
+        }
+
+        private void rbArticle_Click(object sender, EventArgs e)
+        {
+            cbReserve.Visible = false;
+            cbReserve.Checked = false;
+            chartComplex.Series["Reserved"].IsVisibleInLegend = false;
+
+            if (rbArticle.Checked == true && rbAmount.Checked == true)
+            {
+
+                chartComplex.Series["Amount"].Points.Clear();
+                chartComplex.Series["Reserved"].Points.Clear();
+                chartComplex.Series["Amount"].Points.AddXY("USB", dh.GenArt1());
+                chartComplex.Series["Amount"].Points.AddXY("Torch", dh.GenArt2());
+                chartComplex.Series["Amount"].Points.AddXY("Powerbank", dh.GenArt3());
+            }
+        }
+
+        private void rbMoney_CheckedChanged(object sender, EventArgs e)
+        {
+            cbReserve.Visible = false;
+            cbReserve.Checked = false;
+            chartComplex.Series["Reserved"].IsVisibleInLegend = false;
+
+            if (rbMoney.Checked == true && rbAmount.Checked == true)
+            {
+
+                chartComplex.Series["Amount"].Points.Clear();
+                chartComplex.Series["Reserved"].Points.Clear();
+                chartComplex.Series["Amount"].Points.AddXY("Food", dh.GetSpentAmount1());
+                chartComplex.Series["Amount"].Points.AddXY("Registration", dh.GetSpentAmount2());
+                chartComplex.Series["Amount"].Points.AddXY("Deposit", dh.GetSpentAmount3());
+                chartComplex.Series["Amount"].Points.AddXY("Items", dh.GetSpentAmount4());
+            }
+        }
+
+        private void rbCamping_CheckedChanged(object sender, EventArgs e)
+        {
+            cbReserve.Visible = true;
+            chartComplex.Series["Reserved"].IsVisibleInLegend = false;
+
+            if (rbCamping.Checked == true && rbAmount.Checked == true)
+            {
+
+                chartComplex.Series["Amount"].Points.Clear();
+                chartComplex.Series["Reserved"].Points.Clear();
+                chartComplex.Series["Amount"].Points.AddXY("Normal", dh.GetCampNormal());
+                chartComplex.Series["Amount"].Points.AddXY("VIP", dh.GetCampVIP());
+
+            }
+        }
+
+        private void cbReserve_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbReserve.Checked == true)
+            {
+            
+                chartComplex.Series["Reserved"].IsVisibleInLegend = true;
+                chartComplex.Series["Reserved"].Points.AddXY("Normal", dh.GetReservedNormal());
+                chartComplex.Series["Reserved"].Points.AddXY("VIP", dh.GetReservedVIP());
+            }
+            else
+            {
+                chartComplex.Series["Amount"].Points.Clear();
+                chartComplex.Series["Reserved"].Points.Clear();
+                chartComplex.Series["Amount"].Points.AddXY("Normal", dh.GetCampNormal());
+                chartComplex.Series["Amount"].Points.AddXY("VIP", dh.GetCampVIP());
+            }
+
         }
     }
 }

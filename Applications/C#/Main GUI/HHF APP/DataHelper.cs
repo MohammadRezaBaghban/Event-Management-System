@@ -719,6 +719,29 @@ namespace HHF_APP
             }
         }
 
+        public int RefundCloseAccount(int user_id)
+        {
+            string query = "UPDATE users, accounts AS a, transactions AS tr SET users.status ='check_out', a.is_valid='no', a.currentbal= 0 WHERE users.account_id = a.account_id AND a.account_id = tr.account_id AND users.user_id=@user_id";
+            MySqlCommand command = new MySqlCommand(query, connection);
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@user_id", user_id);
+
+            try
+            {
+                connection.Open();
+                int checkedRecords = command.ExecuteNonQuery();
+                return checkedRecords;
+            }
+            catch
+            {
+                return -1;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
         public List<Article> getLoanedArticles(int user_id)
         {
             string sql = "Select art.type,lo.article_status,lo.article_nr FROM articles AS art JOIN loaned AS lo on art.article_nr=lo.article_nr JOIN transactions as tr on tr.transaction_id = lo.transaction_id JOIN accounts as a on tr.account_id=a.account_id JOIN users as usr on a.account_id=usr.account_id where usr.user_id=@user_id";
@@ -795,9 +818,12 @@ namespace HHF_APP
                 while (reader.Read())
                 {
 
-                    tempList.Add(new Transactions(Convert.ToInt32(reader["transaction_id"]), 
-                        Convert.ToInt32(reader["amount"]), Convert.ToString(reader["type"]),
-                        Convert.ToString(reader["date"]),Convert.ToString(reader["time"])));
+                    tempList.Add(new Transactions(
+                        Convert.ToInt32(reader["transaction_id"]), 
+                        Convert.ToInt32(reader["amount"]),
+                        Convert.ToString(reader["type"]),
+                        Convert.ToString(reader["date"]),
+                        Convert.ToString(reader["time"])));
                 }
                 if (tempList != null)
                 {
@@ -877,13 +903,13 @@ namespace HHF_APP
             return result;
         }
 
-        public bool CheckInStatus(int userId)
+        public bool CheckInStatus(int account_id)
         {
             using (MySqlConnection con = new MySqlConnection(connectionInfo))
             {
                 string result = " ";               
                 con.Open();
-                string query = $"Select status From users where user_id = {userId} ";
+                string query = $"Select status From users where account_id = {account_id} ";
                 using (MySqlCommand cmd = new MySqlCommand(query, con))
                 {
                    
@@ -908,6 +934,254 @@ namespace HHF_APP
                 }
             }
         }
+
+               //Graph part methods start
+        public int GenArt1()
+        {
+            String query = "SELECT COUNT(*) FROM loaned WHERE article_nr = 1";
+            MySqlCommand command = new MySqlCommand(query, connection);
+       
+            int number;
+            try
+            {
+                connection.Open();
+                number = Convert.ToInt32(command.ExecuteScalar());
+                return number;
+            }
+            catch
+            {
+                return -1;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+
+        }
+        public int GenArt2()
+        {
+            String query = "SELECT COUNT(*) FROM loaned WHERE article_nr = 2";
+            MySqlCommand command = new MySqlCommand(query, connection);
+
+            int number;
+            try
+            {
+                connection.Open();
+                number = Convert.ToInt32(command.ExecuteScalar());
+                return number;
+            }
+            catch
+            {
+                return -1;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+
+        }
+        public int GenArt3()
+        {
+            String query = "SELECT COUNT(*) FROM loaned WHERE article_nr = 3";
+            MySqlCommand command = new MySqlCommand(query, connection);
+
+            int number;
+            try
+            {
+                connection.Open();
+                number = Convert.ToInt32(command.ExecuteScalar());
+                return number;
+            }
+            catch
+            {
+                return -1;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+
+        }
+
+        public int GetCampNormal()
+        {
+            String query = "SELECT COUNT(*) FROM camp_spots WHERE is_vip = 'no'";
+            MySqlCommand command = new MySqlCommand(query, connection);
+
+            int number;
+            try
+            {
+                connection.Open();
+                number = Convert.ToInt32(command.ExecuteScalar());
+                return number;
+            }
+            catch
+            {
+                return -1;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        public int GetCampVIP()
+        {
+            String query = "SELECT COUNT(*) FROM camp_spots WHERE is_vip = 'yes'";
+            MySqlCommand command = new MySqlCommand(query, connection);
+
+            int number;
+            try
+            {
+                connection.Open();
+                number = Convert.ToInt32(command.ExecuteScalar());
+                return number;
+            }
+            catch
+            {
+                return -1;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        public int GetReservedNormal()
+        {
+            String query = "SELECT COUNT(*) FROM camp_spots WHERE is_vip = 'no' AND is_reserved = 'yes'";
+            MySqlCommand command = new MySqlCommand(query, connection);
+
+            int number;
+            try
+            {
+                connection.Open();
+                number = Convert.ToInt32(command.ExecuteScalar());
+                return number;
+            }
+            catch
+            {
+                return -1;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        public int GetReservedVIP()
+        {
+            String query = "SELECT COUNT(*) FROM camp_spots WHERE is_vip = 'yes' AND is_reserved = 'yes'";
+            MySqlCommand command = new MySqlCommand(query, connection);
+
+            int number;
+            try
+            {
+                connection.Open();
+                number = Convert.ToInt32(command.ExecuteScalar());
+                return number;
+            }
+            catch
+            {
+                return -1;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        public int GetSpentAmount1()
+        {
+            String query = "SELECT SUM(amount) FROM transactions WHERE type = 'food'";
+            MySqlCommand command = new MySqlCommand(query, connection);
+
+            int number;
+            try
+            {
+                connection.Open();
+                number = Convert.ToInt32(command.ExecuteScalar());
+                return number;
+            }
+            catch
+            {
+                return -1;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        public int GetSpentAmount2()
+        {
+            String query = "SELECT SUM(amount) FROM transactions WHERE type = 'registration'";
+            MySqlCommand command = new MySqlCommand(query, connection);
+
+            int number;
+            try
+            {
+                connection.Open();
+                number = Convert.ToInt32(command.ExecuteScalar());
+                return number;
+            }
+            catch
+            {
+                return -1;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        public int GetSpentAmount3()
+        {
+            String query = "SELECT SUM(amount) FROM transactions WHERE type = 'deposit'";
+            MySqlCommand command = new MySqlCommand(query, connection);
+
+            int number;
+            try
+            {
+                connection.Open();
+                number = Convert.ToInt32(command.ExecuteScalar());
+                return number;
+            }
+            catch
+            {
+                return -1;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+        public int GetSpentAmount4()
+        {
+            String query = "SELECT SUM(amount) FROM transactions WHERE type = 'items'";
+            MySqlCommand command = new MySqlCommand(query, connection);
+
+            int number;
+            try
+            {
+                connection.Open();
+                number = Convert.ToInt32(command.ExecuteScalar());
+                return number;
+            }
+            catch
+            {
+                return -1;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        //Graph part methods finish
 
 
     }

@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace HHF_APP
 {
@@ -18,11 +19,12 @@ namespace HHF_APP
             sidepanelforBTNs.Height = ticketsBtn.Height;
             sidepanelforBTNs.Top = ticketsBtn.Top;
             //viewLogin1.BringToFront();
-            
-            viewLending1.Enabled = false;
+
+            viewCamping1.Enabled = true;
+            viewLending1.Enabled = true;
             viewStore1.Enabled = false;
             viewCamping1.LoadAvailable();
-            viewCamping1.Enabled = false;
+         
             lblbal.Text = "......";
             lblname.Text = "......";
         }
@@ -647,7 +649,7 @@ namespace HHF_APP
             sidepanelforBTNs.Top = campBtn.Top;
             panel3.Visible = true;
             viewCamping1.BringToFront();
-            viewCamping1.Enabled = false;
+            
         }
 
         private void lendBtn_Click_1(object sender, EventArgs e)
@@ -655,7 +657,7 @@ namespace HHF_APP
             sidepanelforBTNs.Height = lendBtn.Height;
             sidepanelforBTNs.Top = lendBtn.Top;
             panel3.Visible = true;
-            viewLending1.Enabled = false;
+            
             viewLending1.BringToFront();
         }
 
@@ -751,9 +753,9 @@ namespace HHF_APP
                 else
                 {
                     
-                    viewLending1.Enabled = false;
+                    
                     viewStore1.Enabled = false;
-                    viewCamping1.Enabled = false;
+                    
                     lblbal.Text = "......";
                     lblname.Text = "......";
                     

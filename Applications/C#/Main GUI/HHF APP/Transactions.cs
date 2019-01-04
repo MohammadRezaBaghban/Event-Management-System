@@ -17,20 +17,21 @@ namespace HHF_APP
             this.transaction_amount = transaction_amount;
             this.transaction_type = transaction_type;
             this.date = date;
+            date = date.Split(' ')[0];
             this.time = time;
         }
 
         public int getTransactionId { get => transaction_id; }
         public int getTransactionAmount { get => transaction_amount; }
         public string getTransactionType { get => transaction_type; }
-        public string getTransactionDate { get => date; }
+        public string getTransactionDate => date;
         public string getTransactionTime { get => time; }
 
 
         public override string ToString()
         {
-            return this.getTransactionId + ":" + this.getTransactionType + ":"
-                + this.getTransactionAmount + ":" + this.getTransactionDate + ":" + this.getTransactionTime;
+            return this.getTransactionId + ", " + this.getTransactionType + ", "
+                   + this.getTransactionAmount + ", " + this.getTransactionDate.Split(' ')[0] + ", " + this.getTransactionTime;
         }
     }
 }
