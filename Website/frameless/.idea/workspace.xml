@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="57a408cb-29f0-4aa9-a724-f4cc8cea0832" name="Default Changelist" comment="connecting signup form to db plus validation for password repeat and mail validation on php an js">
-      <change afterPath="$PROJECT_DIR$/php/Others/check_spot.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Applications/C#/Main GUI/HHF APP/obj/Debug/HHF APP.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../Applications/C#/Main GUI/HHF APP/obj/Debug/HHF APP.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Applications/C#/Main GUI/HHF APP/obj/Debug/HHF APP.csproj.GenerateResource.Cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../Applications/C#/Main GUI/HHF APP/obj/Debug/HHF APP.csproj.GenerateResource.Cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Applications/C#/Main GUI/HHF APP/obj/Debug/HHF APP.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../Applications/C#/Main GUI/HHF APP/obj/Debug/HHF APP.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/FormHandlers/Sign-up.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/FormHandlers/Sign-up.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/SignUp-SignIn-SignOut/SignupForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/SignUp-SignIn-SignOut/SignupForm.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/php/dashboard/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/dashboard/dashboard.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/php/random_compat" beforeDir="false" afterPath="$PROJECT_DIR$/php/random_compat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/php/random_compat/other/build_phar.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/random_compat/other/build_phar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testmail.php" beforeDir="false" afterPath="$PROJECT_DIR$/testmail.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -95,9 +89,9 @@
     <session id="-1785616159">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="17" />
+          <entry key="project.closed" value="18" />
           <entry key="project.open.time.11" value="1" />
-          <entry key="project.open.time.12" value="2" />
+          <entry key="project.open.time.12" value="3" />
           <entry key="project.open.time.13" value="2" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.15" value="1" />
@@ -108,7 +102,7 @@
           <entry key="project.open.time.22" value="1" />
           <entry key="project.open.time.23" value="1" />
           <entry key="project.open.time.24" value="2" />
-          <entry key="project.opened" value="19" />
+          <entry key="project.opened" value="20" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -149,8 +143,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/php/SignUp-SignIn-SignOut/SignupForm.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="208" column="34" lean-forward="true" selection-start-line="208" selection-start-column="34" selection-end-line="208" selection-end-column="34" />
+            <state relative-caret-position="4576">
+              <caret line="208" column="34" selection-start-line="208" selection-start-column="34" selection-end-line="208" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -158,8 +152,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/php/FormHandlers/Login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="34" column="13" lean-forward="true" selection-start-line="23" selection-start-column="12" selection-end-line="34" selection-end-column="13" />
+            <state relative-caret-position="748">
+              <caret line="34" column="13" selection-start-line="23" selection-start-column="12" selection-end-line="34" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -167,23 +161,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/php/Others/check_spot.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
+            <state relative-caret-position="550">
               <caret line="25" column="69" selection-start-line="25" selection-start-column="69" selection-end-line="25" selection-end-column="69" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/php/SignUp-SignIn-SignOut/LoginForm.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="12" column="45" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/php/SignUp-SignIn-SignOut/LoginForm.php">
+        <entry file="file://$PROJECT_DIR$/php/dashboard/dashboard.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="12" column="45" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
-              <folding>
-                <element signature="n#style#0;n#p#0;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="242">
+              <caret line="106" column="55" selection-start-line="106" selection-start-column="55" selection-end-line="106" selection-end-column="55" />
             </state>
           </provider>
         </entry>
@@ -283,10 +280,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1690" />
-    <option name="y" value="24" />
-    <option name="width" value="1300" />
-    <option name="height" value="930" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -296,7 +293,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -343,6 +339,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -443,6 +440,7 @@
       <workItem from="1545086450472" duration="1177000" />
       <workItem from="1545672418681" duration="657000" />
       <workItem from="1545679761460" duration="8554000" />
+      <workItem from="1546603938913" duration="12000" />
     </task>
     <task id="LOCAL-00001" summary="updating and connecting contact form to db">
       <created>1538835584591</created>
@@ -462,7 +460,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="188929000" />
+    <option name="totallyTimeSpent" value="188941000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -474,11 +472,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1687" y="27" width="1358" height="814" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="top" id="Database" order="0" side_tool="true" weight="0.32991204" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48973608" visible="true" weight="0.122634366" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48973608" visible="true" weight="0.12227363" />
       <window_info id="Structure" order="1" sideWeight="0.5102639" side_tool="true" weight="0.12425645" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -762,13 +760,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/php/dashboard/dashboard.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="106" column="55" selection-start-line="106" selection-start-column="55" selection-end-line="106" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/php/dashboard/back_assets/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -776,27 +767,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/php/FormHandlers/Login.php">
+    <entry file="file://$PROJECT_DIR$/php/SignUp-SignIn-SignOut/SignupForm.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="34" column="13" lean-forward="true" selection-start-line="23" selection-start-column="12" selection-end-line="34" selection-end-column="13" />
+        <state relative-caret-position="4576">
+          <caret line="208" column="34" selection-start-line="208" selection-start-column="34" selection-end-line="208" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/php/SignUp-SignIn-SignOut/SignupForm.php">
+    <entry file="file://$PROJECT_DIR$/php/FormHandlers/Login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="208" column="34" lean-forward="true" selection-start-line="208" selection-start-column="34" selection-end-line="208" selection-end-column="34" />
+        <state relative-caret-position="748">
+          <caret line="34" column="13" selection-start-line="23" selection-start-column="12" selection-end-line="34" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/php/Others/check_spot.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
+        <state relative-caret-position="550">
           <caret line="25" column="69" selection-start-line="25" selection-start-column="69" selection-end-line="25" selection-end-column="69" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -804,9 +792,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
           <caret line="12" column="45" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
-          <folding>
-            <element signature="n#style#0;n#p#0;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/dashboard/dashboard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="106" column="55" selection-start-line="106" selection-start-column="55" selection-end-line="106" selection-end-column="55" />
         </state>
       </provider>
     </entry>

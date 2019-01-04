@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
 using System.Drawing.Printing;
+using Spire.Barcode;
 
 namespace HHF_APP
 {
