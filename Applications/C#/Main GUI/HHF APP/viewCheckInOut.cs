@@ -12,7 +12,6 @@ using Spire.Barcode.Implementation;
 using System.Diagnostics;
 using System.IO;
 using System.Drawing.Printing;
-using Spire.Barcode;
 
 namespace HHF_APP
 {
@@ -50,8 +49,8 @@ namespace HHF_APP
 
         private void btnTicketPrint_Click(object sender, EventArgs e)
         {
-           
-            try
+            
+            /*try
             {
                 BarcodeSettings barsetting = new BarcodeSettings();
 
@@ -83,7 +82,7 @@ namespace HHF_APP
             {
                 MessageBox.Show(ex.Message);
             }
-            
+            */
 
         }
         private void PrintPage(object o, PrintPageEventArgs e)
@@ -110,10 +109,10 @@ namespace HHF_APP
                     lblTicketType.Text = Convert.ToString(temp.getTicketType);
                     lblTicketStatus.Text = Convert.ToString(temp.getTicketvalidity);
                     lblBalance.Text = Convert.ToString(temp.getBalance);
-                    lblRefundAmount.Text = Convert.ToString(temp.getBalance);
+                    lblVisitorStatus.Text = Convert.ToString(temp.getVisitorStatus);
 
                     List<Person> getListGroupMembers = dh.getGroupMembers(temp.getUserId);
-                    List<Article> getListLoanedArticles = dh.getLoanedArticles(temp.getUserId);
+                    List<ReturnLoaned> getListLoanedArticles = dh.getLoanedArticles(temp.getUserId);
                     List<Transactions> getListTransactions = dh.getAllTransactions(temp.getUserId);
                     this.lbGroupMembers.Items.Clear();
                     this.lbLoanedItems.Items.Clear();
@@ -126,10 +125,9 @@ namespace HHF_APP
                         lbGroupMembers.Items.Add(p.ToString());
                     }
 
-                    foreach (Article A in getListLoanedArticles)
+                    foreach (ReturnLoaned A in getListLoanedArticles)
                     {
-                        lbLoanedItems.Enabled = false;
-                        lbLoanedItems.Items.Add(A.GetLoanedArticles());
+                        lbLoanedItems.Items.Add(A);
                     }
 
                     foreach (Transactions tr in getListTransactions)
@@ -154,16 +152,16 @@ namespace HHF_APP
             try
             {
                 int user_id = Convert.ToInt32(tbUserId.Text);
-                if (dh.checkIn(user_id) == 1)
+                if (dh.checkedIn(user_id) == 1 || dh.status=="check_out")
                 {
-                    if (dh.checkedIn(user_id) == 1)
+                    if (dh.checkIn(user_id) == 1)
                     {
-                        MessageBox.Show("Person Already Checked In");
+                        MessageBox.Show("Check in successfull");
                     }
-                    else { MessageBox.Show("Check In successfull"); }
+                    else { MessageBox.Show("Check In unsuccessfull "); }
 
                 }
-                else { MessageBox.Show("Could not check in user"); }
+                else { MessageBox.Show("Person already checked in"); }
             }
             catch (FormatException)
             {
@@ -188,15 +186,15 @@ namespace HHF_APP
                 int user_id = Convert.ToInt32(tbUserId.Text);
                 int article_nr = Convert.ToInt32(tbArticleNr.Text);
                 Person temp = dh.checkTicket(Convert.ToInt32(tbUserId.Text));
-                if (dh.ReturnLoanedMaterials(user_id, article_nr) == 1)
+                if (dh.ReturnLoanedMaterials((ReturnLoaned)lbLoanedItems.SelectedItem) >= 1)
                 {
                     MessageBox.Show("Item" +
                                     " with article nr" + article_nr + " returned");
                     lbLoanedItems.Items.Clear();
-                    List<Article> getListLoanedArticles = dh.getLoanedArticles(temp.getUserId);
-                    foreach (Article A in getListLoanedArticles)
+                    List<ReturnLoaned> getListLoanedArticles = dh.getLoanedArticles(temp.getUserId);
+                    foreach (ReturnLoaned A in getListLoanedArticles)
                     {
-                        lbLoanedItems.Items.Add(A.GetLoanedArticles());
+                        lbLoanedItems.Items.Add(A);
                     }
                 }
                 else
@@ -291,6 +289,40 @@ namespace HHF_APP
             }
 
             
+        }
+
+        private void btnRefundAndCheckOut_Click(object sender, EventArgs e)
+        {
+            
+            if (tbUserId.Text == "")
+            {
+                MessageBox.Show("User id Field Empty!!");
+            }
+            try
+            {
+
+                int userId = Convert.ToInt32(tbUserId.Text);
+                if (dh.RefundCloseAccount(userId) >= 1)
+                {
+                    MessageBox.Show("Successfully Closed Account");
+                    btnTicketFind.PerformClick();
+                }
+                else MessageBox.Show("Person Already Checked Out");
+            }
+            catch (FormatException) { }
+        }
+
+        private void lbLoanedItems_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lbLoanedItems.SelectedItem == null) { MessageBox.Show("No Article Selected !"); }
+            try
+            {
+                string value = lbLoanedItems.SelectedItem.ToString();
+                string[] result = value.Split(new[] { ',' });
+
+                tbArticleNr.Text = result[2];
+            }
+            catch (NullReferenceException) { }
         }
     }
 }

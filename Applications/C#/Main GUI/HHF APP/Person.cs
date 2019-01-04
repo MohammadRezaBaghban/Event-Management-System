@@ -10,11 +10,11 @@ namespace HHF_APP
     {
         private int user_id, act_id, ticket_id;
         private string group_id;
-        private string fname, lname,status,tickettype,loanStatus;
+        private string fname, lname,Vstatus,status,tickettype;
         private decimal balance;
 
 
-        public Person(int user_id, string groupId,string fname, string lname, int act_id, int ticket_id, decimal balance,string valid,string tictype)
+        public Person(int user_id, string groupId,string fname, string lname, int act_id, int ticket_id, decimal balance,string Vstatus,string valid,string tictype)
         {
             this.user_id = user_id;
             this.group_id = groupId;
@@ -45,6 +45,15 @@ namespace HHF_APP
 
             this.ticket_id = ticket_id;
             this.balance = balance;
+
+            if (Vstatus == "checked_in")
+            {
+                this.Vstatus = "CHECKED IN";
+            } else if (Vstatus == "check_out")
+            {
+                this.Vstatus = "CHECKED OUT";
+            }
+            else if(Vstatus=="") { this.Vstatus = "PENDING"; };
         }
 
 
@@ -62,6 +71,7 @@ namespace HHF_APP
         public string getTicketvalidity { get => status; }
         public string getTicketType { get => tickettype; }
         public decimal getBalance { get => balance; }
+        public string getVisitorStatus { get =>Vstatus; }
 
         public override string ToString()
         {

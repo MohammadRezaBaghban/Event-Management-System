@@ -59,7 +59,7 @@ namespace HHF_APP
         }
         public string GetLoanedArticles()
         {
-            return "Article Type : " + " " + loanedArticle + " " + "Status :" + " " + loanedArticleStatus +" "+"Article Nr "+this.article_nr;
+            return "" + " " + loanedArticle + " " + " , " + " " + loanedArticleStatus +" "+" , "+this.article_nr;
         }
     }
 }

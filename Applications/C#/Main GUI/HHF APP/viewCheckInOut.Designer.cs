@@ -88,7 +88,7 @@ namespace HHF_APP
             this.panel12 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
-            this.lblRefundAmount = new System.Windows.Forms.Label();
+            this.lblVisitorStatus = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.gbGroupMembers = new System.Windows.Forms.GroupBox();
             this.lbGroupMembers = new System.Windows.Forms.ListBox();
@@ -353,6 +353,7 @@ namespace HHF_APP
             this.lbLoanedItems.Name = "lbLoanedItems";
             this.lbLoanedItems.Size = new System.Drawing.Size(675, 226);
             this.lbLoanedItems.TabIndex = 15;
+            this.lbLoanedItems.SelectedIndexChanged += new System.EventHandler(this.lbLoanedItems_SelectedIndexChanged);
             // 
             // btnRefundAndCheckOut
             // 
@@ -367,6 +368,7 @@ namespace HHF_APP
             this.btnRefundAndCheckOut.TabIndex = 16;
             this.btnRefundAndCheckOut.Text = "Refund and Check Out\r\n( Close Account)\r\n";
             this.btnRefundAndCheckOut.UseVisualStyleBackColor = false;
+            this.btnRefundAndCheckOut.Click += new System.EventHandler(this.btnRefundAndCheckOut_Click);
             // 
             // gbTransaction
             // 
@@ -597,7 +599,7 @@ namespace HHF_APP
             this.panel15.Location = new System.Drawing.Point(5, 56);
             this.panel15.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(319, 98);
+            this.panel15.Size = new System.Drawing.Size(341, 98);
             this.panel15.TabIndex = 0;
             // 
             // lblTicketStatus
@@ -789,35 +791,35 @@ namespace HHF_APP
             this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(145, 11);
+            this.label12.Location = new System.Drawing.Point(122, 5);
             this.label12.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(129, 45);
+            this.label12.Size = new System.Drawing.Size(206, 45);
             this.label12.TabIndex = 0;
-            this.label12.Text = "Refund ";
+            this.label12.Text = "Visitor Status";
             // 
             // panel13
             // 
             this.panel13.BackColor = System.Drawing.Color.White;
-            this.panel13.Controls.Add(this.lblRefundAmount);
+            this.panel13.Controls.Add(this.lblVisitorStatus);
             this.panel13.Controls.Add(this.label21);
             this.panel13.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel13.Location = new System.Drawing.Point(5, 56);
             this.panel13.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(299, 98);
+            this.panel13.Size = new System.Drawing.Size(341, 98);
             this.panel13.TabIndex = 2;
             // 
-            // lblRefundAmount
+            // lblVisitorStatus
             // 
-            this.lblRefundAmount.AutoSize = true;
-            this.lblRefundAmount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRefundAmount.Location = new System.Drawing.Point(159, 11);
-            this.lblRefundAmount.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblRefundAmount.Name = "lblRefundAmount";
-            this.lblRefundAmount.Size = new System.Drawing.Size(85, 45);
-            this.lblRefundAmount.TabIndex = 2;
-            this.lblRefundAmount.Text = "-----";
+            this.lblVisitorStatus.AutoSize = true;
+            this.lblVisitorStatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVisitorStatus.Location = new System.Drawing.Point(117, 9);
+            this.lblVisitorStatus.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblVisitorStatus.Name = "lblVisitorStatus";
+            this.lblVisitorStatus.Size = new System.Drawing.Size(85, 45);
+            this.lblVisitorStatus.TabIndex = 2;
+            this.lblVisitorStatus.Text = "-----";
             // 
             // label21
             // 
@@ -939,7 +941,7 @@ namespace HHF_APP
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.Label lblRefundAmount;
+        private System.Windows.Forms.Label lblVisitorStatus;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel16;
