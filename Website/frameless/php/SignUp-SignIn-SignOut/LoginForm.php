@@ -1,30 +1,68 @@
 
-<div class="limiter">
 
-    <div class="container-login100" style="background-image: url('../Images/bg-01.jpg');">
-        <div class="wrap-login100 p-t-30 p-b-50">
-				<span class="login100-form-title p-b-41">
-					Account Login
-				</span>
-            <form class="login100-form validate-form p-b-33 p-t-5" action="?page=loginhandler" method="post">
-                <p style="color: red"><?php if(isset($err)){echo $err;}?></p>
-                <div class="wrap-input100 validate-input" data-validate = "Enter username">
-                    <input class="input100" type="text" name="login_email" placeholder="                                                 User name">
-                    <span class="focus-input100"  data-placeholder="&#xe82a;"></span>
+<div class="account-pages"></div>
+<div class="clearfix"></div>
+<div class="wrapper-page">
+    <div class="text-center">
+        <a href="index.html" class="logo"><span>HighLands Halloween <span>Festival</span></span></a>
+    </div>
+    <div class="m-t-40 card-box">
+        <div class="text-center">
+            <h4 class="text-uppercase font-bold mb-0">Sign In</h4>
+        </div>
+        <div class="p-20">
+            <form class="form-horizontal m-t-20" action="?page=loginhandler"  method="post">
+                <?php if(isset($err)){echo $err;}?>
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        <input class="form-control" type="text" required="" placeholder="Username" name="login_email">
+                    </div>
                 </div>
 
-                <div class="wrap-input100 validate-input" data-validate="Enter password">
-                    <input class="input100" type="password" name="login_password" placeholder="                                                 Password">
-                    <span class="focus-input100"  data-placeholder="&#xe80f;"></span>
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        <input class="form-control" type="password" required="" placeholder="Password" name="login_password">
+                    </div>
                 </div>
 
-                <div class="container-login100-form-btn m-t-32">
-                    <button class="login100-form-btn">
-                        Login
-                    </button>
+                <div class="form-group ">
+                    <div class="col-xs-12">
+                        <div class="checkbox checkbox-custom">
+                            <input id="checkbox-signup" type="checkbox">
+                            <label for="checkbox-signup">
+                                Remember me
+                            </label>
+                        </div>
+
+                    </div>
                 </div>
-                <p ><a href="?page=forgot"> Forgot Password?</a></p>
+
+                <div class="form-group text-center m-t-30">
+                    <div class="col-xs-12">
+                        <button class="btn btn-success btn-bordred btn-block waves-effect waves-light" type="submit">Log In</button>
+                        <button class="btn btn-primary btn-bordred btn-block waves-effect waves-light" href="/">Back Home</button>
+                    </div>
+                </div>
+
+                <div class="form-group m-t-30 mb-0">
+                    <div class="col-sm-12">
+                        <a href="?page=forgot" class="text-muted"><i class="fa fa-lock m-r-5"></i> Forgot your password?</a>
+                    </div>
+                </div>
             </form>
+
         </div>
     </div>
+    <!-- end card-box-->
 </div>
+
+<!-- jQuery  -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/waves.js"></script>
+<script src="assets/js/jquery.slimscroll.js"></script>
+
+<!-- App js -->
+<script src="assets/js/jquery.core.js"></script>
+<script src="assets/js/jquery.app.js"></script>

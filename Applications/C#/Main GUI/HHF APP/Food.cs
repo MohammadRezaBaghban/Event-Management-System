@@ -8,18 +8,18 @@ namespace HHF_APP
 {
     class Food : Article
     {   //here we have enums to be used in the constructors and in the ToString
-        public enum type {Meal,Drink}
+        public enum MealType {Meal,Drink}
 
         //fields
 
-        private type tyoeOfFood;
+        private MealType tyoeOfFood;
         private bool Chili, Double, Menu;
         private decimal Amount;
 
         //constructor for Meals
         public Food(string name, decimal price, int quantity, ArticleType atype, bool Chili,bool Double, bool Menu) : base(name, price, quantity,atype)
         {
-            this.tyoeOfFood = type.Meal;
+            this.tyoeOfFood = MealType.Meal;
             this.Chili = Chili;
             this.Double = Double;
             this.Menu = Menu;
@@ -29,7 +29,7 @@ namespace HHF_APP
         //constructor for drinks
         public Food(string name, decimal price, int quantity, ArticleType atype) : base(name, price, quantity,atype)
         {
-            this.tyoeOfFood = type.Drink;
+            this.tyoeOfFood = MealType.Drink;
         }
         public override decimal GetPrice()
         {
@@ -58,8 +58,12 @@ namespace HHF_APP
 
         public override string ToString()
         {
-             string msj=base.ToString()+GetPrice();
-            if (tyoeOfFood == type.Meal)
+            if (tyoeOfFood == MealType.Drink)
+            {
+                return base.ToString();
+            }
+             string msj=base.ToString()+Convert.ToString(value: (decimal)GetPrice());
+            if (tyoeOfFood == MealType.Meal)
             {
                 if (Menu)
                 {

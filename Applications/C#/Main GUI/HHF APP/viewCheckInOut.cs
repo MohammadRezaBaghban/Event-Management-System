@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//using Spire.Barcode;
-//using Spire.Barcode.Implementation;
+using Spire.Barcode;
+using Spire.Barcode.Implementation;
 using System.Diagnostics;
 using System.IO;
 using System.Drawing.Printing;
@@ -67,7 +67,7 @@ namespace HHF_APP
                 barsetting.Data2D = tbUserId.Text;
 
                 //generate EAN128 barcode
-                barsetting.Type = BarCodeType.Codabar;
+                barsetting.Type = BarCodeType.Code128;
 
                 BarCodeGenerator bargenerator = new BarCodeGenerator(barsetting);
                 Image barcodeimage = bargenerator.GenerateImage();

@@ -13,6 +13,8 @@
     <script src="../JavaScript/bootstrap.min.js"></script>
     <script src="../JavaScript/jquery.validate.min.js"></script>
 
+
+
     <!--===============================================================================================-->
     <script src="../vendor/jquery/jquery-3.2.1.min.js"></script>
     <!--===============================================================================================-->

@@ -905,7 +905,7 @@
             // 
             // nudDrink1
             // 
-            this.nudDrink1.Location = new System.Drawing.Point(208, 153);
+            this.nudDrink1.Location = new System.Drawing.Point(207, 149);
             this.nudDrink1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nudDrink1.Maximum = new decimal(new int[] {
             10,
@@ -995,7 +995,7 @@
             // 
             // nudDrink2
             // 
-            this.nudDrink2.Location = new System.Drawing.Point(208, 154);
+            this.nudDrink2.Location = new System.Drawing.Point(208, 149);
             this.nudDrink2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nudDrink2.Maximum = new decimal(new int[] {
             10,
@@ -1085,7 +1085,7 @@
             // 
             // nudDrink3
             // 
-            this.nudDrink3.Location = new System.Drawing.Point(208, 154);
+            this.nudDrink3.Location = new System.Drawing.Point(208, 149);
             this.nudDrink3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nudDrink3.Maximum = new decimal(new int[] {
             10,
@@ -1175,7 +1175,7 @@
             // 
             // nudDrink4
             // 
-            this.nudDrink4.Location = new System.Drawing.Point(208, 154);
+            this.nudDrink4.Location = new System.Drawing.Point(208, 149);
             this.nudDrink4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nudDrink4.Maximum = new decimal(new int[] {
             10,
