@@ -394,7 +394,7 @@ namespace HHF_APP
         public Person checkTicket(int user_id)
         {
             string query =
-                "SELECT usr.group_id,usr.fname , usr.lname , usr.account_id ,t.ticket_id,ac.is_valid,usr.is_vip, ac.currentbal FROM users AS usr JOIN tickets AS t on usr.user_id=t.user_id,accounts ac  where usr.user_id=@user_id and usr.account_id= ac.account_id";
+                "SELECT usr.group_id,usr.fname , usr.lname , usr.account_id ,t.ticket_id,ac.is_valid,usr.is_vip, usr.status, ac.currentbal FROM users AS usr JOIN tickets AS t on usr.user_id=t.user_id,accounts ac  where usr.user_id=@user_id and usr.account_id= ac.account_id";
             MySqlCommand command = new MySqlCommand(query, connection);
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@user_id", user_id);
@@ -411,7 +411,8 @@ namespace HHF_APP
                             user_id, Convert.ToString(reader["group_id"]), Convert.ToString(reader["fname"]),
                             Convert.ToString(reader["lname"]), Convert.ToInt32(reader["account_id"]),
                             Convert.ToInt32(reader["ticket_id"]), Convert.ToDecimal(reader["currentbal"]),
-                            Convert.ToString(reader["is_valid"]), Convert.ToString(reader["is_vip"]));
+                            Convert.ToString(reader["status"]),Convert.ToString(reader["is_valid"]),
+                            Convert.ToString(reader["is_vip"]));
                 }
 
                 if (temp != null)
@@ -459,17 +460,19 @@ namespace HHF_APP
         }
 
         //Function for checking if users are already checked in
+        public string status;
         public int checkedIn(int user_id)
         {
-            string check_in_query = "SELECT status FROM users WHERE user_id=@user_id and status='checked_in'";
+            string check_in_query = "SELECT status FROM users WHERE user_id=@user_id and status='checked_in' or status='check_out'";
             MySqlCommand command = new MySqlCommand(check_in_query, connection);
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@user_id", user_id);
-
             try
             {
                 connection.Open();
+                MySqlDataReader reader = command.ExecuteReader();
                 int checkedRecords = command.ExecuteNonQuery();
+                status = Convert.ToString(reader["status"]);
                 return checkedRecords;
             }
             catch
@@ -482,11 +485,11 @@ namespace HHF_APP
             }
         }
 
-        public int ticketBalance, ticketRefund;
+        public int ticketBalance; public string visitorStatus;
         public bool checkInOutInfo(int user_id)
         {
             string query =
-                "SELECT tr.current_balance FROM accounts AS a  JOIN users AS usr ON a.account_id=usr.account_id JOIN transactions AS tr ON tr.account_id=a.account_id where usr.user_id =@user_id";
+                "SELECT tr.current_balance, usr.status FROM accounts AS a  JOIN users AS usr ON a.account_id=usr.account_id JOIN transactions AS tr ON tr.account_id=a.account_id where usr.user_id =@user_id";
             MySqlCommand command = new MySqlCommand(query, connection);
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@user_id", user_id);
@@ -499,7 +502,7 @@ namespace HHF_APP
                 while (reader.Read())
                 {
                     this.ticketBalance = Convert.ToInt32(reader["current_balance"]);
-                    this.ticketRefund = Convert.ToInt32(reader["current_balance"]);
+                    this.visitorStatus = Convert.ToString(reader["status"]);
                     temp = true;
                 }
 
@@ -550,11 +553,12 @@ namespace HHF_APP
                         {
                             act_id = Convert.ToInt32(reader["account_id"]);
                         }
+                        reader.Close();
                         if (act_id == -1)
                         {
-                            throw new System.Exception("Either the person is not checked or User does not exists");
+                            throw new System.Exception("Either the User does not exists");
                         }
-                        reader.Close();
+                        
                     }
                     else
                     {
@@ -569,11 +573,12 @@ namespace HHF_APP
                         {
                             act_id = Convert.ToInt32(reader["account_id"]);
                         }
+                        reader.Close();
                         if (act_id == -1)
                         {
-                            throw new System.Exception("Either the person is not checked or User does not exists");
+                            throw new System.Exception("Either the person is not checked in or User does not exists");
                         }
-                        reader.Close();
+                        
                     }
 
 
@@ -615,9 +620,10 @@ namespace HHF_APP
                         command.Parameters.AddWithValue("@id", act_id);
 
 
-                        command.ExecuteNonQuery();
+                        
                         if (Convert.ToInt32(command.ExecuteNonQuery()) <= 0)
                         {
+                            reader.Close();
                             throw new Exception("Error While Updating the balance");
                         }
                         reader.Close();
@@ -721,7 +727,7 @@ namespace HHF_APP
 
         public int RefundCloseAccount(int user_id)
         {
-            string query = "UPDATE users, accounts AS a, transactions AS tr SET users.status ='check_out', a.is_valid='no', a.currentbal= 0 WHERE users.account_id = a.account_id AND a.account_id = tr.account_id AND users.user_id=@user_id";
+            string query = "UPDATE users, accounts AS a, transactions AS tr SET users.status ='check_out', a.is_valid='no', a.currentbal= 0 WHERE users.account_id = a.account_id AND a.account_id = tr.account_id AND users.user_id=@user_id AND users.is_admin='yes'";
             MySqlCommand command = new MySqlCommand(query, connection);
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@user_id", user_id);
@@ -744,7 +750,7 @@ namespace HHF_APP
 
         public List<Article> getLoanedArticles(int user_id)
         {
-            string sql = "Select art.type,lo.article_status,lo.article_nr FROM articles AS art JOIN loaned AS lo on art.article_nr=lo.article_nr JOIN transactions as tr on tr.transaction_id = lo.transaction_id JOIN accounts as a on tr.account_id=a.account_id JOIN users as usr on a.account_id=usr.account_id where usr.user_id=@user_id";
+            string sql = "Select art.type,lo.article_status,lo.article_nr FROM articles AS art JOIN loaned AS lo on art.article_nr=lo.article_nr JOIN transactions as tr on tr.transaction_id = lo.transaction_id JOIN accounts as a on tr.account_id=a.account_id JOIN users as usr on a.account_id=usr.account_id where usr.user_id=@user_id AND tr.type='loan'";
             MySqlCommand command = new MySqlCommand(sql, connection);
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@user_id", user_id);
