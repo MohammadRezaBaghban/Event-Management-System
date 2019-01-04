@@ -49,7 +49,7 @@ namespace HHF_APP
 
         private void btnTicketPrint_Click(object sender, EventArgs e)
         {
-            /*
+           
             try
             {
                 BarcodeSettings barsetting = new BarcodeSettings();
@@ -82,7 +82,7 @@ namespace HHF_APP
             {
                 MessageBox.Show(ex.Message);
             }
-            */
+            
 
         }
         private void PrintPage(object o, PrintPageEventArgs e)
@@ -136,7 +136,7 @@ namespace HHF_APP
                         lblTransations.Items.Add(tr.ToString());
                     }
                 }
-                else { MessageBox.Show("User with user id : " + temp.getUserId + " Not Found"); }
+                else { MessageBox.Show("User with user id : " + tbUserId.Text + " Not Found"); }
             }
             catch (FormatException)
             {

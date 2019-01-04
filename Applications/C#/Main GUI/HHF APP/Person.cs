@@ -65,7 +65,7 @@ namespace HHF_APP
 
         public override string ToString()
         {
-            return "Name(s) :"+" "+ this.getName + "" +"Group id :" +"" + this.group_id;
+            return "Name(s) :" + " "+ this.getName + " " +" Group id :" +" " + this.group_id;
         }
 
     }

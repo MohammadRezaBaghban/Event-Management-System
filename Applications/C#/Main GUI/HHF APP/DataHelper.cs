@@ -357,10 +357,10 @@ namespace HHF_APP
 
         //Function for login 
 
-        public bool appLogin(string email, string password)
+        public void appLogin(string email, string password)
         {
             //Count because the number of records for succesfull login should be q as there is only one user with such records
-            string joinQuery = "SELECT COUNT(*) as cnt FROM employees WHERE email=@email AND password =@password";
+            string joinQuery = "SELECT COUNT(*) as cnt , position FROM employees WHERE email=@email AND password =@password";
             //string join1Query = $"SELECT COUNT(*) as cnt FROM employees WHERE email='{email}' AND password ='{password}'";
             MySqlCommand command = new MySqlCommand(joinQuery, connection);
             command.Parameters.Clear();
@@ -369,19 +369,19 @@ namespace HHF_APP
             try
             {
                 connection.Open();
-
+                MySqlDataReader reader = command.ExecuteReader();
                 if (command.ExecuteScalar().ToString() == "1")
                 {
-                    return true;
+                    //return reader;
                 }
                 else
                 {
-                    return false;
+                   // return false;
                 }
             }
             catch
             {
-                return false;
+               // return false;
             }
             finally
             {

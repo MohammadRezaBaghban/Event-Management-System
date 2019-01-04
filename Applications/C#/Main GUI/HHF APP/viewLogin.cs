@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace HHF_APP
 {
-    public partial class viewLogin : UserControl
+    public partial class viewLogin : UserControl 
     {
         private DataHelper dh;
         public viewLogin()
@@ -19,19 +19,21 @@ namespace HHF_APP
             dh = new DataHelper();
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-            string email = tbEmail.Text;
-            string passWord = tbPassword.Text;
+        //private void btnLogin_Click(object sender, EventArgs e)
+        //{
+            //string email = tbEmail.Text;
+            //string passWord = tbPassword.Text;
+            
+            //if (dh.appLogin(email, passWord) == true)
+            //{
+                //this.SendToBack();
 
-            if (dh.appLogin(email, passWord) == true)
-            {
-                this.SendToBack();
-            }
-            else { MessageBox.Show("Incorrect Username or Password"); }
-            tbEmail.Clear();
-            tbPassword.Clear();
-        }
+
+            //}
+           // else { MessageBox.Show("Incorrect Username or Password"); }
+            //tbEmail.Clear();
+           // tbPassword.Clear();
+        //}
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
