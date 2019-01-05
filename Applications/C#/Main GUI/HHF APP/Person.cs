@@ -64,6 +64,7 @@ namespace HHF_APP
             this.group_id = groupid;
         }
 
+
         public int getUserId { get => user_id; }
         public int getActId { get => act_id; }
         public int getTicketId { get => ticket_id; }

@@ -140,7 +140,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Article.cs" />
-    <Compile Include="RefundClose.cs" />
     <Compile Include="ReturnLoaned.cs" />
     <Compile Include="Transactions.cs" />
     <Compile Include="viewAdminDashboard.cs">

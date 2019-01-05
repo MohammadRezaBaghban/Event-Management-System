@@ -393,8 +393,7 @@ namespace HHF_APP
 
         public Person checkTicket(int user_id)
         {
-            string query =
-                "SELECT usr.group_id,usr.fname , usr.lname , usr.account_id ,t.ticket_id,ac.is_valid,usr.is_vip, usr.status, ac.currentbal FROM users AS usr JOIN tickets AS t on usr.user_id=t.user_id,accounts ac  where usr.user_id=@user_id and usr.account_id= ac.account_id";
+            string query = "SELECT usr.group_id,usr.fname , usr.lname , usr.account_id ,t.ticket_id,ac.is_valid,usr.is_vip, usr.status, ac.currentbal FROM users AS usr JOIN tickets AS t on usr.user_id = t.user_id JOIN accounts AS ac ON usr.account_id = ac.account_id where usr.user_id = @user_id and usr.account_id = ac.account_id";
             MySqlCommand command = new MySqlCommand(query, connection);
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@user_id", user_id);
@@ -460,10 +459,10 @@ namespace HHF_APP
         }
 
         //Function for checking if users are already checked in
-        public string status;
-        public int checkedIn(int user_id)
+        private string status="";
+        public string checkedIn(int user_id)
         {
-            string check_in_query = "SELECT status FROM users WHERE user_id=@user_id and status='checked_in' or status='check_out'";
+            string check_in_query = "SELECT status FROM users WHERE user_id=@user_id";
             MySqlCommand command = new MySqlCommand(check_in_query, connection);
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@user_id", user_id);
@@ -471,25 +470,28 @@ namespace HHF_APP
             {
                 connection.Open();
                 MySqlDataReader reader = command.ExecuteReader();
-                int checkedRecords = command.ExecuteNonQuery();
-                status = Convert.ToString(reader["status"]);
-                return checkedRecords;
+                while (reader.Read())
+                {
+                    status = Convert.ToString(reader["status"]);
+                }
+                return status;
             }
             catch
             {
-                return -1;
+                return null;
             }
             finally
             {
                 connection.Close();
             }
         }
+        /// </summary>
 
         public int ticketBalance; public string visitorStatus;
         public bool checkInOutInfo(int user_id)
         {
             string query =
-                "SELECT tr.current_balance, usr.status FROM accounts AS a  JOIN users AS usr ON a.account_id=usr.account_id JOIN transactions AS tr ON tr.account_id=a.account_id where usr.user_id =@user_id";
+                "SELECT a.currentbal, usr.status FROM accounts AS a  JOIN users AS usr ON a.account_id=usr.account_id JOIN transactions AS tr ON tr.account_id=a.account_id where usr.user_id =@user_id";
             MySqlCommand command = new MySqlCommand(query, connection);
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@user_id", user_id);
@@ -501,7 +503,7 @@ namespace HHF_APP
                 bool temp = false;
                 while (reader.Read())
                 {
-                    this.ticketBalance = Convert.ToInt32(reader["current_balance"]);
+                    this.ticketBalance = Convert.ToInt32(reader["currentbal"]);
                     this.visitorStatus = Convert.ToString(reader["status"]);
                     temp = true;
                 }
@@ -749,7 +751,7 @@ namespace HHF_APP
             }
 
             if (checkedRecords==0) {
-                query = "UPDATE users, accounts AS a, transactions AS tr SET users.status ='check_out', a.is_valid='no', a.currentbal= 0 WHERE users.account_id = a.account_id AND a.account_id = tr.account_id AND users.user_id=@user_id AND users.is_admin='yes' AND users.status='checked_in'";
+                query = "UPDATE users, accounts  SET users.status ='check_out', accounts.is_valid='no', accounts.currentbal= 0 WHERE users.account_id = accounts.account_id AND users.user_id=@user_id AND users.is_admin='yes' AND users.status='checked_in'";
                 command = new MySqlCommand(query, connection);
                 command.Parameters.Clear();
                 command.Parameters.AddWithValue("@user_id", user_id);
@@ -854,6 +856,8 @@ namespace HHF_APP
                 connection.Close();
             }
         }
+        
+       
         public List<Transactions> getAllTransactions(int user_id)
         {
             string sql = "SELECT tr.transaction_id,tr.amount,tr.type,tr.date,tr.time FROM transactions as tr JOIN accounts as a on tr.account_id=a.account_id JOIN users as usr on a.account_id=usr.account_id where usr.user_id=@user_id";

@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Spire.Barcode;
-using Spire.Barcode.Implementation;
+//using Spire.Barcode;
+//using Spire.Barcode.Implementation;
 using System.Diagnostics;
 using System.IO;
 using System.Drawing.Printing;
@@ -152,16 +152,17 @@ namespace HHF_APP
             try
             {
                 int user_id = Convert.ToInt32(tbUserId.Text);
-                if (dh.checkedIn(user_id) == 1 || dh.status=="check_out")
+                string check = dh.checkedIn(user_id);
+                if (check=="checked_in" || check=="check_out")
                 {
-                    if (dh.checkIn(user_id) == 1)
-                    {
-                        MessageBox.Show("Check in successfull");
-                    }
-                    else { MessageBox.Show("Check In unsuccessfull "); }
-
+                    MessageBox.Show("Person Already Checked In/Out");
                 }
-                else { MessageBox.Show("Person already checked in"); }
+                else if (check =="" && dh.checkIn(user_id) == 1)
+                {
+                    MessageBox.Show("Check in successfull");
+                }
+                else { MessageBox.Show("Check In unsuccessfull "); }
+                btnTicketFind.PerformClick();
             }
             catch (FormatException)
             {
@@ -186,7 +187,8 @@ namespace HHF_APP
                 int user_id = Convert.ToInt32(tbUserId.Text);
                 int article_nr = Convert.ToInt32(tbArticleNr.Text);
                 Person temp = dh.checkTicket(Convert.ToInt32(tbUserId.Text));
-                if (dh.ReturnLoanedMaterials((ReturnLoaned)lbLoanedItems.SelectedItem) >= 1)
+                if (((ReturnLoaned)lbLoanedItems.SelectedItem).getArticleStatus == "returned") { MessageBox.Show("Already Returned"); }
+                else if (dh.ReturnLoanedMaterials((ReturnLoaned)lbLoanedItems.SelectedItem) >= 1 && dh.ReturnLoanedMaterials((ReturnLoaned)lbLoanedItems.SelectedItem) != 0)
                 {
                     MessageBox.Show("Item" +
                                     " with article nr" + article_nr + " returned");
@@ -302,6 +304,7 @@ namespace HHF_APP
             {
 
                 int userId = Convert.ToInt32(tbUserId.Text);
+                if(dh.addTransaction(userId, dh.ticketBalance+1, "refund") !=1) { MessageBox.Show("User does not exist or Not Checked In"); }
                 if (dh.RefundCloseAccount(userId) >= 1)
                 {
                     MessageBox.Show("Successfully Closed Account");
@@ -310,6 +313,7 @@ namespace HHF_APP
                 else MessageBox.Show("Person Already Checked Out");
             }
             catch (FormatException) { }
+            catch (Exception ) { MessageBox.Show("User does not exist or Not Checked In"); }
         }
 
         private void lbLoanedItems_SelectedIndexChanged(object sender, EventArgs e)
