@@ -44,7 +44,7 @@
                             </li>
                             <li class="navigation-item"><a href="#" class="navigation-link" data-toggle="modal"
                                                            data-target="#email-ticket">Contact Us</a></li>
-                            <li class="navigation-item"><a href="?page=login">Sign In</a></li>
+                            <li class="navigation-item"><a href="?page=login" class="navigation-link">Log In</a></li>
                         </ul>
                     </div>
                 </div><?php endif; ?></div>

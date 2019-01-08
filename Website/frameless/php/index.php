@@ -15,8 +15,9 @@ echo '<html>';
 include './Others/Head.php';
 
 echo '<body>';
-
+if($page != "login"){
     include './Others/Navigationbar.php';
+}
 
 include './Others/modelform.php';
 
@@ -81,7 +82,9 @@ switch ($page) {
     default:
         include "home.php";
 }
+if($page != "login"){
 require './Footer/Footer.php';
+}
 echo '</body>';
 echo '</html>';
 ?>
