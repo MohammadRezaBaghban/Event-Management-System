@@ -56,11 +56,10 @@ namespace HHF_APP
         public DataTable ReservedCampingSpots()
         {
             string query =
-                "Select r.account_id as 'Account ID', s.spot_nr as 'Spot Number',if (s.is_vip = 'no','Regular','Vip') as 'Camp Type',is_reserved,"
+                "Select r.account_id as 'Account ID', if (a.is_valid = 'yes' , 'Valid', 'In-Valid' ) as 'Validity Status' , s.spot_nr as 'Spot Number',if (s.is_vip = 'no','Regular','Vip') as 'Camp Type',is_reserved,"
                 + " if (r.is_paid = 'yes',' + Already Paid',' - Has Not Paid') as 'Payment Status', if (r.status = 'checked_in', 'Checked In', IF(r.status = 'checked_out', 'Checked Out', '-----') ) as 'Check-in Status'"
-                + " "
                 + "From camp_reservation r join camp_spots s On (s.spot_nr = r.spot_nr) join accounts a on ( r.account_id = a.account_id )"
-                + "Where is_reserved = 'yes' ;";
+                + "Where is_reserved = 'yes';";
 
             DataTable dt = new DataTable();
             using (MySqlConnection con = new MySqlConnection(cs))
@@ -239,12 +238,9 @@ namespace HHF_APP
                 MessageBox.Show($"{ex.Message}");
             }
 
-            DG_AvailableSpots.DataSource = dt1;
-            DG_AvailableSpots.DataMember = dt1.TableName;
-
             DG_ReservedSpots.DataSource = dt2;
             DG_ReservedSpots.DataMember = dt2.TableName;
-            DG_ReservedSpots.Sort(DG_ReservedSpots.Columns[3], ListSortDirection.Ascending);
+            DG_ReservedSpots.Sort(DG_ReservedSpots.Columns[1], ListSortDirection.Descending);
 
             LAvailableSpot.Text = $"{NrOfSpots("no")}/{NrOfSpots("yes") + NrOfSpots("no")}";
             LOccupiedSpot.Text = $"{NrOfSpots("yes")}";
@@ -265,8 +261,8 @@ namespace HHF_APP
                 }
                 else
                 {
-                    PaymentStatus = DG_ReservedSpots.SelectedRows[0].Cells[3].Value.ToString();
-                    CheckInStatus = DG_ReservedSpots.SelectedRows[0].Cells[4].Value.ToString();
+                    PaymentStatus = DG_ReservedSpots.SelectedRows[0].Cells[4].Value.ToString();
+                    CheckInStatus = DG_ReservedSpots.SelectedRows[0].Cells[5].Value.ToString();
 
                     if (PaymentStatus == " - Has Not Paid")
                     {
@@ -337,7 +333,7 @@ namespace HHF_APP
 
                         if (result)
                         {
-                            DG_ReservedSpots.SelectedRows[0].Cells[3].Value = " + Already Paid";
+                            DG_ReservedSpots.SelectedRows[0].Cells[4].Value = " + Already Paid";
                             LblPaymentSts.Text = "Already Paid";
                             LblPaymentSts.ForeColor = Color.LimeGreen;
                         }
@@ -383,7 +379,7 @@ namespace HHF_APP
                             status = CheckInCheckOut(accountId, "checked_in");
                             if (status)
                             {
-                                DG_ReservedSpots.SelectedRows[0].Cells[4].Value = "Checked In";
+                                DG_ReservedSpots.SelectedRows[0].Cells[5].Value = "Checked In";
                                 lblCheckInSts.Text = "Checked-In";
                                 lblCheckInSts.ForeColor = Color.LimeGreen;
                                 
@@ -412,7 +408,7 @@ namespace HHF_APP
                         status = CheckInCheckOut(accountId, "checked_out");
                         if (status)
                         {
-                            DG_ReservedSpots.SelectedRows[0].Cells[4].Value = "Checked Out";
+                            DG_ReservedSpots.SelectedRows[0].Cells[5].Value = "Checked Out";
                             lblCheckInSts.ForeColor = Color.DimGray;
                             lblCheckInSts.Text = "Checked-Out";
                             MessageBox.Show("Tenant checked out successfully!");
