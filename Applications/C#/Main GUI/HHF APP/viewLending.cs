@@ -104,26 +104,26 @@ namespace HHF_APP
             int result;
             if (SelectionChecking())
             {
-                int recordNr = Convert.ToInt32(DG_LoanedArticels.SelectedRows[0].Cells[0].Value);
-                using (MySqlConnection con = new MySqlConnection(cs))
+                DataGridViewSelectedRowCollection dr = this.DG_LoanedArticels.SelectedRows;
+                for (int i = 0; i < dr.Count; i++)
                 {
-                    con.Open();
-                    string query = "Update loaned set article_status = 'returned' where loaned_id = @recordId";
-                    using (MySqlCommand cmd = new MySqlCommand(query, con))
+                    int recordNr = Convert.ToInt32(DG_LoanedArticels.SelectedRows[i].Cells[0].Value);
+                    using (MySqlConnection con = new MySqlConnection(cs))
                     {
-                        cmd.Parameters.AddWithValue("@recordId", recordNr);
-                        result = cmd.ExecuteNonQuery();
+                        con.Open();
+                        string query = "Update loaned set article_status = 'returned' where loaned_id = @recordId";
+                        using (MySqlCommand cmd = new MySqlCommand(query, con))
+                        {
+                            cmd.Parameters.AddWithValue("@recordId", recordNr);
+                            result = cmd.ExecuteNonQuery();
+                        }
                     }
-                }
 
-                if (result == 1)
-                {
-                    DG_LoanedArticels.SelectedRows[0].Cells[3].Value = "Returned";
-                }
-                else
-                {
-                    MessageBox.Show("Something Wrong Happened!");
-                }
+                    if (result == 1)
+                    {
+                        DG_LoanedArticels.SelectedRows[i].Cells[3].Value = "Returned";
+                    }
+                }                                
             }
         }
         private int[] NumberOfBorrowedItems(int id)
@@ -258,17 +258,10 @@ namespace HHF_APP
 
         private bool SelectionChecking()
         {
-            if (DG_LoanedArticels.SelectedRows.Count != 0)
+            if (DG_LoanedArticels.SelectedRows.Count == 1)
             {
-                if (DG_LoanedArticels.SelectedRows.Count > 1)
-                {
-
-                    MessageBox.Show("Only 'One' record should be choosed");
-                    return false;
-                }
-                else
-                {
-                    ReturnStatus = DG_LoanedArticels.SelectedRows[0].Cells[3].Value.ToString();
+                
+                ReturnStatus = DG_LoanedArticels.SelectedRows[0].Cells[3].Value.ToString();
 
                     if (ReturnStatus == "Not Returned")
                     {
@@ -281,12 +274,15 @@ namespace HHF_APP
                     }
 
                     return false;
-                }
+                
 
+            }else if (DG_LoanedArticels.SelectedRows.Count > 1)
+            {
+                return true;
             }
             else
             {
-                MessageBox.Show("Please select 'Only One' record from Loaned Items section");
+                MessageBox.Show("Please select at least One record from Loaned Items section");
                 return false;
             }
         }
@@ -415,6 +411,11 @@ namespace HHF_APP
         private void DG_Revenue_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
            
+        }
+
+        private void BtnRefresh_Click(object sender, EventArgs e)
+        {
+            this.GetListOfLoanedItems();
         }
     }
 }

@@ -36,7 +36,7 @@ namespace HHF_APP
         {
             string query = "Select spot_nr as 'Spot Number',if(is_vip='no','Regular','Vip') as 'Camp Type'" +
                            " From camp_spots" +
-                           $" Where is_reserved = 'no'";
+                           $" Where is_reserved = 'no' ";
             DataTable dt = new DataTable();
             using (MySqlConnection con = new MySqlConnection(cs))
             {
@@ -58,7 +58,8 @@ namespace HHF_APP
             string query =
                 "Select r.account_id as 'Account ID', s.spot_nr as 'Spot Number',if (s.is_vip = 'no','Regular','Vip') as 'Camp Type',is_reserved,"
                 + " if (r.is_paid = 'yes',' + Already Paid',' - Has Not Paid') as 'Payment Status', if (r.status = 'checked_in', 'Checked In', IF(r.status = 'checked_out', 'Checked Out', '-----') ) as 'Check-in Status'"
-                + "From camp_spots s join camp_reservation r On(s.spot_nr = r.spot_nr)"
+                + " "
+                + "From camp_reservation r join camp_spots s On (s.spot_nr = r.spot_nr) join accounts a on ( r.account_id = a.account_id )"
                 + "Where is_reserved = 'yes' ;";
 
             DataTable dt = new DataTable();
@@ -338,7 +339,7 @@ namespace HHF_APP
                         {
                             DG_ReservedSpots.SelectedRows[0].Cells[3].Value = " + Already Paid";
                             LblPaymentSts.Text = "Already Paid";
-                            LblPaymentSts.BackColor = Color.LimeGreen;
+                            LblPaymentSts.ForeColor = Color.LimeGreen;
                         }
                         else
                         {
@@ -436,6 +437,9 @@ namespace HHF_APP
             }
         }
 
-        
+        private void DG_ReservedSpots_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            SelectionChecking();
+        }
     }
 }
