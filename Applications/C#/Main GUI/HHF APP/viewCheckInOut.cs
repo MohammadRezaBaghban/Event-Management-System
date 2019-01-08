@@ -304,7 +304,7 @@ namespace HHF_APP
             {
 
                 int userId = Convert.ToInt32(tbUserId.Text);
-                if(dh.addTransaction(userId, dh.ticketBalance+1, "refund") !=1) { MessageBox.Show("User does not exist or Not Checked In"); }
+                if(dh.addTransaction(userId, dh.ticketBalance, "refund") !=1) { MessageBox.Show("User does not exist or Not Checked In"); }
                 if (dh.RefundCloseAccount(userId) >= 1)
                 {
                     MessageBox.Show("Successfully Closed Account");
@@ -313,7 +313,8 @@ namespace HHF_APP
                 else MessageBox.Show("Person Already Checked Out");
             }
             catch (FormatException) { }
-            catch (Exception ) { MessageBox.Show("User does not exist or Not Checked In"); }
+            catch (Exception ex) { MessageBox.Show(ex.Message
+                ); }
         }
 
         private void lbLoanedItems_SelectedIndexChanged(object sender, EventArgs e)

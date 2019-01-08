@@ -739,19 +739,16 @@ namespace HHF_APP
             {
                 connection.Open();
                 checkedRecords = command.ExecuteNonQuery();
+                connection.Close();
               
             }
             catch
             {
                
             }
-            finally
-            {
-                connection.Close();
-            }
 
-            if (checkedRecords==0) {
-                query = "UPDATE users, accounts  SET users.status ='check_out', accounts.is_valid='no', accounts.currentbal= 0 WHERE users.account_id = accounts.account_id AND users.user_id=@user_id AND users.is_admin='yes' AND users.status='checked_in'";
+            if (checkedRecords==-1) {
+                query = "UPDATE users, accounts  SET users.status ='check_out', accounts.is_valid ='no' WHERE users.account_id = accounts.account_id AND users.user_id=@user_id AND users.status='checked_in'";
                 command = new MySqlCommand(query, connection);
                 command.Parameters.Clear();
                 command.Parameters.AddWithValue("@user_id", user_id);
@@ -762,8 +759,10 @@ namespace HHF_APP
                     checkedRecords = command.ExecuteNonQuery();
                     return checkedRecords;
                 }
-                catch
+                catch(Exception ex)
                 {
+
+                    MessageBox.Show(ex.Message);
                     return -1;
                 }
                 finally
