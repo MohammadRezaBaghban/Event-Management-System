@@ -695,7 +695,7 @@ namespace HHF_APP
                     if (sidepanelforBTNs.Top == campBtn.Top)
                     {
                         viewCamping1.userId = p.getUserId;
-                        if (dh.CheckInStatus(p.getUserId))
+                        if (dh.CheckInStatus(p.getActId))
                         {
                             foreach (DataGridViewRow r in viewCamping1.DG_ReservedSpots.Rows)
                             {
