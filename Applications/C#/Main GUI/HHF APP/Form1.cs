@@ -695,8 +695,7 @@ namespace HHF_APP
                     if (sidepanelforBTNs.Top == campBtn.Top)
                     {
                         viewCamping1.userId = p.getUserId;
-                        if (dh.CheckInStatus(p.getActId))
-                        {
+                        
                             foreach (DataGridViewRow r in viewCamping1.DG_ReservedSpots.Rows)
                             {
                                 r.Selected = false;
@@ -720,11 +719,11 @@ namespace HHF_APP
 
                                 viewCamping1.SelectionChecking();
                             }
-                        }
+                        
                        
                     }else if (sidepanelforBTNs.Top == lendBtn.Top)
                     {
-                        if (dh.CheckInStatus(p.getUserId))
+                        if (dh.CheckInStatus(p.getActId))
                         {
                             viewLending1.accountFound = true;
                             viewLending1.userId = p.getUserId;
@@ -763,13 +762,7 @@ namespace HHF_APP
                 }
                 else
                 {
-                    
-                    
-                    viewStore1.Enabled = false;
-                    
-                    lblbal.Text = "......";
-                    lblname.Text = "......";
-                    
+                    MessageBox.Show($"A Person with given user id of {tbBarcode.Text} does not exist");                   
                 }
             }
             catch (Exception ex)
