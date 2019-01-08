@@ -69,7 +69,14 @@ switch ($page) {
         include "./SignUp-SignIn-SignOut/SignupForm.php";
         break;
     case "signup":
-        include "./FormHandlers/Sign-up.php";
+        if (new DateTime() > new DateTime("2018-01-23 11:00:00")) {
+            # current time is greater than 2018-01-23 12:00:00
+            # in other words, 2018-01-23 12:00:00 has passed
+            echo "OPS You are late, you can no longer buy tickets from the website. You can still buy them from the event itself(Extra Fees Applied)!";
+        }
+        else{
+                include "./FormHandlers/Sign-up.php";
+            }
         break;
     default:
         include "home.php";

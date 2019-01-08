@@ -27,7 +27,7 @@
         });
     });
 
-    function test()
+    function checkCampSpotValidity()
     {
         var spotnr = document.getElementById('campspotnr').value;
         var url = "Others/check_spot.php?$spotnr="+spotnr;
@@ -213,7 +213,7 @@
                             <div class="form-group">
                                 <div class="col-sm-7" id="spotnr"></div>
                                 <div class="col-sm-5">
-                                    <button type="button" class="btn btn-sm" name="checkcamp" id="checkcamp" value="Validated" onclick="test();">Check Availability</button>
+                                    <button type="button" class="btn btn-sm" name="checkcamp" id="checkcamp" value="Validated" onclick="checkCampSpotValidity();">Check Availability</button>
                                 </div>
                             </div>
                         </div>
@@ -257,7 +257,7 @@
                                 <div class="form-group">
                                     <div class="col-sm-7" id="spotnr"></div>
                                     <div class="col-sm-5">
-                                        <button type="button" class="btn btn-sm" name="checkcamp" id="checkcamp" value="Validated" onclick="test();">Check Availability</button>
+                                        <button type="button" class="btn btn-sm" name="checkcamp" id="checkcamp" value="Validated" onclick="checkCampSpotValidity();">Check Availability</button>
                                     </div>
                                 </div>
                             </div>

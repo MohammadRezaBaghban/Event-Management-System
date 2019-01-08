@@ -37,8 +37,8 @@ namespace HHF_APP
         private viewStore viewStore1;
         private viewTickets viewTickets1;
         private viewLogin viewLogin1;
-        private System.Windows.Forms.Label lblbal;
-        private System.Windows.Forms.Label lblname;
+        public System.Windows.Forms.Label lblbal;
+        public System.Windows.Forms.Label lblname;
 
         // private viewAdminDashboard viewAdminDashboard1;
         //       private viewAdminDashboard viewAdminDashboard1;

@@ -119,10 +119,10 @@ namespace HHF_APP
             this.PnlUser.Controls.Add(this.tbUserId);
             this.PnlUser.Controls.Add(this.label3);
             this.PnlUser.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PnlUser.Location = new System.Drawing.Point(13, 69);
-            this.PnlUser.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.PnlUser.Location = new System.Drawing.Point(10, 55);
+            this.PnlUser.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PnlUser.Name = "PnlUser";
-            this.PnlUser.Size = new System.Drawing.Size(807, 359);
+            this.PnlUser.Size = new System.Drawing.Size(605, 287);
             this.PnlUser.TabIndex = 5;
             // 
             // btnCheckIn
@@ -131,10 +131,10 @@ namespace HHF_APP
             this.btnCheckIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCheckIn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCheckIn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnCheckIn.Location = new System.Drawing.Point(637, 206);
-            this.btnCheckIn.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.btnCheckIn.Location = new System.Drawing.Point(478, 165);
+            this.btnCheckIn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCheckIn.Name = "btnCheckIn";
-            this.btnCheckIn.Size = new System.Drawing.Size(165, 131);
+            this.btnCheckIn.Size = new System.Drawing.Size(124, 105);
             this.btnCheckIn.TabIndex = 18;
             this.btnCheckIn.Text = "Check In";
             this.btnCheckIn.UseVisualStyleBackColor = false;
@@ -145,10 +145,10 @@ namespace HHF_APP
             this.btnTicketPrint.BackColor = System.Drawing.SystemColors.Window;
             this.btnTicketPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTicketPrint.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTicketPrint.Location = new System.Drawing.Point(637, 134);
-            this.btnTicketPrint.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.btnTicketPrint.Location = new System.Drawing.Point(478, 107);
+            this.btnTicketPrint.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnTicketPrint.Name = "btnTicketPrint";
-            this.btnTicketPrint.Size = new System.Drawing.Size(165, 59);
+            this.btnTicketPrint.Size = new System.Drawing.Size(124, 47);
             this.btnTicketPrint.TabIndex = 17;
             this.btnTicketPrint.Text = "Print";
             this.btnTicketPrint.UseVisualStyleBackColor = false;
@@ -159,10 +159,10 @@ namespace HHF_APP
             this.btnTicketFind.BackColor = System.Drawing.Color.Wheat;
             this.btnTicketFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTicketFind.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTicketFind.Location = new System.Drawing.Point(637, 48);
-            this.btnTicketFind.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.btnTicketFind.Location = new System.Drawing.Point(478, 38);
+            this.btnTicketFind.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnTicketFind.Name = "btnTicketFind";
-            this.btnTicketFind.Size = new System.Drawing.Size(165, 59);
+            this.btnTicketFind.Size = new System.Drawing.Size(124, 47);
             this.btnTicketFind.TabIndex = 16;
             this.btnTicketFind.Text = "Find";
             this.btnTicketFind.UseVisualStyleBackColor = false;
@@ -179,19 +179,20 @@ namespace HHF_APP
             this.panel1.Controls.Add(this.panel16);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(15, 106);
-            this.panel1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.panel1.Location = new System.Drawing.Point(11, 85);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(617, 231);
+            this.panel1.Size = new System.Drawing.Size(463, 185);
             this.panel1.TabIndex = 15;
             // 
             // lblHolderName
             // 
             this.lblHolderName.AutoSize = true;
             this.lblHolderName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHolderName.Location = new System.Drawing.Point(387, 22);
+            this.lblHolderName.Location = new System.Drawing.Point(290, 18);
+            this.lblHolderName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblHolderName.Name = "lblHolderName";
-            this.lblHolderName.Size = new System.Drawing.Size(189, 45);
+            this.lblHolderName.Size = new System.Drawing.Size(145, 32);
             this.lblHolderName.TabIndex = 7;
             this.lblHolderName.Text = "-------------";
             // 
@@ -199,9 +200,10 @@ namespace HHF_APP
             // 
             this.lblTicketID.AutoSize = true;
             this.lblTicketID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTicketID.Location = new System.Drawing.Point(387, 139);
+            this.lblTicketID.Location = new System.Drawing.Point(290, 111);
+            this.lblTicketID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTicketID.Name = "lblTicketID";
-            this.lblTicketID.Size = new System.Drawing.Size(189, 45);
+            this.lblTicketID.Size = new System.Drawing.Size(145, 32);
             this.lblTicketID.TabIndex = 6;
             this.lblTicketID.Text = "-------------";
             // 
@@ -209,9 +211,10 @@ namespace HHF_APP
             // 
             this.lblAccountID.AutoSize = true;
             this.lblAccountID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAccountID.Location = new System.Drawing.Point(387, 81);
+            this.lblAccountID.Location = new System.Drawing.Point(290, 65);
+            this.lblAccountID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAccountID.Name = "lblAccountID";
-            this.lblAccountID.Size = new System.Drawing.Size(189, 45);
+            this.lblAccountID.Size = new System.Drawing.Size(145, 32);
             this.lblAccountID.TabIndex = 5;
             this.lblAccountID.Text = "-------------";
             // 
@@ -219,9 +222,10 @@ namespace HHF_APP
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(173, 82);
+            this.label8.Location = new System.Drawing.Point(130, 66);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(184, 45);
+            this.label8.Size = new System.Drawing.Size(137, 32);
             this.label8.TabIndex = 4;
             this.label8.Text = "Account ID:";
             // 
@@ -229,9 +233,10 @@ namespace HHF_APP
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(177, 144);
+            this.label5.Location = new System.Drawing.Point(133, 115);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(160, 45);
+            this.label5.Size = new System.Drawing.Size(120, 32);
             this.label5.TabIndex = 3;
             this.label5.Text = "Ticket ID :";
             // 
@@ -243,10 +248,10 @@ namespace HHF_APP
             this.panel16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel16.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel16.Location = new System.Drawing.Point(27, 36);
-            this.panel16.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.panel16.Location = new System.Drawing.Point(20, 29);
+            this.panel16.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(137, 138);
+            this.panel16.Size = new System.Drawing.Size(103, 111);
             this.panel16.TabIndex = 1;
             // 
             // label6
@@ -255,30 +260,30 @@ namespace HHF_APP
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.label6.Location = new System.Drawing.Point(177, 22);
-            this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label6.Location = new System.Drawing.Point(133, 18);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(227, 45);
+            this.label6.Size = new System.Drawing.Size(170, 32);
             this.label6.TabIndex = 0;
             this.label6.Text = "Holder Name: ";
             // 
             // tbUserId
             // 
             this.tbUserId.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbUserId.Location = new System.Drawing.Point(15, 48);
-            this.tbUserId.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.tbUserId.Location = new System.Drawing.Point(11, 38);
+            this.tbUserId.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbUserId.Name = "tbUserId";
-            this.tbUserId.Size = new System.Drawing.Size(617, 50);
+            this.tbUserId.Size = new System.Drawing.Size(464, 39);
             this.tbUserId.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(17, 2);
-            this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label3.Location = new System.Drawing.Point(13, 2);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(131, 45);
+            this.label3.Size = new System.Drawing.Size(97, 32);
             this.label3.TabIndex = 0;
             this.label3.Text = "User ID:";
             // 
@@ -286,10 +291,10 @@ namespace HHF_APP
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(609, 11);
-            this.label7.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label7.Location = new System.Drawing.Point(457, 9);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(448, 59);
+            this.label7.Size = new System.Drawing.Size(331, 45);
             this.label7.TabIndex = 7;
             this.label7.Text = "Check In - Check Out";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -302,29 +307,30 @@ namespace HHF_APP
             this.gbLoanedItems.Controls.Add(this.btnReturnArticles);
             this.gbLoanedItems.Controls.Add(this.lbLoanedItems);
             this.gbLoanedItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbLoanedItems.Location = new System.Drawing.Point(732, 452);
-            this.gbLoanedItems.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.gbLoanedItems.Location = new System.Drawing.Point(549, 362);
+            this.gbLoanedItems.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gbLoanedItems.Name = "gbLoanedItems";
-            this.gbLoanedItems.Padding = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.gbLoanedItems.Size = new System.Drawing.Size(923, 278);
+            this.gbLoanedItems.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gbLoanedItems.Size = new System.Drawing.Size(692, 222);
             this.gbLoanedItems.TabIndex = 15;
             this.gbLoanedItems.TabStop = false;
             this.gbLoanedItems.Text = "Loaned Items";
             // 
             // tbArticleNr
             // 
-            this.tbArticleNr.Location = new System.Drawing.Point(854, 56);
-            this.tbArticleNr.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbArticleNr.Location = new System.Drawing.Point(640, 45);
+            this.tbArticleNr.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbArticleNr.Name = "tbArticleNr";
-            this.tbArticleNr.Size = new System.Drawing.Size(58, 44);
+            this.tbArticleNr.Size = new System.Drawing.Size(44, 35);
             this.tbArticleNr.TabIndex = 17;
             // 
             // lblArticlenr
             // 
             this.lblArticlenr.AutoSize = true;
-            this.lblArticlenr.Location = new System.Drawing.Point(694, 59);
+            this.lblArticlenr.Location = new System.Drawing.Point(520, 47);
+            this.lblArticlenr.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblArticlenr.Name = "lblArticlenr";
-            this.lblArticlenr.Size = new System.Drawing.Size(168, 37);
+            this.lblArticlenr.Size = new System.Drawing.Size(124, 29);
             this.lblArticlenr.TabIndex = 16;
             this.lblArticlenr.Text = "Article Nr :";
             // 
@@ -334,10 +340,10 @@ namespace HHF_APP
             this.btnReturnArticles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReturnArticles.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.btnReturnArticles.ForeColor = System.Drawing.Color.Crimson;
-            this.btnReturnArticles.Location = new System.Drawing.Point(696, 197);
-            this.btnReturnArticles.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.btnReturnArticles.Location = new System.Drawing.Point(522, 158);
+            this.btnReturnArticles.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnReturnArticles.Name = "btnReturnArticles";
-            this.btnReturnArticles.Size = new System.Drawing.Size(219, 71);
+            this.btnReturnArticles.Size = new System.Drawing.Size(164, 57);
             this.btnReturnArticles.TabIndex = 13;
             this.btnReturnArticles.Text = "Return";
             this.btnReturnArticles.UseVisualStyleBackColor = false;
@@ -347,11 +353,11 @@ namespace HHF_APP
             // 
             this.lbLoanedItems.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbLoanedItems.FormattingEnabled = true;
-            this.lbLoanedItems.ItemHeight = 37;
-            this.lbLoanedItems.Location = new System.Drawing.Point(11, 42);
-            this.lbLoanedItems.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.lbLoanedItems.ItemHeight = 28;
+            this.lbLoanedItems.Location = new System.Drawing.Point(8, 34);
+            this.lbLoanedItems.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lbLoanedItems.Name = "lbLoanedItems";
-            this.lbLoanedItems.Size = new System.Drawing.Size(675, 226);
+            this.lbLoanedItems.Size = new System.Drawing.Size(507, 172);
             this.lbLoanedItems.TabIndex = 15;
             this.lbLoanedItems.SelectedIndexChanged += new System.EventHandler(this.lbLoanedItems_SelectedIndexChanged);
             // 
@@ -361,10 +367,10 @@ namespace HHF_APP
             this.btnRefundAndCheckOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefundAndCheckOut.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.btnRefundAndCheckOut.ForeColor = System.Drawing.Color.Crimson;
-            this.btnRefundAndCheckOut.Location = new System.Drawing.Point(1331, 184);
-            this.btnRefundAndCheckOut.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.btnRefundAndCheckOut.Location = new System.Drawing.Point(998, 147);
+            this.btnRefundAndCheckOut.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnRefundAndCheckOut.Name = "btnRefundAndCheckOut";
-            this.btnRefundAndCheckOut.Size = new System.Drawing.Size(279, 148);
+            this.btnRefundAndCheckOut.Size = new System.Drawing.Size(209, 118);
             this.btnRefundAndCheckOut.TabIndex = 16;
             this.btnRefundAndCheckOut.Text = "Refund and Check Out\r\n( Close Account)\r\n";
             this.btnRefundAndCheckOut.UseVisualStyleBackColor = false;
@@ -387,11 +393,11 @@ namespace HHF_APP
             this.gbTransaction.Controls.Add(this.btnRefundAndCheckOut);
             this.gbTransaction.Controls.Add(this.btnTransactionFile);
             this.gbTransaction.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbTransaction.Location = new System.Drawing.Point(21, 741);
-            this.gbTransaction.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.gbTransaction.Location = new System.Drawing.Point(16, 593);
+            this.gbTransaction.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gbTransaction.Name = "gbTransaction";
-            this.gbTransaction.Padding = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.gbTransaction.Size = new System.Drawing.Size(1632, 344);
+            this.gbTransaction.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gbTransaction.Size = new System.Drawing.Size(1224, 275);
             this.gbTransaction.TabIndex = 7;
             this.gbTransaction.TabStop = false;
             this.gbTransaction.Text = "Transaction";
@@ -400,9 +406,10 @@ namespace HHF_APP
             // 
             this.lblTransactionTime.AutoSize = true;
             this.lblTransactionTime.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTransactionTime.Location = new System.Drawing.Point(1091, 272);
+            this.lblTransactionTime.Location = new System.Drawing.Point(824, 218);
+            this.lblTransactionTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTransactionTime.Name = "lblTransactionTime";
-            this.lblTransactionTime.Size = new System.Drawing.Size(137, 45);
+            this.lblTransactionTime.Size = new System.Drawing.Size(105, 32);
             this.lblTransactionTime.TabIndex = 25;
             this.lblTransactionTime.Text = "---------";
             // 
@@ -410,9 +417,10 @@ namespace HHF_APP
             // 
             this.lblTransactionDate.AutoSize = true;
             this.lblTransactionDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTransactionDate.Location = new System.Drawing.Point(1091, 219);
+            this.lblTransactionDate.Location = new System.Drawing.Point(824, 175);
+            this.lblTransactionDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTransactionDate.Name = "lblTransactionDate";
-            this.lblTransactionDate.Size = new System.Drawing.Size(137, 45);
+            this.lblTransactionDate.Size = new System.Drawing.Size(105, 32);
             this.lblTransactionDate.TabIndex = 24;
             this.lblTransactionDate.Text = "---------";
             // 
@@ -420,9 +428,10 @@ namespace HHF_APP
             // 
             this.lblTransactionAmount.AutoSize = true;
             this.lblTransactionAmount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTransactionAmount.Location = new System.Drawing.Point(1091, 169);
+            this.lblTransactionAmount.Location = new System.Drawing.Point(824, 135);
+            this.lblTransactionAmount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTransactionAmount.Name = "lblTransactionAmount";
-            this.lblTransactionAmount.Size = new System.Drawing.Size(137, 45);
+            this.lblTransactionAmount.Size = new System.Drawing.Size(105, 32);
             this.lblTransactionAmount.TabIndex = 23;
             this.lblTransactionAmount.Text = "---------";
             // 
@@ -430,9 +439,10 @@ namespace HHF_APP
             // 
             this.lblTransactionType.AutoSize = true;
             this.lblTransactionType.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTransactionType.Location = new System.Drawing.Point(1089, 114);
+            this.lblTransactionType.Location = new System.Drawing.Point(824, 91);
+            this.lblTransactionType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTransactionType.Name = "lblTransactionType";
-            this.lblTransactionType.Size = new System.Drawing.Size(137, 45);
+            this.lblTransactionType.Size = new System.Drawing.Size(105, 32);
             this.lblTransactionType.TabIndex = 22;
             this.lblTransactionType.Text = "---------";
             // 
@@ -440,9 +450,10 @@ namespace HHF_APP
             // 
             this.lblTransactionID.AutoSize = true;
             this.lblTransactionID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTransactionID.Location = new System.Drawing.Point(1087, 66);
+            this.lblTransactionID.Location = new System.Drawing.Point(824, 53);
+            this.lblTransactionID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTransactionID.Name = "lblTransactionID";
-            this.lblTransactionID.Size = new System.Drawing.Size(137, 45);
+            this.lblTransactionID.Size = new System.Drawing.Size(105, 32);
             this.lblTransactionID.TabIndex = 8;
             this.lblTransactionID.Text = "---------";
             // 
@@ -452,10 +463,10 @@ namespace HHF_APP
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.label22.Location = new System.Drawing.Point(779, 272);
-            this.label22.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label22.Location = new System.Drawing.Point(584, 218);
+            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(275, 45);
+            this.label22.Size = new System.Drawing.Size(207, 32);
             this.label22.TabIndex = 21;
             this.label22.Text = "Transaction Time: ";
             // 
@@ -465,10 +476,10 @@ namespace HHF_APP
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.label16.Location = new System.Drawing.Point(779, 219);
-            this.label16.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label16.Location = new System.Drawing.Point(584, 175);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(271, 45);
+            this.label16.Size = new System.Drawing.Size(204, 32);
             this.label16.TabIndex = 20;
             this.label16.Text = "Transaction Date: ";
             // 
@@ -478,10 +489,10 @@ namespace HHF_APP
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.label15.Location = new System.Drawing.Point(779, 118);
-            this.label15.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label15.Location = new System.Drawing.Point(584, 94);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(271, 45);
+            this.label15.Size = new System.Drawing.Size(205, 32);
             this.label15.TabIndex = 19;
             this.label15.Text = "Transaction Type: ";
             // 
@@ -491,10 +502,10 @@ namespace HHF_APP
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.label14.Location = new System.Drawing.Point(779, 169);
-            this.label14.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label14.Location = new System.Drawing.Point(584, 135);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(320, 45);
+            this.label14.Size = new System.Drawing.Size(240, 32);
             this.label14.TabIndex = 18;
             this.label14.Text = "Transaction Amount: ";
             // 
@@ -504,10 +515,10 @@ namespace HHF_APP
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.label13.Location = new System.Drawing.Point(779, 66);
-            this.label13.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label13.Location = new System.Drawing.Point(584, 53);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(236, 45);
+            this.label13.Size = new System.Drawing.Size(177, 32);
             this.label13.TabIndex = 8;
             this.label13.Text = "Transaction ID: ";
             // 
@@ -515,11 +526,11 @@ namespace HHF_APP
             // 
             this.lblTransations.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTransations.FormattingEnabled = true;
-            this.lblTransations.ItemHeight = 45;
-            this.lblTransations.Location = new System.Drawing.Point(15, 66);
-            this.lblTransations.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.lblTransations.ItemHeight = 32;
+            this.lblTransations.Location = new System.Drawing.Point(11, 53);
+            this.lblTransations.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lblTransations.Name = "lblTransations";
-            this.lblTransations.Size = new System.Drawing.Size(754, 274);
+            this.lblTransations.Size = new System.Drawing.Size(566, 196);
             this.lblTransations.TabIndex = 0;
             this.lblTransations.SelectedIndexChanged += new System.EventHandler(this.lblTransations_SelectedIndexChanged);
             // 
@@ -529,10 +540,10 @@ namespace HHF_APP
             this.btnTransactionFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTransactionFile.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.btnTransactionFile.ForeColor = System.Drawing.Color.Crimson;
-            this.btnTransactionFile.Location = new System.Drawing.Point(1331, 55);
-            this.btnTransactionFile.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.btnTransactionFile.Location = new System.Drawing.Point(998, 44);
+            this.btnTransactionFile.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnTransactionFile.Name = "btnTransactionFile";
-            this.btnTransactionFile.Size = new System.Drawing.Size(281, 101);
+            this.btnTransactionFile.Size = new System.Drawing.Size(211, 81);
             this.btnTransactionFile.TabIndex = 17;
             this.btnTransactionFile.Text = "Transaction File";
             this.btnTransactionFile.UseVisualStyleBackColor = false;
@@ -545,10 +556,10 @@ namespace HHF_APP
             this.pnlTicket.Controls.Add(this.panel2);
             this.pnlTicket.Controls.Add(this.panel5);
             this.pnlTicket.Controls.Add(this.panel11);
-            this.pnlTicket.Location = new System.Drawing.Point(831, 69);
-            this.pnlTicket.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.pnlTicket.Location = new System.Drawing.Point(623, 55);
+            this.pnlTicket.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlTicket.Name = "pnlTicket";
-            this.pnlTicket.Size = new System.Drawing.Size(823, 358);
+            this.pnlTicket.Size = new System.Drawing.Size(617, 286);
             this.pnlTicket.TabIndex = 17;
             // 
             // panel9
@@ -558,10 +569,10 @@ namespace HHF_APP
             this.panel9.Controls.Add(this.label18);
             this.panel9.Controls.Add(this.panel15);
             this.panel9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel9.Location = new System.Drawing.Point(425, 18);
-            this.panel9.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.panel9.Location = new System.Drawing.Point(319, 14);
+            this.panel9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(351, 158);
+            this.panel9.Size = new System.Drawing.Size(263, 126);
             this.panel9.TabIndex = 15;
             // 
             // panel14
@@ -572,10 +583,10 @@ namespace HHF_APP
             this.panel14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel14.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel14.Location = new System.Drawing.Point(27, 16);
-            this.panel14.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.panel14.Location = new System.Drawing.Point(20, 13);
+            this.panel14.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(85, 83);
+            this.panel14.Size = new System.Drawing.Size(64, 67);
             this.panel14.TabIndex = 1;
             // 
             // label18
@@ -583,10 +594,10 @@ namespace HHF_APP
             this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(145, 9);
-            this.label18.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label18.Location = new System.Drawing.Point(109, 7);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(199, 45);
+            this.label18.Size = new System.Drawing.Size(149, 32);
             this.label18.TabIndex = 0;
             this.label18.Text = "Ticket Status";
             // 
@@ -596,20 +607,20 @@ namespace HHF_APP
             this.panel15.Controls.Add(this.lblTicketStatus);
             this.panel15.Controls.Add(this.label20);
             this.panel15.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel15.Location = new System.Drawing.Point(5, 56);
-            this.panel15.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.panel15.Location = new System.Drawing.Point(4, 45);
+            this.panel15.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(341, 98);
+            this.panel15.Size = new System.Drawing.Size(256, 78);
             this.panel15.TabIndex = 0;
             // 
             // lblTicketStatus
             // 
             this.lblTicketStatus.AutoSize = true;
             this.lblTicketStatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTicketStatus.Location = new System.Drawing.Point(159, 25);
-            this.lblTicketStatus.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblTicketStatus.Location = new System.Drawing.Point(119, 20);
+            this.lblTicketStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTicketStatus.Name = "lblTicketStatus";
-            this.lblTicketStatus.Size = new System.Drawing.Size(85, 45);
+            this.lblTicketStatus.Size = new System.Drawing.Size(65, 32);
             this.lblTicketStatus.TabIndex = 2;
             this.lblTicketStatus.Text = "-----";
             // 
@@ -617,10 +628,10 @@ namespace HHF_APP
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(264, 84);
-            this.label20.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label20.Location = new System.Drawing.Point(198, 67);
+            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(82, 38);
+            this.label20.Size = new System.Drawing.Size(63, 30);
             this.label20.TabIndex = 1;
             this.label20.Text = "xxxxx";
             // 
@@ -631,10 +642,10 @@ namespace HHF_APP
             this.panel2.Controls.Add(this.VisitCount);
             this.panel2.Controls.Add(this.pnlBalance);
             this.panel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(21, 184);
-            this.panel2.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.panel2.Location = new System.Drawing.Point(16, 147);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(372, 158);
+            this.panel2.Size = new System.Drawing.Size(279, 126);
             this.panel2.TabIndex = 3;
             // 
             // panel3
@@ -645,10 +656,10 @@ namespace HHF_APP
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel3.Location = new System.Drawing.Point(21, 19);
-            this.panel3.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.panel3.Location = new System.Drawing.Point(16, 15);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(85, 83);
+            this.panel3.Size = new System.Drawing.Size(64, 67);
             this.panel3.TabIndex = 1;
             // 
             // VisitCount
@@ -656,10 +667,10 @@ namespace HHF_APP
             this.VisitCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.VisitCount.AutoSize = true;
             this.VisitCount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VisitCount.Location = new System.Drawing.Point(171, 11);
-            this.VisitCount.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.VisitCount.Location = new System.Drawing.Point(128, 9);
+            this.VisitCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.VisitCount.Name = "VisitCount";
-            this.VisitCount.Size = new System.Drawing.Size(128, 45);
+            this.VisitCount.Size = new System.Drawing.Size(97, 32);
             this.VisitCount.TabIndex = 0;
             this.VisitCount.Text = "Balance";
             // 
@@ -668,20 +679,20 @@ namespace HHF_APP
             this.pnlBalance.BackColor = System.Drawing.Color.White;
             this.pnlBalance.Controls.Add(this.lblBalance);
             this.pnlBalance.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlBalance.Location = new System.Drawing.Point(5, 56);
-            this.pnlBalance.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.pnlBalance.Location = new System.Drawing.Point(4, 45);
+            this.pnlBalance.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlBalance.Name = "pnlBalance";
-            this.pnlBalance.Size = new System.Drawing.Size(363, 98);
+            this.pnlBalance.Size = new System.Drawing.Size(272, 78);
             this.pnlBalance.TabIndex = 0;
             // 
             // lblBalance
             // 
             this.lblBalance.AutoSize = true;
             this.lblBalance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBalance.Location = new System.Drawing.Point(157, 11);
-            this.lblBalance.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblBalance.Location = new System.Drawing.Point(118, 9);
+            this.lblBalance.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBalance.Name = "lblBalance";
-            this.lblBalance.Size = new System.Drawing.Size(85, 45);
+            this.lblBalance.Size = new System.Drawing.Size(65, 32);
             this.lblBalance.TabIndex = 1;
             this.lblBalance.Text = "-----";
             this.lblBalance.Click += new System.EventHandler(this.lblBalance_Click);
@@ -693,10 +704,10 @@ namespace HHF_APP
             this.panel5.Controls.Add(this.label2);
             this.panel5.Controls.Add(this.pnlTicketType);
             this.panel5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel5.Location = new System.Drawing.Point(21, 18);
-            this.panel5.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.panel5.Location = new System.Drawing.Point(16, 14);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(372, 158);
+            this.panel5.Size = new System.Drawing.Size(279, 126);
             this.panel5.TabIndex = 4;
             // 
             // panel6
@@ -707,10 +718,10 @@ namespace HHF_APP
             this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel6.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel6.Location = new System.Drawing.Point(27, 16);
-            this.panel6.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.panel6.Location = new System.Drawing.Point(20, 13);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(85, 83);
+            this.panel6.Size = new System.Drawing.Size(64, 67);
             this.panel6.TabIndex = 1;
             // 
             // label2
@@ -718,10 +729,10 @@ namespace HHF_APP
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(165, 9);
-            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label2.Location = new System.Drawing.Point(124, 7);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(179, 45);
+            this.label2.Size = new System.Drawing.Size(136, 32);
             this.label2.TabIndex = 0;
             this.label2.Text = "Ticket Type";
             // 
@@ -731,20 +742,20 @@ namespace HHF_APP
             this.pnlTicketType.Controls.Add(this.lblTicketType);
             this.pnlTicketType.Controls.Add(this.label1);
             this.pnlTicketType.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlTicketType.Location = new System.Drawing.Point(5, 56);
-            this.pnlTicketType.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.pnlTicketType.Location = new System.Drawing.Point(4, 45);
+            this.pnlTicketType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlTicketType.Name = "pnlTicketType";
-            this.pnlTicketType.Size = new System.Drawing.Size(363, 98);
+            this.pnlTicketType.Size = new System.Drawing.Size(272, 78);
             this.pnlTicketType.TabIndex = 0;
             // 
             // lblTicketType
             // 
             this.lblTicketType.AutoSize = true;
             this.lblTicketType.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTicketType.Location = new System.Drawing.Point(157, 25);
-            this.lblTicketType.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblTicketType.Location = new System.Drawing.Point(118, 20);
+            this.lblTicketType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTicketType.Name = "lblTicketType";
-            this.lblTicketType.Size = new System.Drawing.Size(85, 45);
+            this.lblTicketType.Size = new System.Drawing.Size(65, 32);
             this.lblTicketType.TabIndex = 2;
             this.lblTicketType.Text = "-----";
             // 
@@ -752,10 +763,10 @@ namespace HHF_APP
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(264, 84);
-            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label1.Location = new System.Drawing.Point(198, 67);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 38);
+            this.label1.Size = new System.Drawing.Size(63, 30);
             this.label1.TabIndex = 1;
             this.label1.Text = "xxxxx";
             // 
@@ -766,10 +777,10 @@ namespace HHF_APP
             this.panel11.Controls.Add(this.label12);
             this.panel11.Controls.Add(this.panel13);
             this.panel11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel11.Location = new System.Drawing.Point(425, 184);
-            this.panel11.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.panel11.Location = new System.Drawing.Point(319, 147);
+            this.panel11.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(351, 158);
+            this.panel11.Size = new System.Drawing.Size(263, 126);
             this.panel11.TabIndex = 10;
             // 
             // panel12
@@ -780,10 +791,10 @@ namespace HHF_APP
             this.panel12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel12.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel12.Location = new System.Drawing.Point(27, 16);
-            this.panel12.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.panel12.Location = new System.Drawing.Point(20, 13);
+            this.panel12.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(85, 83);
+            this.panel12.Size = new System.Drawing.Size(64, 67);
             this.panel12.TabIndex = 3;
             // 
             // label12
@@ -791,10 +802,10 @@ namespace HHF_APP
             this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(122, 5);
-            this.label12.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label12.Location = new System.Drawing.Point(92, 4);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(206, 45);
+            this.label12.Size = new System.Drawing.Size(153, 32);
             this.label12.TabIndex = 0;
             this.label12.Text = "Visitor Status";
             // 
@@ -804,20 +815,20 @@ namespace HHF_APP
             this.panel13.Controls.Add(this.lblVisitorStatus);
             this.panel13.Controls.Add(this.label21);
             this.panel13.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel13.Location = new System.Drawing.Point(5, 56);
-            this.panel13.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.panel13.Location = new System.Drawing.Point(4, 45);
+            this.panel13.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(341, 98);
+            this.panel13.Size = new System.Drawing.Size(256, 78);
             this.panel13.TabIndex = 2;
             // 
             // lblVisitorStatus
             // 
             this.lblVisitorStatus.AutoSize = true;
             this.lblVisitorStatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVisitorStatus.Location = new System.Drawing.Point(117, 9);
-            this.lblVisitorStatus.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblVisitorStatus.Location = new System.Drawing.Point(88, 7);
+            this.lblVisitorStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblVisitorStatus.Name = "lblVisitorStatus";
-            this.lblVisitorStatus.Size = new System.Drawing.Size(85, 45);
+            this.lblVisitorStatus.Size = new System.Drawing.Size(65, 32);
             this.lblVisitorStatus.TabIndex = 2;
             this.lblVisitorStatus.Text = "-----";
             // 
@@ -825,10 +836,10 @@ namespace HHF_APP
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(264, 84);
-            this.label21.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label21.Location = new System.Drawing.Point(198, 67);
+            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(82, 38);
+            this.label21.Size = new System.Drawing.Size(63, 30);
             this.label21.TabIndex = 1;
             this.label21.Text = "xxxxx";
             // 
@@ -837,11 +848,11 @@ namespace HHF_APP
             this.gbGroupMembers.BackColor = System.Drawing.Color.MistyRose;
             this.gbGroupMembers.Controls.Add(this.lbGroupMembers);
             this.gbGroupMembers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbGroupMembers.Location = new System.Drawing.Point(13, 452);
-            this.gbGroupMembers.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.gbGroupMembers.Location = new System.Drawing.Point(10, 362);
+            this.gbGroupMembers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gbGroupMembers.Name = "gbGroupMembers";
-            this.gbGroupMembers.Padding = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.gbGroupMembers.Size = new System.Drawing.Size(708, 278);
+            this.gbGroupMembers.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gbGroupMembers.Size = new System.Drawing.Size(531, 222);
             this.gbGroupMembers.TabIndex = 16;
             this.gbGroupMembers.TabStop = false;
             this.gbGroupMembers.Text = "Group Members";
@@ -850,11 +861,11 @@ namespace HHF_APP
             // 
             this.lbGroupMembers.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbGroupMembers.FormattingEnabled = true;
-            this.lbGroupMembers.ItemHeight = 37;
-            this.lbGroupMembers.Location = new System.Drawing.Point(15, 42);
-            this.lbGroupMembers.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.lbGroupMembers.ItemHeight = 28;
+            this.lbGroupMembers.Location = new System.Drawing.Point(11, 34);
+            this.lbGroupMembers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lbGroupMembers.Name = "lbGroupMembers";
-            this.lbGroupMembers.Size = new System.Drawing.Size(675, 226);
+            this.lbGroupMembers.Size = new System.Drawing.Size(507, 172);
             this.lbGroupMembers.TabIndex = 15;
             // 
             // contextMenuStrip1
@@ -865,7 +876,7 @@ namespace HHF_APP
             // 
             // viewCheckInOut
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -876,10 +887,10 @@ namespace HHF_APP
             this.Controls.Add(this.label7);
             this.Controls.Add(this.gbLoanedItems);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "viewCheckInOut";
-            this.Padding = new System.Windows.Forms.Padding(9, 8, 9, 8);
-            this.Size = new System.Drawing.Size(1668, 1098);
+            this.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.Size = new System.Drawing.Size(1251, 878);
             this.Load += new System.EventHandler(this.viewCheckInOut_Load);
             this.PnlUser.ResumeLayout(false);
             this.PnlUser.PerformLayout();

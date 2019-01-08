@@ -129,7 +129,7 @@ namespace HHF_APP
                 total += a.GetPrice();
             }
 
-            lblTotal.Text = total.ToString();
+            lblTotal.Text = "€"+total.ToString();
 
         }
 
@@ -180,70 +180,96 @@ namespace HHF_APP
 
         private void btnConfirmFood_Click(object sender, EventArgs e)
         {
-            
-            decimal totalfood=0m;
-            var confirmResult =  MessageBox.Show("Are you sure you want to confirm order?",
-                "Confirm Order",
-                MessageBoxButtons.YesNo);
-
-            if (confirmResult == DialogResult.Yes)
+            if (this.lbBasket.Items.Count > 0)
             {
-                try
+                Form1 myParent = (Form1)this.Parent;
+
+                var balance = Convert.ToDecimal(myParent.lblbal.Text);
+                var basketbal = Convert.ToDecimal(lblTotal.Text.Substring(1));
+                balance -= basketbal;
+                decimal totalfood = 0m;
+                var confirmResult = MessageBox.Show(
+                    "Are you sure you want to confirm order? The reaming balance would be: €" + (balance),
+                    "Confirm Order",
+                    MessageBoxButtons.YesNo);
+
+                if (confirmResult == DialogResult.Yes)
                 {
-
-                    lbBasket_Click(sender, e);
-                    Form1 myParent = (Form1) this.Parent;
-                    int user_id = Convert.ToInt32(myParent.tbBarcode.Text);
-
-                    if (user_id > 0)
+                    try
                     {
-                        foreach (Article a in lbBasket.Items)
+
+                        lbBasket_Click(sender, e);
+
+                        int user_id = Convert.ToInt32(myParent.tbBarcode.Text);
+
+                        if (user_id > 0)
                         {
-                            if (a is Food)
+                            foreach (Article a in lbBasket.Items)
                             {
-                                totalfood += a.GetPrice();
+                                if (a is Food)
+                                {
+                                    totalfood += a.GetPrice();
+                                }
                             }
-                        }
 
 
 
-                        decimal total;
-                        total = Convert.ToDecimal(lblTotal.Text);
-                        int checkinsertion=1;
-                        int checkinsertion2 = 1;
-                        if (total - totalfood != 0)
-                        {
-                            if (dh.addTransaction(user_id, (total - totalfood), "items") != 1) checkinsertion = 0;
-                        }
+                            decimal total;
+                            total = Convert.ToDecimal(lblTotal.Text.Substring(1));
+                            int checkinsertion = 1;
+                            int checkinsertion2 = 1;
+                            if (total - totalfood != 0)
+                            {
+                                if (dh.addTransaction(user_id, (total - totalfood), "items") != 1) checkinsertion = 0;
+                            }
 
-                        if (totalfood > 0) {if (dh.addTransaction(user_id, totalfood, "food")!= 1) checkinsertion2=0;}
+                            if (totalfood > 0)
+                            {
+                                if (dh.addTransaction(user_id, totalfood, "food") != 1) checkinsertion2 = 0;
+                            }
 
-                        if (checkinsertion == 1 && checkinsertion2 == 1)
-                        {
-                            MessageBox.Show("Order Complete!");
-                            lbBasket.Items.Clear();
-                            myParent.tbBarcode.Text = "0";
-                            myParent.btnSearch_Click(sender,e);
+                            if (checkinsertion == 1 && checkinsertion2 == 1)
+                            {
+                                MessageBox.Show("Order Complete!");
+                                lbBasket.Items.Clear();
+                                this.Enabled = false;
+
+                                myParent.lblbal.Text = "......";
+                                myParent.lblname.Text = "......";
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error while adding order!");
+                            }
                         }
                         else
                         {
-                            MessageBox.Show("Error while adding order!");
+                            throw new Exception("No person with that id");
                         }
                     }
-                    else
+                    catch (Exception exception)
                     {
-                        throw new Exception("No person with that id");
+                        MessageBox.Show(exception.Message);
                     }
-                }
-                catch (Exception exception)
-                {
-                    MessageBox.Show(exception.Message);
                 }
             }
         }
 
         private void lbBasket_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnclearBasket_Click(object sender, EventArgs e)
+        {
+            var confirmResult =  MessageBox.Show("Are you sure you want to clear basket?",
+                "CLEAR BASKET?",
+                MessageBoxButtons.YesNo);
+
+            if (confirmResult == DialogResult.Yes)
+            {
+                lbBasket.Items.Clear();
+            }
 
         }
     }

@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Configuration;
+using System.Web.Hosting;
 
 namespace HHF_APP
 {
@@ -638,7 +639,7 @@ namespace HHF_APP
         {
             sidepanelforBTNs.Height = storeBtn.Height;
             sidepanelforBTNs.Top = storeBtn.Top;
-            viewStore1.Enabled = false;
+            
             panel3.Visible = true;
             viewStore1.BringToFront();
         }
@@ -681,11 +682,20 @@ namespace HHF_APP
                     viewCamping1.Enabled = true;
                     lblbal.Text = p.getBalance.ToString();
                     lblname.Text = p.getName;
+                    if (sidepanelforBTNs.Top == storeBtn.Top)
+                    {
+
+                        if (p.getTicketvalidity!="VALID" && p.getBalance <= 0)
+                        {
+                            viewStore1.Enabled = false;
+                            MessageBox.Show("OPss, this account is either Invalid or has no sufficent balance to create a transaction");
+                        }
+                    }
+
                     if (sidepanelforBTNs.Top == campBtn.Top)
                     {
                         viewCamping1.userId = p.getUserId;
-                        if (dh.CheckInStatus(p.getUserId))
-                        {
+                        
                             foreach (DataGridViewRow r in viewCamping1.DG_ReservedSpots.Rows)
                             {
                                 r.Selected = false;
@@ -709,11 +719,11 @@ namespace HHF_APP
 
                                 viewCamping1.SelectionChecking();
                             }
-                        }
+                        
                        
                     }else if (sidepanelforBTNs.Top == lendBtn.Top)
                     {
-                        if (dh.CheckInStatus(p.getUserId))
+                        if (dh.CheckInStatus(p.getActId))
                         {
                             viewLending1.accountFound = true;
                             viewLending1.userId = p.getUserId;
@@ -752,13 +762,7 @@ namespace HHF_APP
                 }
                 else
                 {
-                    
-                    
-                    viewStore1.Enabled = false;
-                    
-                    lblbal.Text = "......";
-                    lblname.Text = "......";
-                    
+                    MessageBox.Show($"A Person with given user id of {tbBarcode.Text} does not exist");                   
                 }
             }
             catch (Exception ex)

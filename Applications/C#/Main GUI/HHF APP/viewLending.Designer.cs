@@ -50,11 +50,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Cb_torch = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.DG_Revenue = new System.Windows.Forms.DataGridView();
             this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,18 +65,16 @@
             this.trevenue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label8 = new System.Windows.Forms.Label();
             this.LblRevenue = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.BtnRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DG_LoanedArticels)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.flowLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DG_Revenue)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // DG_LoanedArticels
@@ -260,6 +261,18 @@
             this.panel1.Size = new System.Drawing.Size(391, 326);
             this.panel1.TabIndex = 8;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Snow;
+            this.pictureBox1.Image = global::HHF_APP.Properties.Resources.Micro_USB;
+            this.pictureBox1.Location = new System.Drawing.Point(4, 48);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(383, 276);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
             // Cb_torch
             // 
             this.Cb_torch.AutoSize = true;
@@ -307,6 +320,18 @@
             this.panel10.Size = new System.Drawing.Size(391, 326);
             this.panel10.TabIndex = 7;
             // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.Snow;
+            this.pictureBox5.Image = global::HHF_APP.Properties.Resources.item_XL_6389448_3729210;
+            this.pictureBox5.Location = new System.Drawing.Point(4, 48);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(383, 276);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 2;
+            this.pictureBox5.TabStop = false;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Moccasin;
@@ -319,6 +344,18 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(391, 326);
             this.panel2.TabIndex = 9;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Snow;
+            this.pictureBox2.Image = global::HHF_APP.Properties.Resources.power_bank_personalizado_branco_halloween_2_270c5c2e;
+            this.pictureBox2.Location = new System.Drawing.Point(4, 48);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(383, 276);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
             // 
             // flowLayoutPanel3
             // 
@@ -440,41 +477,16 @@
             this.LblRevenue.TabIndex = 42;
             this.LblRevenue.Text = "Nr";
             // 
-            // pictureBox1
+            // BtnRefresh
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Snow;
-            this.pictureBox1.Image = global::HHF_APP.Properties.Resources.Micro_USB;
-            this.pictureBox1.Location = new System.Drawing.Point(4, 48);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(383, 276);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.Color.Snow;
-            this.pictureBox5.Image = global::HHF_APP.Properties.Resources.item_XL_6389448_3729210;
-            this.pictureBox5.Location = new System.Drawing.Point(4, 48);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(383, 276);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 2;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Snow;
-            this.pictureBox2.Image = global::HHF_APP.Properties.Resources.power_bank_personalizado_branco_halloween_2_270c5c2e;
-            this.pictureBox2.Location = new System.Drawing.Point(4, 48);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(383, 276);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
+            this.BtnRefresh.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.BtnRefresh.Location = new System.Drawing.Point(1095, 15);
+            this.BtnRefresh.Name = "BtnRefresh";
+            this.BtnRefresh.Size = new System.Drawing.Size(132, 45);
+            this.BtnRefresh.TabIndex = 43;
+            this.BtnRefresh.Text = "Refresh";
+            this.BtnRefresh.UseVisualStyleBackColor = true;
+            this.BtnRefresh.Click += new System.EventHandler(this.BtnRefresh_Click);
             // 
             // viewLending
             // 
@@ -482,6 +494,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Controls.Add(this.BtnRefresh);
             this.Controls.Add(this.LblRevenue);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.DG_Revenue);
@@ -498,15 +511,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.DG_LoanedArticels)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.flowLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DG_Revenue)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -541,5 +554,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label LblRevenue;
         public System.Windows.Forms.Button btnLendItem;
+        private System.Windows.Forms.Button BtnRefresh;
     }
 }

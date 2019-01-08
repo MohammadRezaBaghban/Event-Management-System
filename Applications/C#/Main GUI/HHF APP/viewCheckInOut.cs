@@ -232,6 +232,7 @@ namespace HHF_APP
             string fileName = "";
             using (SaveFileDialog sfd = new SaveFileDialog())
             {
+                sfd.Filter = "Text File (*.txt) | *.txt";
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
                     fileName = sfd.FileName;
@@ -243,38 +244,57 @@ namespace HHF_APP
             try
             {
                 sw.WriteLine("\t\t\t\t\t List Of Transactions");
+                sw.WriteLine("");
+                sw.WriteLine($"\t Account Number: {this.lblAccountID.Text}  \t\t\t Account Holder Name : {this.lblHolderName.Text} \t \t ");
                 sw.WriteLine("--------------------------------------------------------------------------------------------------");
+                sw.WriteLine("");
+                string header = String.Format("\t {0,-10}{1,-12}{2,-14}{3,-12}{4,-14}{5,-14}\n",
+                    "# Nr","ID", "Type", "Amount", "Date", "Time");
+                sw.WriteLine(header);
+                sw.WriteLine();
                 int user_id = Convert.ToInt32(tbUserId.Text);
 
                 Person temp = dh.checkTicket(user_id);
+                int totalAmount = 0;
                 if (temp != null && dh.getAllTransactions(temp.getUserId) != null)
                 {
 
-
+                    int i = 1;
                     foreach (Transactions tr1 in dh.getAllTransactions(temp.getUserId))
                     {
                         Tuple<int, string, int, string, string>[] transactions =
                         {
                         Tuple.Create(tr1.getTransactionId,tr1.getTransactionType,tr1.getTransactionAmount,tr1.getTransactionDate,tr1.getTransactionTime)
-                    };
+                        };
+                        
+                        if (tr1.getTransactionType.Equals("refund"))
+                        {
+                            totalAmount -= tr1.getTransactionAmount;
+                        }
+                        else
+                        {
+                            totalAmount += tr1.getTransactionAmount;
+                        }
 
+                        
 
-                        string header = String.Format("\t\t\t {0,-12}{1,-14}{2,-12}{3,-14}{4,-14}\n",
-                                                  "ID", "Type", "Amount", "Date", "Time");
-                        sw.WriteLine(header);
-
-
+                        
                         StringBuilder sb = new StringBuilder();
-
+                        
                         foreach (var city in transactions)
                         {
-                            sw.Write(" \t\t\t {0,-12}{1,-14}{2,-12}{3,-14}{4,-14}{5}",
-                                                   city.Item1, city.Item2, city.Item3, city.Item4, city.Item5, Environment.NewLine);
-
+                            sw.Write("\t {0,-10}{1,-12}{2,-14}{3,-12}{4,-14}{5,-14}",
+                                                i ,city.Item1, city.Item2, city.Item3, city.Item4, city.Item5, Environment.NewLine);
+                            sw.WriteLine();
+                            i++;
                         }
                     }
-                    MessageBox.Show("File Created Successfully");
+
+                    sw.WriteLine("");
+                    sw.WriteLine("--------------------------------------------------------------------------------------------------");
+                    sw.Write($"\t Total Amount of Spent Money = {totalAmount}  \t\t Bank Account Number: {this.dh.BankAccountNr(Convert.ToInt32(this.lblAccountID.Text))} \t ");                    
                 }
+                MessageBox.Show("File Created Successfully");
             }
             catch (IOException) { throw new IOException("Error Writing to File"); }
             catch (FormatException) { }

@@ -79,11 +79,49 @@ if (isset($_SESSION['email'])) {
 </head>
 
 <body>
+<script>
+    function test()
+    {
+
+        var email = document.getElementById('email').value;
+        var url = "../Others/cancel_ticket.php";
+
+        if (window.XMLHttpRequest)
+        {// code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp=new XMLHttpRequest();
+        }
+        else
+        {// code for IE6, IE5
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        xmlhttp.onreadystatechange=function()
+        {
+            if (xmlhttp.readyState==4 && xmlhttp.status==200)
+            {
+
+                var result = xmlhttp.responseText;
+                if(xmlhttp.responseText!='')
+                {
+                    document.getElementById('spotnr').innerHTML =result ;
+                }
+            }
+        }
+
+
+        xmlhttp.open("POST",url,true);
+        xmlhttp.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+
+        xmlhttp.send('email=email');
+    }
+</script>
 <script src="code/highcharts.js"></script>
 <script src="code/highcharts-3d.js"></script>
 <script src="code/modules/exporting.js"></script>
+
 <script src="code/modules/export-data.js"></script>
 <!-- Navigation Bar-->
+
 <header id="topnav">
     <div class="topbar-main">
         <div class="container-fluid">
@@ -121,7 +159,7 @@ if (isset($_SESSION['email'])) {
             <!-- end menu-extras -->
 
             <div class="clearfix"></div>
-
+<input id="email" type="hidden" value="<?php echo $_SESSION['email'];?>" name="email">
         </div> <!-- end container -->
     </div>
     <!-- end topbar-main -->
