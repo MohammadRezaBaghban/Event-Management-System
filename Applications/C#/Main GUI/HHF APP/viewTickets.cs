@@ -16,8 +16,7 @@ namespace HHF_APP
         public viewTickets()
         {
             InitializeComponent();
-            //webBrowser1.Visible = false;
-            this.btnCloseBrowser.Visible = false;
+            
             
         }
 
@@ -58,38 +57,125 @@ namespace HHF_APP
 
         private void btnBuyIndiv_Click(object sender, EventArgs e)
         {
-            //webBrowser1.Navigate("http://hhf.hera.fhict.nl/php/index.php?page=booking&type=individual&ref=y");
-            //webBrowser1.Visible = true;
-            this.btnCloseBrowser.Visible = true;
-           // webBrowser1.BringToFront();
-            btnCloseBrowser.BringToFront();
+            
 
 
         }
 
         private void btnBuyGroup_Click(object sender, EventArgs e)
         {
-            //webBrowser1.Navigate("http://hhf.hera.fhict.nl/php/index.php?page=booking&type=group&ref=y");
-            //webBrowser1.Visible = true;
-            this.btnCloseBrowser.Visible = true;
-            //webBrowser1.BringToFront();
-            btnCloseBrowser.BringToFront();
+            
         }
 
         private void btnBuyVIP_Click(object sender, EventArgs e)
         {
-            //webBrowser1.Navigate("http://hhf.hera.fhict.nl/php/index.php?page=booking&type=vip&ref=y");
-            //webBrowser1.Visible = true;
-            this.btnCloseBrowser.Visible = true;
-            //webBrowser1.BringToFront();
-            btnCloseBrowser.BringToFront();
+            
         }
 
         private void btnCloseBrowser_Click(object sender, EventArgs e)
         {
 
-            //this.webBrowser1.Visible = false;
-            this.btnCloseBrowser.Visible = false;
+            
+        }
+
+        private void lblPhone_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblFirstName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TbFirstName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TbLastName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblLastName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblEmail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TbEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TbRepeatEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblRepeatEmail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPassword_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TbPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TbConfirmPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblConfirmPassword_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPhone_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TbPhone_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TbIBAN_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblIBAN_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NrTopUp_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

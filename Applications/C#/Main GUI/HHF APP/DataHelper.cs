@@ -487,7 +487,7 @@ namespace HHF_APP
         }
         /// </summary>
 
-        public int ticketBalance; public string visitorStatus;
+        public decimal ticketBalance; public string visitorStatus;
         public bool checkInOutInfo(int user_id)
         {
             string query =
@@ -503,7 +503,7 @@ namespace HHF_APP
                 bool temp = false;
                 while (reader.Read())
                 {
-                    this.ticketBalance = Convert.ToInt32(reader["currentbal"]);
+                    this.ticketBalance = Convert.ToDecimal(reader["currentbal"]);
                     this.visitorStatus = Convert.ToString(reader["status"]);
                     temp = true;
                 }
@@ -566,7 +566,7 @@ namespace HHF_APP
                     {
                         //get act id of that person
                     
-                        query = "SELECT account_id FROM users WHERE user_id = @idNr and status= @status and is_valid='yes'";
+                        query = "SELECT users.account_id FROM users, accounts WHERE users.account_id = accounts.account_id and users.user_id = @idNr and users.status= @status and accounts.is_valid='yes'";
                         command = new MySqlCommand(query, connection);
                         command.Parameters.AddWithValue("@idNr", userid);
                         command.Parameters.AddWithValue("@status", "checked_in");
