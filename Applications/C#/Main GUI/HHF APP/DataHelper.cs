@@ -958,6 +958,23 @@ namespace HHF_APP
             return result;
         }
 
+        public string BankAccountNr(int i)
+        {
+            string result = "";
+            using (MySqlConnection con = new MySqlConnection(connectionInfo))
+            {
+                string query = "Select bank_act_nr " +
+                               "From accounts " +
+                               $"Where account_id={i};";
+                using (MySqlCommand cmd = new MySqlCommand(query, con))
+                {
+                    con.Open();
+                    result = cmd.ExecuteScalar().ToString();
+                }
+            }
+
+            return result;
+        }
         public bool CheckInStatus(int account_id)
         {
             using (MySqlConnection con = new MySqlConnection(connectionInfo))

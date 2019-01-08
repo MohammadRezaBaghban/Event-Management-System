@@ -148,3 +148,22 @@ C:\Users\Ov\Desktop\CSharp\ProP_Sems2\Applications\C#\Main GUI\HHF APP\bin\Debug
 C:\Users\Ov\Desktop\CSharp\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF APP.csproj.CopyComplete
 C:\Users\Ov\Desktop\CSharp\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF.exe
 C:\Users\Ov\Desktop\CSharp\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF.pdb
+C:\Mrbh\University\Fontys\Curriculum\1st Year\3rd Block\ProP\ProP_Sems2\Applications\C#\Main GUI\HHF APP\bin\Debug\HHF.exe.config
+C:\Mrbh\University\Fontys\Curriculum\1st Year\3rd Block\ProP\ProP_Sems2\Applications\C#\Main GUI\HHF APP\bin\Debug\HHF.exe
+C:\Mrbh\University\Fontys\Curriculum\1st Year\3rd Block\ProP\ProP_Sems2\Applications\C#\Main GUI\HHF APP\bin\Debug\HHF.pdb
+C:\Mrbh\University\Fontys\Curriculum\1st Year\3rd Block\ProP\ProP_Sems2\Applications\C#\Main GUI\HHF APP\bin\Debug\MySql.Data.dll
+C:\Mrbh\University\Fontys\Curriculum\1st Year\3rd Block\ProP\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF APP.csprojResolveAssemblyReference.cache
+C:\Mrbh\University\Fontys\Curriculum\1st Year\3rd Block\ProP\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF_APP.AddEmployee.resources
+C:\Mrbh\University\Fontys\Curriculum\1st Year\3rd Block\ProP\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF_APP.Form1.resources
+C:\Mrbh\University\Fontys\Curriculum\1st Year\3rd Block\ProP\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF_APP.PasswordPanel.resources
+C:\Mrbh\University\Fontys\Curriculum\1st Year\3rd Block\ProP\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF_APP.Properties.Resources.resources
+C:\Mrbh\University\Fontys\Curriculum\1st Year\3rd Block\ProP\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF_APP.viewAdminDashboard.resources
+C:\Mrbh\University\Fontys\Curriculum\1st Year\3rd Block\ProP\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF_APP.viewCamping.resources
+C:\Mrbh\University\Fontys\Curriculum\1st Year\3rd Block\ProP\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF_APP.viewLending.resources
+C:\Mrbh\University\Fontys\Curriculum\1st Year\3rd Block\ProP\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF_APP.viewLogin.resources
+C:\Mrbh\University\Fontys\Curriculum\1st Year\3rd Block\ProP\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF_APP.viewStore.resources
+C:\Mrbh\University\Fontys\Curriculum\1st Year\3rd Block\ProP\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF_APP.viewTickets.resources
+C:\Mrbh\University\Fontys\Curriculum\1st Year\3rd Block\ProP\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF_APP.viewCheckInOut.resources
+C:\Mrbh\University\Fontys\Curriculum\1st Year\3rd Block\ProP\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF APP.csproj.GenerateResource.Cache
+C:\Mrbh\University\Fontys\Curriculum\1st Year\3rd Block\ProP\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF.exe
+C:\Mrbh\University\Fontys\Curriculum\1st Year\3rd Block\ProP\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF.pdb

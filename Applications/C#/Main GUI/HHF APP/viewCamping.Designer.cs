@@ -33,7 +33,6 @@ namespace HHF_APP
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
             this.lbCampingHeader = new System.Windows.Forms.Label();
@@ -52,7 +51,6 @@ namespace HHF_APP
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.DG_ReservedSpots = new System.Windows.Forms.DataGridView();
-            this.DG_AvailableSpots = new System.Windows.Forms.DataGridView();
             this.LAvailableSpot = new System.Windows.Forms.Label();
             this.LOccupiedSpot = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
@@ -61,7 +59,6 @@ namespace HHF_APP
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DG_ReservedSpots)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DG_AvailableSpots)).BeginInit();
             this.SuspendLayout();
             // 
             // panel9
@@ -259,7 +256,7 @@ namespace HHF_APP
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(21, 13);
+            this.label4.Location = new System.Drawing.Point(22, 58);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(236, 45);
             this.label4.TabIndex = 22;
@@ -269,7 +266,7 @@ namespace HHF_APP
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(409, 13);
+            this.label5.Location = new System.Drawing.Point(21, 10);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(237, 45);
             this.label5.TabIndex = 23;
@@ -285,6 +282,7 @@ namespace HHF_APP
             this.DG_ReservedSpots.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.DG_ReservedSpots.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.DG_ReservedSpots.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
+            this.DG_ReservedSpots.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -293,7 +291,6 @@ namespace HHF_APP
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DG_ReservedSpots.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.DG_ReservedSpots.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -305,57 +302,28 @@ namespace HHF_APP
             this.DG_ReservedSpots.DefaultCellStyle = dataGridViewCellStyle2;
             this.DG_ReservedSpots.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.DG_ReservedSpots.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.DG_ReservedSpots.Location = new System.Drawing.Point(417, 97);
+            this.DG_ReservedSpots.Location = new System.Drawing.Point(29, 119);
             this.DG_ReservedSpots.Name = "DG_ReservedSpots";
             this.DG_ReservedSpots.ReadOnly = true;
-            this.DG_ReservedSpots.RowTemplate.Height = 28;
-            this.DG_ReservedSpots.Size = new System.Drawing.Size(808, 294);
-            this.DG_ReservedSpots.StandardTab = true;
-            this.DG_ReservedSpots.TabIndex = 2;
-            // 
-            // DG_AvailableSpots
-            // 
-            this.DG_AvailableSpots.AllowUserToAddRows = false;
-            this.DG_AvailableSpots.AllowUserToDeleteRows = false;
-            this.DG_AvailableSpots.AllowUserToResizeRows = false;
-            this.DG_AvailableSpots.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.DG_AvailableSpots.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.DG_AvailableSpots.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.DG_AvailableSpots.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            this.DG_AvailableSpots.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Cornsilk;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DG_AvailableSpots.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.DG_AvailableSpots.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.NullValue = "Null";
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Cornsilk;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DG_AvailableSpots.DefaultCellStyle = dataGridViewCellStyle4;
-            this.DG_AvailableSpots.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.DG_AvailableSpots.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.DG_AvailableSpots.Location = new System.Drawing.Point(29, 97);
-            this.DG_AvailableSpots.Name = "DG_AvailableSpots";
-            this.DG_AvailableSpots.ReadOnly = true;
-            this.DG_AvailableSpots.RowTemplate.Height = 28;
-            this.DG_AvailableSpots.Size = new System.Drawing.Size(364, 294);
-            this.DG_AvailableSpots.StandardTab = true;
-            this.DG_AvailableSpots.TabIndex = 1;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DG_ReservedSpots.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.DG_ReservedSpots.RowTemplate.Height = 28;
+            this.DG_ReservedSpots.Size = new System.Drawing.Size(1196, 294);
+            this.DG_ReservedSpots.StandardTab = true;
+            this.DG_ReservedSpots.TabIndex = 2;
+            this.DG_ReservedSpots.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DG_ReservedSpots_RowHeaderMouseClick);
             // 
             // LAvailableSpot
             // 
             this.LAvailableSpot.AutoSize = true;
             this.LAvailableSpot.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LAvailableSpot.Location = new System.Drawing.Point(21, 49);
+            this.LAvailableSpot.Location = new System.Drawing.Point(305, 58);
             this.LAvailableSpot.Name = "LAvailableSpot";
             this.LAvailableSpot.Size = new System.Drawing.Size(55, 45);
             this.LAvailableSpot.TabIndex = 26;
@@ -365,7 +333,7 @@ namespace HHF_APP
             // 
             this.LOccupiedSpot.AutoSize = true;
             this.LOccupiedSpot.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LOccupiedSpot.Location = new System.Drawing.Point(409, 49);
+            this.LOccupiedSpot.Location = new System.Drawing.Point(305, 10);
             this.LOccupiedSpot.Name = "LOccupiedSpot";
             this.LOccupiedSpot.Size = new System.Drawing.Size(55, 45);
             this.LOccupiedSpot.TabIndex = 27;
@@ -374,7 +342,7 @@ namespace HHF_APP
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.button2.Location = new System.Drawing.Point(1072, 46);
+            this.button2.Location = new System.Drawing.Point(1072, 432);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(153, 45);
             this.button2.TabIndex = 0;
@@ -391,7 +359,6 @@ namespace HHF_APP
             this.Controls.Add(this.button2);
             this.Controls.Add(this.LOccupiedSpot);
             this.Controls.Add(this.LAvailableSpot);
-            this.Controls.Add(this.DG_AvailableSpots);
             this.Controls.Add(this.DG_ReservedSpots);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -413,7 +380,6 @@ namespace HHF_APP
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DG_ReservedSpots)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DG_AvailableSpots)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -442,6 +408,5 @@ namespace HHF_APP
         private System.Windows.Forms.Label LOccupiedSpot;
         private System.Windows.Forms.Button button2;
         public System.Windows.Forms.DataGridView DG_ReservedSpots;
-        public System.Windows.Forms.DataGridView DG_AvailableSpots;
     }
 }
