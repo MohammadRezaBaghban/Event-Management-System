@@ -129,7 +129,7 @@ namespace HHF_APP
                 total += a.GetPrice();
             }
 
-            lblTotal.Text = total.ToString();
+            lblTotal.Text = "€"+total.ToString();
 
         }
 
@@ -179,10 +179,12 @@ namespace HHF_APP
         }
 
         private void btnConfirmFood_Click(object sender, EventArgs e)
-        {
-            
+        {   Form1 myParent = (Form1) this.Parent;
+            var balance = Convert.ToDecimal(myParent.lblbal.Text);
+            var basketbal = Convert.ToDecimal(lblTotal.Text.Substring(1));
+            balance -= basketbal;
             decimal totalfood=0m;
-            var confirmResult =  MessageBox.Show("Are you sure you want to confirm order?",
+            var confirmResult =  MessageBox.Show("Are you sure you want to confirm order? The reaming balance would be: €"+(balance),
                 "Confirm Order",
                 MessageBoxButtons.YesNo);
 
@@ -192,7 +194,7 @@ namespace HHF_APP
                 {
 
                     lbBasket_Click(sender, e);
-                    Form1 myParent = (Form1) this.Parent;
+                    
                     int user_id = Convert.ToInt32(myParent.tbBarcode.Text);
 
                     if (user_id > 0)
@@ -208,7 +210,7 @@ namespace HHF_APP
 
 
                         decimal total;
-                        total = Convert.ToDecimal(lblTotal.Text);
+                        total = Convert.ToDecimal(lblTotal.Text.Substring(1));
                         int checkinsertion=1;
                         int checkinsertion2 = 1;
                         if (total - totalfood != 0)
@@ -244,6 +246,19 @@ namespace HHF_APP
 
         private void lbBasket_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnclearBasket_Click(object sender, EventArgs e)
+        {
+            var confirmResult =  MessageBox.Show("Are you sure you want to clear basket?",
+                "CLEAR BASKET?",
+                MessageBoxButtons.YesNo);
+
+            if (confirmResult == DialogResult.Yes)
+            {
+                lbBasket.Items.Clear();
+            }
 
         }
     }

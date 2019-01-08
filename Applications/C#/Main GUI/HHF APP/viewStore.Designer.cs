@@ -128,6 +128,7 @@
             this.nudItem4 = new System.Windows.Forms.NumericUpDown();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.btnItemDrink4 = new System.Windows.Forms.Button();
+            this.btnclearBasket = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.otr.SuspendLayout();
             this.Food.SuspendLayout();
@@ -177,6 +178,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel1.Controls.Add(this.btnclearBasket);
             this.panel1.Controls.Add(this.label25);
             this.panel1.Controls.Add(this.tbquantity);
             this.panel1.Controls.Add(this.btnUndoFoods);
@@ -1607,6 +1609,21 @@
             this.btnItemDrink4.UseVisualStyleBackColor = false;
             this.btnItemDrink4.Click += new System.EventHandler(this.btnItemDrink4_Click);
             // 
+            // btnclearBasket
+            // 
+            this.btnclearBasket.BackColor = System.Drawing.Color.Bisque;
+            this.btnclearBasket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnclearBasket.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Bold);
+            this.btnclearBasket.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnclearBasket.Location = new System.Drawing.Point(255, 259);
+            this.btnclearBasket.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnclearBasket.Name = "btnclearBasket";
+            this.btnclearBasket.Size = new System.Drawing.Size(47, 25);
+            this.btnclearBasket.TabIndex = 10;
+            this.btnclearBasket.Text = "Clear";
+            this.btnclearBasket.UseVisualStyleBackColor = false;
+            this.btnclearBasket.Click += new System.EventHandler(this.btnclearBasket_Click);
+            // 
             // viewStore
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -1782,5 +1799,6 @@
         private System.Windows.Forms.Button btnItemDrink4;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.TextBox tbquantity;
+        private System.Windows.Forms.Button btnclearBasket;
     }
 }

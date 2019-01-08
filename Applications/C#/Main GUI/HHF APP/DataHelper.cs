@@ -558,7 +558,7 @@ namespace HHF_APP
                         reader.Close();
                         if (act_id == -1)
                         {
-                            throw new System.Exception("Either the User does not exists");
+                            throw new System.Exception("the User does not exists");
                         }
                         
                     }
@@ -566,7 +566,7 @@ namespace HHF_APP
                     {
                         //get act id of that person
                     
-                        query = "SELECT account_id FROM users WHERE user_id = @idNr and status= @status";
+                        query = "SELECT account_id FROM users WHERE user_id = @idNr and status= @status and is_valid='yes'";
                         command = new MySqlCommand(query, connection);
                         command.Parameters.AddWithValue("@idNr", userid);
                         command.Parameters.AddWithValue("@status", "checked_in");
@@ -578,7 +578,7 @@ namespace HHF_APP
                         reader.Close();
                         if (act_id == -1)
                         {
-                            throw new System.Exception("Either the person is not checked in or User does not exists");
+                            throw new System.Exception("Either the person is not checked in  or the account is no longer valid");
                         }
                         
                     }
