@@ -169,9 +169,9 @@ if (isset($_SESSION['email'])) {
             <div id="navigation">
                 <!-- Navigation Menu-->
                 <ul class="navigation-menu">
-                    <li><a href="index.html"><i class="mdi mdi-view-dashboard"></i><span>Dashboard</span></a></li>
-                    <li><a href="#" data-toggle="modal" data-target="#topUp"><i class="mdi mdi-view-dashboard"></i><span>Top Up</span></a></li>
-                    <li><a href="index.html"><i class="ti-settings"></i> <span>Settings</span></a></li>
+                    <li><a href="#"><i class="mdi mdi-view-dashboard"></i><span>Dashboard</span></a></li>
+                    <li><a href="/topup.php"><i class="mdi mdi-view-dashboard"></i><span>Top Up</span></a></li>
+                    <li><a href="/php/dashboard/settings.php"><i class="mdi mdi-view-settings"></i><span>Settings</span></a></li>
                 </ul>
                 <!-- End navigation menu -->
             </div> <!-- end #navigation -->
@@ -336,9 +336,6 @@ if (isset($_SESSION['email'])) {
                 </div>
             </div>
         </footer>
-        <!-- End Footer -->
-
-
      
 
 
@@ -366,37 +363,5 @@ if (isset($_SESSION['email'])) {
         <script src="back_assets/js/jquery.app.js"></script>
 
 
-
-        <!-- -->
-        <div id="topUp" class="modal fade show" tabindex="-1" role="dialog" aria-labelledby="topUp" style="display: block; padding-right: 16px;">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h4 class="modal-title mt-0" id="topUp">Modal Heading</h4>
-                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <h4>Text in a modal</h4>
-                                            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
-                                            <hr>
-                                            <h4>Overflowing text to show scroll behavior</h4>
-                                            <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-                                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-                                            <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
-                                            <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-                                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-                                            <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
-                                            <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-                                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-                                            <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary waves-effect waves-light">Save changes</button>
-                                        </div>
-                                    </div><!-- /.modal-content -->
-                                </div><!-- /.modal-dialog -->
-                            </div>
-        <!-- -->
 </body>
 </html>
