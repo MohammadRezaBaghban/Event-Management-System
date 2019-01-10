@@ -1,3 +1,62 @@
+<?php
+session_start();
+if (isset($_POST["formpassword"])) {
+$mailchange = $_SESSION['email'];
+$password = $_REQUEST['pass1'];
+$confirmpassword = $_REQUEST['pass2'];
+
+
+if($_SESSION['email']=="")
+{
+    echo "error recieving mail";
+}
+else
+{  $myPDO = new PDO('mysql:host=studmysql01.fhict.local;dbname=dbi400320', 'dbi400320', '12345678');
+// set the PDO error mode to exception
+    $myPDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    function check($email)
+    {
+        $query = (object)$GLOBALS['myPDO']->prepare('SELECT * FROM accounts WHERE email = :email');
+        $query->execute([':email' => $email]);
+        $result = $query->fetch(PDO::FETCH_ASSOC);
+        $user = $result['email'];
+        return $user;
+    }
+    if (check($mailchange)!=null)
+    {
+        if ($password == $confirmpassword) {
+
+            //has and secure the password
+
+            $password = password_hash($password, PASSWORD_DEFAULT);
+
+
+            // Update the user's password
+
+            $query = $myPDO->prepare('UPDATE accounts SET password = :password WHERE email = :email');
+
+            $query->bindParam(':password', $password);
+
+            $query->bindParam(':email', $user);
+
+            $query->execute();
+            //delete the tokens to prevent reusing the link again
+
+            $myPDO = null;
+            echo "Your password has been successfully reset.";
+            echo "<script>alert('successfully changed');</script>";
+            echo "<script>setTimeout(function(){window.location.replace('../index.php?page=dashboard');}, 2000);</script>";
+
+
+        } else
+            echo "<script>alert('Your passwords do not match');</script>";
+            echo "Your password's do not match.";
+
+    }
+}
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,48 +77,6 @@
 </head>
 
 <body>
-<script>
-    function test()
-    {
-
-        var email = document.getElementById('email').value;
-        var url = "../Others/cancel_ticket.php";
-
-        if (window.XMLHttpRequest)
-        {// code for IE7+, Firefox, Chrome, Opera, Safari
-            xmlhttp=new XMLHttpRequest();
-        }
-        else
-        {// code for IE6, IE5
-            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-        }
-
-        xmlhttp.onreadystatechange=function()
-        {
-            if (xmlhttp.readyState==4 && xmlhttp.status==200)
-            {
-
-                var result = xmlhttp.responseText;
-                if(xmlhttp.responseText!='')
-                {
-                    document.getElementById('spotnr').innerHTML =result ;
-                }
-            }
-        }
-
-
-        xmlhttp.open("POST",url,true);
-        xmlhttp.setRequestHeader('Content-type','application/x-www-form-urlencoded');
-
-        xmlhttp.send('email=email');
-    }
-</script>
-<script src="code/highcharts.js"></script>
-<script src="code/highcharts-3d.js"></script>
-<script src="code/modules/exporting.js"></script>
-
-<script src="code/modules/export-data.js"></script>
-<!-- Navigation Bar-->
 
 
 <header id="topnav">
@@ -80,12 +97,12 @@
                     </li>
                     <li class="dropdown notification-list">
                         <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown"
-                           href="index.html#" role="button"
+                           href="/php/dashboard/dashboard.php" role="button"
                            aria-haspopup="false" aria-expanded="false">
                             <img src="back_assets/images/users/avatar-1.jpg" alt="user" class="rounded-circle">
                         </a>
                         <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <a href="/php/dashboard/settings.php" class="dropdown-item notify-item">
                                 <i class="ti-settings m-r-5"></i> Settings
                             </a>
                             <a href="../?page=logout" class="dropdown-item notify-item">
@@ -99,7 +116,7 @@
             <!-- end menu-extras -->
 
             <div class="clearfix"></div>
-<input id="email" type="hidden" value="<?php echo $_SESSION['email'];?>" name="email">
+
         </div> <!-- end container -->
     </div>
     <!-- end topbar-main -->
@@ -109,7 +126,7 @@
             <div id="navigation">
                 <!-- Navigation Menu-->
                 <ul class="navigation-menu">
-                    <li><a href="#"><i class="mdi mdi-view-dashboard"></i><span>Dashboard</span></a></li>
+                    <li><a href="/php/dashboard/dashboard.php"><i class="mdi mdi-view-dashboard"></i><span>Dashboard</span></a></li>
                     <li><a href="/php/dashboard/topup.php"><i class="mdi mdi-view-dashboard"></i><span>Top Up</span></a></li>
                     <li><a href="/php/dashboard/settings.php"><i class="mdi mdi-view-settings"></i><span>Settings</span></a></li>
                 </ul>
@@ -130,21 +147,19 @@
                 <div class="card-box">
                     <h4 class="header-title m-t-0 m-b-30">Reset Password Form</h4>
 
-                    <form action="#" data-parsley-validate="" novalidate="">
+                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" data-parsley-validate="" novalidate="">
+                        <input id="semail" type="hidden" value="<?php echo $_SESSION['email'];?>" name="email">
                         <div class="form-group">
                             <label for="userName">Old Password</label>
-                            <input type="password" name="nick" required="" placeholder="Enter user name" class="form-control" id="userName">
+                            <input type="password" name="pass1" required class="form-control" id="password">
                         </div>
                         <div class="form-group">
                             <label for="emailAddress">New Password</label>
-                            <input type="password" name="email"required="" placeholder="Enter email" class="form-control" id="emailAddress">
+                            <input type="password" name="pass2" required class="form-control" id="password2">
                         </div>
                         <div class="form-group text-right m-b-0">
-                            <button class="btn btn-primary waves-effect waves-light" type="submit">
+                            <button class="btn btn-primary waves-effect waves-light" type="submit" name="formpassword">
                                 Submit
-                            </button>
-                            <button type="reset" class="btn btn-secondary waves-effect waves-light m-l-5">
-                                Cancel
                             </button>
                         </div>
 

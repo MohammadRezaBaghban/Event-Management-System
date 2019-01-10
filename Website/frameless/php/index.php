@@ -15,11 +15,13 @@ echo '<html>';
 include './Others/Head.php';
 
 echo '<body>';
-if($page != "login"){
+if($page != "login" && $page !="loginhandler" && $page !="forgot" && $page!="resetpass"){
     include './Others/Navigationbar.php';
 }
 
+if($page !="login" ){
 include './Others/modelform.php';
+}
 
 
 switch ($page) {
@@ -70,10 +72,13 @@ switch ($page) {
         include "./SignUp-SignIn-SignOut/SignupForm.php";
         break;
     case "signup":
-        if (new DateTime() > new DateTime("2018-01-23 11:00:00")) {
+        $date = new DateTime("2018-01-21 11:00:00");
+        $datenow = new DateTime();
+        if ($date > $datenow) {
             # current time is greater than 2018-01-23 12:00:00
             # in other words, 2018-01-23 12:00:00 has passed
-            echo "OPS You are late, you can no longer buy tickets from the website. You can still buy them from the event itself(Extra Fees Applied)!";
+            echo "Ops, It's too late.";
+            exit();
         }
         else{
                 include "./FormHandlers/Sign-up.php";
@@ -82,7 +87,7 @@ switch ($page) {
     default:
         include "home.php";
 }
-if($page != "login"){
+if($page != "login" && $page !="loginhandler" && $page !="forgot" && $page!="resetpass"){
 require './Footer/Footer.php';
 }
 echo '</body>';

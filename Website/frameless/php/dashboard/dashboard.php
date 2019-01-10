@@ -80,11 +80,11 @@ if (isset($_SESSION['email'])) {
 
 <body>
 <script>
-    function test()
+    function cancelticket()
     {
 
-        var email = document.getElementById('email').value;
-        var url = "../Others/cancel_ticket.php";
+        var email = document.getElementById('demail').value;
+        var url = "cancel_ticket.php?email="+email;
 
         if (window.XMLHttpRequest)
         {// code for IE7+, Firefox, Chrome, Opera, Safari
@@ -103,16 +103,24 @@ if (isset($_SESSION['email'])) {
                 var result = xmlhttp.responseText;
                 if(xmlhttp.responseText!='')
                 {
-                    document.getElementById('spotnr').innerHTML =result ;
+
+
+                    document.getElementById('cancelticket').innerHTML =result;
+                    if(result.includes("Cancelled")){
+                        document.getElementsById('contactSubmit').toggle();
+                    setTimeout(function(){window.location.replace('../index.php?page=logout');}, 2000);
+
+                      }
                 }
+
             }
         }
 
 
-        xmlhttp.open("POST",url,true);
-        xmlhttp.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+        xmlhttp.open("GET",url,true);
 
-        xmlhttp.send('email=email');
+
+        xmlhttp.send();
     }
 </script>
 <script src="code/highcharts.js"></script>
@@ -140,12 +148,12 @@ if (isset($_SESSION['email'])) {
                     </li>
                     <li class="dropdown notification-list">
                         <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown"
-                           href="index.html#" role="button"
+                           href="/php/dashboard/dashboard.php" role="button"
                            aria-haspopup="false" aria-expanded="false">
                             <img src="back_assets/images/users/avatar-1.jpg" alt="user" class="rounded-circle">
                         </a>
                         <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <a href="/php/dashboard/settings.php" class="dropdown-item notify-item">
                                 <i class="ti-settings m-r-5"></i> Settings
                             </a>
                             <a href="../?page=logout" class="dropdown-item notify-item">
@@ -159,7 +167,7 @@ if (isset($_SESSION['email'])) {
             <!-- end menu-extras -->
 
             <div class="clearfix"></div>
-<input id="email" type="hidden" value="<?php echo $_SESSION['email'];?>" name="email">
+<input id="demail" type="hidden" value="<?php echo $_SESSION['email'];?>" name="email">
         </div> <!-- end container -->
     </div>
     <!-- end topbar-main -->
@@ -169,8 +177,8 @@ if (isset($_SESSION['email'])) {
             <div id="navigation">
                 <!-- Navigation Menu-->
                 <ul class="navigation-menu">
-                    <li><a href="#"><i class="mdi mdi-view-dashboard"></i><span>Dashboard</span></a></li>
-                    <li><a href="/topup.php"><i class="mdi mdi-view-dashboard"></i><span>Top Up</span></a></li>
+                    <li><a href="/php/dashboard/dashboard.php"><i class="mdi mdi-view-dashboard"></i><span>Dashboard</span></a></li>
+                    <li><a href="/php/dashboard/topup.php"><i class="mdi mdi-view-dashboard"></i><span>Top Up</span></a></li>
                     <li><a href="/php/dashboard/settings.php"><i class="mdi mdi-view-settings"></i><span>Settings</span></a></li>
                 </ul>
                 <!-- End navigation menu -->
@@ -219,13 +227,15 @@ if (isset($_SESSION['email'])) {
                     <div class="widget-chart-1">
                         <div class="widget-detail-1">
                             <h2 class="p-t-10 mb-0"> VALID </h2>
+
                         </div>
+                        <div id="cancelticket"></div>
+
                     </div>
                 </div>
 
-
                 <div class="text-right m-b-0">
-                    <button class="btn btn-danger" type="submit"  style="margin-top: -120px;margin-right: 10px;">
+                    <button class="btn btn-danger" type="submit"  style="margin-top: -120px;margin-right: 10px;" name="contactSubmit" id="contactSubmit" value="Validated" onclick="if(confirm('Are you sure that you want to cancel the ticket?! We will only refund 75% of the ticket fees')){cancelticket();} else {return false;}">
                         CANCEL TICKET
                     </button>
                 </div>

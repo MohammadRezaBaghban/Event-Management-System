@@ -20,6 +20,7 @@ try {
 
 
 } catch (PDexception $e) {
+    echo $e->getMessage();
 
 }
 if (isset($_POST["ResetPasswordForm"])) {

@@ -1,5 +1,6 @@
-topup.php
-
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,11 +23,21 @@ topup.php
 
 <body>
 <script>
-    function test()
+    function topup()
     {
 
-        var email = document.getElementById('email').value;
-        var url = "../Others/cancel_ticket.php";
+        var email = document.getElementById('temail').value;
+        var amount = $('.slectOne:checked').val();
+
+        var inputElements = document.getElementsByClassName('slectOne');
+        for(var i=0; inputElements[i]; ++i){
+            if(inputElements[i].checked){
+                amount = inputElements[i].value;
+                break;
+            }
+        }
+
+        var url = "top_up.php?email="+email+"&amount="+amount;
 
         if (window.XMLHttpRequest)
         {// code for IE7+, Firefox, Chrome, Opera, Safari
@@ -45,16 +56,16 @@ topup.php
                 var result = xmlhttp.responseText;
                 if(xmlhttp.responseText!='')
                 {
-                    document.getElementById('spotnr').innerHTML =result ;
+                    document.getElementById('topup').innerHTML =result ;
                 }
             }
         }
 
 
-        xmlhttp.open("POST",url,true);
-        xmlhttp.setRequestHeader('Content-type','application/x-www-form-urlencoded');
 
-        xmlhttp.send('email=email');
+        xmlhttp.open("GET",url,true);
+
+        xmlhttp.send();
     }
 </script>
 <script src="code/highcharts.js"></script>
@@ -97,12 +108,12 @@ $('.slectOne').on('change', function() {
                     </li>
                     <li class="dropdown notification-list">
                         <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown"
-                           href="index.html#" role="button"
+                           href="/php/dashboard/dashboard.php" role="button"
                            aria-haspopup="false" aria-expanded="false">
                             <img src="back_assets/images/users/avatar-1.jpg" alt="user" class="rounded-circle">
                         </a>
                         <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <a href="/php/dashboard/settings.php" class="dropdown-item notify-item">
                                 <i class="ti-settings m-r-5"></i> Settings
                             </a>
                             <a href="../?page=logout" class="dropdown-item notify-item">
@@ -116,7 +127,7 @@ $('.slectOne').on('change', function() {
             <!-- end menu-extras -->
 
             <div class="clearfix"></div>
-<input id="email" type="hidden" value="<?php echo $_SESSION['email'];?>" name="email">
+<input id="temail" type="hidden" value="<?php echo $_SESSION['email'];?>" name="email">
         </div> <!-- end container -->
     </div>
     <!-- end topbar-main -->
@@ -126,7 +137,7 @@ $('.slectOne').on('change', function() {
             <div id="navigation">
                 <!-- Navigation Menu-->
                 <ul class="navigation-menu">
-                    <li><a href="#"><i class="mdi mdi-view-dashboard"></i><span>Dashboard</span></a></li>
+                    <li><a href="/php/dashboard/dashboard.php"><i class="mdi mdi-view-dashboard"></i><span>Dashboard</span></a></li>
                     <li><a href="/php/dashboard/topup.php"><i class="mdi mdi-view-dashboard"></i><span>Top Up</span></a></li>
                     <li><a href="/php/dashboard/settings.php"><i class="mdi mdi-view-settings"></i><span>Settings</span></a></li>
                 </ul>
@@ -146,33 +157,31 @@ $('.slectOne').on('change', function() {
 
                     <div class="row">
                         <div class="col-xl-6">
-                            <form class="form-horizontal group-border-dashed" action="#" novalidate="">
+                            <form class="form-horizontal group-border-dashed" onsubmit="return false;">
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Choose Amount</label>
                                     <div class="col-sm-6">
                                         <div class="checkbox checkbox-pink">
-                                            <input id="checkbox1" class="slectOne" type="checkbox" name="">
+                                            <input id="checkbox1" class="slectOne" type="checkbox" name="amount" value="30">
                                             <label for="checkbox1"> 30 Euros </label>
                                         </div>
                                         <div class="checkbox checkbox-pink">
-                                            <input id="checkbox2" type="checkbox" class="slectOne" name="">
-                                            <label for="checkbox2"> 40 Euros </label>
+                                            <input id="checkbox2" type="checkbox" class="slectOne" name="amount" value="60">
+                                            <label for="checkbox2"> 60 Euros </label>
                                         </div>
                                         <div class="checkbox checkbox-pink">
-                                            <input id="checkbox3" type="checkbox" class="slectOne" name="">
-                                            <label for="checkbox3"> 50 Euros </label>
+                                            <input id="checkbox3" type="checkbox" class="slectOne" name="amount" value="100">
+                                            <label for="checkbox3"> 100 Euros </label>
                                         </div>
                                     </div>
                                 </div>
-
+                                <div id="topup"></div>
                                 <div class="form-group row m-b-0">
                                     <div class="offset-sm-3 col-sm-9 m-t-15">
-                                        <button type="submit" class="btn btn-primary waves-effect waves-light">
+                                        <button type="submit" class="btn btn-primary waves-effect waves-light" onclick="if(confirm('Confirm Top Up')){topup();} else {return false;}">
                                             Submit
                                         </button>
-                                        <button type="reset" class="btn btn-secondary waves-effect m-l-5">
-                                            Cancel
-                                        </button>
+
                                     </div>
                                 </div>
                             </form>
