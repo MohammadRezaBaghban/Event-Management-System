@@ -1,7 +1,7 @@
 <?php
-$date = new DateTime("2018-01-21 11:00:00");
+$date = new DateTime("2019-01-21 11:00:00");
 $datenow = new DateTime();
-if ($date > $datenow) {
+if ($datenow > $date) {
     # current time is greater than 2018-01-23 12:00:00
     # in other words, 2018-01-23 12:00:00 has passed
     echo "Ops, It's too late.";

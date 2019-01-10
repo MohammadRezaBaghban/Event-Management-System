@@ -39,12 +39,12 @@
             this.lblStreet = new System.Windows.Forms.Label();
             this.lblPostcode = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.tbPosition = new System.Windows.Forms.TextBox();
             this.lblPassword = new System.Windows.Forms.Label();
             this.tbAddress = new System.Windows.Forms.TextBox();
             this.tbPostcode = new System.Windows.Forms.TextBox();
             this.tbEmail = new System.Windows.Forms.TextBox();
             this.tbPassword = new System.Windows.Forms.TextBox();
+            this.cbRole = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // tbLname
@@ -141,13 +141,6 @@
             this.lblEmail.TabIndex = 10;
             this.lblEmail.Text = "Email";
             // 
-            // tbPosition
-            // 
-            this.tbPosition.Location = new System.Drawing.Point(80, 115);
-            this.tbPosition.Name = "tbPosition";
-            this.tbPosition.Size = new System.Drawing.Size(100, 20);
-            this.tbPosition.TabIndex = 11;
-            // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
@@ -185,16 +178,27 @@
             this.tbPassword.Size = new System.Drawing.Size(100, 20);
             this.tbPassword.TabIndex = 16;
             // 
+            // cbRole
+            // 
+            this.cbRole.FormattingEnabled = true;
+            this.cbRole.Items.AddRange(new object[] {
+            "admin",
+            "manager"});
+            this.cbRole.Location = new System.Drawing.Point(79, 114);
+            this.cbRole.Name = "cbRole";
+            this.cbRole.Size = new System.Drawing.Size(100, 21);
+            this.cbRole.TabIndex = 17;
+            // 
             // AddEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.cbRole);
             this.Controls.Add(this.tbPassword);
             this.Controls.Add(this.tbEmail);
             this.Controls.Add(this.tbPostcode);
             this.Controls.Add(this.tbAddress);
             this.Controls.Add(this.lblPassword);
-            this.Controls.Add(this.tbPosition);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblPostcode);
             this.Controls.Add(this.lblStreet);
@@ -226,11 +230,11 @@
         private System.Windows.Forms.Label lblStreet;
         private System.Windows.Forms.Label lblPostcode;
         private System.Windows.Forms.Label lblEmail;
-        private System.Windows.Forms.TextBox tbPosition;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.TextBox tbAddress;
         private System.Windows.Forms.TextBox tbPostcode;
         private System.Windows.Forms.TextBox tbEmail;
         private System.Windows.Forms.TextBox tbPassword;
+        private System.Windows.Forms.ComboBox cbRole;
     }
 }

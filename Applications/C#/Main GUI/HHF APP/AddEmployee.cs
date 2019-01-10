@@ -19,6 +19,7 @@ namespace HHF_APP
             dh = new DataHelper();
         }
 
+        
         private void btnSubmitEmp_Click(object sender, EventArgs e)
         {
             
@@ -31,12 +32,12 @@ namespace HHF_APP
             String email;
             String password;
 
-            if (tbFname.Text != "" && tbLname.Text != "" && tbPhoneNr.Text != "" && tbPosition.Text != "" && tbAddress.Text != "" && tbPostcode.Text != "" && tbEmail.Text != "" && tbPassword.Text != "")
+            if (tbFname.Text != "" && tbLname.Text != "" && tbPhoneNr.Text != "" && cbRole.SelectedItem.ToString() != "" && tbAddress.Text != "" && tbPostcode.Text != "" && tbEmail.Text != "" && tbPassword.Text != "")
             {
                 fName = Convert.ToString(tbFname.Text);
                 lName = Convert.ToString(tbLname.Text);
                 phoneNr = Convert.ToString(tbPhoneNr.Text);
-                position = Convert.ToString(tbPosition.Text);
+                position = Convert.ToString(cbRole.SelectedItem.ToString());
                 address = Convert.ToString(tbAddress.Text);
                 postcode = Convert.ToString(tbPostcode.Text);
                 email = Convert.ToString(tbEmail.Text);
@@ -47,7 +48,7 @@ namespace HHF_APP
                 bool phoneNrResult = phoneNr.All(Char.IsDigit);
                 bool positionResult = position.All(Char.IsLetter);
                 bool emailResult = email.Contains("@");
-                
+
 
 
 
@@ -64,29 +65,57 @@ namespace HHF_APP
                             tbFname.Clear();
                             tbLname.Clear();
                             tbPhoneNr.Clear();
-                            tbPosition.Clear();
+                            cbRole.Items.Clear();
                             tbAddress.Clear();
                             tbPostcode.Clear();
                             tbEmail.Clear();
                             tbPassword.Clear();
-                            Panel myParent = (Panel) this.Parent;
+                            Panel myParent = (Panel)this.Parent;
                             myParent.Visible = false;
+
+
+                            var myFormParent = myParent.Parent;
+                            myFormParent = myFormParent.Parent;
+                             myFormParent = myFormParent.Parent;
+                            viewAdminDashboard secondparent =(viewAdminDashboard) myFormParent.Parent;
+
+
+
+                            secondparent.btnSearchEmployee_Click(sender, e);
 
                         }
                     }
-                    catch(Exception ex)
+                    catch (Exception ex)
                     {
                         MessageBox.Show(ex.Message);
                     }
                 }
+                else if (fNameResult == false)
+                {
+                    MessageBox.Show("Enter a valid first name");
+                }
+                else if (lNameResult == false)
+                {
+                    MessageBox.Show("Enter a valid last name");
+                }
+                else if (phoneNrResult == false)
+                {
+                    MessageBox.Show("Enter a valid phone number");
+                }
                 else
                 {
-                    MessageBox.Show("Some info provided is incorrect");
+                    MessageBox.Show("Enter a valid email address");
                 }
+            }
+            else
+            {
+                MessageBox.Show("Fill in all the fields!!");
             }
        
            
             
-        } 
+        }
+
+       
     }
 }

@@ -3,10 +3,13 @@
         <span class="icon section-icon icon-shopping-04"></span>
         <h3 style="color: black;">Tickets</h3>
         <p class="text-alt">Get yours while they are still <span class="highlight">available</span></p>
-        <?php if (new DateTime() > new DateTime("2018-01-23 11:00:00")) {
+        <?php $date = new DateTime("2019-01-20 11:00:00");
+        $datenow = new DateTime();
+        if ($datenow > $date) {
             # current time is greater than 2018-01-23 12:00:00
             # in other words, 2018-01-23 12:00:00 has passed
-            echo "OPS You are late, you can no longer buy tickets from the website. You can still buy them from the event itself(Extra Fees Applied)!";
+            echo "<p style='color: red; font-size: 18px;'><strong>OPS You are late, you can no longer buy tickets from the website. You can still buy them from the event itself(Extra Fees Applied)!</strong></p>";
+			
         }
         ?>
         <br/>

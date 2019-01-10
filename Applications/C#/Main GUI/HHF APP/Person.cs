@@ -33,15 +33,15 @@ namespace HHF_APP
             {
                 this.tickettype = "VIP";
             }
-            else if (tictype == "no")
-            {
-                this.tickettype = "INDIVIDUAL";
-            }
-            else if (tictype == "no" && groupId == "NULL")
+            
+            else if (tictype == "no" && groupId != "NULL")
             {
                 this.tickettype = "GROUP";
             }
-            else { this.tickettype = "ERROR"; }
+            else
+            {
+                this.tickettype = "INDIVIDUAL";
+            }
 
             this.ticket_id = ticket_id;
             this.balance = balance;

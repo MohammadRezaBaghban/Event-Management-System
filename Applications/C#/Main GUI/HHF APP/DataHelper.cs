@@ -357,11 +357,11 @@ namespace HHF_APP
 
         //Function for login 
 
-        public void appLogin(string email, string password)
+        public bool appLogin(string email, string password)
         {
             //Count because the number of records for succesfull login should be q as there is only one user with such records
-            string joinQuery = "SELECT COUNT(*) as cnt , position FROM employees WHERE email=@email AND password =@password";
-            //string join1Query = $"SELECT COUNT(*) as cnt FROM employees WHERE email='{email}' AND password ='{password}'";
+            //string joinQuery = "SELECT COUNT(*) as cnt , position FROM employees WHERE email=@email AND password =@password";
+            string joinQuery = $"SELECT COUNT(*) as cnt FROM employees WHERE email='{email}' AND password ='{password}'";
             MySqlCommand command = new MySqlCommand(joinQuery, connection);
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@email", email);
@@ -369,19 +369,18 @@ namespace HHF_APP
             try
             {
                 connection.Open();
-                MySqlDataReader reader = command.ExecuteReader();
                 if (command.ExecuteScalar().ToString() == "1")
                 {
-                    //return reader;
+                    return true;
                 }
                 else
                 {
-                   // return false;
+                   return false;
                 }
             }
             catch
             {
-               // return false;
+               return false;
             }
             finally
             {
@@ -536,7 +535,12 @@ namespace HHF_APP
 
             using (connection)
             {
+                if (connection.State.ToString() != "Open")
+                {
                 connection.Open();
+                }
+                
+               
                 MySqlTransaction tran = connection.BeginTransaction();
 
                 try
@@ -730,7 +734,7 @@ namespace HHF_APP
         public int RefundCloseAccount(int user_id)
         {
             int checkedRecords=0;
-            string query = "Select * from users where is_admin='no' AND user_id=@user_id";
+            string query = "Select is_admin from users where user_id=@user_id";
             MySqlCommand command = new MySqlCommand(query, connection);
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@user_id", user_id);
@@ -738,7 +742,20 @@ namespace HHF_APP
             try
             {
                 connection.Open();
-                checkedRecords = command.ExecuteNonQuery();
+                MySqlDataReader reader = command.ExecuteReader();
+               
+                while (reader.Read())
+                {
+
+                    if (reader["is_admin"].ToString() == "yes")
+                    {
+                        checkedRecords = 1;
+                    }
+                    else if(reader["is_admin"].ToString() == "no")
+                    {
+                        checkedRecords = 0;
+                    }
+                }
                 connection.Close();
               
             }
@@ -747,8 +764,9 @@ namespace HHF_APP
                
             }
 
-            if (checkedRecords==-1) {
-                query = "UPDATE users, accounts  SET users.status ='check_out', accounts.is_valid ='no' WHERE users.account_id = accounts.account_id AND users.user_id=@user_id AND users.status='checked_in'";
+            if (checkedRecords==1) {
+                addTransaction(user_id, ticketBalance, "refund");
+                query = "UPDATE users, accounts  SET users.status ='check_out', accounts.is_valid ='no'  WHERE users.account_id = accounts.account_id AND users.user_id=@user_id AND users.status='checked_in'";
                 command = new MySqlCommand(query, connection);
                 command.Parameters.Clear();
                 command.Parameters.AddWithValue("@user_id", user_id);
@@ -757,6 +775,7 @@ namespace HHF_APP
                 {
                     connection.Open();
                     checkedRecords = command.ExecuteNonQuery();
+                   
                     return checkedRecords;
                 }
                 catch(Exception ex)

@@ -14,6 +14,7 @@ img { border: 0; max-width: 100%; }
   list-style: none;
   padding: 20px 0 20px;
   position: relative;
+  background-color: #f5f9fc !important;
 }
 
 .timeline:before {
@@ -22,7 +23,7 @@ img { border: 0; max-width: 100%; }
   position: absolute;
   content: " ";
   width: 3px;
-  background-color: #eee;
+  background-color: black;
   left: 50%;
   margin-left: -1.5px;
 }

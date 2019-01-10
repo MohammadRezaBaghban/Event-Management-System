@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
 using System.Drawing.Printing;
+using Spire.Barcode;
 
 namespace HHF_APP
 {
@@ -50,7 +51,7 @@ namespace HHF_APP
         private void btnTicketPrint_Click(object sender, EventArgs e)
         {
             
-            /*try
+            try
             {
                 BarcodeSettings barsetting = new BarcodeSettings();
 
@@ -82,7 +83,7 @@ namespace HHF_APP
             {
                 MessageBox.Show(ex.Message);
             }
-            */
+            
 
         }
         private void PrintPage(object o, PrintPageEventArgs e)
@@ -324,7 +325,6 @@ namespace HHF_APP
             {
 
                 int userId = Convert.ToInt32(tbUserId.Text);
-                if(dh.addTransaction(userId, dh.ticketBalance, "refund") !=1) { MessageBox.Show("User does not exist or Not Checked In"); }
                 if (dh.RefundCloseAccount(userId) >= 1)
                 {
                     MessageBox.Show("Successfully Closed Account");

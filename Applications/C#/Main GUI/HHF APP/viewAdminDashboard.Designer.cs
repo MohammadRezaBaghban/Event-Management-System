@@ -784,7 +784,7 @@ namespace HHF_APP
             this.rbMoney.Name = "rbMoney";
             this.rbMoney.Size = new System.Drawing.Size(86, 17);
             this.rbMoney.TabIndex = 6;
-            this.rbMoney.Text = "Transactions";
+            this.rbMoney.Text = "Revenue";
             this.rbMoney.UseVisualStyleBackColor = true;
             this.rbMoney.CheckedChanged += new System.EventHandler(this.rbMoney_CheckedChanged);
             // 
