@@ -20,6 +20,58 @@ namespace HHF_APP
             
         }
 
+        public void ManagingUI(int a)
+        {
+            //Function of this method, since Radio Buttons are being in different panels
+            //They can all be checked, to link them in a way that only one can be selected 
+            //This method can be used.
+
+            void ChangeColor()
+            {
+                this.pnlIndividual.BackColor = Color.LavenderBlush;
+                this.pnlGroup.BackColor = Color.LavenderBlush;
+                this.pnlVIP.BackColor = Color.LavenderBlush;
+                if (a == 1)
+                {
+                    this.pnlIndividual.BackColor = Color.NavajoWhite;
+                }
+                else if (a == 2)
+                {
+                    this.pnlGroup.BackColor = Color.NavajoWhite;
+                }
+                else if (a == 3)
+                {
+                    this.pnlVIP.BackColor = Color.NavajoWhite;
+                }
+            }
+
+            if (a==1)
+            {            
+                this.RbGroup.Checked = false;
+                this.RbVIP.Checked = false;
+                this.RbIndividual.Checked = true;
+                this.GbCamping.Visible = false;
+                this.GbGroupMembers.Visible = false;
+                
+            }else if (a==2)
+            {                
+                this.RbVIP.Checked = false;
+                this.RbIndividual.Checked = false;
+                this.RbGroup.Checked = true;
+                this.GbCamping.Visible = true;
+                this.GbGroupMembers.Visible = true;
+            }
+            else if (a==3)
+            {                 
+                this.RbIndividual.Checked = false;
+                this.RbGroup.Checked = false;
+                this.RbVIP.Checked = true;
+                this.GbCamping.Visible = true;
+                this.GbGroupMembers.Visible = false;
+            }
+            ChangeColor();
+            
+        }
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -176,6 +228,41 @@ namespace HHF_APP
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void personToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RbIndividual_Click(object sender, EventArgs e)
+        {
+            this.ManagingUI(1);
+        }
+
+        private void RbGroup_Click(object sender, EventArgs e)
+        {
+            this.ManagingUI(2);
+        }
+
+        private void RbVIP_Click(object sender, EventArgs e)
+        {
+            this.ManagingUI(3);
+        }
+
+        private void pnlIndividual_Click(object sender, EventArgs e)
+        {
+            this.ManagingUI(1);
+        }
+
+        private void pnlGroup_Click(object sender, EventArgs e)
+        {
+            this.ManagingUI(2);
+        }
+
+        private void pnlVIP_Click(object sender, EventArgs e)
+        {
+            this.ManagingUI(3);
         }
     }
 }

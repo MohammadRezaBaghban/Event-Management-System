@@ -43,29 +43,13 @@ namespace HHF_APP
         {
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             btnRefresh_Click( sender, e);
+            lbEmployees_SelectedIndexChanged_1(sender, e);
             btnSearchEmployee_Click(sender,e);
+           
             rbArticle_Click(sender, e);
         }
 
-        private void buttonModified1_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void modifiedpanel1_Paint(object sender, PaintEventArgs e)
-        {
-        }
-
-        private void VisitCount_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void chart1_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void panel16_Paint(object sender, PaintEventArgs e)
-        {
-        }
+       
 
         public void btnAddEmployee_Click(object sender, EventArgs e)
         {
@@ -79,9 +63,7 @@ namespace HHF_APP
             }
         }
 
-        private void addEmployee1_Load(object sender, EventArgs e)
-        {
-        }
+        
 
         public void btnRefresh_Click(object sender, EventArgs e)
         {
@@ -94,7 +76,8 @@ namespace HHF_APP
             lblFreeSpots.Text = Convert.ToString(10000 - Convert.ToInt32(lblBookedSpots.Text));
         }
 
-        private void btnSearchEmployee_Click(object sender, EventArgs e)
+        
+        public void btnSearchEmployee_Click(object sender, EventArgs e)
         {
             lbEmployees.Items.Clear();
             String input = tbSearchEmployee.Text;
@@ -152,16 +135,18 @@ namespace HHF_APP
             else pnlPassword.Visible = true;
         }
 
-        private void lbEmployees_SelectedIndexChanged(object sender, EventArgs e)
+       /* private void lbEmployees_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             try
             {
                 passwordPanel1.SetSelectedUser(lbEmployees.SelectedItem.ToString());
             }
-            catch
+            catch(Exception ex)
             {
+                MessageBox.Show(ex.Message);
             }
-        }
+        }*/
 
 
         private void btnRemoveEmployee_Click(object sender, EventArgs e)
@@ -280,6 +265,8 @@ namespace HHF_APP
                 chartComplex.Series["Amount"].Points.AddXY("Registration", dh.GetSpentAmount2());
                 chartComplex.Series["Amount"].Points.AddXY("Deposit", dh.GetSpentAmount3());
                 chartComplex.Series["Amount"].Points.AddXY("Items", dh.GetSpentAmount4());
+                chartComplex.Series["Amount"].Points.AddXY("Loan", dh.GetSpentAmount5());
+                chartComplex.Series["Amount"].Points.AddXY("Camping", dh.GetSpentAmount6());
             }
         }
 
@@ -317,5 +304,29 @@ namespace HHF_APP
             }
 
         }
+
+        private void lbEmployees_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (lbEmployees.SelectedIndex > -1)
+            {
+                btnChangePassword.Enabled = true;
+            }
+            else
+                btnChangePassword.Enabled = false;
+        }
+
+        private void lbEmployees_SelectedValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                passwordPanel1.SetSelectedUser(lbEmployees.SelectedItem.ToString());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Please select an employee to continue");
+            }
+        }
+       
+       
     }
 }

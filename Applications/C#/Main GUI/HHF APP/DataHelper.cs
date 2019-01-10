@@ -1252,7 +1252,48 @@ namespace HHF_APP
             }
         }
 
-        //Graph part methods finish
+        public int GetSpentAmount5()
+        {
+            String query = "SELECT SUM(amount) FROM transactions WHERE type = 'loan'";
+            MySqlCommand command = new MySqlCommand(query, connection);
+
+            int number;
+            try
+            {
+                connection.Open();
+                number = Convert.ToInt32(command.ExecuteScalar());
+                return number;
+            }
+            catch
+            {
+                return -1;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+        public int GetSpentAmount6()
+        {
+            String query = "SELECT SUM(amount) FROM transactions WHERE type = 'camp'";
+            MySqlCommand command = new MySqlCommand(query, connection);
+
+            int number;
+            try
+            {
+                connection.Open();
+                number = Convert.ToInt32(command.ExecuteScalar());
+                return number;
+            }
+            catch
+            {
+                return -1;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }//Graph part methods finish
 
 
     }

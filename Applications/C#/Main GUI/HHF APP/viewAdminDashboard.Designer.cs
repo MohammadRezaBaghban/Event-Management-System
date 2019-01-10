@@ -30,17 +30,15 @@ namespace HHF_APP
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(viewAdminDashboard));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Maintab = new System.Windows.Forms.TabPage();
             this.panel10 = new System.Windows.Forms.Panel();
             this.pnlPassword = new System.Windows.Forms.Panel();
-            this.passwordPanel1 = new HHF_APP.PasswordPanel();
             this.panelAddEmp = new System.Windows.Forms.Panel();
-            this.addEmployee2 = new HHF_APP.AddEmployee();
             this.btnRemoveEmployee = new System.Windows.Forms.Button();
             this.btnAddEmployee = new System.Windows.Forms.Button();
             this.tbSearchEmployee = new System.Windows.Forms.TextBox();
@@ -97,6 +95,8 @@ namespace HHF_APP
             this.rbArticle = new System.Windows.Forms.RadioButton();
             this.chartComplex = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.ofdATMLog = new System.Windows.Forms.OpenFileDialog();
+            this.passwordPanel1 = new HHF_APP.PasswordPanel();
+            this.addEmployee2 = new HHF_APP.AddEmployee();
             this.tabControl1.SuspendLayout();
             this.Maintab.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -173,14 +173,6 @@ namespace HHF_APP
             this.pnlPassword.TabIndex = 6;
             this.pnlPassword.Visible = false;
             // 
-            // passwordPanel1
-            // 
-            this.passwordPanel1.Location = new System.Drawing.Point(10, 2);
-            this.passwordPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.passwordPanel1.Name = "passwordPanel1";
-            this.passwordPanel1.Size = new System.Drawing.Size(150, 150);
-            this.passwordPanel1.TabIndex = 0;
-            // 
             // panelAddEmp
             // 
             this.panelAddEmp.BackColor = System.Drawing.Color.SeaShell;
@@ -191,14 +183,6 @@ namespace HHF_APP
             this.panelAddEmp.Size = new System.Drawing.Size(487, 155);
             this.panelAddEmp.TabIndex = 1;
             this.panelAddEmp.Visible = false;
-            // 
-            // addEmployee2
-            // 
-            this.addEmployee2.Location = new System.Drawing.Point(16, 2);
-            this.addEmployee2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.addEmployee2.Name = "addEmployee2";
-            this.addEmployee2.Size = new System.Drawing.Size(445, 150);
-            this.addEmployee2.TabIndex = 0;
             // 
             // btnRemoveEmployee
             // 
@@ -272,7 +256,8 @@ namespace HHF_APP
             this.lbEmployees.Name = "lbEmployees";
             this.lbEmployees.Size = new System.Drawing.Size(667, 173);
             this.lbEmployees.TabIndex = 0;
-            this.lbEmployees.Click += new System.EventHandler(this.lbEmployees_SelectedIndexChanged);
+            this.lbEmployees.SelectedIndexChanged += new System.EventHandler(this.lbEmployees_SelectedIndexChanged_1);
+            this.lbEmployees.SelectedValueChanged += new System.EventHandler(this.lbEmployees_SelectedValueChanged);
             // 
             // panel21
             // 
@@ -779,7 +764,6 @@ namespace HHF_APP
             this.groupBox1.Size = new System.Drawing.Size(102, 329);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
             // 
             // cbReserve
             // 
@@ -830,21 +814,21 @@ namespace HHF_APP
             // 
             // chartComplex
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartComplex.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartComplex.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.chartComplex.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartComplex.Legends.Add(legend2);
             this.chartComplex.Location = new System.Drawing.Point(229, 20);
             this.chartComplex.Name = "chartComplex";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Amount";
-            series2.ChartArea = "ChartArea1";
-            series2.IsVisibleInLegend = false;
-            series2.Legend = "Legend1";
-            series2.Name = "Reserved";
-            this.chartComplex.Series.Add(series1);
-            this.chartComplex.Series.Add(series2);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Amount";
+            series4.ChartArea = "ChartArea1";
+            series4.IsVisibleInLegend = false;
+            series4.Legend = "Legend1";
+            series4.Name = "Reserved";
+            this.chartComplex.Series.Add(series3);
+            this.chartComplex.Series.Add(series4);
             this.chartComplex.Size = new System.Drawing.Size(548, 364);
             this.chartComplex.TabIndex = 0;
             this.chartComplex.Text = "chart1";
@@ -852,6 +836,22 @@ namespace HHF_APP
             // ofdATMLog
             // 
             this.ofdATMLog.FileName = "ofdATMLog";
+            // 
+            // passwordPanel1
+            // 
+            this.passwordPanel1.Location = new System.Drawing.Point(10, 2);
+            this.passwordPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.passwordPanel1.Name = "passwordPanel1";
+            this.passwordPanel1.Size = new System.Drawing.Size(150, 150);
+            this.passwordPanel1.TabIndex = 0;
+            // 
+            // addEmployee2
+            // 
+            this.addEmployee2.Location = new System.Drawing.Point(16, 2);
+            this.addEmployee2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.addEmployee2.Name = "addEmployee2";
+            this.addEmployee2.Size = new System.Drawing.Size(445, 150);
+            this.addEmployee2.TabIndex = 0;
             // 
             // viewAdminDashboard
             // 
