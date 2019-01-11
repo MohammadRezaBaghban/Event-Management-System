@@ -1,18 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HHF_APP
 {
     public partial class viewLogin : UserControl 
     {
-        private DataHelper dh;
+        private new const string Text = "Incorrect Username or Password";
+        private const string Text1 = "Fill in everything!";
+        private readonly DataHelper dh;
         public viewLogin()
         {
             InitializeComponent();
@@ -25,15 +20,15 @@ namespace HHF_APP
             string passWord = tbPassword.Text;
             if (!string.IsNullOrWhiteSpace(email) || !string.IsNullOrWhiteSpace(passWord))
             {
-                if (dh.appLogin(email, passWord) == true)
+                if (dh.appLogin(email, passWord))
                 {
-                    this.SendToBack();
+                    SendToBack();
 
 
                 }
                 else
                 {
-                    MessageBox.Show("Incorrect Username or Password");
+                    MessageBox.Show(Text);
                 }
 
                 tbEmail.Clear();
@@ -41,15 +36,8 @@ namespace HHF_APP
             }
             else
             {
-                MessageBox.Show("Fill in everything!");
+                MessageBox.Show(Text1);
             }
         }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-            
-        }
-
-        
     }
 }

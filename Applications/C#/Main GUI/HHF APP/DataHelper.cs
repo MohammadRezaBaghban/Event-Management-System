@@ -1314,6 +1314,357 @@ namespace HHF_APP
             }
         }//Graph part methods finish
 
+        //Begin Ticket Purchase 
+        private int AvailibleCampSpot()
+        {   
 
+            string check_in_query = "SELECT min(spot_nr) as minspot FROM camp_spots WHERE is_reserved='no' and is_vip ='no'";
+            MySqlCommand command = new MySqlCommand(check_in_query, connection);
+            command.Parameters.Clear();
+            try
+            {
+                connection.Open();
+                MySqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    return Convert.ToInt32(reader["minspot"]);
+                }
+
+                throw new Exception("ERROR WHILE GETTING CAMP SPOT NUMBER");
+               
+            }
+            catch
+            {
+                throw new Exception("ERROR WHILE GETTING CAMP SPOT NUMBER");
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+        private int AvailibleCampSpotVIP()
+        {   
+
+            string check_in_query = "SELECT min(spot_nr) as minspot FROM camp_spots WHERE is_reserved='no' and is_vip ='yes'";
+            MySqlCommand command = new MySqlCommand(check_in_query, connection);
+            command.Parameters.Clear();
+            try
+            {
+                connection.Open();
+                MySqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    return Convert.ToInt32(reader["minspot"]);
+                }
+
+                throw new Exception("ERROR WHILE GETTING CAMP SPOT NUMBER");
+               
+            }
+            catch
+            {
+                throw new Exception("ERROR WHILE GETTING CAMP SPOT NUMBER");
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+        private bool CreateAccount(string email, string phone, string password, string iban, decimal initialbal,
+            decimal currentbal)
+        {
+            string query =
+                            "INSERT INTO account (`email`, `phone`, `password`, `bank_act_nr`, `initial_balance`, `currentbal`, `is_valid`) VALUES (@email, @phone, @password, @iban, @initialbal, @currentbal,'yes')";
+            var command = new MySqlCommand(query, connection);
+            
+            command.Parameters.AddWithValue("@email", email);
+          
+            command.Parameters.AddWithValue("@phone", phone);
+
+            command.Parameters.AddWithValue("@password", password);
+            command.Parameters.AddWithValue("@iban", iban);
+            command.Parameters.AddWithValue("@initialbal",initialbal);
+            command.Parameters.AddWithValue("@currentbal", currentbal);
+
+
+            try
+            {
+                int nrOfRecordsChanged = command.ExecuteNonQuery();
+                if (nrOfRecordsChanged > 0)
+                {
+
+                    connection.Close();
+
+                    return true;
+
+                }
+
+                return false;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+           
+        }
+
+        private bool CreateUser(string email, string fname, string lname, int accountid,int group_id, string is_admin,string is_vip)
+        {
+            string query =
+                "INSERT INTO users (`fname`, `lname`, `account_id`, `email`, `group_id`, `is_admin`,`is_vip`) VALUES (@fname, @lname, @account_id, @email, @group_id, @is_admin,@is_vip)";
+            var command = new MySqlCommand(query, connection);
+            
+            command.Parameters.AddWithValue("@email", email);
+          
+            command.Parameters.AddWithValue("@fname", fname);
+
+            command.Parameters.AddWithValue("@lname", lname);
+            command.Parameters.AddWithValue("@account_id", accountid);
+            if(group_id==0){ command.Parameters.AddWithValue("@group_id",null);}
+            else
+            {
+                command.Parameters.AddWithValue("@group_id",group_id);
+
+            }
+           
+            command.Parameters.AddWithValue("@is_vip", is_vip);
+            command.Parameters.AddWithValue("@is_admin", is_admin);
+
+
+            try
+            {
+                int nrOfRecordsChanged = command.ExecuteNonQuery();
+                if (nrOfRecordsChanged > 0)
+                {
+
+                    connection.Close();
+
+                    return true;
+
+                }
+
+                return false;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+           
+        }
+        
+        private bool CreateTicket(int user_id)
+        {
+            string query =
+                "INSERT INTO tickets (`user_id`, `date_of_purchase`) VALUES (@user,@date)";
+            var command = new MySqlCommand(query, connection);
+            
+            command.Parameters.AddWithValue("@user", user_id);
+            string s = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            command.Parameters.AddWithValue("@date", s);
+            try
+            {
+                int nrOfRecordsChanged = command.ExecuteNonQuery();
+                if (nrOfRecordsChanged > 0)
+                {
+
+                    connection.Close();
+
+                    return true;
+
+                }
+
+                return false;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+           
+        }
+
+        private bool MakeCampReservation(int campspot,int account_id,string pay)
+        {
+            string query =
+                "INSERT INTO camp_reservation (`spot_nr`, `account_id`, `is_paid`) VALUES (@spot,@actid,@pay)";
+            var command = new MySqlCommand(query, connection);
+            
+            command.Parameters.AddWithValue("@spot", campspot);
+            
+            command.Parameters.AddWithValue("@actid", account_id);
+            command.Parameters.AddWithValue("@pay", pay);
+            try
+            {
+                int nrOfRecordsChanged = command.ExecuteNonQuery();
+                if (nrOfRecordsChanged > 0)
+                {
+                    query =
+                        "UPDATE camp_spots SET is_reserved = 'yes' where spot_nr = @nr";
+                    command = new MySqlCommand(query, connection);
+            
+                    command.Parameters.AddWithValue("@nr", campspot);
+                     nrOfRecordsChanged = command.ExecuteNonQuery();
+                     if (nrOfRecordsChanged > 0)
+                     {
+                         connection.Close();
+
+                         return true;
+                     }
+                }
+
+                return false;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+           
+        }
+        private int GetGroupNumber()
+        {
+            String query = "SELECT max(group_id) as group_id FROM users";
+            MySqlCommand command = new MySqlCommand(query, connection);
+
+            int number;
+            try
+            {
+                connection.Open();
+                number = Convert.ToInt32(command.ExecuteScalar());
+                connection.Close();
+                return number+1;
+            }
+            catch(Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+        private int GetUserId()
+        {
+            String query = "SELECT max(user_id) as user_id FROM users";
+            MySqlCommand command = new MySqlCommand(query, connection);
+
+            int number;
+            try
+            {
+                connection.Open();
+                number = Convert.ToInt32(command.ExecuteScalar());
+                connection.Close();
+                return number;
+            }
+            catch(Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+        private int getAccountId(string email)
+        {
+            String query = "SELECT account_id FROM accounts WHERE email=@email";
+            MySqlCommand command = new MySqlCommand(query, connection);
+            command.Parameters.AddWithValue("@email", email);
+
+            int number;
+            try
+            {
+                connection.Open();
+                number = Convert.ToInt32(command.ExecuteScalar());
+                connection.Close();
+                return number;
+            }
+            catch(Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+          
+        }
+
+        public bool SellTicketIndividual(TicketPurchase g)
+        {
+            try
+            {
+                CreateAccount(g.getEmail, g.getPhone, g.getPassword, g.getIban, g.getTopUp, g.getTopUp);
+                var accountid = getAccountId(g.getEmail);
+                CreateUser(g.getEmail, g.getFName, g.getLName, accountid, 0, "yes",
+                    "no");
+                var userid = GetUserId();
+                CreateTicket(userid);
+                addTransaction(userid, 55, "registration");
+            
+            
+                return true;
+            }
+            catch (Exception e)
+            {
+                
+                throw new Exception(e.Message);
+            }
+          
+        }
+        public bool SellTicketGroup(TicketGroup g)
+        {
+           
+            decimal _topUp = g.getTopUp;
+            var _isVip = g.getVip;
+
+            try
+            {
+                if (_isVip =="yes")
+                {
+                    _topUp += 250;
+                    CreateAccount(g.getEmail, g.getPhone, g.getPassword, g.getIban, g.getTopUp, g.getTopUp);
+                    var accountid = getAccountId(g.getEmail);
+                    CreateUser(g.getEmail, g.getFName, g.getLName, accountid, 0, "yes",
+                        "yes");
+                    var userid = GetUserId();
+                    CreateTicket(userid);
+                    addTransaction(userid, 150, "registration");
+                    addTransaction(userid, 130, "camp");
+                    var campspot = AvailibleCampSpotVIP();
+                    MakeCampReservation(campspot, accountid, "yes");
+
+
+                }
+                else
+                {
+                    
+                    
+                    var groupid = GetGroupNumber();
+                    _topUp += 500;
+                    CreateAccount(g.getEmail, g.getPhone, g.getPassword, g.getIban, g.getTopUp, g.getTopUp);
+                    var accountid = getAccountId(g.getEmail);
+                    CreateUser(g.getEmail, g.getFName, g.getLName, accountid, groupid, "yes",
+                        "no");
+                     var userid = GetUserId();
+                    CreateTicket(userid);
+                    addTransaction(userid, 55 * (g.getFNames.Count + 1), "registration");
+
+                    if (g.getPaynow == "yes")
+                    {
+                        addTransaction(userid, 20 * (g.getFNames.Count + 1), "camp");
+                    }
+                    userid++;
+                    for (int i = 0; i < g.getFNames.Count; i++)
+                    {
+                        
+                        CreateUser(g.getEmails[i], g.getFNames[i], g.getLNames[i], accountid, groupid, "no", "no");
+                        userid++;
+                        CreateTicket(userid);
+                    }
+
+                    var campspot = AvailibleCampSpot();
+                    MakeCampReservation(campspot, accountid, g.getPaynow);
+                }
+
+
+
+
+            }
+            catch (Exception e)
+            {
+                
+                throw new Exception(e.Message);
+            }
+            return false;
+
+        }
+
+        //end ticket purchsase
     }
 }

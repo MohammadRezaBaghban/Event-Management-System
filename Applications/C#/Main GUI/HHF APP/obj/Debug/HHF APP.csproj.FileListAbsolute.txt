@@ -186,3 +186,6 @@ C:\xampp\htdocs\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF APP.cs
 C:\xampp\htdocs\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF.exe
 C:\xampp\htdocs\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF.pdb
 C:\xampp\htdocs\ProP_Sems2\Applications\C#\Main GUI\HHF APP\obj\Debug\HHF APP.csprojAssemblyReference.cache
+C:\xampp\htdocs\ProP_Sems2\Applications\C#\Main GUI\HHF APP\bin\Debug\CryptSharp.dll
+C:\xampp\htdocs\ProP_Sems2\Applications\C#\Main GUI\HHF APP\bin\Debug\CryptSharp.pdb
+C:\xampp\htdocs\ProP_Sems2\Applications\C#\Main GUI\HHF APP\bin\Debug\CryptSharp.xml
