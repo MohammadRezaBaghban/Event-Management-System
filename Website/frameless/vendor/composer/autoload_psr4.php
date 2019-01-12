@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Picqer\\Barcode\\' => array($vendorDir . '/picqer/php-barcode-generator/src'),
+    'Picqer\\Api\\' => array($vendorDir . '/picqer/api-client/src'),
 );

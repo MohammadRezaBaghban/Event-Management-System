@@ -79,25 +79,31 @@ namespace HHF_APP
         }
         private void GetListOfLoanedItems()
         {
-            DataSet ds = new DataSet();
-            using (MySqlConnection con = new MySqlConnection(cs))
+            try
             {
-                string query = "Select loaned_id as 'Record ID', t.account_id as 'Account Id', " +
-                               "if(a.type = 'usb', 'USB Cable', if(a.type = 'torch','Torch','Power Bank')) as 'Item Type', " +
-                               "if(l.article_status='loaned', 'Not Returned','Returned') as 'Item Status' " +
-                               "From articles a join loaned l On (a.article_nr = l.article_nr) Join transactions t on ( l.transaction_id = t.transaction_id ) " +
-                               "ORDER By 1 ";
-                using (MySqlDataAdapter da = new MySqlDataAdapter(query, con))
+                DataSet ds = new DataSet();
+                using (MySqlConnection con = new MySqlConnection(cs))
                 {
-                    da.FillSchema(ds, schemaType: SchemaType.Source);
-                    da.Fill(ds);
+                    string query = "Select loaned_id as 'Record ID', t.account_id as 'Account Id', " +
+                                   "if(a.type = 'usb', 'USB Cable', if(a.type = 'torch','Torch','Power Bank')) as 'Item Type', " +
+                                   "if(l.article_status='loaned', 'Not Returned','Returned') as 'Item Status' " +
+                                   "From articles a join loaned l On (a.article_nr = l.article_nr) Join transactions t on ( l.transaction_id = t.transaction_id ) " +
+                                   "ORDER By 1 ";
+                    using (MySqlDataAdapter da = new MySqlDataAdapter(query, con))
+                    {
+                        da.FillSchema(ds, schemaType: SchemaType.Source);
+                        da.Fill(ds);
+                    }
                 }
+
+                DG_LoanedArticels.DataSource = ds;
+                DG_LoanedArticels.DataMember = ds.Tables[0].TableName;
+
+                Revenue();
             }
-
-            DG_LoanedArticels.DataSource = ds;
-            DG_LoanedArticels.DataMember = ds.Tables[0].TableName;
-
-            Revenue();
+            catch
+            {
+            }
         }
         private void btnReturnItem_Click(object sender, EventArgs e)
         {
@@ -291,7 +297,7 @@ namespace HHF_APP
         {
             if (!btnLendItem.Enabled)
             {
-                //accountId = -1;
+                accountId = -1;
                 btnLendItem.BackColor = Color.DimGray;
                 btnLendItem.ForeColor = Color.White;
                 Cb_powerbank.Enabled = false;
@@ -397,8 +403,7 @@ namespace HHF_APP
                         }
                     }
 
-                    this.btnLendItem.Enabled = false;
-                    this.flowLayoutPanel3.Enabled = false;
+                    this.Enabled = false;
 
                 }
             }

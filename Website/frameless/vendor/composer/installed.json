@@ -1,5 +1,51 @@
 [
     {
+        "name": "picqer/api-client",
+        "version": "v0.17.0",
+        "version_normalized": "0.17.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/picqer/picqer-php.git",
+            "reference": "c16e5d112cf51a20f3f804345dc9a48fac8a8177"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/picqer/picqer-php/zipball/c16e5d112cf51a20f3f804345dc9a48fac8a8177",
+            "reference": "c16e5d112cf51a20f3f804345dc9a48fac8a8177",
+            "shasum": ""
+        },
+        "require": {
+            "ext-curl": "*",
+            "php": ">=5.6.0"
+        },
+        "time": "2018-11-29T19:13:17+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Picqer\\Api\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Casper Bakker",
+                "email": "info@picqer.com"
+            }
+        ],
+        "description": "A PHP Client for the Picqer API",
+        "homepage": "https://github.com/picqer/picqer-php",
+        "keywords": [
+            "api",
+            "php",
+            "picqer",
+            "wms"
+        ]
+    },
+    {
         "name": "picqer/php-barcode-generator",
         "version": "v0.2.2",
         "version_normalized": "0.2.2.0",

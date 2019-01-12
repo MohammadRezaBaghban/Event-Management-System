@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 //using Spire.Barcode;
-// Spire.Barcode.Implementation;
+//using Spire.Barcode.Implementation;
 using System.Diagnostics;
 using System.IO;
 using System.Drawing.Printing;
-//using Spire.Barcode;
+using Spire.Barcode;
 
 namespace HHF_APP
 {
@@ -53,7 +53,7 @@ namespace HHF_APP
             
             try
             {
-               /* BarcodeSettings barsetting = new BarcodeSettings();
+                BarcodeSettings barsetting = new BarcodeSettings();
 
                 //set the x dimension
                 barsetting.X = 0.8f;
@@ -77,7 +77,7 @@ namespace HHF_APP
                 pd.PrintPage += PrintPage;
                 pd.Print();
                 Process.Start(filename);
-             */   // Process.Start(@filename);
+                // Process.Start(@filename);
             }
             catch (Exception ex)
             {

@@ -729,7 +729,6 @@ namespace HHF_APP
                             viewLending1.userId = p.getUserId;
                             viewLending1.accountId = input;
                             viewLending1.btnLendItem.Enabled = true;
-                            this.viewLending1.flowLayoutPanel3.Enabled = true;
                             bool hasRecord = false;
                             int index = -1;
                             viewLending1.DG_LoanedArticels.Sort(viewLending1.DG_LoanedArticels.Columns[1], ListSortDirection.Ascending);

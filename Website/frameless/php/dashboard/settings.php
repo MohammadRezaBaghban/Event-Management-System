@@ -126,6 +126,8 @@ else
             <div id="navigation">
                 <!-- Navigation Menu-->
                 <ul class="navigation-menu">
+                    <li><a href="/"><i class="mdi mdi-view-dashboard"></i><span>Home</span></a></li>
+
                     <li><a href="/php/dashboard/dashboard.php"><i class="mdi mdi-view-dashboard"></i><span>Dashboard</span></a></li>
                     <li><a href="/php/dashboard/topup.php"><i class="mdi mdi-view-dashboard"></i><span>Top Up</span></a></li>
                     <li><a href="/php/dashboard/settings.php"><i class="mdi mdi-view-settings"></i><span>Settings</span></a></li>

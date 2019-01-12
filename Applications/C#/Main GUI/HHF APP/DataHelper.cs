@@ -357,30 +357,38 @@ namespace HHF_APP
 
         //Function for login 
 
-        public bool appLogin(string email, string password)
+        public int appLogin(string email, string password)
         {
-            //Count because the number of records for succesfull login should be q as there is only one user with such records
-            //string joinQuery = "SELECT COUNT(*) as cnt , position FROM employees WHERE email=@email AND password =@password";
-            string joinQuery = $"SELECT COUNT(*) as cnt FROM employees WHERE email='{email}' AND password ='{password}'";
-            MySqlCommand command = new MySqlCommand(joinQuery, connection);
+            
+            int checker = 0;
+            string query = $"SELECT position FROM employees WHERE email='{email}' AND password ='{password}'";
+            MySqlCommand command = new MySqlCommand(query, connection);
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@email", email);
             command.Parameters.AddWithValue("@password", password);
+
             try
             {
                 connection.Open();
-                if (command.ExecuteScalar().ToString() == "1")
+                MySqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
                 {
-                    return true;
+
+                    if (reader["position"].ToString() == "manager")
+                    {
+                        checker = 1;
+                    }
+                    else if (reader["position"].ToString() == "admin")
+                    {
+                        checker = 0;
+                    }
                 }
-                else
-                {
-                   return false;
-                }
+                return checker;
             }
-            catch
+            catch(Exception exc)
             {
-               return false;
+                return -1;
             }
             finally
             {
@@ -1373,7 +1381,7 @@ namespace HHF_APP
             decimal currentbal)
         {
             string query =
-                            "INSERT INTO account (`email`, `phone`, `password`, `bank_act_nr`, `initial_balance`, `currentbal`, `is_valid`) VALUES (@email, @phone, @password, @iban, @initialbal, @currentbal,'yes')";
+                            "INSERT INTO accounts (`email`, `phone`, `password`, `bank_act_nr`, `initial_balance`, `currentbal`, `is_valid`) VALUES (@email, @phone, @password, @iban, @initialbal, @currentbal,'yes')";
             var command = new MySqlCommand(query, connection);
             
             command.Parameters.AddWithValue("@email", email);
@@ -1387,7 +1395,7 @@ namespace HHF_APP
 
 
             try
-            {
+            {   connection.Open();
                 int nrOfRecordsChanged = command.ExecuteNonQuery();
                 if (nrOfRecordsChanged > 0)
                 {
@@ -1410,7 +1418,7 @@ namespace HHF_APP
         private bool CreateUser(string email, string fname, string lname, int accountid,int group_id, string is_admin,string is_vip)
         {
             string query =
-                "INSERT INTO users (`fname`, `lname`, `account_id`, `email`, `group_id`, `is_admin`,`is_vip`) VALUES (@fname, @lname, @account_id, @email, @group_id, @is_admin,@is_vip)";
+                "INSERT INTO users (`fname`, `lname`, `account_id`, `email`, `group_id`, `is_admin`,`is_vip`,`status`) VALUES (@fname, @lname, @account_id, @email, @group_id, @is_admin,@is_vip,'checked_in')";
             var command = new MySqlCommand(query, connection);
             
             command.Parameters.AddWithValue("@email", email);
@@ -1430,8 +1438,8 @@ namespace HHF_APP
             command.Parameters.AddWithValue("@is_admin", is_admin);
 
 
-            try
-            {
+            try 
+            {connection.Open();
                 int nrOfRecordsChanged = command.ExecuteNonQuery();
                 if (nrOfRecordsChanged > 0)
                 {
@@ -1461,7 +1469,7 @@ namespace HHF_APP
             string s = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             command.Parameters.AddWithValue("@date", s);
             try
-            {
+            { connection.Open();
                 int nrOfRecordsChanged = command.ExecuteNonQuery();
                 if (nrOfRecordsChanged > 0)
                 {
@@ -1492,7 +1500,7 @@ namespace HHF_APP
             command.Parameters.AddWithValue("@actid", account_id);
             command.Parameters.AddWithValue("@pay", pay);
             try
-            {
+            { connection.Open();
                 int nrOfRecordsChanged = command.ExecuteNonQuery();
                 if (nrOfRecordsChanged > 0)
                 {
@@ -1579,13 +1587,13 @@ namespace HHF_APP
         {
             try
             {
-                CreateAccount(g.getEmail, g.getPhone, g.getPassword, g.getIban, g.getTopUp, g.getTopUp);
+                CreateAccount(g.getEmail, g.getPhone, g.getPassword, g.getIban, g.getTopUp+65, g.getTopUp+65);
                 var accountid = getAccountId(g.getEmail);
                 CreateUser(g.getEmail, g.getFName, g.getLName, accountid, 0, "yes",
                     "no");
                 var userid = GetUserId();
                 CreateTicket(userid);
-                addTransaction(userid, 55, "registration");
+                addTransaction(userid, 65, "registration");
             
             
                 return true;
@@ -1599,70 +1607,91 @@ namespace HHF_APP
         }
         public bool SellTicketGroup(TicketGroup g)
         {
-           
-            decimal _topUp = g.getTopUp;
-            var _isVip = g.getVip;
-
-            try
-            {
-                if (_isVip =="yes")
-                {
-                    _topUp += 250;
-                    CreateAccount(g.getEmail, g.getPhone, g.getPassword, g.getIban, g.getTopUp, g.getTopUp);
-                    var accountid = getAccountId(g.getEmail);
-                    CreateUser(g.getEmail, g.getFName, g.getLName, accountid, 0, "yes",
-                        "yes");
-                    var userid = GetUserId();
-                    CreateTicket(userid);
-                    addTransaction(userid, 150, "registration");
-                    addTransaction(userid, 130, "camp");
-                    var campspot = AvailibleCampSpotVIP();
-                    MakeCampReservation(campspot, accountid, "yes");
-
-
-                }
-                else
-                {
-                    
-                    
-                    var groupid = GetGroupNumber();
-                    _topUp += 500;
-                    CreateAccount(g.getEmail, g.getPhone, g.getPassword, g.getIban, g.getTopUp, g.getTopUp);
-                    var accountid = getAccountId(g.getEmail);
-                    CreateUser(g.getEmail, g.getFName, g.getLName, accountid, groupid, "yes",
-                        "no");
-                     var userid = GetUserId();
-                    CreateTicket(userid);
-                    addTransaction(userid, 55 * (g.getFNames.Count + 1), "registration");
-
-                    if (g.getPaynow == "yes")
-                    {
-                        addTransaction(userid, 20 * (g.getFNames.Count + 1), "camp");
-                    }
-                    userid++;
-                    for (int i = 0; i < g.getFNames.Count; i++)
-                    {
-                        
-                        CreateUser(g.getEmails[i], g.getFNames[i], g.getLNames[i], accountid, groupid, "no", "no");
-                        userid++;
-                        CreateTicket(userid);
-                    }
-
-                    var campspot = AvailibleCampSpot();
-                    MakeCampReservation(campspot, accountid, g.getPaynow);
-                }
-
-
-
-
-            }
-            catch (Exception e)
+            using (connection)
             {
                 
-                throw new Exception(e.Message);
-            }
-            return false;
+                decimal _topUp = g.getTopUp;
+                var _isVip = g.getVip;
+                
+                try
+                {
+                   
+                    if (_isVip == "yes")
+                    {
+                        _topUp += 340;
+                        if (CreateAccount(g.getEmail, g.getPhone, g.getPassword, g.getIban, _topUp, _topUp))
+                        {
+                            var accountid = getAccountId(g.getEmail);
+                            if (CreateUser(g.getEmail, g.getFName, g.getLName, accountid, 0, "yes",
+                                "yes"))
+                            {
+                                var userid = GetUserId();
+                                if(CreateTicket(userid)){
+                                    if (addTransaction(userid, 160, "registration") == 1)
+                                    {
+                                        if (addTransaction(userid, 180, "camp")==1)
+                                        {
 
+
+                                            var campspot = AvailibleCampSpotVIP();
+                                            if (MakeCampReservation(campspot, accountid, "yes"))
+                                            {
+                                               
+                                                return true;
+                                            }
+                                        }
+
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+                    else
+                    {
+
+
+                        var groupid = GetGroupNumber();
+                        _topUp += 500;
+                        CreateAccount(g.getEmail, g.getPhone, g.getPassword, g.getIban, _topUp, _topUp);
+                        var accountid = getAccountId(g.getEmail);
+                        CreateUser(g.getEmail, g.getFName, g.getLName, accountid, groupid, "yes",
+                            "no");
+                        var userid = GetUserId();
+                        CreateTicket(userid);
+                        addTransaction(userid, 65 * (g.getFNames.Count + 1), "registration");
+
+                        if (g.getPaynow == "yes")
+                        {
+                            addTransaction(userid, 20 * (g.getFNames.Count + 1) + 10, "camp");
+                        }
+
+                        userid++;
+                        for (int i = 0; i < g.getFNames.Count; i++)
+                        {
+
+                            CreateUser(g.getEmails[i], g.getFNames[i], g.getLNames[i], accountid, groupid, "no", "no");
+                            
+                            CreateTicket(userid);
+                            userid++;
+                        }
+
+                        var campspot = AvailibleCampSpot();
+                        MakeCampReservation(campspot, accountid, g.getPaynow);
+                    }
+
+
+
+
+                }
+                catch (Exception e)
+                {
+                    
+                    throw new Exception(e.Message);
+                }
+
+                return false;
+            }
         }
 
         //end ticket purchsase

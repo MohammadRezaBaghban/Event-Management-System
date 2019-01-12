@@ -1,6 +1,6 @@
 <?php
 if(!isset($_REQUEST['$spotnr'])){
-    echo "please set username";
+    echo "please set spot nr";
     exit;
 }
 $spotnr = $_REQUEST['$spotnr'];
@@ -22,7 +22,7 @@ else
     $sth->execute([':spotnr' => $spotnr]);
     $result = $sth->fetch();
 
-    if (isset($result[0]) == false) {
+    if ($result[0] == $spotnr) {
        echo "<div style='color: red; font-weight: bold; font-size: 16px'>camp spot is already reserved</div>";
     }
     else{

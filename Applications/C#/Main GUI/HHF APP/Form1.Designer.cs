@@ -15,7 +15,7 @@ namespace HHF_APP
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button LogoutBtn;
         private System.Windows.Forms.Panel sidepanelforBTNs;
-        private System.Windows.Forms.Button AdminBtn;
+        public System.Windows.Forms.Button AdminBtn;
         private System.Windows.Forms.Button lendBtn;
         private System.Windows.Forms.Button campBtn;
         private System.Windows.Forms.Button checkinBTn;
@@ -30,7 +30,7 @@ namespace HHF_APP
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnscanBarcodeMainForm;
-        private viewAdminDashboard viewAdminDashboard1;
+        public viewAdminDashboard viewAdminDashboard1;
         private viewCamping viewCamping1;
         private viewCheckInOut viewCheckInOut1;
         private viewLending viewLending1;

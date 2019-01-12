@@ -16,6 +16,7 @@ namespace HHF_APP
         private List<string> FirstName;
         List<string> LastName;
         List<string> Email;
+        private DataHelper dh=new DataHelper();
 
        
         List<Member> members = new List<Member>();
@@ -74,7 +75,7 @@ namespace HHF_APP
                 this.RbIndividual.Checked = false;
                 this.RbGroup.Checked = false;
                 this.RbVIP.Checked = true;
-                this.GbCamping.Visible = true;
+                this.GbCamping.Visible = false;
                 this.GbGroupMembers.Visible = false;
             }
             ChangeColor();
@@ -238,6 +239,57 @@ namespace HHF_APP
         }
 
         private void BtnRegister_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (TbEmail.Text == TbRepeatEmail.Text && TbPassword.Text == TbConfirmPassword.Text && TbFirstName.Text!=""&& TbIBAN.Text!="" && TbLastName.Text!=""&& TbPassword.Text!=""&& TbEmail.Text!=""&& TbLastName.Text!=""&& TbPassword.Text!=""&& NrTopUp.Text!="")
+                {
+                    if (RbIndividual.Checked)
+                    {
+                        dh.SellTicketIndividual(new TicketPurchase(TbFirstName.Text.ToString(),
+                            TbLastName.Text.ToString(), TbEmail.Text.ToString(), TbPassword.Text.ToString(),
+                            TbPhone.Text.ToString(), TbIBAN.Text.ToString(), Convert.ToDecimal(NrTopUp.Value)));
+                    }
+                    else if (RbGroup.Checked)
+                    {
+                        dh.SellTicketGroup(new TicketGroup
+                        (TbFirstName.Text.ToString(),
+                            TbLastName.Text.ToString(), TbEmail.Text.ToString(), TbPassword.Text.ToString(),
+                            TbPhone.Text.ToString(), TbIBAN.Text.ToString(), Convert.ToDecimal(NrTopUp.Value),
+                            FirstName,
+                            LastName, Email, CbAdvancedPayment.Checked));
+                    }
+                    else if (RbVIP.Checked)
+                    {
+                        dh.SellTicketGroup(new TicketGroup
+                        (TbFirstName.Text.ToString(),
+                            TbLastName.Text.ToString(), TbEmail.Text.ToString(), TbPassword.Text.ToString(),
+                            TbPhone.Text.ToString(), TbIBAN.Text.ToString(), Convert.ToDecimal(NrTopUp.Value), true));
+
+                    }
+                }
+                else if(TbEmail.Text != TbRepeatEmail.Text)
+                {
+                    MessageBox.Show("Emails Dont Match");
+                }
+                else if (TbPassword.Text != TbConfirmPassword.Text)
+                {
+                    MessageBox.Show("Password Dont Match");
+                }
+            }
+            catch(Exception ee)
+            {
+                MessageBox.Show(ee.Message);
+            }
+
+        }
+
+        private void RbGroup_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnReset_Click(object sender, EventArgs e)
         {
 
         }

@@ -121,7 +121,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 function SendMail($username, $userid, $mail)
 {
 
-    $generator = new \Picqer\Barcode\BarcodeGeneratorPNG();
+    $generator = new Picqer\Barcode\BarcodeGeneratorPNG();
     $barcode = $generator->getBarcode($userid, $generator::TYPE_CODABAR);
 
     $message = '<html><body>';
@@ -359,7 +359,7 @@ if ($_GET['type'] === "group" || $_GET['type'] === "individual" || $_GET['type']
                 $datenow = date("Y-m-d");
                 $timenow = date("h:i:s");
                 if ($_GET['type'] === "vip") {
-                    $amount = 230;
+                    $amount = 150;
                 } else {
                     $amount = 55;
                 }
@@ -371,6 +371,18 @@ if ($_GET['type'] === "group" || $_GET['type'] === "individual" || $_GET['type']
                 $query = $myPDO->prepare('UPDATE accounts SET currentbal = :bal WHERE account_id = :nr');
                 $query->execute([':nr' => $act_id, ':bal' => $currentbal]);
                 if ($_GET['type'] === "vip") {
+
+                    $campamount = 130;
+                    $sql = 'insert into transactions values(transaction_id,:datetra,:timetra,:actID,:amount,:current_balance,:typetra)';
+                    $sth = $myPDO->prepare($sql);
+                    $datenow = date("Y-m-d");
+                    $timenow = date("h:i:s");
+
+                    $currentbal -=$campamount;
+                    $sth->execute([':datetra' => $datenow, ':timetra' => $timenow, ':actID' => $act_id, ':amount' => $campamount,
+                        ':current_balance' => $currentbal
+                        , ':typetra' => "camp"]);
+                
                     //create a camp reservation for the vip
                     $sql = 'insert into camp_reservation values(:spot,:actid,:pay,null)';
                     $sth = $myPDO->prepare($sql);

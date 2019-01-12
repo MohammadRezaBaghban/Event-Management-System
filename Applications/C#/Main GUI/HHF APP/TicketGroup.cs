@@ -22,29 +22,14 @@ namespace HHF_APP
             _fNames = fNames;
             _lNames = lNames;
             _emails = emails;
-            if (paynow)
-            {
-                _paynow = "yes";
-            }
-            else
-            {
-                _paynow = "no";
-            }
-
+            _paynow = paynow ? "yes" : "no";
         }
 
         public TicketGroup(string fName, string lName, string email, string password, string phone, string iban,
             decimal topUp, bool isVip) : base(fName,
             lName, email, password, phone, iban, topUp)
         {
-            if (isVip)
-            {
-                _vip = "yes";
-            }
-            else
-            {
-                _vip = "no";
-            }
+            _vip = isVip ? "yes" : "no";
 
         }
 

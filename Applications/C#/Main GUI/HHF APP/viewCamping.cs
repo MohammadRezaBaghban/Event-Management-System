@@ -222,28 +222,21 @@ namespace HHF_APP
             try
             {
                 dt1 = AvailableCampingSpots();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"{ex.Message}");
-            }
-            try
-            {
                 dt2 = ReservedCampingSpots();
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"{ex.Message}");
-            }
+          
+            
 
             DG_ReservedSpots.DataSource = dt2;
             DG_ReservedSpots.DataMember = dt2.TableName;
             DG_ReservedSpots.Sort(DG_ReservedSpots.Columns[1], ListSortDirection.Descending);
 
             LAvailableSpot.Text = $"{NrOfSpots("no")}/{NrOfSpots("yes") + NrOfSpots("no")}";
-            LOccupiedSpot.Text = $"{NrOfSpots("yes")}";
+            LOccupiedSpot.Text = $"{NrOfSpots("yes")}";  }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"{ex.Message}");
+            }
 
         }
 

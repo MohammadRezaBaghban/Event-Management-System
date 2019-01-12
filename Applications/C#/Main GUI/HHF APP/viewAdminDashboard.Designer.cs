@@ -1,8 +1,6 @@
 ﻿
 namespace HHF_APP
 {
-    using System.Drawing;
-
     partial class viewAdminDashboard
     {
         /// <summary> 
@@ -255,9 +253,8 @@ namespace HHF_APP
             this.lbEmployees.FormattingEnabled = true;
             this.lbEmployees.Location = new System.Drawing.Point(4, 11);
             this.lbEmployees.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.lbEmployees.Font = new Font("Segoe UI", 11.0F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbEmployees.Name = "lbEmployees";
-            this.lbEmployees.Size = new System.Drawing.Size(667, 193);
+            this.lbEmployees.Size = new System.Drawing.Size(667, 173);
             this.lbEmployees.TabIndex = 0;
             this.lbEmployees.SelectedIndexChanged += new System.EventHandler(this.lbEmployees_SelectedIndexChanged_1);
             this.lbEmployees.SelectedValueChanged += new System.EventHandler(this.lbEmployees_SelectedValueChanged);
@@ -291,7 +288,6 @@ namespace HHF_APP
             this.lbATMLog.FormattingEnabled = true;
             this.lbATMLog.Location = new System.Drawing.Point(452, 19);
             this.lbATMLog.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.lbATMLog.Font = new Font("Segoe UI", 11.0F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbATMLog.Name = "lbATMLog";
             this.lbATMLog.Size = new System.Drawing.Size(357, 56);
             this.lbATMLog.TabIndex = 4;
@@ -370,7 +366,7 @@ namespace HHF_APP
             // panel18
             // 
             this.panel18.AutoSize = true;
-            this.panel18.BackColor = System.Drawing.Color.GreenYellow;
+            this.panel18.BackColor = System.Drawing.Color.Aqua;
             this.panel18.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel18.BackgroundImage")));
             this.panel18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -427,7 +423,7 @@ namespace HHF_APP
             // panel5
             // 
             this.panel5.AutoSize = true;
-            this.panel5.BackColor = System.Drawing.Color.Orange;
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
             this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -497,7 +493,7 @@ namespace HHF_APP
             // panel3
             // 
             this.panel3.AutoSize = true;
-            this.panel3.BackColor = System.Drawing.Color.Gold;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -553,7 +549,7 @@ namespace HHF_APP
             // panel15
             // 
             this.panel15.AutoSize = true;
-            this.panel15.BackColor = System.Drawing.Color.LimeGreen;
+            this.panel15.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.panel15.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel15.BackgroundImage")));
             this.panel15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -621,7 +617,7 @@ namespace HHF_APP
             // panel8
             // 
             this.panel8.AutoSize = true;
-            this.panel8.BackColor = System.Drawing.Color.Chocolate;
+            this.panel8.BackColor = System.Drawing.Color.CornflowerBlue;
             this.panel8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel8.BackgroundImage")));
             this.panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -678,7 +674,7 @@ namespace HHF_APP
             // panel12
             // 
             this.panel12.AutoSize = true;
-            this.panel12.BackColor = System.Drawing.Color.Lime;
+            this.panel12.BackColor = System.Drawing.Color.MediumSpringGreen;
             this.panel12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel12.BackgroundImage")));
             this.panel12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;

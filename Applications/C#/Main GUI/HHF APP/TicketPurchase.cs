@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
+using CryptSharp.Utility;
+using DevOne.Security.Cryptography.BCrypt;
 
 namespace HHF_APP
 {
@@ -16,12 +14,18 @@ namespace HHF_APP
             _fName = fName;
             _lName = lName;
             _email = email;
-            _password = password;
+
+            _password = BCryptHelper.HashPassword(password, getSalt());
             _phone = phone;
             _iban = iban;
             _topUp = topUp;
         }
 
+        private static string getSalt()
+        {
+
+            return BCryptHelper.GenerateSalt();
+        }
         public string getFName => _fName;
         public string getLName => _lName;
 

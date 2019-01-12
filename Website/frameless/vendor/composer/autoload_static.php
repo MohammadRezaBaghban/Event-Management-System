@@ -10,6 +10,7 @@ class ComposerStaticInit3cc0639bd409752098313a3935ef4db4
         'P' => 
         array (
             'Picqer\\Barcode\\' => 15,
+            'Picqer\\Api\\' => 11,
         ),
     );
 
@@ -17,6 +18,10 @@ class ComposerStaticInit3cc0639bd409752098313a3935ef4db4
         'Picqer\\Barcode\\' => 
         array (
             0 => __DIR__ . '/..' . '/picqer/php-barcode-generator/src',
+        ),
+        'Picqer\\Api\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/picqer/api-client/src',
         ),
     );
 

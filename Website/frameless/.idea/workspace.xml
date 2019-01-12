@@ -5,19 +5,1441 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="57a408cb-29f0-4aa9-a724-f4cc8cea0832" name="Default Changelist" comment="connecting signup form to db plus validation for password repeat and mail validation on php an js">
+      <change afterPath="$PROJECT_DIR$/ajax/ajax.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Applications/C#/Main GUI/HHF APP/DataHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Applications/C#/Main GUI/HHF APP/DataHelper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Applications/C#/Main GUI/HHF APP/Form1.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Applications/C#/Main GUI/HHF APP/Form1.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Applications/C#/Main GUI/HHF APP/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Applications/C#/Main GUI/HHF APP/Form1.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Applications/C#/Main GUI/HHF APP/viewStore.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Applications/C#/Main GUI/HHF APP/viewStore.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Applications/C#/Main GUI/HHF APP/viewStore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Applications/C#/Main GUI/HHF APP/viewStore.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Applications/C#/Main GUI/HHF APP/TicketGroup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Applications/C#/Main GUI/HHF APP/TicketGroup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Applications/C#/Main GUI/HHF APP/obj/Debug/DesignTimeResolveAssemblyReferences.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../Applications/C#/Main GUI/HHF APP/obj/Debug/DesignTimeResolveAssemblyReferences.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Applications/C#/Main GUI/HHF APP/viewLogin.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Applications/C#/Main GUI/HHF APP/viewLogin.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Applications/C#/Main GUI/HHF APP/viewLogin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Applications/C#/Main GUI/HHF APP/viewLogin.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Applications/C#/Main GUI/HHF APP/viewTickets.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Applications/C#/Main GUI/HHF APP/viewTickets.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Applications/C#/Main GUI/HHF APP/viewTickets.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Applications/C#/Main GUI/HHF APP/viewTickets.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Applications/C#/Main GUI/HHF APP/viewTickets.resx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Applications/C#/Main GUI/HHF APP/viewTickets.resx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/frameless.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/frameless.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/.idea/frameless.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/.idea/php.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/Images/activities_gallery/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/Images/activities_gallery/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/Images/activities_gallery/3.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/Images/activities_gallery/4.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/Images/activities_gallery/5.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/Images/activities_gallery/6.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/Images/activities_gallery/9.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/Images/backgrounds/bg1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/Images/backgrounds/bg3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/Images/backgrounds/bg4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/Images/backgrounds/bg5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/Images/backgrounds/bg6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/Images/bg-01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/Images/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/Images/icons/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/Images/imac-371x412.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/Images/logo.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/Images/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/Images/logo_.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/JavaScript/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/JavaScript/jquery.validate.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/JavaScript/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/Style/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/Style/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/Style/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/Style/timeline.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/Style/util.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/ajax/ajax_info.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/ajax/categories.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/assets/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/assets/css/icons.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/assets/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/assets/fonts/dripicons-v2-.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/assets/fonts/dripicons-v2.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/assets/fonts/dripicons-v2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/assets/fonts/dripicons-v2.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/assets/fonts/dripicons-v2.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/assets/fonts/fontawesome-webfont-.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/assets/fonts/fontawesome-webfont-v=4.7.0.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/assets/fonts/fontawesome-webfont-v=4.7.0.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/assets/fonts/fontawesome-webfont-v=4.7.0.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/assets/fonts/fontawesome-webfont-v=4.7.0.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/assets/fonts/fontawesome-webfont-v=4.7.0.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/assets/fonts/materialdesignicons-webfont-.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/assets/fonts/materialdesignicons-webfont-v=2.0.46.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/assets/fonts/materialdesignicons-webfont-v=2.0.46.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/assets/fonts/materialdesignicons-webfont-v=2.0.46.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/assets/fonts/materialdesignicons-webfont-v=2.0.46.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/assets/fonts/materialdesignicons-webfont-v=2.0.46.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/assets/fonts/themify--fvbane.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/assets/fonts/themify--fvbane.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/assets/fonts/themify--fvbane.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/assets/fonts/themify--fvbane.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/assets/fonts/themify-.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/assets/images/bg6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/assets/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/assets/js/jquery.app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/assets/js/jquery.core.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/assets/js/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/assets/js/jquery.slimscroll.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/assets/js/modernizr.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/assets/js/popper.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/assets/js/waves.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/composer.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/Linearicons-Free-v1.0.0/WebFont/Linearicons-Free.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/Linearicons-Free-v1.0.0/WebFont/Linearicons-Free.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/Linearicons-Free-v1.0.0/WebFont/Linearicons-Free.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/Linearicons-Free-v1.0.0/WebFont/Linearicons-Free.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/Linearicons-Free-v1.0.0/WebFont/Linearicons-Free.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/Linearicons-Free-v1.0.0/icon-font.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/font-awesome-4.7.0/HELP-US-OUT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/font-awesome-4.7.0/css/font-awesome.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/font-awesome-4.7.0/css/font-awesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/font-awesome-4.7.0/fonts/FontAwesome.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/font-awesome-4.7.0/less/animated.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/font-awesome-4.7.0/less/bordered-pulled.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/font-awesome-4.7.0/less/core.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/font-awesome-4.7.0/less/fixed-width.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/font-awesome-4.7.0/less/font-awesome.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/font-awesome-4.7.0/less/icons.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/font-awesome-4.7.0/less/larger.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/font-awesome-4.7.0/less/list.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/font-awesome-4.7.0/less/mixins.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/font-awesome-4.7.0/less/path.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/font-awesome-4.7.0/less/rotated-flipped.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/font-awesome-4.7.0/less/screen-reader.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/font-awesome-4.7.0/less/stacked.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/font-awesome-4.7.0/less/variables.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/font-awesome-4.7.0/scss/_animated.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/font-awesome-4.7.0/scss/_bordered-pulled.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/font-awesome-4.7.0/scss/_core.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/font-awesome-4.7.0/scss/_fixed-width.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/font-awesome-4.7.0/scss/_icons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/font-awesome-4.7.0/scss/_larger.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/font-awesome-4.7.0/scss/_list.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/font-awesome-4.7.0/scss/_mixins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/font-awesome-4.7.0/scss/_path.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/font-awesome-4.7.0/scss/_rotated-flipped.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/font-awesome-4.7.0/scss/_screen-reader.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/font-awesome-4.7.0/scss/_stacked.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/font-awesome-4.7.0/scss/_variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/font-awesome-4.7.0/scss/font-awesome.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/fontawesome-webfont-.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/fontawesome-webfont-v=4.3.0.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/fontawesome-webfont-v=4.3.0.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/fontawesome-webfont-v=4.3.0.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/fontawesome-webfont-v=4.3.0.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/fontawesome-webfont-v=4.3.0.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/iconic/css/material-design-iconic-font.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/iconic/css/material-design-iconic-font.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/iconic/fonts/Material-Design-Iconic-Font.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/iconic/fonts/Material-Design-Iconic-Font.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/iconic/fonts/Material-Design-Iconic-Font.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/iconic/fonts/Material-Design-Iconic-Font.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/iconic/fonts/Material-Design-Iconic-Font.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/line-icons-.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/line-icons.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/line-icons.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/line-icons.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/line-icons.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/poppins/Poppins-Black.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/poppins/Poppins-BlackItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/poppins/Poppins-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/poppins/Poppins-BoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/poppins/Poppins-ExtraBold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/poppins/Poppins-ExtraBoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/poppins/Poppins-ExtraLight.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/poppins/Poppins-ExtraLightItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/poppins/Poppins-Italic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/poppins/Poppins-Light.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/poppins/Poppins-LightItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/poppins/Poppins-Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/poppins/Poppins-MediumItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/poppins/Poppins-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/poppins/Poppins-SemiBold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/poppins/Poppins-SemiBoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/poppins/Poppins-Thin.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/poppins/Poppins-ThinItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/ubuntu/UFL.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/ubuntu/Ubuntu-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/ubuntu/Ubuntu-BoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/ubuntu/Ubuntu-Italic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/ubuntu/Ubuntu-Light.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/ubuntu/Ubuntu-LightItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/ubuntu/Ubuntu-Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/ubuntu/Ubuntu-MediumItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/fonts/ubuntu/Ubuntu-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/icons/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/Footer/Footer.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/Footer/Privacy.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/Footer/Terms.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/FormHandlers/Login.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/FormHandlers/Sign-up.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/HomePage/sectionAbout.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/HomePage/sectionActivities.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/HomePage/sectionMain.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/HomePage/sectionTickets.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/HomePage/sectionTwitter.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/Others/Head.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/Others/Navigationbar.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/Others/check_spot.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/Others/contactus.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/Others/modelform.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/Others/schedule.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/SignUp-SignIn-SignOut/LoginForm.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/SignUp-SignIn-SignOut/SignOut.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/SignUp-SignIn-SignOut/SignupForm.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/SignUp-SignIn-SignOut/front_assets/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/SignUp-SignIn-SignOut/front_assets/css/icons.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/SignUp-SignIn-SignOut/front_assets/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/SignUp-SignIn-SignOut/front_assets/fonts/dripicons-v2-.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/SignUp-SignIn-SignOut/front_assets/fonts/dripicons-v2.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/SignUp-SignIn-SignOut/front_assets/fonts/dripicons-v2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/SignUp-SignIn-SignOut/front_assets/fonts/dripicons-v2.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/SignUp-SignIn-SignOut/front_assets/fonts/dripicons-v2.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/SignUp-SignIn-SignOut/front_assets/fonts/fontawesome-webfont-.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/SignUp-SignIn-SignOut/front_assets/fonts/fontawesome-webfont-v=4.7.0.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/SignUp-SignIn-SignOut/front_assets/fonts/fontawesome-webfont-v=4.7.0.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/SignUp-SignIn-SignOut/front_assets/fonts/fontawesome-webfont-v=4.7.0.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/SignUp-SignIn-SignOut/front_assets/fonts/fontawesome-webfont-v=4.7.0.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/SignUp-SignIn-SignOut/front_assets/fonts/fontawesome-webfont-v=4.7.0.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/SignUp-SignIn-SignOut/front_assets/fonts/materialdesignicons-webfont-.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/SignUp-SignIn-SignOut/front_assets/fonts/materialdesignicons-webfont-v=2.0.46.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/SignUp-SignIn-SignOut/front_assets/fonts/materialdesignicons-webfont-v=2.0.46.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/SignUp-SignIn-SignOut/front_assets/fonts/materialdesignicons-webfont-v=2.0.46.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/SignUp-SignIn-SignOut/front_assets/fonts/materialdesignicons-webfont-v=2.0.46.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/SignUp-SignIn-SignOut/front_assets/fonts/materialdesignicons-webfont-v=2.0.46.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/SignUp-SignIn-SignOut/front_assets/fonts/themify--fvbane.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/SignUp-SignIn-SignOut/front_assets/fonts/themify--fvbane.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/SignUp-SignIn-SignOut/front_assets/fonts/themify--fvbane.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/SignUp-SignIn-SignOut/front_assets/fonts/themify--fvbane.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/SignUp-SignIn-SignOut/front_assets/fonts/themify-.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/SignUp-SignIn-SignOut/front_assets/images/bg6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/SignUp-SignIn-SignOut/front_assets/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/SignUp-SignIn-SignOut/front_assets/js/jquery.app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/SignUp-SignIn-SignOut/front_assets/js/jquery.core.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/SignUp-SignIn-SignOut/front_assets/js/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/SignUp-SignIn-SignOut/front_assets/js/jquery.slimscroll.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/SignUp-SignIn-SignOut/front_assets/js/modernizr.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/SignUp-SignIn-SignOut/front_assets/js/popper.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/SignUp-SignIn-SignOut/front_assets/js/waves.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/css/icons.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/fonts/fontawesome-webfont-.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/fonts/fontawesome-webfont-v=4.7.0.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/fonts/fontawesome-webfont-v=4.7.0.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/fonts/fontawesome-webfont-v=4.7.0.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/fonts/fontawesome-webfont-v=4.7.0.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/fonts/fontawesome-webfont-v=4.7.0.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/fonts/materialdesignicons-webfont-.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/fonts/materialdesignicons-webfont-v=2.0.46.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/fonts/materialdesignicons-webfont-v=2.0.46.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/fonts/materialdesignicons-webfont-v=2.0.46.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/fonts/materialdesignicons-webfont-v=2.0.46.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/fonts/materialdesignicons-webfont-v=2.0.46.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/fonts/themify--fvbane.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/fonts/themify--fvbane.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/fonts/themify--fvbane.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/fonts/themify--fvbane.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/fonts/themify-.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/images/attached-files/img-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/images/attached-files/img-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/images/attached-files/img-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/images/big/bg1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/images/email/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/images/email/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/images/email/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/images/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/images/gallery/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/images/gallery/10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/images/gallery/11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/images/gallery/12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/images/gallery/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/images/gallery/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/images/gallery/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/images/gallery/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/images/gallery/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/images/gallery/7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/images/gallery/8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/images/gallery/9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/images/logo-sm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/images/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/images/mail_confirm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/images/multiple-arrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/images/profile.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/images/small/img1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/images/small/img2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/images/small/img3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/images/users/avatar-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/images/users/avatar-10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/images/users/avatar-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/images/users/avatar-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/images/users/avatar-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/images/users/avatar-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/images/users/avatar-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/images/users/avatar-7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/images/users/avatar-8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/images/users/avatar-9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/js/canvasjs.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/js/jquery.app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/js/jquery.core.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/js/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/js/jquery.slimscroll.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/js/modernizr.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/js/popper.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/js/waves.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/pages/jquery.chartist.init.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/pages/jquery.chartjs.init.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/pages/jquery.dashboard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/pages/jquery.flot.init.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/pages/jquery.fullcalendar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/pages/jquery.gmaps.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/pages/jquery.inbox.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/pages/jquery.morris.init.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/pages/jquery.other-charts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/pages/jquery.sweet-alert.init.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/pages/jquery.tree.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/pages/jquery.ui-sliders.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/pages/jquery.xeditable.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/pages/jvectormap.init.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/plugins/datatables/buttons.bootstrap4.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/plugins/datatables/buttons.bootstrap4.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/plugins/datatables/buttons.html5.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/plugins/datatables/buttons.print.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/plugins/datatables/dataTables.bootstrap4.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/plugins/datatables/dataTables.bootstrap4.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/plugins/datatables/dataTables.buttons.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/plugins/datatables/dataTables.keyTable.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/plugins/datatables/dataTables.responsive.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/plugins/datatables/dataTables.select.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/plugins/datatables/jquery.dataTables.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/plugins/datatables/jszip.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/plugins/datatables/pdfmake.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/plugins/datatables/responsive.bootstrap4.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/plugins/datatables/responsive.bootstrap4.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/plugins/datatables/select.bootstrap4.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/plugins/datatables/vfs_fonts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/plugins/morris/morris.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/plugins/morris/morris.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/plugins/raphael/raphael-min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/plugins/responsive-table/css/rwd-table.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/back_assets/plugins/responsive-table/js/rwd-table.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/cancel_ticket.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/change_password.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/css/annotations/popup.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/css/annotations/popup.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/css/highcharts.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/css/highcharts.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/css/stocktools/gui.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/css/stocktools/gui.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/css/themes/dark-unica.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/css/themes/dark-unica.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/css/themes/grid-light.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/css/themes/grid-light.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/css/themes/sand-signika.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/css/themes/sand-signika.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/annotations/ControlPoint.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/annotations/MockPoint.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/annotations/annotations.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/annotations/controllable/ControllableCircle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/annotations/controllable/ControllableImage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/annotations/controllable/ControllableLabel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/annotations/controllable/ControllablePath.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/annotations/controllable/ControllableRect.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/annotations/controllable/controllableMixin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/annotations/controllable/markerMixin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/annotations/eventEmitterMixin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/annotations/navigationBindings.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/annotations/popup.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/annotations/types/CrookedLine.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/annotations/types/ElliottWave.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/annotations/types/Fibonacci.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/annotations/types/InfinityLine.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/annotations/types/Measure.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/annotations/types/Pitchfork.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/annotations/types/Tunnel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/annotations/types/VerticalLine.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/error-messages.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/error.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/highcharts-3d.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/highcharts-more.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/highcharts.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/accessibility.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/annotations-advanced.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/annotations.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/arrow-symbols.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/boost-canvas.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/boost.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/broken-axis.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/bullet.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/current-date-indicator.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/cylinder.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/data.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/debugger.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/drag-panes.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/draggable-points.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/drilldown.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/export-data.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/exporting.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/full-screen.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/funnel.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/gantt.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/grid-axis.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/heatmap.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/histogram-bellcurve.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/item-series.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/networkgraph.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/no-data-to-display.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/offline-exporting.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/oldie-polyfills.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/oldie.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/overlapping-datalabels.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/parallel-coordinates.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/pareto.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/pathfinder.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/pattern-fill.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/price-indicator.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/sankey.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/series-label.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/solid-gauge.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/sonification.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/static-scale.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/stock-tools.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/stock.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/streamgraph.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/sunburst.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/tilemap.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/timeline.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/treegrid.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/treemap.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/variable-pie.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/variwide.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/vector.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/venn.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/windbarb.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/wordcloud.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/modules/xrange.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/themes/avocado.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/themes/avocado.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/themes/dark-blue.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/themes/dark-green.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/themes/dark-unica.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/themes/gray.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/themes/grid-light.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/themes/grid.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/themes/sand-signika.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/themes/skies.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/themes/sunset.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/masters/themes/sunset.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/mixins/ajax.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/mixins/centered-series.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/mixins/derived-series.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/mixins/download-url.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/mixins/draw-point.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/mixins/geometry-circles.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/mixins/geometry.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/mixins/indicator-required.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/mixins/multipe-lines.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/mixins/nodes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/mixins/on-series.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/mixins/polygon.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/mixins/reduce-array.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/mixins/tree-series.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/a11y-i18n.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/annotations-legacy.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/bellcurve.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/boost-canvas.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/boost.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/broken-axis.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/bullet.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/cylinder.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/data.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/debugger.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/drag-panes.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/draggable-points.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/drilldown.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/export-data.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/exporting.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/full-screen.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/funnel.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/histogram.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/item-series.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/keyboard-navigation.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/networkgraph/QuadTree.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/networkgraph/layouts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/networkgraph/networkgraph.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/no-data-to-display.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/offline-exporting.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/oldie-polyfills.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/oldie.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/overlapping-datalabels.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/parallel-coordinates.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/pareto.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/pattern-fill.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/price-indicator.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/sankey.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/screen-reader.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/series-label.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/solid-gauge.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/sonification/Earcon.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/sonification/Instrument.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/sonification/Timeline.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/sonification/chartSonify.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/sonification/instrumentDefinitions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/sonification/musicalFrequencies.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/sonification/pointSonify.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/sonification/sonification.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/sonification/utilities.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/static-scale.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/stock-tools-bindings.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/stock-tools-gui.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/streamgraph.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/sunburst.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/tilemap.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/timeline.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/treemap.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/variable-pie.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/variwide.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/vector.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/venn.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/windbarb.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/wordcloud.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/modules/xrange.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/parts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/parts/Tick.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/parts/Time.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/parts/Tooltip.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/parts/TouchPointer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/es-modules/parts/Utilities.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/highcharts-3d.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/highcharts-3d.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/highcharts-3d.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/highcharts-more.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/highcharts-more.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/highcharts-more.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/highcharts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/highcharts.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/code/highcharts.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/dashboard.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/dashboard/top_up.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/home.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/php/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/testmail.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/.idea/frameless.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/.idea/php.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/Images/activities_gallery/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/Images/activities_gallery/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/Images/activities_gallery/3.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/Images/activities_gallery/4.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/Images/activities_gallery/5.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/Images/activities_gallery/6.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/Images/activities_gallery/9.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/Images/backgrounds/bg1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/Images/backgrounds/bg3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/Images/backgrounds/bg4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/Images/backgrounds/bg5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/Images/backgrounds/bg6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/Images/bg-01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/Images/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/Images/icons/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/Images/imac-371x412.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/Images/logo.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/Images/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/Images/logo_.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/JavaScript/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/JavaScript/jquery.validate.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/JavaScript/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/Style/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/Style/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/Style/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/Style/timeline.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/Style/util.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/ajax/ajax_info.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/ajax/categories.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/composer.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/Linearicons-Free-v1.0.0/WebFont/Linearicons-Free.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/Linearicons-Free-v1.0.0/WebFont/Linearicons-Free.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/Linearicons-Free-v1.0.0/WebFont/Linearicons-Free.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/Linearicons-Free-v1.0.0/WebFont/Linearicons-Free.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/Linearicons-Free-v1.0.0/WebFont/Linearicons-Free.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/Linearicons-Free-v1.0.0/icon-font.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/font-awesome-4.7.0/HELP-US-OUT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/font-awesome-4.7.0/css/font-awesome.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/font-awesome-4.7.0/css/font-awesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/font-awesome-4.7.0/fonts/FontAwesome.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/font-awesome-4.7.0/less/animated.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/font-awesome-4.7.0/less/bordered-pulled.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/font-awesome-4.7.0/less/core.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/font-awesome-4.7.0/less/fixed-width.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/font-awesome-4.7.0/less/font-awesome.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/font-awesome-4.7.0/less/icons.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/font-awesome-4.7.0/less/larger.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/font-awesome-4.7.0/less/list.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/font-awesome-4.7.0/less/mixins.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/font-awesome-4.7.0/less/path.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/font-awesome-4.7.0/less/rotated-flipped.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/font-awesome-4.7.0/less/screen-reader.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/font-awesome-4.7.0/less/stacked.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/font-awesome-4.7.0/less/variables.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/font-awesome-4.7.0/scss/_animated.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/font-awesome-4.7.0/scss/_bordered-pulled.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/font-awesome-4.7.0/scss/_core.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/font-awesome-4.7.0/scss/_fixed-width.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/font-awesome-4.7.0/scss/_icons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/font-awesome-4.7.0/scss/_larger.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/font-awesome-4.7.0/scss/_list.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/font-awesome-4.7.0/scss/_mixins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/font-awesome-4.7.0/scss/_path.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/font-awesome-4.7.0/scss/_rotated-flipped.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/font-awesome-4.7.0/scss/_screen-reader.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/font-awesome-4.7.0/scss/_stacked.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/font-awesome-4.7.0/scss/_variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/font-awesome-4.7.0/scss/font-awesome.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/fontawesome-webfont-.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/fontawesome-webfont-v=4.3.0.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/fontawesome-webfont-v=4.3.0.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/fontawesome-webfont-v=4.3.0.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/fontawesome-webfont-v=4.3.0.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/fontawesome-webfont-v=4.3.0.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/iconic/css/material-design-iconic-font.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/iconic/css/material-design-iconic-font.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/iconic/fonts/Material-Design-Iconic-Font.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/iconic/fonts/Material-Design-Iconic-Font.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/iconic/fonts/Material-Design-Iconic-Font.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/iconic/fonts/Material-Design-Iconic-Font.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/iconic/fonts/Material-Design-Iconic-Font.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/line-icons-.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/line-icons.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/line-icons.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/line-icons.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/line-icons.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/poppins/Poppins-Black.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/poppins/Poppins-BlackItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/poppins/Poppins-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/poppins/Poppins-BoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/poppins/Poppins-ExtraBold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/poppins/Poppins-ExtraBoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/poppins/Poppins-ExtraLight.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/poppins/Poppins-ExtraLightItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/poppins/Poppins-Italic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/poppins/Poppins-Light.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/poppins/Poppins-LightItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/poppins/Poppins-Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/poppins/Poppins-MediumItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/poppins/Poppins-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/poppins/Poppins-SemiBold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/poppins/Poppins-SemiBoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/poppins/Poppins-Thin.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/poppins/Poppins-ThinItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/ubuntu/UFL.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/ubuntu/Ubuntu-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/ubuntu/Ubuntu-BoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/ubuntu/Ubuntu-Italic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/ubuntu/Ubuntu-Light.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/ubuntu/Ubuntu-LightItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/ubuntu/Ubuntu-Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/ubuntu/Ubuntu-MediumItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/fonts/ubuntu/Ubuntu-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/page-login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/Footer/Footer.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/Footer/Privacy.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/Footer/Terms.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/FormHandlers/Login.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/FormHandlers/Sign-up.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/HomePage/sectionAbout.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/HomePage/sectionActivities.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/HomePage/sectionMain.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/HomePage/sectionTickets.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/HomePage/sectionTwitter.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/Others/Head.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/Others/Navigationbar.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/Others/check_spot.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/Others/modelform.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/Others/schedule.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/SignUp-SignIn-SignOut/LoginForm.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/SignUp-SignIn-SignOut/SignOut.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/SignUp-SignIn-SignOut/SignupForm.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/css/icons.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/fonts/fontawesome-webfont-.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/fonts/fontawesome-webfont-v=4.7.0.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/fonts/fontawesome-webfont-v=4.7.0.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/fonts/fontawesome-webfont-v=4.7.0.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/fonts/fontawesome-webfont-v=4.7.0.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/fonts/fontawesome-webfont-v=4.7.0.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/fonts/materialdesignicons-webfont-.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/fonts/materialdesignicons-webfont-v=2.0.46.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/fonts/materialdesignicons-webfont-v=2.0.46.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/fonts/materialdesignicons-webfont-v=2.0.46.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/fonts/materialdesignicons-webfont-v=2.0.46.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/fonts/materialdesignicons-webfont-v=2.0.46.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/fonts/themify--fvbane.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/fonts/themify--fvbane.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/fonts/themify--fvbane.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/fonts/themify--fvbane.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/fonts/themify-.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/images/attached-files/img-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/images/attached-files/img-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/images/attached-files/img-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/images/big/bg1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/images/email/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/images/email/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/images/email/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/images/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/images/gallery/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/images/gallery/10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/images/gallery/11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/images/gallery/12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/images/gallery/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/images/gallery/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/images/gallery/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/images/gallery/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/images/gallery/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/images/gallery/7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/images/gallery/8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/images/gallery/9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/images/logo-sm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/images/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/images/mail_confirm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/images/multiple-arrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/images/profile.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/images/small/img1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/images/small/img2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/images/small/img3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/images/users/avatar-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/images/users/avatar-10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/images/users/avatar-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/images/users/avatar-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/images/users/avatar-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/images/users/avatar-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/images/users/avatar-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/images/users/avatar-7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/images/users/avatar-8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/images/users/avatar-9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/js/canvasjs.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/js/jquery.app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/js/jquery.core.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/js/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/js/jquery.slimscroll.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/js/modernizr.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/js/popper.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/js/waves.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/pages/jquery.chartist.init.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/pages/jquery.chartjs.init.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/pages/jquery.dashboard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/pages/jquery.flot.init.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/pages/jquery.fullcalendar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/pages/jquery.gmaps.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/pages/jquery.inbox.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/pages/jquery.morris.init.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/pages/jquery.other-charts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/pages/jquery.sweet-alert.init.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/pages/jquery.tree.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/pages/jquery.ui-sliders.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/pages/jquery.xeditable.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/pages/jvectormap.init.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/plugins/datatables/buttons.bootstrap4.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/plugins/datatables/buttons.bootstrap4.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/plugins/datatables/buttons.html5.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/plugins/datatables/buttons.print.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/plugins/datatables/dataTables.bootstrap4.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/plugins/datatables/dataTables.bootstrap4.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/plugins/datatables/dataTables.buttons.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/plugins/datatables/dataTables.keyTable.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/plugins/datatables/dataTables.responsive.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/plugins/datatables/dataTables.select.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/plugins/datatables/jquery.dataTables.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/plugins/datatables/jszip.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/plugins/datatables/pdfmake.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/plugins/datatables/responsive.bootstrap4.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/plugins/datatables/responsive.bootstrap4.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/plugins/datatables/select.bootstrap4.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/plugins/datatables/vfs_fonts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/plugins/morris/morris.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/plugins/morris/morris.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/plugins/raphael/raphael-min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/plugins/responsive-table/css/rwd-table.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/back_assets/plugins/responsive-table/js/rwd-table.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/css/annotations/popup.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/css/annotations/popup.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/css/highcharts.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/css/highcharts.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/css/stocktools/gui.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/css/stocktools/gui.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/css/themes/dark-unica.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/css/themes/dark-unica.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/css/themes/grid-light.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/css/themes/grid-light.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/css/themes/sand-signika.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/css/themes/sand-signika.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/annotations/ControlPoint.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/annotations/MockPoint.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/annotations/annotations.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/annotations/controllable/ControllableCircle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/annotations/controllable/ControllableImage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/annotations/controllable/ControllableLabel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/annotations/controllable/ControllablePath.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/annotations/controllable/ControllableRect.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/annotations/controllable/controllableMixin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/annotations/controllable/markerMixin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/annotations/eventEmitterMixin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/annotations/navigationBindings.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/annotations/popup.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/annotations/types/CrookedLine.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/annotations/types/ElliottWave.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/annotations/types/Fibonacci.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/annotations/types/InfinityLine.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/annotations/types/Measure.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/annotations/types/Pitchfork.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/annotations/types/Tunnel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/annotations/types/VerticalLine.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/error-messages.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/error.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/highcharts-3d.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/highcharts-more.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/highcharts.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/accessibility.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/annotations-advanced.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/annotations.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/arrow-symbols.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/boost-canvas.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/boost.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/broken-axis.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/bullet.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/current-date-indicator.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/cylinder.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/data.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/debugger.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/drag-panes.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/draggable-points.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/drilldown.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/export-data.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/exporting.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/full-screen.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/funnel.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/gantt.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/grid-axis.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/heatmap.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/histogram-bellcurve.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/item-series.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/networkgraph.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/no-data-to-display.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/offline-exporting.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/oldie-polyfills.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/oldie.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/overlapping-datalabels.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/parallel-coordinates.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/pareto.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/pathfinder.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/pattern-fill.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/price-indicator.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/sankey.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/series-label.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/solid-gauge.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/sonification.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/static-scale.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/stock-tools.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/stock.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/streamgraph.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/sunburst.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/tilemap.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/timeline.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/treegrid.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/treemap.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/variable-pie.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/variwide.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/vector.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/venn.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/windbarb.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/wordcloud.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/modules/xrange.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/themes/avocado.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/themes/avocado.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/themes/dark-blue.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/themes/dark-green.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/themes/dark-unica.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/themes/gray.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/themes/grid-light.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/themes/grid.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/themes/sand-signika.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/themes/skies.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/themes/sunset.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/masters/themes/sunset.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/mixins/ajax.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/mixins/centered-series.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/mixins/derived-series.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/mixins/download-url.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/mixins/draw-point.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/mixins/geometry-circles.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/mixins/geometry.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/mixins/indicator-required.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/mixins/multipe-lines.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/mixins/nodes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/mixins/on-series.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/mixins/polygon.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/mixins/reduce-array.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/mixins/tree-series.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/a11y-i18n.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/annotations-legacy.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/bellcurve.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/boost-canvas.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/boost.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/broken-axis.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/bullet.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/cylinder.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/data.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/debugger.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/drag-panes.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/draggable-points.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/drilldown.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/export-data.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/exporting.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/full-screen.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/funnel.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/histogram.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/item-series.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/keyboard-navigation.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/networkgraph/QuadTree.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/networkgraph/layouts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/networkgraph/networkgraph.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/no-data-to-display.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/offline-exporting.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/oldie-polyfills.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/oldie.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/overlapping-datalabels.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/parallel-coordinates.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/pareto.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/pattern-fill.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/price-indicator.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/sankey.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/screen-reader.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/series-label.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/solid-gauge.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/sonification/Earcon.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/sonification/Instrument.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/sonification/Timeline.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/sonification/chartSonify.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/sonification/instrumentDefinitions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/sonification/musicalFrequencies.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/sonification/pointSonify.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/sonification/sonification.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/sonification/utilities.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/static-scale.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/stock-tools-bindings.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/stock-tools-gui.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/streamgraph.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/sunburst.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/tilemap.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/timeline.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/treemap.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/variable-pie.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/variwide.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/vector.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/venn.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/windbarb.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/wordcloud.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/modules/xrange.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts-3d/Axis.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts-3d/Chart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts-3d/Column.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts-3d/Math.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts-3d/Pie.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts-3d/SVGRenderer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts-3d/Scatter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts-3d/Series.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts-3d/VMLRenderer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts-gantt/ArrowSymbols.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts-gantt/CurrentDateIndicator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts-gantt/GanttChart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts-gantt/GanttSeries.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts-gantt/GridAxis.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts-gantt/Pathfinder.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts-gantt/PathfinderAlgorithms.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts-gantt/Tree.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts-gantt/TreeGrid.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts-map/ColorAxis.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts-map/ColorSeriesMixin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts-map/GeoJSON.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts-map/HeatmapSeries.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts-map/Map.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts-map/MapAxis.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts-map/MapBubbleSeries.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts-map/MapLineSeries.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts-map/MapNavigation.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts-map/MapPointSeries.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts-map/MapPointer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts-map/MapSeries.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts-more/AreaRangeSeries.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts-more/AreaSplineRangeSeries.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts-more/BoxPlotSeries.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts-more/BubbleLegend.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts-more/BubbleSeries.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts-more/ColumnPyramidSeries.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts-more/ColumnRangeSeries.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts-more/ErrorBarSeries.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts-more/GaugeSeries.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts-more/PackedBubbleSeries.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts-more/Pane.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts-more/Polar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts-more/PolygonSeries.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts-more/RadialAxis.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts-more/WaterfallSeries.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts/AreaSeries.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts/AreaSplineSeries.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts/Axis.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts/BarSeries.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts/CandlestickSeries.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts/Chart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts/Color.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts/ColumnSeries.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts/DataGrouping.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts/DataLabels.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts/DateTimeAxis.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts/Dynamics.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts/FlagsSeries.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts/Globals.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts/Html.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts/Interaction.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts/Legend.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts/LogarithmicAxis.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts/MSPointer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts/Navigator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts/OHLCSeries.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts/Options.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts/OrdinalAxis.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts/PieSeries.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts/PlotBandSeries.experimental.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts/PlotLineOrBand.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts/Point.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts/Pointer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts/RangeSelector.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts/Responsive.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts/ScatterSeries.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts/ScrollablePlotArea.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts/Scrollbar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts/Series.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts/SplineSeries.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts/Stacking.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts/StockChart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts/SvgRenderer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts/Tick.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts/Time.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts/Tooltip.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts/TouchPointer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/parts/Utilities.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/themes/avocado.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/themes/dark-blue.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/themes/dark-green.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/themes/dark-unica.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/themes/gray.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/themes/grid-light.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/themes/grid.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/themes/sand-signika.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/themes/skies.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/es-modules/themes/sunset.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/highcharts-3d.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/highcharts-3d.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/highcharts-3d.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/highcharts-more.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/highcharts-more.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/highcharts-more.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/highcharts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/highcharts.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/highcharts.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/lib/canvg.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/lib/canvg.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/lib/jspdf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/lib/jspdf.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/lib/rgbcolor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/lib/rgbcolor.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/lib/svg2pdf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/lib/svg2pdf.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/accessibility.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/accessibility.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/accessibility.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/annotations-advanced.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/annotations-advanced.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/annotations-advanced.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/annotations.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/annotations.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/annotations.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/arrow-symbols.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/arrow-symbols.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/arrow-symbols.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/boost-canvas.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/boost-canvas.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/boost-canvas.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/boost.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/boost.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/boost.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/broken-axis.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/broken-axis.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/broken-axis.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/bullet.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/bullet.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/bullet.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/current-date-indicator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/current-date-indicator.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/current-date-indicator.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/cylinder.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/cylinder.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/cylinder.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/data.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/data.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/debugger.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/debugger.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/debugger.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/drag-panes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/drag-panes.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/drag-panes.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/draggable-points.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/draggable-points.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/draggable-points.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/drilldown.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/drilldown.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/drilldown.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/export-data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/export-data.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/export-data.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/exporting.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/exporting.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/exporting.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/full-screen.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/full-screen.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/full-screen.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/funnel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/funnel.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/funnel.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/gantt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/gantt.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/gantt.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/grid-axis.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/grid-axis.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/grid-axis.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/heatmap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/heatmap.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/heatmap.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/histogram-bellcurve.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/histogram-bellcurve.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/histogram-bellcurve.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/item-series.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/item-series.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/item-series.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/networkgraph.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/networkgraph.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/networkgraph.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/no-data-to-display.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/no-data-to-display.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/no-data-to-display.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/offline-exporting.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/offline-exporting.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/offline-exporting.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/oldie-polyfills.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/oldie-polyfills.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/oldie-polyfills.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/oldie.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/oldie.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/oldie.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/overlapping-datalabels.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/overlapping-datalabels.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/overlapping-datalabels.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/parallel-coordinates.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/parallel-coordinates.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/parallel-coordinates.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/pareto.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/pareto.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/pareto.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/pathfinder.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/pathfinder.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/pathfinder.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/pattern-fill.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/pattern-fill.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/pattern-fill.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/price-indicator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/price-indicator.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/price-indicator.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/sankey.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/sankey.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/sankey.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/series-label.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/series-label.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/series-label.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/solid-gauge.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/solid-gauge.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/solid-gauge.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/sonification.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/sonification.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/sonification.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/static-scale.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/static-scale.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/static-scale.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/stock-tools.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/stock-tools.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/stock-tools.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/stock.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/stock.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/stock.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/streamgraph.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/streamgraph.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/streamgraph.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/sunburst.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/sunburst.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/sunburst.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/tilemap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/tilemap.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/tilemap.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/timeline.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/timeline.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/timeline.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/treegrid.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/treegrid.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/treegrid.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/treemap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/treemap.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/treemap.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/variable-pie.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/variable-pie.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/variable-pie.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/variwide.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/variwide.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/variwide.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/vector.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/vector.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/vector.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/venn.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/venn.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/venn.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/windbarb.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/windbarb.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/windbarb.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/wordcloud.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/wordcloud.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/wordcloud.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/xrange.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/xrange.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/modules/xrange.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/themes/avocado.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/themes/avocado.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/themes/avocado.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/themes/dark-blue.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/themes/dark-blue.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/themes/dark-blue.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/themes/dark-green.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/themes/dark-green.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/themes/dark-green.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/themes/dark-unica.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/themes/dark-unica.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/themes/dark-unica.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/themes/gray.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/themes/gray.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/themes/gray.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/themes/grid-light.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/themes/grid-light.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/themes/grid-light.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/themes/grid.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/themes/grid.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/themes/grid.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/themes/sand-signika.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/themes/sand-signika.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/themes/sand-signika.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/themes/skies.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/themes/skies.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/themes/skies.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/themes/sunset.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/themes/sunset.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/code/themes/sunset.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/dashboard.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/stock-icons/annotations-hidden.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/stock-icons/annotations-visible.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/stock-icons/arrow-bottom.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/stock-icons/arrow-left.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/stock-icons/arrow-line.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/stock-icons/arrow-ray.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/stock-icons/arrow-right.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/stock-icons/arrow-segment.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/stock-icons/arrow.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/stock-icons/circle.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/stock-icons/close.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/stock-icons/crooked-3.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/stock-icons/crooked-5.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/stock-icons/current-price-hide.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/stock-icons/current-price-show.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/stock-icons/destroy.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/stock-icons/edit.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/stock-icons/elliott-3.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/stock-icons/elliott-5.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/stock-icons/fibonacci.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/stock-icons/flag-basic.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/stock-icons/flag-diamond.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/stock-icons/flag-elipse.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/stock-icons/flag-trapeze.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/stock-icons/fullscreen.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/stock-icons/horizontal-line.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/stock-icons/indicators.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/stock-icons/label.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/stock-icons/line.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/stock-icons/measure-x.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/stock-icons/measure-xy.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/stock-icons/measure-y.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/stock-icons/parallel-channel.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/stock-icons/pitchfork.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/stock-icons/ray.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/stock-icons/rectangle.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/stock-icons/remove-annotations.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/stock-icons/save-chart.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/stock-icons/segment.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/stock-icons/separator.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/stock-icons/series-candlestick.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/stock-icons/series-line.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/stock-icons/series-ohlc.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/stock-icons/text.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/stock-icons/vertical-arrow.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/stock-icons/vertical-counter.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/stock-icons/vertical-double-arrow.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/stock-icons/vertical-label.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/stock-icons/vertical-line.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/stock-icons/zoom-x.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/stock-icons/zoom-xy.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/stock-icons/zoom-y.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/gfx/vml-radial-gradient.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/graphics/color-picker.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/graphics/cursor.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/graphics/earth.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/graphics/feature.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/graphics/flag-circle.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/graphics/flag-circlepin.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/graphics/flag-diamondpin.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/graphics/flag-flag.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/graphics/flag-rectangle.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/graphics/flag-squarepin.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/graphics/flag.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/graphics/rect.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/graphics/reset.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/graphics/save-chart-cloud.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/graphics/save.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/graphics/search.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/graphics/skies.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/graphics/snow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/dashboard/graphics/sun.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/database/dbconnect.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/home.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/psw_reset/change.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/psw_reset/forgot_password.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/psw_reset/reset.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/php/psw_reset/reset_password.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/testmail.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/timeline.css" beforeDir="false" afterPath="$PROJECT_DIR$/Style/timeline.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/animate/animate.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/animsition/css/animsition.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/animsition/css/animsition.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/animsition/js/animsition.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/animsition/js/animsition.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/autoload.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/bootstrap/css/bootstrap-grid.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/bootstrap/css/bootstrap-grid.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/bootstrap/css/bootstrap-grid.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/bootstrap/css/bootstrap-grid.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/bootstrap/css/bootstrap-reboot.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/bootstrap/css/bootstrap-reboot.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/bootstrap/css/bootstrap-reboot.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/bootstrap/css/bootstrap-reboot.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/bootstrap/css/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/bootstrap/css/bootstrap.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/bootstrap/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/bootstrap/css/bootstrap.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/bootstrap/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/bootstrap/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/bootstrap/js/popper.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/bootstrap/js/popper.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/bootstrap/js/tooltip.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/composer/ClassLoader.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/composer/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/composer/autoload_classmap.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/composer/autoload_namespaces.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/composer/autoload_psr4.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/composer/autoload_real.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/composer/autoload_static.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/composer/installed.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/countdowntime/countdowntime.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/css-hamburgers/hamburgers.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/css-hamburgers/hamburgers.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/daterangepicker/daterangepicker.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/daterangepicker/daterangepicker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/daterangepicker/moment.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/daterangepicker/moment.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/jquery/jquery-3.2.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/perfect-scrollbar/perfect-scrollbar.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/perfect-scrollbar/perfect-scrollbar.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/picqer/php-barcode-generator/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/picqer/php-barcode-generator/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/picqer/php-barcode-generator/LICENSE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/picqer/php-barcode-generator/Readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/picqer/php-barcode-generator/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/picqer/php-barcode-generator/generate-verified-files.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/picqer/php-barcode-generator/phpunit.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/picqer/php-barcode-generator/src/BarcodeGenerator.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/picqer/php-barcode-generator/src/BarcodeGeneratorHTML.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/picqer/php-barcode-generator/src/BarcodeGeneratorJPG.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/picqer/php-barcode-generator/src/BarcodeGeneratorPNG.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/picqer/php-barcode-generator/src/BarcodeGeneratorSVG.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/picqer/php-barcode-generator/src/Exceptions/BarcodeException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/picqer/php-barcode-generator/src/Exceptions/InvalidCharacterException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/picqer/php-barcode-generator/src/Exceptions/InvalidCheckDigitException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/picqer/php-barcode-generator/src/Exceptions/InvalidFormatException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/picqer/php-barcode-generator/src/Exceptions/InvalidLengthException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/picqer/php-barcode-generator/src/Exceptions/UnknownTypeException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/picqer/php-barcode-generator/tests/BarcodeTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/picqer/php-barcode-generator/tests/verified-files/0049000004632-ean13.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/picqer/php-barcode-generator/tests/verified-files/081231723897-code128.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/picqer/php-barcode-generator/tests/verified-files/081231723897-ean13.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/select2/select2.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/select2/select2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/select2/select2.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/vendor/select2/select2.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/FormHandlers/Sign-up.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/FormHandlers/Sign-up.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/php/HomePage/sectionTickets.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/HomePage/sectionTickets.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/Others/modelform.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/Others/modelform.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/SignUp-SignIn-SignOut/SignupForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/SignUp-SignIn-SignOut/SignupForm.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/Others/Head.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/Others/Head.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/Others/check_spot.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/Others/check_spot.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/dashboard/cancel_ticket.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/dashboard/cancel_ticket.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/php/dashboard/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/dashboard/dashboard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/dashboard/settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/dashboard/settings.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/dashboard/top_up.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/dashboard/top_up.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/dashboard/topup.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/dashboard/topup.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/php/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/php/random_compat" beforeDir="false" afterPath="$PROJECT_DIR$/php/random_compat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/php/random_compat/other/build_phar.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/random_compat/other/build_phar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testmail.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -101,13 +1523,13 @@
     <session id="-1785616159">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="25" />
+          <entry key="project.closed" value="27" />
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.11" value="2" />
           <entry key="project.open.time.12" value="3" />
           <entry key="project.open.time.13" value="2" />
           <entry key="project.open.time.14" value="1" />
-          <entry key="project.open.time.15" value="2" />
+          <entry key="project.open.time.15" value="3" />
           <entry key="project.open.time.16" value="4" />
           <entry key="project.open.time.18" value="3" />
           <entry key="project.open.time.19" value="2" />
@@ -116,7 +1538,7 @@
           <entry key="project.open.time.23" value="1" />
           <entry key="project.open.time.24" value="3" />
           <entry key="project.open.time.25" value="1" />
-          <entry key="project.opened" value="27" />
+          <entry key="project.opened" value="29" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -124,7 +1546,7 @@
           <entry key="css" value="13" />
           <entry key="html" value="3" />
           <entry key="js" value="3" />
-          <entry key="php" value="211" />
+          <entry key="php" value="221" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -133,45 +1555,32 @@
           <entry key="CSS" value="13" />
           <entry key="HTML" value="3" />
           <entry key="JavaScript" value="3" />
-          <entry key="PHP" value="204" />
+          <entry key="PHP" value="214" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="126" />
           <entry key="html" value="1" />
-          <entry key="php" value="14301" />
+          <entry key="php" value="14583" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="126" />
           <entry key="HTML" value="21" />
-          <entry key="PHP" value="14281" />
+          <entry key="PHP" value="14563" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/php/index.php">
+        <entry file="file://$PROJECT_DIR$/php/FormHandlers/Sign-up.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="16" column="14" lean-forward="true" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/php/dashboard/cancel_ticket.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="8" column="1" lean-forward="true" selection-start-line="1" selection-end-line="8" selection-end-column="1" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="286">
+              <caret line="132" column="48" lean-forward="true" selection-start-line="132" selection-start-column="48" selection-end-line="132" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -205,8 +1614,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/php/basket.php" />
-        <option value="$PROJECT_DIR$/php/login.php" />
         <option value="$PROJECT_DIR$/php/logout.php" />
         <option value="$PROJECT_DIR$/php/signup.php" />
         <option value="$PROJECT_DIR$/../../test local/test/test/php/registration.php" />
@@ -233,9 +1640,7 @@
         <option value="$PROJECT_DIR$/php/dashboard/back_assets/css/style.css" />
         <option value="$PROJECT_DIR$/php/Footer/Footer.php" />
         <option value="$PROJECT_DIR$/php/HomePage/sectionTwitter.php" />
-        <option value="$PROJECT_DIR$/php/FormHandlers/Sign-up.php" />
         <option value="$PROJECT_DIR$/php/Others/check_spot.php" />
-        <option value="$PROJECT_DIR$/php/Others/Head.php" />
         <option value="$PROJECT_DIR$/php/HomePage/sectionTickets.php" />
         <option value="$PROJECT_DIR$/php/Others/change_password.php" />
         <option value="$PROJECT_DIR$/php/SignUp-SignIn-SignOut/SignupForm.php" />
@@ -251,11 +1656,15 @@
         <option value="$PROJECT_DIR$/php/FormHandlers/Login.php" />
         <option value="$PROJECT_DIR$/php/dashboard/cancel_ticket.php" />
         <option value="$PROJECT_DIR$/php/dashboard/top_up.php" />
-        <option value="$PROJECT_DIR$/php/dashboard/topup.php" />
-        <option value="$PROJECT_DIR$/php/dashboard/dashboard.php" />
         <option value="$PROJECT_DIR$/php/dashboard/change_password.php" />
-        <option value="$PROJECT_DIR$/php/dashboard/settings.php" />
         <option value="$PROJECT_DIR$/php/index.php" />
+        <option value="$PROJECT_DIR$/ajax/ajax.php" />
+        <option value="$PROJECT_DIR$/php/Others/Head.php" />
+        <option value="$PROJECT_DIR$/php/dashboard/topup.php" />
+        <option value="$PROJECT_DIR$/php/dashboard/settings.php" />
+        <option value="$PROJECT_DIR$/php/dashboard/dashboard.php" />
+        <option value="$USER_HOME$/Desktop/test.php" />
+        <option value="$PROJECT_DIR$/php/FormHandlers/Sign-up.php" />
       </list>
     </option>
   </component>
@@ -274,13 +1683,14 @@
       <path value="$PROJECT_DIR$/vendor/picqer/php-barcode-generator" />
       <path value="$PROJECT_DIR$/vendor/bootstrap/css" />
       <path value="$PROJECT_DIR$/vendor/bootstrap/js" />
+      <path value="$PROJECT_DIR$/vendor/picqer/api-client" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="y" value="-10" />
-    <option name="width" value="1940" />
-    <option name="height" value="1050" />
+    <option name="x" value="-1690" />
+    <option name="y" value="24" />
+    <option name="width" value="1699" />
+    <option name="height" value="1019" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -290,7 +1700,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -301,42 +1710,13 @@
             <path>
               <item name="frameless" type="b2602c69:ProjectViewProjectNode" />
               <item name="frameless" type="462c0819:PsiDirectoryNode" />
-              <item name="php" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="frameless" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frameless" type="462c0819:PsiDirectoryNode" />
-              <item name="php" type="462c0819:PsiDirectoryNode" />
-              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="frameless" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frameless" type="462c0819:PsiDirectoryNode" />
-              <item name="php" type="462c0819:PsiDirectoryNode" />
-              <item name="FormHandlers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="frameless" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frameless" type="462c0819:PsiDirectoryNode" />
-              <item name="php" type="462c0819:PsiDirectoryNode" />
-              <item name="Others" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="frameless" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frameless" type="462c0819:PsiDirectoryNode" />
-              <item name="php" type="462c0819:PsiDirectoryNode" />
-              <item name="psw_reset" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="frameless" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frameless" type="462c0819:PsiDirectoryNode" />
-              <item name="php" type="462c0819:PsiDirectoryNode" />
-              <item name="SignUp-SignIn-SignOut" type="462c0819:PsiDirectoryNode" />
+              <item name="ajax" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -450,6 +1830,8 @@
       <workItem from="1547049491731" duration="17246000" />
       <workItem from="1547126792288" duration="458000" />
       <workItem from="1547134383914" duration="590000" />
+      <workItem from="1547222636783" duration="2394000" />
+      <workItem from="1547227628077" duration="4467000" />
     </task>
     <task id="LOCAL-00001" summary="updating and connecting contact form to db">
       <created>1538835584591</created>
@@ -469,7 +1851,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="229458000" />
+    <option name="totallyTimeSpent" value="236319000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -481,11 +1863,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-1687" y="27" width="1358" height="814" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="top" id="Database" order="0" side_tool="true" weight="0.32991204" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48973608" visible="true" weight="0.14805023" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48973608" visible="true" weight="0.16956851" />
       <window_info id="Structure" order="1" sideWeight="0.5102639" side_tool="true" weight="0.12425645" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -542,22 +1924,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="connecting signup form to db plus validation for password repeat and mail validation on php an js" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/php/HomePage/sectionAbout.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/php/database/dbconnect.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="2" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html" />
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/BNZ.5c01a31775ae3c6/util.css" />
     <entry file="file://$USER_HOME$/AppData/Local/Temp/BNZ.5c01a30e75ac273/main.css" />
     <entry file="file://$PROJECT_DIR$/php/Footer/Privacy.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -629,13 +1995,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testmail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="62" selection-start-line="5" selection-start-column="50" selection-end-line="5" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/testmail.php" />
     <entry file="file://$PROJECT_DIR$/../../../SoMoTech/Website/php/Others/Basket.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-840">
@@ -670,20 +2030,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Desktop/Gael_changes/page-login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="17" column="58" selection-start-line="13" selection-start-column="7" selection-end-line="17" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/php/FormHandlers/Sign-up.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="289" column="41" lean-forward="true" selection-start-line="289" selection-start-column="41" selection-end-line="289" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Desktop/Gael_changes/page-login.html" />
     <entry file="file://$PROJECT_DIR$/php/HomePage/sectionMain.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -740,13 +2087,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/php/Others/Head.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/php/Others/contactus.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="613">
@@ -793,49 +2133,93 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/php/dashboard/cancel_ticket.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="7" lean-forward="true" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/php/dashboard/top_up.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-18">
+        <state relative-caret-position="22">
           <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/php/dashboard/topup.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="858">
-          <caret line="39" column="34" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
+        <state relative-caret-position="281">
+          <caret line="139" selection-start-line="139" selection-end-line="140" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/php/dashboard/settings.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="946">
-          <caret line="43" selection-start-line="43" selection-end-line="44" />
+        <state relative-caret-position="501">
+          <caret line="129" lean-forward="true" selection-start-line="129" selection-end-line="129" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/php/dashboard/dashboard.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2420">
-          <caret line="110" column="103" selection-start-line="110" selection-start-column="20" selection-end-line="110" selection-end-column="103" />
+        <state relative-caret-position="347">
+          <caret line="180" lean-forward="true" selection-start-line="180" selection-end-line="180" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/php/dashboard/cancel_ticket.php">
+    <entry file="file://$PROJECT_DIR$/php/Others/Head.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="1" lean-forward="true" selection-start-line="1" selection-end-line="8" selection-end-column="1" />
+        <state relative-caret-position="134">
+          <caret line="17" column="84" lean-forward="true" selection-start-line="17" selection-start-column="84" selection-end-line="17" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajax/ajax.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="22" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="26" column="1" lean-forward="true" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Temp1_IDAutomation_PHP_Code-128_Barcode_Generator_Script_DEMO.zip/idautomation-code128-demo-static.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2902">
           <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#7#826#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/php/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" column="14" lean-forward="true" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+        <state relative-caret-position="198">
+          <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/picqer/php-barcode-generator/src/BarcodeGeneratorHTML.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/FormHandlers/Sign-up.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="132" column="48" lean-forward="true" selection-start-line="132" selection-start-column="48" selection-end-line="132" selection-end-column="48" />
         </state>
       </provider>
     </entry>
