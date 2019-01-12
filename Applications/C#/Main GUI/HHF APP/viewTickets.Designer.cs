@@ -334,7 +334,6 @@ namespace HHF_APP
             0,
             0,
             0});
-            
             // 
             // lblTopUp
             // 
@@ -344,7 +343,6 @@ namespace HHF_APP
             this.lblTopUp.Size = new System.Drawing.Size(189, 30);
             this.lblTopUp.TabIndex = 34;
             this.lblTopUp.Text = "Top Up Amount :  ";
-            
             // 
             // TbIBAN
             // 
@@ -356,7 +354,6 @@ namespace HHF_APP
             this.TbIBAN.Size = new System.Drawing.Size(323, 37);
             this.TbIBAN.TabIndex = 33;
             this.TbIBAN.Text = "Enter your bank account IBAN";
-           
             // 
             // lblIBAN
             // 
@@ -366,7 +363,6 @@ namespace HHF_APP
             this.lblIBAN.Size = new System.Drawing.Size(85, 30);
             this.lblIBAN.TabIndex = 32;
             this.lblIBAN.Text = "IBAN :  ";
-            
             // 
             // TbPhone
             // 
@@ -377,7 +373,6 @@ namespace HHF_APP
             this.TbPhone.Size = new System.Drawing.Size(323, 37);
             this.TbPhone.TabIndex = 31;
             this.TbPhone.Text = "+31";
-            
             // 
             // lblPhone
             // 
@@ -387,7 +382,6 @@ namespace HHF_APP
             this.lblPhone.Size = new System.Drawing.Size(177, 30);
             this.lblPhone.TabIndex = 30;
             this.lblPhone.Text = "Phone Number:  ";
-            
             // 
             // TbConfirmPassword
             // 
@@ -398,7 +392,6 @@ namespace HHF_APP
             this.TbConfirmPassword.PasswordChar = '*';
             this.TbConfirmPassword.Size = new System.Drawing.Size(323, 37);
             this.TbConfirmPassword.TabIndex = 29;
-            
             // 
             // lblConfirmPassword
             // 
@@ -408,7 +401,6 @@ namespace HHF_APP
             this.lblConfirmPassword.Size = new System.Drawing.Size(210, 30);
             this.lblConfirmPassword.TabIndex = 28;
             this.lblConfirmPassword.Text = "Confirm Password :  ";
-            
             // 
             // TbPassword
             // 
@@ -419,7 +411,6 @@ namespace HHF_APP
             this.TbPassword.PasswordChar = '*';
             this.TbPassword.Size = new System.Drawing.Size(323, 37);
             this.TbPassword.TabIndex = 27;
-            
             // 
             // lblPassword
             // 
@@ -429,7 +420,6 @@ namespace HHF_APP
             this.lblPassword.Size = new System.Drawing.Size(126, 30);
             this.lblPassword.TabIndex = 26;
             this.lblPassword.Text = "Password :  ";
-            
             // 
             // TbRepeatEmail
             // 
@@ -438,7 +428,6 @@ namespace HHF_APP
             this.TbRepeatEmail.Name = "TbRepeatEmail";
             this.TbRepeatEmail.Size = new System.Drawing.Size(323, 37);
             this.TbRepeatEmail.TabIndex = 25;
-            
             // 
             // lblRepeatEmail
             // 
@@ -448,7 +437,6 @@ namespace HHF_APP
             this.lblRepeatEmail.Size = new System.Drawing.Size(160, 30);
             this.lblRepeatEmail.TabIndex = 24;
             this.lblRepeatEmail.Text = "Repeat Email :  ";
-            
             // 
             // TbEmail
             // 
@@ -468,7 +456,6 @@ namespace HHF_APP
             this.lblEmail.Size = new System.Drawing.Size(87, 30);
             this.lblEmail.TabIndex = 22;
             this.lblEmail.Text = "Email :  ";
-            
             // 
             // TbLastName
             // 
@@ -478,7 +465,6 @@ namespace HHF_APP
             this.TbLastName.Name = "TbLastName";
             this.TbLastName.Size = new System.Drawing.Size(323, 37);
             this.TbLastName.TabIndex = 21;
-            
             // 
             // TbFirstName
             // 
@@ -488,7 +474,6 @@ namespace HHF_APP
             this.TbFirstName.Name = "TbFirstName";
             this.TbFirstName.Size = new System.Drawing.Size(323, 37);
             this.TbFirstName.TabIndex = 20;
-            
             // 
             // lblLastName
             // 
@@ -499,7 +484,6 @@ namespace HHF_APP
             this.lblLastName.Size = new System.Drawing.Size(131, 30);
             this.lblLastName.TabIndex = 19;
             this.lblLastName.Text = "Last Name : ";
-           
             // 
             // lblFirstName
             // 
@@ -509,7 +493,6 @@ namespace HHF_APP
             this.lblFirstName.Size = new System.Drawing.Size(134, 30);
             this.lblFirstName.TabIndex = 18;
             this.lblFirstName.Text = "First Name : ";
-        
             // 
             // GbCamping
             // 
@@ -665,7 +648,6 @@ namespace HHF_APP
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(608, 274);
             this.panel2.TabIndex = 1;
-            
             // 
             // pnlGroup
             // 
@@ -691,6 +673,7 @@ namespace HHF_APP
             this.label1.Size = new System.Drawing.Size(186, 38);
             this.label1.TabIndex = 0;
             this.label1.Text = "Group Ticket";
+            this.label1.Click += new System.EventHandler(this.RbGroup_Click);
             // 
             // label15
             // 
@@ -700,7 +683,7 @@ namespace HHF_APP
             this.label15.Location = new System.Drawing.Point(26, 95);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(26, 25);
+            this.label15.Size = new System.Drawing.Size(0, 25);
             this.label15.TabIndex = 9;
             // 
             // label14
@@ -738,7 +721,6 @@ namespace HHF_APP
             this.label6.Size = new System.Drawing.Size(525, 38);
             this.label6.TabIndex = 10;
             this.label6.Text = "Camping: 120€ + 60€ (2 Nights -3 Days)";
-            
             // 
             // panel3
             // 
@@ -752,7 +734,6 @@ namespace HHF_APP
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(607, 274);
             this.panel3.TabIndex = 1;
-            
             // 
             // label3
             // 
@@ -764,6 +745,7 @@ namespace HHF_APP
             this.label3.Size = new System.Drawing.Size(288, 38);
             this.label3.TabIndex = 2;
             this.label3.Text = "VIP Individual Ticket";
+            this.label3.Click += new System.EventHandler(this.RbVIP_Click);
             // 
             // pnlVIP
             // 
@@ -838,7 +820,7 @@ namespace HHF_APP
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(608, 274);
-            this.panel1.TabIndex = 0;           
+            this.panel1.TabIndex = 0;
             // 
             // label2
             // 
@@ -850,6 +832,7 @@ namespace HHF_APP
             this.label2.Size = new System.Drawing.Size(235, 38);
             this.label2.TabIndex = 1;
             this.label2.Text = "Individual Ticket";
+            this.label2.Click += new System.EventHandler(this.pnlIndividual_Click);
             // 
             // pnlIndividual
             // 

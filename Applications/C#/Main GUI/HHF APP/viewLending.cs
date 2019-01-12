@@ -291,7 +291,7 @@ namespace HHF_APP
         {
             if (!btnLendItem.Enabled)
             {
-                accountId = -1;
+                //accountId = -1;
                 btnLendItem.BackColor = Color.DimGray;
                 btnLendItem.ForeColor = Color.White;
                 Cb_powerbank.Enabled = false;
@@ -397,7 +397,8 @@ namespace HHF_APP
                         }
                     }
 
-                    this.Enabled = false;
+                    this.btnLendItem.Enabled = false;
+                    this.flowLayoutPanel3.Enabled = false;
 
                 }
             }
