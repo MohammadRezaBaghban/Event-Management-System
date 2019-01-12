@@ -13,6 +13,14 @@ namespace HHF_APP
 {
     public partial class viewTickets : UserControl
     {
+        private List<string> FirstName;
+        List<string> LastName;
+        List<string> Email;
+
+       
+        List<Member> members = new List<Member>();
+        private int NrMembers = 0;
+
         public viewTickets()
         {
             InitializeComponent();
@@ -72,169 +80,6 @@ namespace HHF_APP
             ChangeColor();
             
         }
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label14_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label15_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnBuyIndiv_Click(object sender, EventArgs e)
-        {
-            
-
-
-        }
-
-        private void btnBuyGroup_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnBuyVIP_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnCloseBrowser_Click(object sender, EventArgs e)
-        {
-
-            
-        }
-
-        private void lblPhone_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblFirstName_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TbFirstName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TbLastName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblLastName_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblEmail_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TbEmail_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TbRepeatEmail_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblRepeatEmail_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblPassword_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TbPassword_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TbConfirmPassword_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblConfirmPassword_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblPhone_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TbPhone_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TbIBAN_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblIBAN_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void NrTopUp_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void personToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void RbIndividual_Click(object sender, EventArgs e)
         {
             this.ManagingUI(1);
@@ -263,6 +108,138 @@ namespace HHF_APP
         private void pnlVIP_Click(object sender, EventArgs e)
         {
             this.ManagingUI(3);
+        }
+
+        class Member
+        {
+            public static int Number = 0;
+
+            public string Fn;
+
+            public string Ln;
+
+            public string Email;
+            public Member(string fn,string ln, string email)
+            {
+                this.Email = email;
+                this.Fn = fn;
+                this.Ln = ln;
+                Number++;
+            }
+        }
+        
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(this.TbMemberFN.Text))
+            {
+                MessageBox.Show("Please fill in First name field");
+                this.TbMemberLN.Focus();
+            }else if (String.IsNullOrWhiteSpace(this.TbMemberLN.Text))
+            {
+                MessageBox.Show("Please fill in Last name field");
+                this.TbMemberLN.Focus();
+            }
+            else if (String.IsNullOrWhiteSpace(this.TbMemberEmail.Text))
+            {
+                MessageBox.Show("Please fill in Email field");
+                this.TbMemberEmail.Focus();
+            }
+            else
+            {
+                if (Member.Number < 5)
+                {
+                    if (this.members.Exists(
+                        delegate (Member member)
+                            {
+                                if (member.Email == this.TbMemberEmail.Text)
+                                {
+                                    return true;
+                                }
+                                else
+                                {
+                                    return false;
+                                }
+                            }))
+                    {
+                        MessageBox.Show("There is another member in the list with given email!");
+                    }
+                    else
+                    {
+                        Member m = new Member(this.TbMemberFN.Text, this.TbMemberLN.Text, this.TbMemberEmail.Text);
+                        this.members.Add(m);
+                        this.UpdateListOfMember();
+                        TbMemberFN.Text = "";
+                        TbMemberLN.Text = "";
+                        TbMemberEmail.Text = "";
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("A group can only has maximum six members");
+                }
+                
+            }
+        }
+
+        private void UpdateListOfMember()
+        {
+            this.ToolStripMemberList.DropDownItems.Clear();
+            this.FirstName = new List<string>();
+            this.LastName = new List<string>();
+            this.Email = new List<string>();
+                     
+            int i = 0;
+            foreach (var m in this.members)
+            {
+                this.FirstName.Add(m.Fn);
+                this.LastName.Add(m.Ln);
+                this.Email.Add(m.Email);
+                this.ToolStripMemberList.DropDownItems.Add($"{i+1} - {m.Fn}");
+                this.ToolStripMemberList.DropDownItems[i].Tag = m;
+                this.ToolStripMemberList.DropDownItems[i].Click += new EventHandler(this.ShowMemberInforMation);
+                var temp = this.ToolStripMemberList.DropDownItems[i].Tag;
+               
+                i++;
+            }
+        }
+
+        public void ShowMemberInforMation(object o, EventArgs e)
+        {
+            
+            var temp = ((ToolStripItem)o);
+            Member m = (Member)temp.Tag;
+            this.TbMemberFN.Text = m.Fn;
+            this.TbMemberLN.Text = m.Ln;
+            this.TbMemberEmail.Text = m.Email;
+            this.lblCurrentMember.Text = m.Fn;
+            this.lblCurrentMember.Tag = m;
+
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            if (lblCurrentMember.Tag == null)
+            {
+                MessageBox.Show("No member has been selected");
+            }
+            else
+            {
+
+                this.members.Remove((Member)this.lblCurrentMember.Tag);
+                Member.Number--;
+                this.lblCurrentMember.Tag = null;
+                this.lblCurrentMember.Text = "";
+                TbMemberFN.Text = "";
+                TbMemberLN.Text = "";
+                TbMemberEmail.Text = "";
+                this.UpdateListOfMember();
+            }
+        }
+
+        private void BtnRegister_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

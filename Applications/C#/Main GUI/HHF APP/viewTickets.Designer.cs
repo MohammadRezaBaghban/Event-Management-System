@@ -31,6 +31,23 @@ namespace HHF_APP
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(viewTickets));
             this.panel7 = new System.Windows.Forms.Panel();
+            this.BtnReset = new System.Windows.Forms.Button();
+            this.BtnRegister = new System.Windows.Forms.Button();
+            this.GbGroupMembers = new System.Windows.Forms.GroupBox();
+            this.ToolStripMember = new System.Windows.Forms.ToolStrip();
+            this.ToolStripMemberList = new System.Windows.Forms.ToolStripDropDownButton();
+            this.fToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.lblCurrentMember = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.TbMemberEmail = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.TbMemberLN = new System.Windows.Forms.TextBox();
+            this.TbMemberFN = new System.Windows.Forms.TextBox();
             this.Gb_Common = new System.Windows.Forms.GroupBox();
             this.NrTopUp = new System.Windows.Forms.NumericUpDown();
             this.lblTopUp = new System.Windows.Forms.Label();
@@ -80,25 +97,9 @@ namespace HHF_APP
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.pnlIndividual = new System.Windows.Forms.Panel();
-            this.GbGroupMembers = new System.Windows.Forms.GroupBox();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.personToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.BtnRegister = new System.Windows.Forms.Button();
-            this.BtnReset = new System.Windows.Forms.Button();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.panel7.SuspendLayout();
+            this.GbGroupMembers.SuspendLayout();
+            this.ToolStripMember.SuspendLayout();
             this.Gb_Common.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NrTopUp)).BeginInit();
             this.GbCamping.SuspendLayout();
@@ -108,8 +109,6 @@ namespace HHF_APP
             this.pnlVIP.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnlIndividual.SuspendLayout();
-            this.GbGroupMembers.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel7
@@ -126,6 +125,175 @@ namespace HHF_APP
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(591, 876);
             this.panel7.TabIndex = 2;
+            // 
+            // BtnReset
+            // 
+            this.BtnReset.BackColor = System.Drawing.Color.LightCoral;
+            this.BtnReset.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnReset.Location = new System.Drawing.Point(366, 817);
+            this.BtnReset.Name = "BtnReset";
+            this.BtnReset.Size = new System.Drawing.Size(91, 44);
+            this.BtnReset.TabIndex = 42;
+            this.BtnReset.Text = "Reset";
+            this.BtnReset.UseVisualStyleBackColor = false;
+            // 
+            // BtnRegister
+            // 
+            this.BtnRegister.BackColor = System.Drawing.Color.LimeGreen;
+            this.BtnRegister.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRegister.Location = new System.Drawing.Point(463, 817);
+            this.BtnRegister.Name = "BtnRegister";
+            this.BtnRegister.Size = new System.Drawing.Size(115, 44);
+            this.BtnRegister.TabIndex = 41;
+            this.BtnRegister.Text = "Register";
+            this.BtnRegister.UseVisualStyleBackColor = false;
+            this.BtnRegister.Click += new System.EventHandler(this.BtnRegister_Click);
+            // 
+            // GbGroupMembers
+            // 
+            this.GbGroupMembers.Controls.Add(this.ToolStripMember);
+            this.GbGroupMembers.Controls.Add(this.TbMemberEmail);
+            this.GbGroupMembers.Controls.Add(this.label19);
+            this.GbGroupMembers.Controls.Add(this.label17);
+            this.GbGroupMembers.Controls.Add(this.label18);
+            this.GbGroupMembers.Controls.Add(this.TbMemberLN);
+            this.GbGroupMembers.Controls.Add(this.TbMemberFN);
+            this.GbGroupMembers.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.GbGroupMembers.Location = new System.Drawing.Point(12, 580);
+            this.GbGroupMembers.Name = "GbGroupMembers";
+            this.GbGroupMembers.Size = new System.Drawing.Size(566, 231);
+            this.GbGroupMembers.TabIndex = 40;
+            this.GbGroupMembers.TabStop = false;
+            this.GbGroupMembers.Text = "Group Members";
+            this.GbGroupMembers.Visible = false;
+            // 
+            // ToolStripMember
+            // 
+            this.ToolStripMember.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.ToolStripMember.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.ToolStripMember.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMemberList,
+            this.toolStripSeparator1,
+            this.lblCurrentMember,
+            this.toolStripLabel2,
+            this.toolStripButton1,
+            this.toolStripButton2});
+            this.ToolStripMember.Location = new System.Drawing.Point(3, 197);
+            this.ToolStripMember.Name = "ToolStripMember";
+            this.ToolStripMember.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.ToolStripMember.Size = new System.Drawing.Size(560, 31);
+            this.ToolStripMember.TabIndex = 42;
+            this.ToolStripMember.Tag = "                                  ";
+            this.ToolStripMember.Text = "toolStrip1";
+            // 
+            // ToolStripMemberList
+            // 
+            this.ToolStripMemberList.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ToolStripMemberList.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fToolStripMenuItem});
+            this.ToolStripMemberList.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ToolStripMemberList.Name = "ToolStripMemberList";
+            this.ToolStripMemberList.Size = new System.Drawing.Size(18, 28);
+            this.ToolStripMemberList.Text = "toolStripDropDownButton1";
+            // 
+            // fToolStripMenuItem
+            // 
+            this.fToolStripMenuItem.Name = "fToolStripMenuItem";
+            this.fToolStripMenuItem.Size = new System.Drawing.Size(102, 30);
+            this.fToolStripMenuItem.Text = "f";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 31);
+            // 
+            // lblCurrentMember
+            // 
+            this.lblCurrentMember.Name = "lblCurrentMember";
+            this.lblCurrentMember.Size = new System.Drawing.Size(0, 28);
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(0, 28);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(28, 28);
+            this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(28, 28);
+            this.toolStripButton2.Text = "toolStripButton2";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
+            // TbMemberEmail
+            // 
+            this.TbMemberEmail.AllowDrop = true;
+            this.TbMemberEmail.ForeColor = System.Drawing.Color.Gray;
+            this.TbMemberEmail.Location = new System.Drawing.Point(181, 133);
+            this.TbMemberEmail.Name = "TbMemberEmail";
+            this.TbMemberEmail.Size = new System.Drawing.Size(323, 37);
+            this.TbMemberEmail.TabIndex = 41;
+            this.TbMemberEmail.Text = "someone@something.sth";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(11, 37);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(134, 30);
+            this.label19.TabIndex = 36;
+            this.label19.Text = "First Name : ";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(10, 135);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(87, 30);
+            this.label17.TabIndex = 40;
+            this.label17.Text = "Email :  ";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(11, 86);
+            this.label18.Name = "label18";
+            this.label18.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label18.Size = new System.Drawing.Size(131, 30);
+            this.label18.TabIndex = 37;
+            this.label18.Text = "Last Name : ";
+            // 
+            // TbMemberLN
+            // 
+            this.TbMemberLN.AllowDrop = true;
+            this.TbMemberLN.ForeColor = System.Drawing.Color.Gray;
+            this.TbMemberLN.Location = new System.Drawing.Point(181, 83);
+            this.TbMemberLN.Name = "TbMemberLN";
+            this.TbMemberLN.Size = new System.Drawing.Size(323, 37);
+            this.TbMemberLN.TabIndex = 39;
+            // 
+            // TbMemberFN
+            // 
+            this.TbMemberFN.AllowDrop = true;
+            this.TbMemberFN.ForeColor = System.Drawing.Color.Gray;
+            this.TbMemberFN.Location = new System.Drawing.Point(181, 33);
+            this.TbMemberFN.Name = "TbMemberFN";
+            this.TbMemberFN.Size = new System.Drawing.Size(323, 37);
+            this.TbMemberFN.TabIndex = 38;
             // 
             // Gb_Common
             // 
@@ -166,7 +334,7 @@ namespace HHF_APP
             0,
             0,
             0});
-            this.NrTopUp.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            
             // 
             // lblTopUp
             // 
@@ -176,7 +344,7 @@ namespace HHF_APP
             this.lblTopUp.Size = new System.Drawing.Size(189, 30);
             this.lblTopUp.TabIndex = 34;
             this.lblTopUp.Text = "Top Up Amount :  ";
-            this.lblTopUp.Click += new System.EventHandler(this.NrTopUp_Click);
+            
             // 
             // TbIBAN
             // 
@@ -188,7 +356,7 @@ namespace HHF_APP
             this.TbIBAN.Size = new System.Drawing.Size(323, 37);
             this.TbIBAN.TabIndex = 33;
             this.TbIBAN.Text = "Enter your bank account IBAN";
-            this.TbIBAN.TextChanged += new System.EventHandler(this.TbIBAN_TextChanged);
+           
             // 
             // lblIBAN
             // 
@@ -198,7 +366,7 @@ namespace HHF_APP
             this.lblIBAN.Size = new System.Drawing.Size(85, 30);
             this.lblIBAN.TabIndex = 32;
             this.lblIBAN.Text = "IBAN :  ";
-            this.lblIBAN.Click += new System.EventHandler(this.lblIBAN_Click);
+            
             // 
             // TbPhone
             // 
@@ -209,7 +377,7 @@ namespace HHF_APP
             this.TbPhone.Size = new System.Drawing.Size(323, 37);
             this.TbPhone.TabIndex = 31;
             this.TbPhone.Text = "+31";
-            this.TbPhone.TextChanged += new System.EventHandler(this.TbPhone_TextChanged);
+            
             // 
             // lblPhone
             // 
@@ -219,7 +387,7 @@ namespace HHF_APP
             this.lblPhone.Size = new System.Drawing.Size(177, 30);
             this.lblPhone.TabIndex = 30;
             this.lblPhone.Text = "Phone Number:  ";
-            this.lblPhone.Click += new System.EventHandler(this.lblPhone_Click_1);
+            
             // 
             // TbConfirmPassword
             // 
@@ -230,7 +398,7 @@ namespace HHF_APP
             this.TbConfirmPassword.PasswordChar = '*';
             this.TbConfirmPassword.Size = new System.Drawing.Size(323, 37);
             this.TbConfirmPassword.TabIndex = 29;
-            this.TbConfirmPassword.TextChanged += new System.EventHandler(this.TbConfirmPassword_TextChanged);
+            
             // 
             // lblConfirmPassword
             // 
@@ -240,7 +408,7 @@ namespace HHF_APP
             this.lblConfirmPassword.Size = new System.Drawing.Size(210, 30);
             this.lblConfirmPassword.TabIndex = 28;
             this.lblConfirmPassword.Text = "Confirm Password :  ";
-            this.lblConfirmPassword.Click += new System.EventHandler(this.lblConfirmPassword_Click);
+            
             // 
             // TbPassword
             // 
@@ -251,7 +419,7 @@ namespace HHF_APP
             this.TbPassword.PasswordChar = '*';
             this.TbPassword.Size = new System.Drawing.Size(323, 37);
             this.TbPassword.TabIndex = 27;
-            this.TbPassword.TextChanged += new System.EventHandler(this.TbPassword_TextChanged);
+            
             // 
             // lblPassword
             // 
@@ -261,7 +429,7 @@ namespace HHF_APP
             this.lblPassword.Size = new System.Drawing.Size(126, 30);
             this.lblPassword.TabIndex = 26;
             this.lblPassword.Text = "Password :  ";
-            this.lblPassword.Click += new System.EventHandler(this.lblPassword_Click);
+            
             // 
             // TbRepeatEmail
             // 
@@ -270,7 +438,7 @@ namespace HHF_APP
             this.TbRepeatEmail.Name = "TbRepeatEmail";
             this.TbRepeatEmail.Size = new System.Drawing.Size(323, 37);
             this.TbRepeatEmail.TabIndex = 25;
-            this.TbRepeatEmail.TextChanged += new System.EventHandler(this.TbRepeatEmail_TextChanged);
+            
             // 
             // lblRepeatEmail
             // 
@@ -280,7 +448,7 @@ namespace HHF_APP
             this.lblRepeatEmail.Size = new System.Drawing.Size(160, 30);
             this.lblRepeatEmail.TabIndex = 24;
             this.lblRepeatEmail.Text = "Repeat Email :  ";
-            this.lblRepeatEmail.Click += new System.EventHandler(this.lblRepeatEmail_Click);
+            
             // 
             // TbEmail
             // 
@@ -291,7 +459,6 @@ namespace HHF_APP
             this.TbEmail.Size = new System.Drawing.Size(323, 37);
             this.TbEmail.TabIndex = 23;
             this.TbEmail.Text = "someone@something.sth";
-            this.TbEmail.TextChanged += new System.EventHandler(this.TbEmail_TextChanged);
             // 
             // lblEmail
             // 
@@ -301,7 +468,7 @@ namespace HHF_APP
             this.lblEmail.Size = new System.Drawing.Size(87, 30);
             this.lblEmail.TabIndex = 22;
             this.lblEmail.Text = "Email :  ";
-            this.lblEmail.Click += new System.EventHandler(this.lblEmail_Click);
+            
             // 
             // TbLastName
             // 
@@ -311,7 +478,7 @@ namespace HHF_APP
             this.TbLastName.Name = "TbLastName";
             this.TbLastName.Size = new System.Drawing.Size(323, 37);
             this.TbLastName.TabIndex = 21;
-            this.TbLastName.TextChanged += new System.EventHandler(this.TbLastName_TextChanged);
+            
             // 
             // TbFirstName
             // 
@@ -321,7 +488,7 @@ namespace HHF_APP
             this.TbFirstName.Name = "TbFirstName";
             this.TbFirstName.Size = new System.Drawing.Size(323, 37);
             this.TbFirstName.TabIndex = 20;
-            this.TbFirstName.TextChanged += new System.EventHandler(this.TbFirstName_TextChanged);
+            
             // 
             // lblLastName
             // 
@@ -332,7 +499,7 @@ namespace HHF_APP
             this.lblLastName.Size = new System.Drawing.Size(131, 30);
             this.lblLastName.TabIndex = 19;
             this.lblLastName.Text = "Last Name : ";
-            this.lblLastName.Click += new System.EventHandler(this.lblLastName_Click);
+           
             // 
             // lblFirstName
             // 
@@ -342,7 +509,7 @@ namespace HHF_APP
             this.lblFirstName.Size = new System.Drawing.Size(134, 30);
             this.lblFirstName.TabIndex = 18;
             this.lblFirstName.Text = "First Name : ";
-            this.lblFirstName.Click += new System.EventHandler(this.lblFirstName_Click);
+        
             // 
             // GbCamping
             // 
@@ -498,7 +665,7 @@ namespace HHF_APP
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(608, 274);
             this.panel2.TabIndex = 1;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            
             // 
             // pnlGroup
             // 
@@ -535,8 +702,6 @@ namespace HHF_APP
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(26, 25);
             this.label15.TabIndex = 9;
-            this.label15.Text = "O";
-            this.label15.Click += new System.EventHandler(this.label15_Click);
             // 
             // label14
             // 
@@ -549,7 +714,6 @@ namespace HHF_APP
             this.label14.Size = new System.Drawing.Size(431, 38);
             this.label14.TabIndex = 11;
             this.label14.Text = "Price: 150€ + 10€ (Late Purchase)";
-            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // label9
             // 
@@ -562,7 +726,6 @@ namespace HHF_APP
             this.label9.Size = new System.Drawing.Size(26, 25);
             this.label9.TabIndex = 8;
             this.label9.Text = "O";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label6
             // 
@@ -575,7 +738,7 @@ namespace HHF_APP
             this.label6.Size = new System.Drawing.Size(525, 38);
             this.label6.TabIndex = 10;
             this.label6.Text = "Camping: 120€ + 60€ (2 Nights -3 Days)";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+            
             // 
             // panel3
             // 
@@ -589,7 +752,7 @@ namespace HHF_APP
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(607, 274);
             this.panel3.TabIndex = 1;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            
             // 
             // label3
             // 
@@ -675,8 +838,7 @@ namespace HHF_APP
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(608, 274);
-            this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.panel1.TabIndex = 0;           
             // 
             // label2
             // 
@@ -703,177 +865,6 @@ namespace HHF_APP
             this.pnlIndividual.TabIndex = 1;
             this.pnlIndividual.Click += new System.EventHandler(this.pnlIndividual_Click);
             // 
-            // GbGroupMembers
-            // 
-            this.GbGroupMembers.Controls.Add(this.toolStrip1);
-            this.GbGroupMembers.Controls.Add(this.textBox1);
-            this.GbGroupMembers.Controls.Add(this.label19);
-            this.GbGroupMembers.Controls.Add(this.label17);
-            this.GbGroupMembers.Controls.Add(this.label18);
-            this.GbGroupMembers.Controls.Add(this.textBox2);
-            this.GbGroupMembers.Controls.Add(this.textBox3);
-            this.GbGroupMembers.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.GbGroupMembers.Location = new System.Drawing.Point(12, 580);
-            this.GbGroupMembers.Name = "GbGroupMembers";
-            this.GbGroupMembers.Size = new System.Drawing.Size(566, 231);
-            this.GbGroupMembers.TabIndex = 40;
-            this.GbGroupMembers.TabStop = false;
-            this.GbGroupMembers.Text = "Group Members";
-            this.GbGroupMembers.Visible = false;
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripDropDownButton1,
-            this.toolStripSeparator1,
-            this.toolStripLabel1,
-            this.toolStripSeparator2,
-            this.toolStripLabel2,
-            this.toolStripButton2,
-            this.toolStripButton1});
-            this.toolStrip1.Location = new System.Drawing.Point(3, 197);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.toolStrip1.Size = new System.Drawing.Size(560, 31);
-            this.toolStrip1.TabIndex = 42;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripDropDownButton1
-            // 
-            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.personToolStripMenuItem});
-            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(18, 28);
-            this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
-            // 
-            // personToolStripMenuItem
-            // 
-            this.personToolStripMenuItem.Name = "personToolStripMenuItem";
-            this.personToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
-            this.personToolStripMenuItem.Text = "Member 1";
-            // 
-            // textBox1
-            // 
-            this.textBox1.AllowDrop = true;
-            this.textBox1.ForeColor = System.Drawing.Color.Gray;
-            this.textBox1.Location = new System.Drawing.Point(181, 133);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(323, 37);
-            this.textBox1.TabIndex = 41;
-            this.textBox1.Text = "someone@something.sth";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(11, 37);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(134, 30);
-            this.label19.TabIndex = 36;
-            this.label19.Text = "First Name : ";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(10, 135);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(87, 30);
-            this.label17.TabIndex = 40;
-            this.label17.Text = "Email :  ";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(11, 86);
-            this.label18.Name = "label18";
-            this.label18.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label18.Size = new System.Drawing.Size(131, 30);
-            this.label18.TabIndex = 37;
-            this.label18.Text = "Last Name : ";
-            // 
-            // textBox2
-            // 
-            this.textBox2.AllowDrop = true;
-            this.textBox2.ForeColor = System.Drawing.Color.Gray;
-            this.textBox2.Location = new System.Drawing.Point(181, 83);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(323, 37);
-            this.textBox2.TabIndex = 39;
-            // 
-            // textBox3
-            // 
-            this.textBox3.AllowDrop = true;
-            this.textBox3.ForeColor = System.Drawing.Color.Gray;
-            this.textBox3.Location = new System.Drawing.Point(181, 33);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(323, 37);
-            this.textBox3.TabIndex = 38;
-            // 
-            // BtnRegister
-            // 
-            this.BtnRegister.BackColor = System.Drawing.Color.LimeGreen;
-            this.BtnRegister.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnRegister.Location = new System.Drawing.Point(463, 817);
-            this.BtnRegister.Name = "BtnRegister";
-            this.BtnRegister.Size = new System.Drawing.Size(115, 44);
-            this.BtnRegister.TabIndex = 41;
-            this.BtnRegister.Text = "Register";
-            this.BtnRegister.UseVisualStyleBackColor = false;
-            // 
-            // BtnReset
-            // 
-            this.BtnReset.BackColor = System.Drawing.Color.LightCoral;
-            this.BtnReset.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnReset.Location = new System.Drawing.Point(366, 817);
-            this.BtnReset.Name = "BtnReset";
-            this.BtnReset.Size = new System.Drawing.Size(91, 44);
-            this.BtnReset.TabIndex = 42;
-            this.BtnReset.Text = "Reset";
-            this.BtnReset.UseVisualStyleBackColor = false;
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(94, 28);
-            this.toolStripLabel1.Text = "Member 1";
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(28, 28);
-            this.toolStripButton1.Text = "toolStripButton1";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 31);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 31);
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(28, 28);
-            this.toolStripButton2.Text = "toolStripButton2";
-            // 
-            // toolStripLabel2
-            // 
-            this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(342, 28);
-            this.toolStripLabel2.Text = "                                                                  ";
-            // 
             // viewTickets
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -894,6 +885,10 @@ namespace HHF_APP
             this.Size = new System.Drawing.Size(1239, 909);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            this.GbGroupMembers.ResumeLayout(false);
+            this.GbGroupMembers.PerformLayout();
+            this.ToolStripMember.ResumeLayout(false);
+            this.ToolStripMember.PerformLayout();
             this.Gb_Common.ResumeLayout(false);
             this.Gb_Common.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NrTopUp)).EndInit();
@@ -911,10 +906,6 @@ namespace HHF_APP
             this.panel1.PerformLayout();
             this.pnlIndividual.ResumeLayout(false);
             this.pnlIndividual.PerformLayout();
-            this.GbGroupMembers.ResumeLayout(false);
-            this.GbGroupMembers.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -971,22 +962,21 @@ namespace HHF_APP
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel pnlIndividual;
         private System.Windows.Forms.GroupBox GbGroupMembers;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
-        private System.Windows.Forms.ToolStripMenuItem personToolStripMenuItem;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ToolStrip ToolStripMember;
+        private System.Windows.Forms.ToolStripDropDownButton ToolStripMemberList;
+        private System.Windows.Forms.TextBox TbMemberEmail;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox TbMemberLN;
+        private System.Windows.Forms.TextBox TbMemberFN;
         private System.Windows.Forms.Button BtnReset;
         private System.Windows.Forms.Button BtnRegister;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripLabel lblCurrentMember;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripMenuItem fToolStripMenuItem;
     }
 }
