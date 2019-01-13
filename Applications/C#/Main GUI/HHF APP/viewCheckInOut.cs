@@ -349,5 +349,13 @@ namespace HHF_APP
             }
             catch (NullReferenceException) { }
         }
+
+        private void checkEnter(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+               btnTicketFind.PerformClick();
+            }
+        }
     }
 }

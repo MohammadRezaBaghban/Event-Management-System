@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Configuration;
+using System.Runtime.Remoting.Channels;
 using System.Web.Hosting;
 
 namespace HHF_APP
@@ -420,6 +421,8 @@ namespace HHF_APP
             this.tbBarcode.Name = "tbBarcode";
             this.tbBarcode.Size = new System.Drawing.Size(170, 24);
             this.tbBarcode.TabIndex = 3;
+            this.tbBarcode.KeyPress += new KeyPressEventHandler(enterClick);
+
             // 
             // label3
             // 
@@ -583,6 +586,7 @@ namespace HHF_APP
         
         private void btnscanBarcodeMainForm_Click(object sender, EventArgs e)
         {
+            this.tbBarcode.Clear();
             tbBarcode.Focus();
         }
 
@@ -774,6 +778,14 @@ namespace HHF_APP
         private void pictureBox3_Click_1(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void enterClick(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                btnSearch.PerformClick();
+            }
         }
     }
 }
