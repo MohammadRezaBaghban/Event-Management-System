@@ -20,7 +20,7 @@ namespace HHF_APP
             panel3.Visible = false;
             sidepanelforBTNs.Height = ticketsBtn.Height;
             sidepanelforBTNs.Top = ticketsBtn.Top;
-            //viewLogin1.BringToFront();
+            viewLogin1.BringToFront();
 
             viewCamping1.Enabled = true;
             viewLending1.Enabled = true;

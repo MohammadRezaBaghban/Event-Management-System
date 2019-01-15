@@ -360,7 +360,7 @@ namespace HHF_APP
         public int appLogin(string email, string password)
         {
             
-            int checker = 0;
+            int checker = -1;
             string query = $"SELECT position FROM employees WHERE email='{email}' AND password ='{password}'";
             MySqlCommand command = new MySqlCommand(query, connection);
             command.Parameters.Clear();
@@ -1678,6 +1678,7 @@ namespace HHF_APP
 
                         var campspot = AvailibleCampSpot();
                         MakeCampReservation(campspot, accountid, g.getPaynow);
+                        return true;
                     }
 
 

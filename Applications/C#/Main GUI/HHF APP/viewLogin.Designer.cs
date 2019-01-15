@@ -39,10 +39,9 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(672, 436);
-            this.lblEmail.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblEmail.Location = new System.Drawing.Point(392, 279);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(162, 60);
+            this.lblEmail.Size = new System.Drawing.Size(105, 38);
             this.lblEmail.TabIndex = 0;
             this.lblEmail.Text = "Email :";
             // 
@@ -50,33 +49,36 @@
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(672, 591);
+            this.lblPassword.Location = new System.Drawing.Point(392, 378);
+            this.lblPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(256, 60);
+            this.lblPassword.Size = new System.Drawing.Size(163, 38);
             this.lblPassword.TabIndex = 1;
             this.lblPassword.Text = "Password : ";
             // 
             // tbEmail
             // 
-            this.tbEmail.Location = new System.Drawing.Point(1020, 458);
-            this.tbEmail.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tbEmail.Location = new System.Drawing.Point(595, 293);
             this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(414, 31);
+            this.tbEmail.Size = new System.Drawing.Size(243, 24);
             this.tbEmail.TabIndex = 5;
             // 
             // tbPassword
             // 
-            this.tbPassword.Location = new System.Drawing.Point(1020, 612);
+            this.tbPassword.Location = new System.Drawing.Point(595, 392);
+            this.tbPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbPassword.Name = "tbPassword";
-            this.tbPassword.Size = new System.Drawing.Size(414, 31);
+            this.tbPassword.PasswordChar = '*';
+            this.tbPassword.Size = new System.Drawing.Size(243, 24);
             this.tbPassword.TabIndex = 3;
             // 
             // btnLogin
             // 
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(1023, 739);
+            this.btnLogin.Location = new System.Drawing.Point(597, 473);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(413, 100);
+            this.btnLogin.Size = new System.Drawing.Size(241, 64);
             this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -84,7 +86,7 @@
             // 
             // viewLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.Controls.Add(this.btnLogin);
@@ -92,8 +94,9 @@
             this.Controls.Add(this.tbEmail);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblEmail);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "viewLogin";
-            this.Size = new System.Drawing.Size(2460, 1169);
+            this.Size = new System.Drawing.Size(1435, 748);
             this.Load += new System.EventHandler(this.viewLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

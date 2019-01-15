@@ -120,7 +120,7 @@ namespace HHF_APP
             this.panel7.Controls.Add(this.CbTerms);
             this.panel7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel7.Location = new System.Drawing.Point(485, 7);
-            this.panel7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel7.Margin = new System.Windows.Forms.Padding(2);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(460, 701);
             this.panel7.TabIndex = 2;
@@ -130,7 +130,7 @@ namespace HHF_APP
             this.BtnReset.BackColor = System.Drawing.Color.LightCoral;
             this.BtnReset.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnReset.Location = new System.Drawing.Point(285, 654);
-            this.BtnReset.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnReset.Margin = new System.Windows.Forms.Padding(2);
             this.BtnReset.Name = "BtnReset";
             this.BtnReset.Size = new System.Drawing.Size(71, 35);
             this.BtnReset.TabIndex = 42;
@@ -143,7 +143,7 @@ namespace HHF_APP
             this.BtnRegister.BackColor = System.Drawing.Color.LimeGreen;
             this.BtnRegister.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnRegister.Location = new System.Drawing.Point(360, 654);
-            this.BtnRegister.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnRegister.Margin = new System.Windows.Forms.Padding(2);
             this.BtnRegister.Name = "BtnRegister";
             this.BtnRegister.Size = new System.Drawing.Size(89, 35);
             this.BtnRegister.TabIndex = 41;
@@ -162,9 +162,9 @@ namespace HHF_APP
             this.GbGroupMembers.Controls.Add(this.TbMemberFN);
             this.GbGroupMembers.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.GbGroupMembers.Location = new System.Drawing.Point(9, 464);
-            this.GbGroupMembers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GbGroupMembers.Margin = new System.Windows.Forms.Padding(2);
             this.GbGroupMembers.Name = "GbGroupMembers";
-            this.GbGroupMembers.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GbGroupMembers.Padding = new System.Windows.Forms.Padding(2);
             this.GbGroupMembers.Size = new System.Drawing.Size(440, 185);
             this.GbGroupMembers.TabIndex = 40;
             this.GbGroupMembers.TabStop = false;
@@ -248,7 +248,7 @@ namespace HHF_APP
             this.TbMemberEmail.AllowDrop = true;
             this.TbMemberEmail.ForeColor = System.Drawing.Color.Gray;
             this.TbMemberEmail.Location = new System.Drawing.Point(141, 106);
-            this.TbMemberEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TbMemberEmail.Margin = new System.Windows.Forms.Padding(2);
             this.TbMemberEmail.Name = "TbMemberEmail";
             this.TbMemberEmail.Size = new System.Drawing.Size(252, 32);
             this.TbMemberEmail.TabIndex = 41;
@@ -290,7 +290,7 @@ namespace HHF_APP
             this.TbMemberLN.AllowDrop = true;
             this.TbMemberLN.ForeColor = System.Drawing.Color.Gray;
             this.TbMemberLN.Location = new System.Drawing.Point(141, 66);
-            this.TbMemberLN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TbMemberLN.Margin = new System.Windows.Forms.Padding(2);
             this.TbMemberLN.Name = "TbMemberLN";
             this.TbMemberLN.Size = new System.Drawing.Size(252, 32);
             this.TbMemberLN.TabIndex = 39;
@@ -300,7 +300,7 @@ namespace HHF_APP
             this.TbMemberFN.AllowDrop = true;
             this.TbMemberFN.ForeColor = System.Drawing.Color.Gray;
             this.TbMemberFN.Location = new System.Drawing.Point(141, 26);
-            this.TbMemberFN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TbMemberFN.Margin = new System.Windows.Forms.Padding(2);
             this.TbMemberFN.Name = "TbMemberFN";
             this.TbMemberFN.Size = new System.Drawing.Size(252, 32);
             this.TbMemberFN.TabIndex = 38;
@@ -327,9 +327,9 @@ namespace HHF_APP
             this.Gb_Common.Controls.Add(this.lblFirstName);
             this.Gb_Common.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.Gb_Common.Location = new System.Drawing.Point(9, 11);
-            this.Gb_Common.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Gb_Common.Margin = new System.Windows.Forms.Padding(2);
             this.Gb_Common.Name = "Gb_Common";
-            this.Gb_Common.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Gb_Common.Padding = new System.Windows.Forms.Padding(2);
             this.Gb_Common.Size = new System.Drawing.Size(440, 351);
             this.Gb_Common.TabIndex = 21;
             this.Gb_Common.TabStop = false;
@@ -338,7 +338,7 @@ namespace HHF_APP
             // NrTopUp
             // 
             this.NrTopUp.Location = new System.Drawing.Point(180, 311);
-            this.NrTopUp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NrTopUp.Margin = new System.Windows.Forms.Padding(2);
             this.NrTopUp.Name = "NrTopUp";
             this.NrTopUp.Size = new System.Drawing.Size(86, 32);
             this.NrTopUp.TabIndex = 35;
@@ -364,7 +364,7 @@ namespace HHF_APP
             this.TbIBAN.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList;
             this.TbIBAN.ForeColor = System.Drawing.Color.Gray;
             this.TbIBAN.Location = new System.Drawing.Point(180, 277);
-            this.TbIBAN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TbIBAN.Margin = new System.Windows.Forms.Padding(2);
             this.TbIBAN.Name = "TbIBAN";
             this.TbIBAN.Size = new System.Drawing.Size(252, 32);
             this.TbIBAN.TabIndex = 33;
@@ -385,7 +385,7 @@ namespace HHF_APP
             this.TbPhone.AllowDrop = true;
             this.TbPhone.ForeColor = System.Drawing.Color.Gray;
             this.TbPhone.Location = new System.Drawing.Point(180, 241);
-            this.TbPhone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TbPhone.Margin = new System.Windows.Forms.Padding(2);
             this.TbPhone.Name = "TbPhone";
             this.TbPhone.Size = new System.Drawing.Size(252, 32);
             this.TbPhone.TabIndex = 31;
@@ -406,7 +406,7 @@ namespace HHF_APP
             this.TbConfirmPassword.AllowDrop = true;
             this.TbConfirmPassword.ForeColor = System.Drawing.Color.Gray;
             this.TbConfirmPassword.Location = new System.Drawing.Point(180, 205);
-            this.TbConfirmPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TbConfirmPassword.Margin = new System.Windows.Forms.Padding(2);
             this.TbConfirmPassword.Name = "TbConfirmPassword";
             this.TbConfirmPassword.PasswordChar = '*';
             this.TbConfirmPassword.Size = new System.Drawing.Size(252, 32);
@@ -427,7 +427,7 @@ namespace HHF_APP
             this.TbPassword.AllowDrop = true;
             this.TbPassword.ForeColor = System.Drawing.Color.Gray;
             this.TbPassword.Location = new System.Drawing.Point(180, 169);
-            this.TbPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TbPassword.Margin = new System.Windows.Forms.Padding(2);
             this.TbPassword.Name = "TbPassword";
             this.TbPassword.PasswordChar = '*';
             this.TbPassword.Size = new System.Drawing.Size(252, 32);
@@ -447,7 +447,7 @@ namespace HHF_APP
             // 
             this.TbRepeatEmail.ForeColor = System.Drawing.Color.Gray;
             this.TbRepeatEmail.Location = new System.Drawing.Point(180, 133);
-            this.TbRepeatEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TbRepeatEmail.Margin = new System.Windows.Forms.Padding(2);
             this.TbRepeatEmail.Name = "TbRepeatEmail";
             this.TbRepeatEmail.Size = new System.Drawing.Size(252, 32);
             this.TbRepeatEmail.TabIndex = 25;
@@ -467,7 +467,7 @@ namespace HHF_APP
             this.TbEmail.AllowDrop = true;
             this.TbEmail.ForeColor = System.Drawing.Color.Gray;
             this.TbEmail.Location = new System.Drawing.Point(180, 97);
-            this.TbEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TbEmail.Margin = new System.Windows.Forms.Padding(2);
             this.TbEmail.Name = "TbEmail";
             this.TbEmail.Size = new System.Drawing.Size(252, 32);
             this.TbEmail.TabIndex = 23;
@@ -488,7 +488,7 @@ namespace HHF_APP
             this.TbLastName.AllowDrop = true;
             this.TbLastName.ForeColor = System.Drawing.Color.Gray;
             this.TbLastName.Location = new System.Drawing.Point(180, 61);
-            this.TbLastName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TbLastName.Margin = new System.Windows.Forms.Padding(2);
             this.TbLastName.Name = "TbLastName";
             this.TbLastName.Size = new System.Drawing.Size(252, 32);
             this.TbLastName.TabIndex = 21;
@@ -498,7 +498,7 @@ namespace HHF_APP
             this.TbFirstName.AllowDrop = true;
             this.TbFirstName.ForeColor = System.Drawing.Color.Gray;
             this.TbFirstName.Location = new System.Drawing.Point(180, 25);
-            this.TbFirstName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TbFirstName.Margin = new System.Windows.Forms.Padding(2);
             this.TbFirstName.Name = "TbFirstName";
             this.TbFirstName.Size = new System.Drawing.Size(252, 32);
             this.TbFirstName.TabIndex = 20;
@@ -529,9 +529,9 @@ namespace HHF_APP
             this.GbCamping.Controls.Add(this.CbAdvancedPayment);
             this.GbCamping.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.GbCamping.Location = new System.Drawing.Point(9, 376);
-            this.GbCamping.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GbCamping.Margin = new System.Windows.Forms.Padding(2);
             this.GbCamping.Name = "GbCamping";
-            this.GbCamping.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GbCamping.Padding = new System.Windows.Forms.Padding(2);
             this.GbCamping.Size = new System.Drawing.Size(440, 83);
             this.GbCamping.TabIndex = 20;
             this.GbCamping.TabStop = false;
@@ -542,7 +542,7 @@ namespace HHF_APP
             // 
             this.CbAdvancedPayment.AutoSize = true;
             this.CbAdvancedPayment.Location = new System.Drawing.Point(14, 29);
-            this.CbAdvancedPayment.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CbAdvancedPayment.Margin = new System.Windows.Forms.Padding(2);
             this.CbAdvancedPayment.Name = "CbAdvancedPayment";
             this.CbAdvancedPayment.Size = new System.Drawing.Size(204, 29);
             this.CbAdvancedPayment.TabIndex = 41;
@@ -562,7 +562,7 @@ namespace HHF_APP
             // 
             this.CbTerms.AutoSize = true;
             this.CbTerms.Location = new System.Drawing.Point(12, 664);
-            this.CbTerms.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CbTerms.Margin = new System.Windows.Forms.Padding(2);
             this.CbTerms.Name = "CbTerms";
             this.CbTerms.Size = new System.Drawing.Size(18, 17);
             this.CbTerms.TabIndex = 18;
@@ -571,7 +571,7 @@ namespace HHF_APP
             // RbVIP
             // 
             this.RbVIP.Location = new System.Drawing.Point(436, 23);
-            this.RbVIP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RbVIP.Margin = new System.Windows.Forms.Padding(2);
             this.RbVIP.Name = "RbVIP";
             this.RbVIP.Size = new System.Drawing.Size(23, 24);
             this.RbVIP.TabIndex = 10;
@@ -582,7 +582,7 @@ namespace HHF_APP
             // RbGroup
             // 
             this.RbGroup.Location = new System.Drawing.Point(436, 20);
-            this.RbGroup.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RbGroup.Margin = new System.Windows.Forms.Padding(2);
             this.RbGroup.Name = "RbGroup";
             this.RbGroup.Size = new System.Drawing.Size(23, 15);
             this.RbGroup.TabIndex = 9;
@@ -595,7 +595,7 @@ namespace HHF_APP
             // 
             this.RbIndividual.Checked = true;
             this.RbIndividual.Location = new System.Drawing.Point(436, 14);
-            this.RbIndividual.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RbIndividual.Margin = new System.Windows.Forms.Padding(2);
             this.RbIndividual.Name = "RbIndividual";
             this.RbIndividual.Size = new System.Drawing.Size(23, 24);
             this.RbIndividual.TabIndex = 8;
@@ -864,7 +864,7 @@ namespace HHF_APP
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "viewTickets";
-            this.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Padding = new System.Windows.Forms.Padding(5);
             this.Size = new System.Drawing.Size(964, 727);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();

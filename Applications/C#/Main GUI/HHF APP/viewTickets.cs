@@ -246,25 +246,36 @@ namespace HHF_APP
                 {
                     if (RbIndividual.Checked)
                     {
-                        dh.SellTicketIndividual(new TicketPurchase(TbFirstName.Text.ToString(),
-                            TbLastName.Text.ToString(), TbEmail.Text.ToString(), TbPassword.Text.ToString(),
-                            TbPhone.Text.ToString(), TbIBAN.Text.ToString(), Convert.ToDecimal(NrTopUp.Value)));
+                        if (dh.SellTicketIndividual(new TicketPurchase(TbFirstName.Text,
+                            TbLastName.Text, TbEmail.Text, TbPassword.Text,
+                            TbPhone.Text, TbIBAN.Text, Convert.ToDecimal(NrTopUp.Value))))
+                        {
+                            MessageBox.Show("Successfully purchased.");
+           
+                        }
                     }
                     else if (RbGroup.Checked)
                     {
-                        dh.SellTicketGroup(new TicketGroup
-                        (TbFirstName.Text.ToString(),
-                            TbLastName.Text.ToString(), TbEmail.Text.ToString(), TbPassword.Text.ToString(),
-                            TbPhone.Text.ToString(), TbIBAN.Text.ToString(), Convert.ToDecimal(NrTopUp.Value),
+                        if (dh.SellTicketGroup(new TicketGroup
+                        (TbFirstName.Text,
+                            TbLastName.Text, TbEmail.Text, TbPassword.Text,
+                            TbPhone.Text, TbIBAN.Text, Convert.ToDecimal(NrTopUp.Value),
                             FirstName,
-                            LastName, Email, CbAdvancedPayment.Checked));
+                            LastName, Email, CbAdvancedPayment.Checked)))
+                        {
+                            MessageBox.Show("Successfully purchased.");
+
+                        }
                     }
                     else if (RbVIP.Checked)
                     {
-                        dh.SellTicketGroup(new TicketGroup
-                        (TbFirstName.Text.ToString(),
-                            TbLastName.Text.ToString(), TbEmail.Text.ToString(), TbPassword.Text.ToString(),
-                            TbPhone.Text.ToString(), TbIBAN.Text.ToString(), Convert.ToDecimal(NrTopUp.Value), true));
+                        if (dh.SellTicketGroup(new TicketGroup
+                        (TbFirstName.Text,
+                            TbLastName.Text, TbEmail.Text, TbPassword.Text,
+                            TbPhone.Text, TbIBAN.Text, Convert.ToDecimal(NrTopUp.Value), true)))
+                        {
+                            MessageBox.Show("Successfully purchased.");
+                        }
 
                     }
                 }
@@ -276,6 +287,8 @@ namespace HHF_APP
                 {
                     MessageBox.Show("Password Dont Match");
                 }
+                else {
+                    MessageBox.Show("Not Fields are filled");}
             }
             catch(Exception ee)
             {
