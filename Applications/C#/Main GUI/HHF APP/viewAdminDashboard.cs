@@ -135,18 +135,7 @@ namespace HHF_APP
             else pnlPassword.Visible = true;
         }
 
-       /* private void lbEmployees_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-            try
-            {
-                passwordPanel1.SetSelectedUser(lbEmployees.SelectedItem.ToString());
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }*/
+      
 
 
         private void btnRemoveEmployee_Click(object sender, EventArgs e)
@@ -154,13 +143,21 @@ namespace HHF_APP
             try
             {
                 String emp = lbEmployees.SelectedItem.ToString();
-                char index = emp[0];
-
-                int nrDeleted = dh.DeleteEmployee(index.ToString());
+                String index = emp.Substring(0, 2);
+                if (index.Contains(","))
+                {
+                    index = emp.Substring(0, 1);
+                }
+                
+                
+                
+                
+                int nrDeleted = dh.DeleteEmployee(index);
 
                 if (nrDeleted > 0)
                 {
                     MessageBox.Show("Employee removed successfully");
+                    btnSearchEmployee_Click(sender, e);
                 }
             }
             catch (Exception)

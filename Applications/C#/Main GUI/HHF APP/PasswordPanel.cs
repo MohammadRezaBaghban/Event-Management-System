@@ -13,18 +13,20 @@ namespace HHF_APP
     public partial class PasswordPanel : UserControl
     {
         private DataHelper dh;
-        char index;
-        
-        
+        String index;
+
+
 
 
         public PasswordPanel()
         {
             InitializeComponent();
             dh = new DataHelper();
-            
-       
+
+
         }
+
+
 
         private void btnSubmitPsw_Click(object sender, EventArgs e)
         {
@@ -36,11 +38,11 @@ namespace HHF_APP
                 {
                     MessageBox.Show("Successfully changed the password");
                     tbNewPassw.Clear();
-                    Panel myParent = (Panel) this.Parent;
+                    Panel myParent = (Panel)this.Parent;
                     myParent.Visible = false;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -48,8 +50,16 @@ namespace HHF_APP
 
         internal void SetSelectedUser(string v)
         {
-            index = v[0];
-            
+
+            String emp = v;
+            index = emp.Substring(0, 2);
+            if (index.Contains(","))
+            {
+                index = emp.Substring(0, 1);
+            }
+
+
+
         }
     }
 }
