@@ -766,6 +766,9 @@ namespace HHF_APP
                 }
                 else
                 {
+                    viewStore1.Enabled = false;
+                    lblbal.Text = "......";
+                    lblname.Text = "......";
                     MessageBox.Show($"A Person with given user id of {tbBarcode.Text} does not exist");                   
                 }
             }

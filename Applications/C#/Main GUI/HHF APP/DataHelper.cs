@@ -1583,7 +1583,7 @@ namespace HHF_APP
           
         }
 
-        public bool SellTicketIndividual(TicketPurchase g)
+        public bool SellTicketIndividual(TicketPurchase g,out int useridset)
         {
             try
             {
@@ -1594,7 +1594,7 @@ namespace HHF_APP
                 var userid = GetUserId();
                 CreateTicket(userid);
                 addTransaction(userid, 65, "registration");
-            
+                useridset = userid;
             
                 return true;
             }
@@ -1605,11 +1605,13 @@ namespace HHF_APP
             }
           
         }
-        public bool SellTicketGroup(TicketGroup g)
+        public bool SellTicketGroup(TicketGroup g,out List<string> namesWithUserId,out int campspotnr)
         {
             using (connection)
             {
-                
+              
+                namesWithUserId=new List<string>();
+                campspotnr = 0;
                 decimal _topUp = g.getTopUp;
                 var _isVip = g.getVip;
                 
@@ -1637,6 +1639,8 @@ namespace HHF_APP
                                             if (MakeCampReservation(campspot, accountid, "yes"))
                                             {
                                                
+                                                namesWithUserId.Add(userid+" "+g.getFName+" "+g.getLName);
+                                               campspotnr = campspot;
                                                 return true;
                                             }
                                         }
@@ -1658,6 +1662,7 @@ namespace HHF_APP
                         CreateUser(g.getEmail, g.getFName, g.getLName, accountid, groupid, "yes",
                             "no");
                         var userid = GetUserId();
+                        namesWithUserId.Add(userid+" "+g.getFName+" "+g.getLName);
                         CreateTicket(userid);
                         addTransaction(userid, 65 * (g.getFNames.Count + 1), "registration");
 
@@ -1673,11 +1678,14 @@ namespace HHF_APP
                             CreateUser(g.getEmails[i], g.getFNames[i], g.getLNames[i], accountid, groupid, "no", "no");
                             
                             CreateTicket(userid);
+                          
+                            namesWithUserId.Add(userid+" "+g.getFNames[i]+" "+g.getLNames[i]);
                             userid++;
                         }
 
                         var campspot = AvailibleCampSpot();
                         MakeCampReservation(campspot, accountid, g.getPaynow);
+                        campspotnr = campspot;
                         return true;
                     }
 

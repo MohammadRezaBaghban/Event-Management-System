@@ -248,9 +248,9 @@ namespace HHF_APP
                     {
                         if (dh.SellTicketIndividual(new TicketPurchase(TbFirstName.Text,
                             TbLastName.Text, TbEmail.Text, TbPassword.Text,
-                            TbPhone.Text, TbIBAN.Text, Convert.ToDecimal(NrTopUp.Value))))
+                            TbPhone.Text, TbIBAN.Text, Convert.ToDecimal(NrTopUp.Value)),out int userid))
                         {
-                            MessageBox.Show("Successfully purchased.");
+                            MessageBox.Show("Successfully purchased. \n the user id is: "+ userid + "for: "+TbFirstName.Text +" "+TbLastName.Text);
            
                         }
                     }
@@ -261,9 +261,11 @@ namespace HHF_APP
                             TbLastName.Text, TbEmail.Text, TbPassword.Text,
                             TbPhone.Text, TbIBAN.Text, Convert.ToDecimal(NrTopUp.Value),
                             FirstName,
-                            LastName, Email, CbAdvancedPayment.Checked)))
+                            LastName, Email, CbAdvancedPayment.Checked), out List<string> names,out int campspotnr))
                         {
-                            MessageBox.Show("Successfully purchased.");
+                            MessageBox.Show("Successfully purchased. \n " +"The camp spot number is: "+campspotnr+
+                                            "\n The user ids with names are: \n" +
+                                            String.Join(Environment.NewLine, names.Where(x => x != null)));
 
                         }
                     }
@@ -272,9 +274,11 @@ namespace HHF_APP
                         if (dh.SellTicketGroup(new TicketGroup
                         (TbFirstName.Text,
                             TbLastName.Text, TbEmail.Text, TbPassword.Text,
-                            TbPhone.Text, TbIBAN.Text, Convert.ToDecimal(NrTopUp.Value), true)))
+                            TbPhone.Text, TbIBAN.Text, Convert.ToDecimal(NrTopUp.Value), true), out List<string> names,out int campspotnr))
                         {
-                            MessageBox.Show("Successfully purchased.");
+                            MessageBox.Show("Successfully purchased. \n " +"The camp spot number is: "+campspotnr+
+                                            "\n The user ids with names are: \n" +
+                                            String.Join(Environment.NewLine, names.Where(x => x != null)));
                         }
 
                     }
